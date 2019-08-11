@@ -1,0 +1,175 @@
+Folder Structure : 
+	Innovision
+		/apis
+			/CASelectionApplication
+				/createCAApplication.php
+			/events
+				createEvent.php
+				fetchAllEvents.php
+				fetchIndividualEvent.php
+				index.html
+				updateEvent.php
+			/panels
+				/CASelection
+					displayResponses.php
+					selectCA.php
+				/cms
+					config.php
+					login.php
+					verifyCMSAdmin.php
+				/eventCoordinator
+					displayParticipants.php
+					eventInfo.php
+				/participant
+					basicInfo.php
+					eventRegistrationDetails.php
+					
+
+
+Innovision/apis/CASelectionApplication/createCAApplication.php
+	Input : q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13 using POST . 
+	Function : Inserts the above input into the table ca_selection_responses.
+	Output : Format : JSON
+				If the insertion in the table is successful 
+					-> {'status' => 'success', 'result' => 'successful entry'}
+				If insertion failed 
+					-> {'status' => 'failure', 'result' => 'entry failed. try again'}
+				
+				
+Innovision/apis/events/createEvent.php
+	Input : title, description, rules, judging_criteria, date, venue, time, category, coordinatorName1, coordinatorContact1, coordinatorName2, coordinatorContact2, max_par using POST.
+	Function : Inserts the above data into the events table.
+			   event image upload and updaing the events table.
+	Output : Format : JSON
+				If the event details and uploading of the image is successful 
+					-> {'status' => 'success', 'result' => 'successful entry'}
+				If event details uploaded but error in image uploading 
+					-> {'status' => 'failure', 'result' => 'image upload failed'}
+				If event details uploaded and error in image type
+					-> {'status' => 'failure', 'result' => 'wrong image type'}
+				If event details uploaded and no image is selected or error in uploading the image
+					-> {'status' => 'failure', 'result' => 'Event details updated. Image not selected or upload failed'}
+				If event details are not uploaded
+					-> {'status' => 'failure', 'result' => 'DB operations failed'}
+				If token is invalid
+					-> {'status' => 'failure', 'result' => 'invalid token'}
+				
+Innovision/apis/events/fetchAllEvents.php
+	Input : -
+	Function : Fetch all the event details
+	Output : JSON
+			{'status' => 'success', 'result' => $result} ,where $result is the array of the event details.
+			
+			
+Innovision/apis/events/fetchIndividualEvent.php
+	Input : Two digit event ID using POST
+	Function : Fetch the details of the event matching the above event ID.
+	Output : Format : JSON
+				If invalid event ID is passed.
+					-> {'status' => 'failure', 'result' => 'eid not found'}
+				If valid event ID is passed.
+					-> {'status' => 'success', 'result' => $result} , where $result is the event details of the corresponding passed event ID.
+					
+			
+Innovision/apis/events/updateEvent.php
+	Input : two digit event ID using POST
+	Function : updates the event details for the above mentioned event ID.
+	Output : Format : JSON
+				If invalid event ID
+					-> {'status' => 'failure', 'result' => 'eid not found'}
+				If valid event ID and event image uploaded succesfully
+					-> {'status' => 'success', 'result' => 'successful entry'}
+				If valid event ID and image upload failed
+					-> {'status' => 'failure', 'result' => 'image upload failed'}
+				If valid event ID and image upload failed due to wrong image type
+					-> {'status' => 'failure', 'result' => 'wrong image type'}
+				If valid event ID and no image selected
+					-> {'status' => 'success', 'result' => 'Event details updated. Image not selected or upload failed'}
+				ELSE
+					-> {'status' => 'failure', 'result' => 'DB operations failed'}
+					
+					
+Innovision/apis/panels/CASelection/displayResponses.php
+	Input : -
+	Function : Displays the responses of the CA selection from table ca_selection_responses
+	Output : Format : JSON
+				{'status' => 'success', 'result' => $result} where $result is the array containing the responses.
+				
+
+Innovision/apis/panels/CASelection/selectCA.php
+	Input : id_list using POST
+	Function : updates the "selected" column of table ca_selection_responses with 1 for the selected CA
+	Output : Format : JSON
+				If CA_Applicant ID not found
+					-> {'status' => 'failure', 'result' => 'DB operation failed or ca_applicant_id not found'}
+				If the CA_Applicant ids are correct
+					-> {'status' => 'success', 'result' => 'successfully updated'}
+					
+					
+Innovision/apis/panels/cms/login.php
+			Input : username and password using POST
+			Function : 
+			Output : Format : JSON
+					If username and password are correct
+						-> {'status' => 'success', 'result' => $jwt}
+					If username and password are incorrect
+						-> {'status' => 'failure', 'result' => 'username or password incorrect'}
+					If username or password are not set
+						-> {'status' => 'failure', 'result' => 'username or password missing'}
+						
+Innovision/apis/panels/cms/verifyCMSAdmin.php
+			Input : token value using POST
+			Function : 
+			Output : Format : JSON
+					If the $jwt couldn't not be decoded
+						-> {'status' => 'failure', 'result' => $e} where $e is the exception
+					If the token is not set or missing.
+						-> {'status' => 'failure', 'result' => 'token missing'}
+						
+
+Innovision/apis/panels/eventCoordinator/displayParticipants.php
+			Input : event id using GET
+			Function : fetch the participants registered for an event
+			Output : Format : JSON
+						If event id is not valid	
+							-> {'status' => 'failure', 'result' => 'eid not found'}
+						If event id is valid and problem in fetching details from users table
+							-> {'status' => 'failure', 'result' => 'DB query failed'}
+						If event id is valid and details are correctly fetched from the users table
+							-> {'status' => 'success', 'result' => $result} where $result is the array containing the details of the registered participants
+						If event id is valid but event id not in events_registration table
+							-> {'status' => 'failure', 'result' => 'DB query failed'}
+							
+							
+Innovision/apis/panels/eventCoordinator/eventInfo.php
+			Input : event id using GET
+			Function : fetch the details of the event.
+			Output : Format : JSON
+						If event id is found
+							-> {'status' => 'success', 'result' => $result} where $result is the array containing the event details
+						If the event id is not found
+							-> {'status' => 'failure', 'result' => 'eid not found'}
+							
+						
+Innovision/apis/panels/participant/basicInfo.php
+			Input : Inno id using GET
+			Function : fetch the details of the particular participant.
+			Output : Format : JSON
+						If inno id is found in the users table	
+							-> {'status' => 'success', 'result' => $result} where $result is the array containing the details of the participant
+						If inno id is not found in the users table
+							-> {'status' => 'failure', 'result' => 'inno_id not found'}
+							
+					
+Innovision/apis/panels/participant/eventRegistrationDetails.php
+			Input : Inno id using GET
+			Function : fetch the details of the events a particular participant is participating.
+			Output : Format : JSON
+						If the inno id is not in the users table
+							-> {'status' => 'failure', 'result' => 'inno_id not found'}
+						If inno id is found and event details are fetched properly
+							-> {'status' => 'success', 'result' => $result}
+						If inno id is found and event details are not fetched properly
+							-> {'status' => 'failure', 'result' => 'DB query failed'}
+						If inno id is found and the list of events he/she is participating is not fetched properly
+							-> {'status' => 'failure', 'result' => 'DB query failed'}
