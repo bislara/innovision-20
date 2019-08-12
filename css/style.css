@@ -164,14 +164,14 @@ h6 {
 }
 
 #header #logo h1 {
+  display: inline-block;
   font-size: 36px;
   margin: 0;
-  padding: 6px 0;
+  padding: 0;
   line-height: 1;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
 #header #logo h1 span {
@@ -186,7 +186,7 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 55px;
 }
 
 /*--------------------------------------------------------------
@@ -353,6 +353,34 @@ h6 {
 .nav-menu ul ul {
   margin: 0;
 }
+
+
+/* for the dropdown */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #142d4c;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f82249;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 /* Mobile Nav Toggle */
 
@@ -699,11 +727,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #speakers {
-  padding: 50px 0 30px 0;      /* Changed by BiswaBehera "padding top from 30px to 50px" */
+  padding: 30px 0 30px 0;      /* Changed by BiswaBehera "padding top from 30px to 50px" */
 }
 
-#speakers h3 {                 /* this section is added by BiswaBehera for h3's in the speaker ids */
-  margin-top: 80px;
+#speakers h3 {
+  padding-top: 50px;              /* this section is added by BiswaBehera for h3's in the speaker ids */
   font-size: 1.5rem;
   font-weight: 550;
 }
@@ -810,9 +838,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
-
+/* fcf9f4     f1e9e3    ffe9e3 */
 #schedule {
-  padding: 120px 0 60px 0;          /* Changed by BiswaBehera "padding top from 60 px to 120px  */
+  background-color: rgba(6, 12, 34, 0.05);
+  padding: 100px 0 60px 0;         /* Changed by BiswaBehera "padding top from 60 px to 100px  */
 }
 
 #schedule .nav-tabs {
