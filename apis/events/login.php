@@ -1,4 +1,4 @@
-<!-- EVENT ADMIN LOGIN API -->
+<!-- EVENT-COORDINATOR LOGIN API -->
 <?php
 
     include('../db.php');
