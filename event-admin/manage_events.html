@@ -1,0 +1,135 @@
+<html>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <body style="background-color: #FBC02D">
+    <br>
+    <div class="container">
+      <center>
+        <div class="row">
+          <h1>
+            <b>Edit/Remove Event Details</b>
+          </h1>
+        </div>
+      </center>
+    </div>
+    <!-- include fetchllevent script get the DATA_ARRAY-->
+    <script>
+      var temp = '';
+      $(document).ready(function () {
+        $.ajax({
+          type: "GET",
+          url: "../apis/events/fetchAllEvents.php",
+          success: function (data) {
+            //console.log(data);
+            var data_obj = JSON.parse(data);
+            var data_arr = data_obj.result;
+            for (var i = 0; i < data_arr.length; i++) {
+              temp = temp + '<tr><td style="display:none" id="eid">' + data_arr[i].eid + '</td><td>' + (i + 1) + '</td ><td><img class="img-responsive" src="' + data_arr[i].image_path + '" height="70px" width="auto"></td><td>' + data_arr[i].title + '</td><td>' + data_arr[i].venue + '</td><td>' + data_arr[i].date + '</td><td>' + data_arr[i].time + '</td><td>' + data_arr[i].date1 + '</td><td>' + data_arr[i].time1 + '</td><td><button onclick="" class="btn btn-danger" id="delete">Delete</button></td><td><button class="btn btn-warning" id="update" data-toggle="modal" data-target="#update_modal">Update</button></td></tr> ';
+             
+            }
+             $('tbody').append(temp);
+          },
+          error: function (data) {
+            console.log(data);
+          }
+        });
+      });
+
+    </script>
+    <div class="container" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+      <div class="row" style="margin-top: 4em">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <table class="table table-bordered table-responsive" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Poster</th>
+                <th>Name</th>
+                <th>Venue</th>
+                <th>Date1</th>
+                <th>Time1</th>
+                <th>Date2</th>
+                <th>Time2</th>
+                <th colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script>
+      $(document).on("click", "#update", function () {
+        console.log("Hiii");
+        var eid = $(this).parents("tr").find("#eid").text();
+        console.log(eid);
+        $.ajax({
+          type: "GET",
+          url: "../apis/events/fetchIndividualEvent.php?q=" + eid,
+          success: function (data) {
+            //code for modal on update button click
+            var dataObj = JSON.parse(data);
+            console.log(dataObj.result);
+            var dataArray = dataObj.result;
+            var temp = '<div style="display:none" value="' + dataArray.eid + '" id="eid"></div>  <div class="form-group"><label for= "event_name"> Event Name</label ><input type="text" id="title" name="title" value="' + dataArray.title + '" class="form-control" />  </div><div class="form-group"><label for="message-text" class="col-form-label">Description:</label><textarea class="form-control" value="" id="desc" name="description">' + dataArray.description + '</textarea></div><div class="form-group"><label for="message-text" class="col-form-label">Event Rules:</label><textarea class="form-control" value="" id="rules" name="rules">' + dataArray.rules + '</textarea></div><div class="form-group"><label for="message-text" class="col-form-label">Judging Criteria:</label><textarea class="form-control" value="" id="jc" name="judging_criteria">' + dataArray.judging_criteria + '</textarea></div><div class="form-group"><label for="date">Date1:</label><br><input type="date" id="date" name="date" value="' + dataArray.date + '"></div><div class="form-group"><label for="date1">Date2:</label><br><input type="date" id="date1" name="date1" value="' + dataArray.date1 + '"></div><div class="form-group"><label for="time">Time1</label><input type="time" id="time" value="' + dataArray.time + '" class="form-control" name="time"/></div><div class="form-group"><label for="time">Time2</label><input type="time" id="time1" value="' + dataArray.time1 + '" class="form-control" name="time1"/></div><div class="form-group"><label for="venue">Venue</label><input type="text" id="venue" value="' + dataArray.venue + '" class="form-control" name="venue" /></div><div class="form-group"><label for="category">Category</label><input type="text" id="category" value="' + dataArray.category + '" class="form-control" name="category"/></div><div class="form-group"><label for="image-path">Image Path</label><img src="' + dataArray.image_path + '" height="200" width="200"></div><h4>Coordinator one</h4><div class="form-group"><label for="full_name_1">Full Name</label><input type="text" id="full_name_1" value="' + dataArray.coordinatorName1 + '" class="form-control" name="coordinatorName1"/></div><div class="form-group"><label for="contact_1">Contact</label><input type="tel" id="contact_1" value="' + dataArray.coordinatorContact1 + '" class="form-control" name="coordinatorContact1"/></div><h4>Coordinator two</h4><div class="form-group"><label for="full_name_2">Full Name</label><input type="text" id="full_name_2" value="' + dataArray.coordinatorName2 + '" class="form-control" name="coordinatorName2"/></div><div class="form-group"><label for="contact_2">Contact</label><input type="tel" id="contact_2" value="' + dataArray.coordinatorContact2 + '" class="form-control" name="coordinatorContact2"/></div><div class="form-group"><label for= "LoginID">Login ID</label ><input type="text" id="loginId" name="loginId" value="' + dataArray.loginId + '" class="form-control" />  </div><div class="form-group"><label for= "login_password">Login Password</label ><input type="text" id="loginPassword" name="loginPassword" value="' + dataArray.loginPassword + '" class="form-control" />  </div>';
+            $("#updateEvents").html(temp);
+            // $("#update_modal").toggle();
+            //console.log($("#updateEvents").html());
+          },
+          error: function (data) {
+            console.log(data);
+          }
+        });
+      });
+    </script>
+    <div class="row" style="margin-top: 2em;">
+      <button class="btn btn-info logout-button" onclick="location.href = 'index.html'">Logout</button>
+    </div>
+    <script>
+      $(document).on("click", ".logout-button", function () {
+        window.location.assign("./index.html");
+      });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div class="modal fade" id="update_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Update Event</h4>
+          </div>
+          <div class="modal-body" id="updateEvents">
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="submit_it">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script>
+
+  for (var i = 0; i < dataArray.length; i++) {
+    temp = '<div style="display:none" value="' + dataArray[i].eid + '" id="eid"></div>  <div class="form-group">< label for= "event_name" > Event Name</label ><input type="text" id="title" value="' + dataArray[i].title + '" class="form-control" />  </div          <div class="form-group"><label for="message-text" class="col-form-label">Description:</label><textarea class="form-control" value="' + dataArray[i].description + '" id="desc"></textarea></div><div class="form-group"><label for="message-text" class="col-form-label">Event Rules:</label><textarea class="form-control" value="' + dataArray[i].rules + '" id="rules"></textarea></div><div class="form-group"><label for="message-text" class="col-form-label">Judging Criteria:</label><textarea class="form-control" value="' + dataArray[i].judging_criteria + '" id="jc"></textarea></div><div class="form-group"><label for="date">Date:</label><br><input type="date" id="date" name="event_date" value="' + dataArray[i].date + '"></div><div class="form-group"><label for="time">Time</label><input type="time" id="time" value="' + dataArray[i].time + '" class="form-control" /></div><div class="form-group"><label for="venue">Venue</label><input type="text" id="venue" value="' + dataArray[i].venue + '" class="form-control" /></div><div class="form-group"><label for="category">Category</label><input type="text" id="category" value="' + dataArray[i].category + '" class="form-control" /></div><div class="form-group"><label for="image-path">Image Path</label><img src="' + dataArray[i].image_path + '"><input type="file" id="img_path" name="image" class="form-control" /></div><div class="form-group"><label for="max-participants">Maximum Participants</label><input type="number" id="max_participants" value="' + dataArray[i].max_par + '" class="form-control" /></div><h4>Coordinator one</h4><div class="form-group"><label for="full_name_1">Full Name</label><input type="text" id="full_name_1" value="' + dataArray[i].coordinatorName1 + '" class="form-control" /></div><div class="form-group"><label for="contact_1">Contact</label><input type="tel" id="contact_1" value="' + dataArray[i].coordinatorContact1 + '" class="form-control" /></div><h4>Coordinator two</h4><div class="form-group"><label for="full_name_2">Full Name</label><input type="text" id="full_name_2" value="' + dataArray[i].coordinatorName2 + '" class="form-control" /></div><div class="form-group"><label for="contact_2">Contact</label><input type="tel" id="contact_2" value="' + dataArray[i].coordinatorContact1 + '" class="form-control" /></div>'
+  }
+  $("#updateEvents").append(temp);
+</script> -->
+  <script>
+    $(document).ready(function () {
+      if (!(localStorage.cms_token)) window.location.assign("./index.html");
+    });
+
+  </script>
+  <script src="../js/ajax/manageEvents.js"></script>
+
+</html>
