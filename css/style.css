@@ -695,11 +695,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
-# Speakers Section
+# Events Section
 --------------------------------------------------------------*/
 
 #speakers {
-  padding: 60px 0 30px 0;
+  padding: 50px 0 30px 0;      /* Changed by BiswaBehera "padding top from 30px to 50px" */
+}
+
+#speakers h3 {                 /* this section is added by BiswaBehera for h3's in the speaker ids */
+  margin-top: 80px;
+  font-size: 1.5rem;
+  font-weight: 550;
 }
 
 #speakers .speaker {
@@ -708,7 +714,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 30px;
 }
 
-#speakers .speaker .details {
+#speakers .speaker:hover img {        /* Changed by BiswaBehera "added the following property to event images" */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*
+  Changed by BiswaBehera "this section has been commented out coz they are not used"
+
+  #speakers .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;
   left: 0;
@@ -751,7 +765,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #speakers-details {
   padding: 60px 0;
-}
+} */
+
+/* ---------- event details ------------- */
 
 #speakers-details .details h2 {
   color: #112363;
@@ -796,7 +812,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #schedule {
-  padding: 60px 0 60px 0;
+  padding: 120px 0 60px 0;          /* Changed by BiswaBehera "padding top from 60 px to 120px  */
 }
 
 #schedule .nav-tabs {
