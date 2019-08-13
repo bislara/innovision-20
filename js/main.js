@@ -15,7 +15,7 @@ jQuery(document).ready(function( $ ) {
 
   // Header fixed on scroll
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
+    if ($(this).scrollTop() > 65) {
       $('#header').addClass('header-scrolled');
     } else {
       $('#header').removeClass('header-scrolled');

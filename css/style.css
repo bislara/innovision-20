@@ -165,14 +165,14 @@ h6 {
 }
 
 #header #logo h1 {
+  display: inline-block;
   font-size: 36px;
   margin: 0;
-  padding: 6px 0;
+  padding: 0;
   line-height: 1;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
 #header #logo h1 span {
@@ -187,7 +187,7 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -353,6 +353,33 @@ h6 {
 
 .nav-menu ul ul {
   margin: 0;
+}
+
+
+/* for the dropdown */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #142d4c;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f82249;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Mobile Nav Toggle */
@@ -698,11 +725,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
-# Speakers Section
+# Events Section
 --------------------------------------------------------------*/
 
 #speakers {
-  padding: 60px 0 30px 0;
+  padding: 30px 0 30px 0;      /* Changed by BiswaBehera "padding top from 30px to 50px" */
+}
+
+#speakers h3 {
+  padding-top: 75px;              /* this section is added by BiswaBehera for h3's in the speaker ids */
+  font-size: 1.5rem;
+  font-weight: 550;
 }
 
 #speakers .speaker {
@@ -711,7 +744,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 30px;
 }
 
-#speakers .speaker .details {
+#speakers .speaker:hover img {        /* Changed by BiswaBehera "added the following property to event images" */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*
+  Changed by BiswaBehera "this section has been commented out coz they are not used"
+
+  #speakers .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;
   left: 0;
@@ -754,6 +795,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #speakers-details {
   padding: 60px 0;
+} */
+
+/* ---------- event details ------------- */
+
+#speakers-details {
+  margin: 0;
+  background-color: rgba(6, 12, 34, 0.07);
+  padding: 100px 0 60px 0;
 }
 
 #speakers-details .details h2 {
@@ -796,12 +845,46 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 
+/* -------- event register button --------- */
+.event-register {
+  text-align: center;
+  margin: 25px auto;
+  border-radius: 30%;
+}
+
+.event-register a {
+  color: rgba(6, 12, 34, 0.8);
+  background: #f82249;
+  padding: 7px 22px;
+  border-radius: 50px;
+  border: 2px solid #f82249;
+  transition: all ease-in-out 0.3s;
+  font-weight: 700;
+  margin-left: 8px;
+  margin-top: 20px;
+  line-height: 1;
+  font-size: 17px;
+}
+
+.event-register a:hover {
+  background: none;
+}
+
+.event-register:hover a:before {
+  visibility: hidden;
+}
+
+/* ------------------------------------------ */
+
+
+
 /*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
-
+/* fcf9f4     f1e9e3    ffe9e3 */
 #schedule {
-  padding: 60px 0 60px 0;
+  background-color: rgba(6, 12, 34, 0.07);
+  padding: 100px 0 60px 0;         /* Changed by BiswaBehera "padding top from 60 px to 100px  */
 }
 
 #schedule .nav-tabs {
