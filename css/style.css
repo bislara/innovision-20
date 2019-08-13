@@ -840,6 +840,40 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 10px;
 }
 
+
+/* -------- event register button --------- */
+.event-register {
+  text-align: center;
+  margin: 25px auto;
+  border-radius: 30%;
+}
+
+.event-register a {
+  color: rgba(6, 12, 34, 0.8);
+  background: #f82249;
+  padding: 7px 22px;
+  border-radius: 50px;
+  border: 2px solid #f82249;
+  transition: all ease-in-out 0.3s;
+  font-weight: 700;
+  margin-left: 8px;
+  margin-top: 20px;
+  line-height: 1;
+  font-size: 17px;
+}
+
+.event-register a:hover {
+  background: none;
+}
+
+.event-register:hover a:before {
+  visibility: hidden;
+}
+
+/* ------------------------------------------ */
+
+
+
 /*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
