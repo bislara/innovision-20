@@ -165,14 +165,14 @@ h6 {
 }
 
 #header #logo h1 {
+  display: inline-block;
   font-size: 36px;
   margin: 0;
-  padding: 6px 0;
+  padding: 0;
   line-height: 1;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
 #header #logo h1 span {
@@ -187,7 +187,7 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -355,6 +355,33 @@ h6 {
   margin: 0;
 }
 
+
+/* for the dropdown */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #142d4c;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f82249;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* Mobile Nav Toggle */
 
 #mobile-nav-toggle {
@@ -463,33 +490,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-
-/*Profile Section*/
-#profile_inno {
-  width: 100%;
-  background: url(../img/intro-bg.jpg) top center;
-  background-size: cover;
-  overflow: hidden;
-  position: relative;
-}
-
-#profile_inno:before {
-  content: "";
-  background: rgba(6, 12, 34, 0.8);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#profile_inno h1 {
-  color: #fff;
-  font-family: "Raleway", sans-serif;
-  font-size: 56px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 
 
 /*--------------------------------------------------------------
@@ -725,11 +725,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
-# Speakers Section
+# Events Section
 --------------------------------------------------------------*/
 
 #speakers {
-  padding: 60px 0 30px 0;
+  padding: 30px 0 30px 0;      /* Changed by BiswaBehera "padding top from 30px to 50px" */
+}
+
+#speakers h3 {
+  padding-top: 75px;              /* this section is added by BiswaBehera for h3's in the speaker ids */
+  font-size: 1.5rem;
+  font-weight: 550;
 }
 
 #speakers .speaker {
@@ -738,7 +744,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 30px;
 }
 
-#speakers .speaker .details {
+#speakers .speaker:hover img {        /* Changed by BiswaBehera "added the following property to event images" */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*
+  Changed by BiswaBehera "this section has been commented out coz they are not used"
+
+  #speakers .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;
   left: 0;
@@ -781,6 +795,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #speakers-details {
   padding: 60px 0;
+} */
+
+/* ---------- event details ------------- */
+
+#speakers-details {
+  margin: 0;
+  background-color: rgba(6, 12, 34, 0.07);
+  padding: 100px 0 60px 0;
 }
 
 #speakers-details .details h2 {
@@ -823,75 +845,46 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 
-/*Signin and Registration ID*/
-#signin_id {
-  padding: 60px 0 60px 0;
-  background: url(../img/intro-bg.jpg) top center;
-    background-size: cover;
-
-     overflow: hidden;
-  position: relative;
-}
-
-#signin_id:before {
-  content: "";
-  background: rgba(6, 12, 34, 0.8);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#signin_id .nav-tabs {
+/* -------- event register button --------- */
+.event-register {
   text-align: center;
-  margin: auto;
-  display: block;
-  border-bottom: 0;
-  margin-bottom: 30px;
-  position: relative;
+  margin: 25px auto;
+  border-radius: 30%;
 }
 
-#signin_id .nav-tabs li {
-  display: inline-block;
-  margin-bottom: 0;
-  /*width: 40vw;*/
-}
-
-#signin_id .nav-tabs a {
-  border: none;
+.event-register a {
+  color: rgba(6, 12, 34, 0.8);
+  background: #f82249;
+  padding: 7px 22px;
   border-radius: 50px;
-  font-weight: 600;
-  background-color: #0e1b4d;
-  color: #fff;
-  padding: 10px 100px;
+  border: 2px solid #f82249;
+  transition: all ease-in-out 0.3s;
+  font-weight: 700;
+  margin-left: 8px;
+  margin-top: 20px;
+  line-height: 1;
+  font-size: 17px;
 }
 
-#signin_id .nav-tabs a.active {
-  background-color: #f82249;
-  color: #fff;
+.event-register a:hover {
+  background: none;
 }
 
-#signin_id .sub-heading {
-  text-align: center;
-  font-size: 18px;
-  font-style: italic;
-  margin: 0 auto 30px auto;
+.event-register:hover a:before {
+  visibility: hidden;
 }
 
-#signin_id .tab-pane {
-  transition: ease-in-out .2s;
-}
-
+/* ------------------------------------------ */
 
 
 
 /*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
-
+/* fcf9f4     f1e9e3    ffe9e3 */
 #schedule {
-  padding: 60px 0 60px 0;
+  background-color: rgba(6, 12, 34, 0.07);
+  padding: 100px 0 60px 0;         /* Changed by BiswaBehera "padding top from 60 px to 100px  */
 }
 
 #schedule .nav-tabs {
@@ -1048,59 +1041,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 #venue .venue-gallery:hover img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-}
-
-/*Profile Events */
-#profile_events {
- 
-}
-
-#profile_events .hotel {
-  /*border: 1px solid #e0e5fa;*/
-  /*background: #fff;*/
-  /*margin-bottom: 30px;*/
-}
-
-#profile_events .hotel:hover .hotel-img img {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-#profile_events .hotel-img {
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-#profile_events .hotel-img img {
-  transition: 0.3s ease-in-out;
-}
-
-#profile_events h3 {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 5px;
-  padding: 0 20px;
-}
-
-#profile_events a {
-  color: #f82249;
-}
-
-#profile_events a:hover {
-  color: #152b79;
-}
-
-#profile_events .stars {
-  padding: 0 20px;
-  margin-bottom: 5px;
-}
-
-#profile_events p {
-  padding: 0 20px;
-  margin-bottom: 20px;
-  color: #060c22;
-  font-style: italic;
-  font-size: 15px;
 }
 
 
