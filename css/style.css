@@ -186,7 +186,7 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 55px;
+  max-height: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -380,7 +380,6 @@ h6 {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 
 /* Mobile Nav Toggle */
 
@@ -731,7 +730,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #speakers h3 {
-  padding-top: 50px;              /* this section is added by BiswaBehera for h3's in the speaker ids */
+  padding-top: 75px;              /* this section is added by BiswaBehera for h3's in the speaker ids */
   font-size: 1.5rem;
   font-weight: 550;
 }
@@ -797,6 +796,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* ---------- event details ------------- */
 
+#speakers-details {
+  margin: 0;
+  background-color: rgba(6, 12, 34, 0.07);
+  padding: 100px 0 60px 0;
+}
+
 #speakers-details .details h2 {
   color: #112363;
   font-size: 28px;
@@ -840,7 +845,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 /* fcf9f4     f1e9e3    ffe9e3 */
 #schedule {
-  background-color: rgba(6, 12, 34, 0.05);
+  background-color: rgba(6, 12, 34, 0.07);
   padding: 100px 0 60px 0;         /* Changed by BiswaBehera "padding top from 60 px to 100px  */
 }
 
