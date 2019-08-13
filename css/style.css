@@ -145,14 +145,15 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-  height: 90px;
-  padding: 25px 0;
-  position: fixed;
+  height: 80px;
+  padding: 20px 0;
+  position: relative;
   left: 0;
   top: 0;
   right: 0;
   transition: all 0.5s;
   z-index: 997;
+  background: rgba(6, 12, 34, 0.98);
 }
 
 #header.header-scrolled,
@@ -488,6 +489,8 @@ body.mobile-nav-active #mobile-nav {
 body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
+
+
 
 /*--------------------------------------------------------------
 # Intro Section
@@ -841,6 +844,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
+
 /* -------- event register button --------- */
 .event-register {
   text-align: center;
@@ -1038,6 +1042,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+
 
 /*--------------------------------------------------------------
 # Hotels Section
