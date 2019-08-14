@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "./apis/participantRegistration/fetch_certificate.php?inno_id=" + localStorage.innoID,
+        url: "../../../apis/participantRegistration/fetch_certificate.php?inno_id=" + localStorage.innoID,
         success: function (data) {
             console.log(data);
             if (JSON.parse(data).status == "success") {
