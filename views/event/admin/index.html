@@ -1,0 +1,86 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+<script src="../../../assets/lib/jquery/jquery.min.js"></script>
+
+
+<body style="background-color: #FBC02D">
+    <br>
+    <div class="container">
+        <center>
+            <div class="row" style="margin-top: 8em">
+                <h1>
+                    <b>CMS SIGN-IN</b>
+                </h1>
+            </div>
+
+    </div>
+
+    <div class="container" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+        <div class="row" style="margin-top: 1em">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">User ID</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="id" placeholder="Enter id">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="pwd">Password:</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me</label>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default submit" style="background-color: black;color: aliceblue">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </center>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="../js/ajax/cms_login.js"></script>-->
+    <script type="text/javascript">
+        $(document).on("click", ".submit", function() {
+            console.log($("#id").val());
+            console.log($("#pwd").val());
+            $.ajax({
+                type: "POST",
+                url: "../apis/panels/cms/login.php",
+                data: {
+                    username: $("#id").val().toString(),
+                    password: $("#pwd").val().toString()
+                },
+                success: function(data) {
+                    var dataSet = JSON.parse(data);
+                    if (dataSet["status"].localeCompare("success") == 0) {
+                        localStorage.cms_token = dataSet["result"];
+                        window.location.assign("./cms_events.html");
+                    } else {
+                        alert(dataSet["result"]);
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            localStorage.clear();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+    <script src="../../../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../../../assets/js/sweetalert.min.js"></script>
+</head>
+
+<body style="background-color: #FBC02D;padding: 2em;">
+    <br>
+    <!-- include fetchllevent script get the DATA_ARRAY-->
+    <!-- <script src="../js/ajax/fetchingParticipantsList.js"></script> -->
+    <!-- <script type="text/javascript">
+    function populate(data_arr)
+    {
+      var str;
+      for (var i = 0; i < data_arr.length; i++) {
+            str = "";
+            if(data_arr[i].checked_in == 0) str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox"> </td>';
+            else str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox" checked> </td>';
+            temp = temp + '<tr><td style="display:none" id="inno_id">' + data_arr[i].inno_id + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].inno_id + '</td><td>' + data_arr[i].name + '</td><td>' + data_arr[i].gender + '</td><td>' + data_arr[i].phone + '</td><td>' + data_arr[i].email + '</td><td>' + data_arr[i].college + '</td><td>' + data_arr[i].paid + '</td>' + str + '</tr>';
+          }
+          $("tbody").append(temp);
+    }
+  </script> -->
+    <div class="container" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+        <h2 style="color:red">Read the instructions carefully before proceeding for submission of winners and runners results</h2>
+        <ul>
+            <!-- <li>
+                    Make sure, all the winners and runners of your event are registred to your event (even if some are
+                    from NITR) <b>THROUGH THE
+                        INNOVISION WEBSITE.You can verify this from the REGISTERED PARTICIPANTS LIST BELOW.</b> If not,
+                    then contact them to register to your event now through <a href="javascript:void(0)">innonitr.com/eventFinal.html</a>
+                </li>
+                <br />
+                <li>
+                    <b style="color:red">Untill the above step is completed, don't proceed further.</b>
+                </li>
+                <br /> -->
+            <li>
+                When you proceed for entering the winners and runners id in the form, <b>FIRST CONFIRM THEIR ID'S</b> and then submit those as <b>THE SUBMISSION FORM WILL BE ACCESSIBLE ONLY ONCE.</b>Enter the ID's carefully.
+            </li>
+            <br />
+            <li>
+                While submitting, enter all winners and runners<b> ID's seprated by comma(e.g 876,3442,22)</b> and then click on submit.
+            </li>
+            <br />
+            <li>
+                <b>If you have read and understood all the instructions carefully</b>, PROCEED TO SUBMIT YOUR RESULTS.
+                <a id="result" href="javascript:void(0)">Click Here</a>
+            </li>
+        </ul>
+
+    </div>
+    <script>
+        $(document).on("click", "#result", function() {
+            $(".result").css("display", "block");
+        });
+    </script>
+    <div class="container result" style="width:40%;padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);display:none">
+        <div class="row" style="margin-top: 1em">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="winners">Winners Id:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="winners" class="form-control" id="winners" placeholder="Enter InnoID of winners separated by commas">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="runners_up">Runners Up Id:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="runners" class="form-control" id="runners" placeholder="Enter InnoID of runners up separated by commas">
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                          <label>
+                              <input type="checkbox"> Remember me</label>
+                      </div>
+                  </div>
+              </div> -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default submit_button" style="background-color: black;color: aliceblue">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#checkit").html('All Registration for event_ = ' + localStorage.name);
+        });
+    </script>
+    <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top:2em">
+        <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
+            <h1>NOTICE</h1>
+            <ol type="A">
+                <li>Event co-ordinators need to <b>check all the participants in</b> before allowing them in their event.
+                </li>
+                <li>In order to check a participant in the event, visit <a href="javascript:void(0)">https://innonitr.com/eventauth</a> and authorize by providing the corresponding loginID and password of the event.</li>
+                <li>On successful authorization, a message <b>'Authorized'</b> will appear on the browser. Else, it will show an error message regarding misauthorization.</li>
+                <li>So, after a successful login, keep the browser open and intact in the background. This will authorize you for QR code scanning.</li>
+                <li>Use any of the QR code scanner to scan the QR code of the participants <b>from their profile.</b></li>
+                <li>After scanning, if message <b>'Successfully checked-in'</b> appears, then the participant gets checked-in into the event and then is eligible to participate for the event.</li>
+                <li>If the message<b> 'User hasn't checked-in into the institute'</b> appears, then either user hasn't checked-in into the institute or he hasn't paid yet.</li>
+                <li>If the participant hasn't registered for the event, then an error <b>'User has not registered
+                            for
+                            the event.'</b> will appear. Please ask them to register to your event first in website.</li>
+                <li>In any other cases please try again.</li>
+            </ol>
+        </div>
+        <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
+            <center>
+                <h1 id="checkit"></h1>
+            </center>
+            <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Inno ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Institution</th>
+                    </tr>
+                </thead>
+                <tbody id="dp">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top:2em">
+        <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
+            <center>
+                <h1>Checked In List</h1>
+            </center>
+            <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Inno ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Institution</th>
+                    </tr>
+                </thead>
+                <tbody id="cil">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-sm-10"></div>
+        <div class="col-sm-2"><button type="button" class="btn btn-default logout_button" style="margin-top: 2em;">Sign
+                    Out</button></div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).on("click", ".logout_button", function() {
+            localStorage.clear();
+            window.location.assign("./index.html");
+        });
+        $(document).ready(function() {
+            if (!(localStorage.loginid) || !(localStorage.password)) {
+                window.location.assign("./index.html");
+            }
+            if (localStorage.bool == 1) {
+                $("#result").html("<h1>You Have Submitted !!!</h1>")
+            }
+        });
+    </script>
+
+    <script src="../js/ajax/update_event_winners.js"></script>
+    <script src="../js/ajax/displayParticipants.js"></script>
+    <script src="../js/ajax/checkedInList.js"></script>
+
+</body>
+
+</html>

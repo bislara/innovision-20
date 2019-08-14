@@ -1,0 +1,81 @@
+/*Signin and Registration ID*/
+
+#signin_id {
+    padding: 60px 0 60px 0;
+    background: url(../images/intro-bg.jpg) top center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+#signin_id:before {
+    content: "";
+    background: rgba(6, 12, 34, 0.8);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#signin_id .nav-tabs {
+    text-align: center;
+    margin: auto;
+    display: block;
+    border-bottom: 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#signin_id .nav-tabs li {
+    display: inline-block;
+    margin-bottom: 0;
+    /*width: 40vw;*/
+}
+
+#signin_id .nav-tabs a {
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #0e1b4d;
+    color: #fff;
+    padding: 10px 100px;
+}
+
+#signin_id .nav-tabs a.active {
+    background-color: #f82249;
+    color: #fff;
+}
+
+#signin_id .sub-heading {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0 auto 30px auto;
+}
+
+#signin_id .tab-pane {
+    transition: ease-in-out .2s;
+}
+
+#login_inno .about-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 2px solid #f82249;
+}
+
+#login_inno .about-btn:hover {
+    background: #f82249;
+    color: #fff;
+}

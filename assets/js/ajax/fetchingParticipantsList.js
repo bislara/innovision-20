@@ -2,7 +2,7 @@ var temp = '';
 $(document).ready(function(){
   $.ajax({
     type: "POST",
-    url: "../apis/panels/admin_participants/displayParticipantsList.php",
+    url: "../../apis/panels/admin_participants/displayParticipantsList.php",
     data: {
       token : localStorage.admin_token
     },
