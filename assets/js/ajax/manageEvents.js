@@ -56,6 +56,7 @@ $(document).on("click", "#delete", function () {
 			eid: event_id
 		},
 		success: function (data) {
+            console.log(data);
 			if (JSON.parse(data).status == "success") {
 				alert("Event successfully deleted!");
 			} else {
