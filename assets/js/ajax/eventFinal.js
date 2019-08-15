@@ -1,12 +1,12 @@
 $(document).ready(function () {
 	$.ajax({
 		type: "GET",
-		url: "./apis/events/fetchAllEvents.php",
+		url: "../apis/events/fetchAllEvents.php",
 		success: function (data) {
 			var dataArray = JSON.parse(data);
 			if (dataArray["status"] == "success") {
 				var eventArray = dataArray["result"];
-				//console.log(eventArray);
+				
 				var event_flagships = [];
 				var event_events = [];
 				var event_workshops = [];
@@ -91,24 +91,41 @@ $(document).ready(function () {
 				} else {
 					if ((event_events.length) % 3 == 0) {
 						var index = 0;
+						var str='';
 						while (index < (event_events.length) / 3) {
-							var str = '<a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_events[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_events[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_events[3 * index + 1]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_events[3 * index + 2]["eid"] + '"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="' + event_events[3 * index + 2]["image_path"].slice(4, ) + '"></div></a>';
-							$("#events").children("center").append(str);
+							str = str + '<div class="row">';
+							str = str + '<div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 2]["image_path"] + '" alt=" Event ' + event_events[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '</div>'
+
+							$("#events").children("center").append(str);							 
 							index = index + 1;
 						}
+						$('#events').html(str);
+						
+
 					} else {
 						var index = 0;
+						var str="";
 						while (index < (event_events.length - (event_events.length) % 3) / 3) {
-							var str = '<a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_events[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_events[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_events[3 * index + 1]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_events[3 * index + 2]["eid"] + '"><div class="card wow fadeInRight hvr-grow-rotate-left"><img class="img-responsive" src="' + event_events[3 * index + 2]["image_path"].slice(4, ) + '"></div></a>';
-							$("#events").children("center").append(str);
+							str = str + '<div class="row">';
+							str = str + '<div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 2]["image_path"] + '" alt=" Event ' + event_events[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '</div>'			
 							index = index + 1;
+							// console.log(str)
 						}
 						if ((event_events.length) % 3 == 1) {
-							var str2 = '<a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_events[3 * index]["image_path"].slice(4, ) + '"></div></a>';
+							str = str + '<div class="row">';
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '</div>'
+
 						} else if ((event_events.length) % 3 == 2) {
-							var str2 = '<a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_events[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_events[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_events[3 * index + 1]["image_path"].slice(4, ) + '"></div></a>';
+							str = str + '<div class="row">';
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="javascript:void(0)" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="javascript:void(0)" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '</div>'
+
 						}
 						$("#events").children("center").append(str2);
+							$('#events').html(str);
 					}
 				}
 				//workshops
@@ -158,7 +175,7 @@ $(document).ready(function () {
 							index = index + 1;
 						}
 						if ((event_exhibitions.length) % 3 == 1) {
-							var str2 = '<a href="javascript:void(0)" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_exhibitions[3 * index]["image_path"].slice(4, ) + '"></div></a>';
+							// var str2 = '<a href="javascript:void(0)" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_exhibitions[3 * index]["image_path"].slice(4, ) + '"></div></a>';
 						} else if ((event_exhibitions.length) % 3 == 2) {
 							var str2 = '<a href="javascript:void(0)" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_exhibitions[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_exhibitions[3 * index + 1]["image_path"].slice(4, ) + '"></div></a>';
 						}
@@ -187,7 +204,7 @@ $(document).ready(function () {
 						if ((event_cultural.length) % 3 == 1) {
 							var str2 = '<a href="javascript:void(0)" value="' + event_cultural[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_cultural[3 * index]["image_path"].slice(4, ) + '"></div></a>';
 						} else if ((event_cultural.length) % 3 == 2) {
-							var str2 = '<a href="javascript:void(0)" value="' + event_cultural[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_cultural[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_cultural[3 * index + 1]["image_path"].slice(4, ) + '"></div></a>';
+							// var str2 = '<a href="javascript:void(0)" value="' + event_cultural[3 * index]["eid"] + '"><div class="card wow fadeInLeft hvr-grow-rotate-right"><img class="img-responsive" src="' + event_cultural[3 * index]["image_path"].slice(4, ) + '"></div></a><a href="javascript:void(0)" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="card wow fadeInUp hvr-grow"><img class="img-responsive" src="' + event_cultural[3 * index + 1]["image_path"].slice(4, ) + '"></div></a>';
 						}
 						$("#cultural").children("center").append(str2);
 					}
