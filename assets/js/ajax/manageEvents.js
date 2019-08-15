@@ -96,12 +96,18 @@ $(document).on("click", "#submit_it", function () {
 		url: "../../../apis/events/updateEvent.php",
 		data: formobj,
 		success: function (data) {            
-			if (JSON.parse(data).status == "success") {
-				alert("Event info successfully updated.");
+			if (JSON.parse(data).status == "success") {			
+                swal("Event Updated Successfully", ": )", "success")    
+                .then((value)=>{
+                    window.location.assign("manage_events.html");
+                }) 
 			} else {
-				alert(JSON.parse(data).result);
+                swal(JSON.parse(data).result, ": )", "error")
+                .then((value)=>{
+                    console.log("close");
+                    window.location.assign("manage_events.html");
+                })
 			}
-			window.location.assign("manage_events.html");
 		},
 		error: function (data) {
 			alert("Failed in processing request.");
