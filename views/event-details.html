@@ -26,6 +26,8 @@
 
     <!-- Main Stylesheet File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/sweetalert.css" rel="stylesheet">
+
 
     <!-- =======================================================
     Theme Name: TheEvent
@@ -58,10 +60,12 @@
                         <a class="dropbtn">Events</a>
                         <div class="dropdown-content">
                             <a href="eventsSection.html#EventsSection">Event Schedule</a>
-                            <a href="eventsSection.html#Tech-Events">Tech Events</a>
-                            <a href="eventsSection.html#Fun-Events">Fun Events</a>
-                            <a href="eventsSection.html#Workshops">Workshops</a>
-                            <a href="eventsSection.html#Exhibitions">Exhibitions</a>
+                             <a href="eventsSection.html#flagships">Flagship Events</a>
+                            <a href="eventsSection.html#events">Events</a>
+                            <a href="eventsSection.html#workshops">Workshops</a>
+                            <a href="eventsSection.html#paidworkshops">Workshops (Paid)</a>
+                            <a href="eventsSection.html#exhibitions">Exhibitions</a>
+                            <a href="eventsSection.html#cultural">Cultural </a>
                         </div>
 
                     </li>
@@ -87,48 +91,48 @@
     <section id="speakers-details" class="wow fadeIn">
         <div class="container">
             <div class="section-header">
-                <h2>Event Name</h2>
+                <h2 id="eid_name"></h2>
                 <p>
-                    <b>Date : </b> date <br>
-                    <b>Time : </b> time <br>
-                    <b>Venue : </b> venue <br>
-                    <div class="event-register"><a href="#">Register</a></div>
+                    Date : <b id="eid_date"> </b> <br>
+                    Time : <b id="eid_time"> </b> <br>
+                    Venue : <b id="eid_venue"> </b>  <br>
+                    <div class="event-register register"><a href="#" id="register">Register</a></div>
                     <!-- register button for events -->
                 </p>
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <img src="../assets/images/speakers/1.jpg" title="Event name" class="img-fluid">
+                <div class="col-md-6" id="eid_img">
+                    <!-- <img src="../assets/images/speakers/1.jpg" title="Event name" class="img-fluid"> -->
                 </div>
 
                 <div class="col-md-6">
                     <div class="details">
                         <h2>Event Description</h2>
 
-                        <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
+                        <p id="eid_des"></p>
 
                     </div>
 
                     <div class="details">
                         <h2>Event Rules</h2>
 
-                        <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
+                        <p id="eid_rule"> </p>
 
                     </div>
 
                     <div class="details">
                         <h2>Judging Criteria</h2>
 
-                        <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
+                        <p id="eid_judge"></p>
 
                     </div>
 
                     <div class="details">
                         <h2>Coordinators info</h2>
 
-                        <p> <b>Name</b> : <em>contact no.</em> </p>
-                        <p> <b>Name</b> : <em>contact no.</em> </p>
+                        <p> <b id="eid_cd1">Name</b> : <em id="eid_no1">contact no.</em> </p>
+                        <p> <b id="eid_cd2">Name</b> : <em id="eid_no2">contact no.</em> </p>
 
                     </div>
 
@@ -236,6 +240,7 @@
     <!-- Template Main Javascript File -->
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/ajax/event_individual.js"></script>
+    <script src="../assets/js/sweetalert.js"></script>
 </body>
 
 </html>

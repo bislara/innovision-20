@@ -6,12 +6,49 @@ $(document).ready(function () {
 	} else {
 		$.ajax({
 			type: "GET",
-			url: "./apis/events/fetchIndividualEvent.php?q=" + eid,
-			success: function (data) {
+			url: "../apis/events/fetchIndividualEvent.php?eid=" + eid,
+			success: function (data) {			
 				var dataArray = JSON.parse(data);
 				if (dataArray["status"] == "success") {
 					var eventArr = dataArray["result"];
-					populate(eventArr);
+
+					var name=eventArr["title"];
+					$('#eid_name').html(name);
+
+					var date=eventArr["date"];
+					$('#eid_date').html(date);
+
+					var time=eventArr["time"];
+					$('#eid_time').html(time);
+
+					var venue=eventArr["venue"];
+					$('#eid_venue').html(venue);
+
+					var img='<img src="'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
+					$('#eid_img').html(img);
+
+					var des=eventArr["description"];
+					$('#eid_des').html(des);
+										
+					var rule=eventArr["rules"];
+					$('#eid_rule').html(rule);
+
+					var judging_criteria=eventArr["judging_criteria"];
+					$('#eid_judge').html(judging_criteria);
+
+					var cd1=eventArr["coordinatorName1"];
+					$('#eid_cd1').html(cd1);
+					
+					var no1=eventArr["coordinatorContact1"];
+					$('#eid_no1').html(no1);
+					
+					var cd2=eventArr["coordinatorName2"];
+					$('#eid_cd2').html(cd2);
+					
+					var no2=eventArr["coordinatorContact2"];
+					$('#eid_no2').html(no2);
+
+					// populate(eventArr);
 				}
 			}
 		});
@@ -19,12 +56,13 @@ $(document).ready(function () {
 });
 
 $(document).on("click", ".register", function () {
+	alert(localStorage.innoID);
 	if (localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID)) {
 		swal("Please Login First to register.", ": [", "warning");
 	} else {
 		$.ajax({
 			type: "POST",
-			url: "./apis/events/eventRegistration.php",
+			url: "../apis/events/eventRegistration.php",
 			data: {
 				innoID: localStorage.innoID,
 				eid: eid
