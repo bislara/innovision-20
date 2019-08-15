@@ -9,6 +9,6 @@
     $issuedAt   = time();
     $notBefore  = $issuedAt + 10;  //Adding 10 seconds
     $expire     = $notBefore + 3600; // Adding 60 seconds
-    $serverName = 'http://localhost/Innovision-18/';
+    $serverName = 'http://localhost/inno/';
 
 ?>

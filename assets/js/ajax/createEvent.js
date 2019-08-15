@@ -1,4 +1,9 @@
-$(document).on("click", "#add", function () {
+// Event Create Handler
+$(document).on("click", "#newEvent", function() {    
+    $("#create_modal").modal("show");    
+});
+
+$(document).on("click", "#createEvent", function () {
     //alert("Hii");
     var title = $("#title").val().toString();
     var desc = $("#desc").val().toString();
@@ -59,34 +64,18 @@ $(document).on("click", "#add", function () {
     }
     $.ajax({
         type: "POST",
-        url: "../apis/events/createEvent.php",
+        url: "../../../apis/events/createEvent.php",
         cache: false,
         contentType: false,
         processData: false,
-        data: formObj
-            // title: $("#title").val().toString(),
-            // description: $("#desc").val().toString(),
-            // rules: $("#rules").val().toString(),
-            // judging_criteria: $("#jc").val().toString(),
-            // date: $("#date").val().toString(),
-            // venue: $("#venue").val().toString(),
-            // time: $("#time").val().toString(),
-            // category: $("#category").val().toString(),
-            // max_par: $("#max_participants").val().toString(),
-            // coordinatorName1: $("#full_name_1").val().toString(),
-            // coordinatorContact1: $("#contact_1").val().toString(),
-            // coordinatorName2: $("#full_name_2").val().toString(),
-            // coordinatorContact2: $("#contact_2").val().toString(),
-
-            ,
+        data: formObj,
         success: function (data) {
-
             console.log(data);
             var d = JSON.parse(data);
             if (d.status == "success") {
                 swal("Event Updated Successfully", ": )", "success");
             } else {
-                swal("Unable to upload", ": )", "error");
+                swal(d.result, ": )", "error");
             }
         },
         error: function (data) {
