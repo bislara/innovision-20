@@ -4,6 +4,8 @@
     include('../panels/cms/verifyCMSAdmin.php');
 
     
+
+    
     if (isset($status) && $status === "success") {
     $eid = $_POST["eid"];
     $query = mysqli_query($conn, "SELECT * FROM events WHERE eid =".$eid);
@@ -24,26 +26,27 @@
         
         if (mysqli_query($conn, $query)) {
         
-            // if(is_uploaded_file($_FILES["image"]["name"])) {
-            //     $allowedExtension = array('gif','png' ,'jpg', 'jpeg', 'bmp');
-            //     if( in_array( pathinfo( $_FILES["image"]["name"], PATHINFO_EXTENSION), $allowedExtension)) {
+            if(isset($_FILES["fileToUpload"]["name"])) {
+                $allowedExtension = array('gif','png' ,'jpg', 'jpeg', 'bmp');
+                if( in_array( pathinfo( $_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION), $allowedExtension)) {
                         
-            //         $ext = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
-            //         $file_path_name = "../../images/events/eid_".($eid).('.').$ext;                
-            //         if(move_uploaded_file($_FILES["image"]["name"], $file_path_name)) {
+                    $ext = pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION);
+                    $file_path_name = "../../assets/images/events/eid_".($eid).('.').$ext;    
+                    
+                    if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path_name)) {
                          echo(json_encode(array('status' => 'success', 'result' => 'successful entry')));
-            //         }
-            //         else {
-            //             echo(json_encode(array('status' => 'failure', 'result' => 'image upload failed')));
-            //         }
-            //     }
-            //     else {
-            //         echo(json_encode(array('status' => 'failure', 'result' => 'wrong image type')));
-            //     }
-            // }
-            // else{
-            //     echo(json_encode(array('status' => 'success', 'result' => 'Event details updated. Image not selected or upload failed')));
-            // }
+                    }
+                    else {
+                        echo(json_encode(array('status' => 'failure', 'result' => 'image upload failed')));
+                    }
+                }
+                else {
+                    echo(json_encode(array('status' => 'failure', 'result' => 'wrong image type')));
+                }
+            }
+            else{
+                echo(json_encode(array('status' => 'success', 'result' => 'Event details updated. Image not selected or upload failed')));
+            }
         }
         else {
             echo(json_encode(array('status' => 'failure', 'result' => 'DB operations failed')));
