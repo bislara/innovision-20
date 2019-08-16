@@ -56,7 +56,9 @@ $(document).ready(function () {
 });
 
 $(document).on("click", ".register", function () {
-	alert(localStorage.innoID);
+	// alert("hi lara");
+	// localStorage.innoID = 3;
+	// console.log(localStorage.innoID);
 	if (localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID)) {
 		swal("Please Login First to register.", ": [", "warning");
 	} else {

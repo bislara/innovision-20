@@ -1,5 +1,8 @@
 <?php
 	include('../db.php');
+
+	// $_POST["innoID"]=3;
+	// $_POST['eid']=1;
 	if(isset($_POST["innoID"]) && isset($_POST["eid"]))
 	{
 		$sql1 = "SELECT * FROM events_registration WHERE inno_id='".$_POST["innoID"]."' and event_id='".$_POST["eid"]."'";
