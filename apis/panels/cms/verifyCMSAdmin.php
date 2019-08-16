@@ -8,9 +8,12 @@
     include('../panels/cms/config.php');
 
     $secretKey = base64_decode(SECRET_KEY);
+    
+    $headers = apache_request_headers();
 
-    $jwt = $_POST["token"];
-
+    $authHeader= $headers["Authorization"];
+    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
+    
     if (isset($jwt) && $jwt ) {
 
     	try {
@@ -20,7 +23,8 @@
     			$secretKey,
     			array(ALGORITHM)
     		);
-
+            // echo ($DecodedDataArray->data->inno_id);
+            // echo ($DecodedDataArray->data->email);
     		if ($DecodedDataArray->data->inno_id === INNO_ID && $DecodedDataArray->data->email === EMAIL) {
 
                 $status = "success";
@@ -31,7 +35,7 @@
     		
     	} catch (Exception $e) {
     		
-    		echo(json_encode(array('status' => 'failure', 'result' => $e)));
+    		echo(json_encode(array('status' => 'failure', 'result' => $e->getMessage())));
     	}
 
     } else {

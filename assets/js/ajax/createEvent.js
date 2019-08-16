@@ -46,6 +46,9 @@ $(document).on("click", "#createEvent", function () {
     }
     $.ajax({
         type: "POST",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
         url: "../../../apis/events/createEvent.php",
         cache: false,
         contentType: false,

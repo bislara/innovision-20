@@ -3,18 +3,29 @@ var temp = '';
 // Script to fetch all events
 $(document).ready(function() {
     $.ajax({
-        type: "GET",
         url: "../../../apis/events/fetchAllEvents.php",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
+        type: "GET",
         success: function(data) {
             console.log(data);
             var data_obj = JSON.parse(data);
             console.log(data_obj);
             var data_arr = data_obj.result;
-            for (var i = 0; i < data_arr.length; i++) {
-                temp = temp + '<tr><td style="display:none" id="eid">' + data_arr[i].eid + '</td><td>' + (i + 1) + '</td ><td><img class="img-responsive" src="' + data_arr[i].image_path + '" height="70px" width="auto"></td><td>' + data_arr[i].title + '</td><td>' + data_arr[i].venue + '</td><td>' + data_arr[i].date + '</td><td>' + data_arr[i].time + '</td><td>' + data_arr[i].date1 + '</td><td>' + data_arr[i].time1 + '</td><td><button onclick="" class="btn btn-danger" id="delete">Delete</button></td><td><button class="btn btn-warning" id="update" data-toggle="modal" data-target="#update_modal">Update</button></td></tr> ';
+            if(data_obj["status"]!=="failure"){
+                    for (var i = 0; i < data_arr.length; i++) {
+                    temp = temp + '<tr><td style="display:none" id="eid">' + data_arr[i].eid + '</td><td>' + (i + 1) + '</td ><td><img class="img-responsive" src="' + data_arr[i].image_path + '" height="70px" width="auto"></td><td>' + data_arr[i].title + '</td><td>' + data_arr[i].venue + '</td><td>' + data_arr[i].date + '</td><td>' + data_arr[i].time + '</td><td>' + data_arr[i].date1 + '</td><td>' + data_arr[i].time1 + '</td><td><button onclick="" class="btn btn-danger" id="delete">Delete</button></td><td><button class="btn btn-warning" id="update" data-toggle="modal" data-target="#update_modal">Update</button></td></tr> ';
 
+                }
+                $('tbody').append(temp);
+            }else{
+                swal(data_obj["result"], "error")    
+                .then((value)=>{
+                    window.location.assign("index.html");
+                }) 
             }
-            $('tbody').append(temp);
+            
         },
         error: function(data) {
             //console.log(data);
@@ -29,6 +40,9 @@ $(document).on("click", "#update", function() {
     console.log(eid);
     $.ajax({
         type: "GET",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
         url: "../../../apis/events/fetchIndividualEvent.php?q=" + eid,
         success: function(data) {
             //console.log(data);
@@ -51,6 +65,9 @@ $(document).on("click", "#delete", function () {
 	var event_id = $(this).parents("td").siblings("#eid").html();
 	$.ajax({
 		type: "POST",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
 		url: "../../../apis/events/deleteEvent.php",
 		data: {
 			eid: event_id
@@ -95,6 +112,9 @@ $(document).on("click", "#submit_it", function () {
     
 	$.ajax({
 		type: "POST",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
 		url: "../../../apis/events/updateEvent.php",
 		data: formObj,
         cache: false,
