@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2018 at 12:07 PM
--- Server version: 5.7.9
--- PHP Version: 5.6.16
+-- Generation Time: Aug 17, 2019 at 04:26 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,8 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `ca_selection_questions`
 --
 
-DROP TABLE IF EXISTS `ca_selection_questions`;
-CREATE TABLE IF NOT EXISTS `ca_selection_questions` (
+CREATE TABLE `ca_selection_questions` (
   `question_id` varchar(3) NOT NULL,
   `question` tinytext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -46,7 +47,7 @@ INSERT INTO `ca_selection_questions` (`question_id`, `question`) VALUES
 ('q7', 'Positions of responsibility held in college'),
 ('q8', 'Have you ever been to Innovision earlier? When?'),
 ('q9', 'Write in brief about what you know about Innovision.'),
-('q10', 'How many students do you think you can convince into bringing to Innovision this year? What''s your strategy to promote Innovision?'),
+('q10', 'How many students do you think you can convince into bringing to Innovision this year? What\'s your strategy to promote Innovision?'),
 ('q11', 'Social Media platforms that you are active on?'),
 ('q12', 'Languages that you are fluent in'),
 ('q13', 'What makes you unique from others?');
@@ -57,9 +58,8 @@ INSERT INTO `ca_selection_questions` (`question_id`, `question`) VALUES
 -- Table structure for table `ca_selection_responses`
 --
 
-DROP TABLE IF EXISTS `ca_selection_responses`;
-CREATE TABLE IF NOT EXISTS `ca_selection_responses` (
-  `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ca_selection_responses` (
+  `ca_applicant_id` int(11) NOT NULL,
   `q1` tinytext NOT NULL,
   `q2` varchar(50) NOT NULL,
   `q3` varchar(11) NOT NULL,
@@ -73,10 +73,8 @@ CREATE TABLE IF NOT EXISTS `ca_selection_responses` (
   `q11` mediumtext NOT NULL,
   `q12` mediumtext NOT NULL,
   `q13` mediumtext NOT NULL,
-  `selected` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ca_applicant_id`),
-  UNIQUE KEY `q2` (`q2`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `selected` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ca_selection_responses`
@@ -90,12 +88,30 @@ INSERT INTO `ca_selection_responses` (`ca_applicant_id`, `q1`, `q2`, `q3`, `q4`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `college`
+--
+
+CREATE TABLE `college` (
+  `id` int(11) NOT NULL,
+  `college_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `college`
+--
+
+INSERT INTO `college` (`id`, `college_name`) VALUES
+(1, 'VSSUT, Burla'),
+(2, 'CET , Bhubaneswar');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
-DROP TABLE IF EXISTS `events`;
-CREATE TABLE IF NOT EXISTS `events` (
-  `eid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `events` (
+  `eid` int(11) NOT NULL,
   `title` mediumtext NOT NULL,
   `description` longtext NOT NULL,
   `rules` longtext NOT NULL,
@@ -114,9 +130,8 @@ CREATE TABLE IF NOT EXISTS `events` (
   `winner2` mediumtext,
   `image_path` mediumtext,
   `max_par` int(11) NOT NULL,
-  `filled` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`eid`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+  `filled` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
@@ -134,8 +149,7 @@ INSERT INTO `events` (`eid`, `title`, `description`, `rules`, `judging_criteria`
 -- Table structure for table `events_registration`
 --
 
-DROP TABLE IF EXISTS `events_registration`;
-CREATE TABLE IF NOT EXISTS `events_registration` (
+CREATE TABLE `events_registration` (
   `inno_id` int(11) NOT NULL,
   `event_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -157,30 +171,88 @@ INSERT INTO `events_registration` (`inno_id`, `event_id`) VALUES
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `inno_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `inno_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `gender` text NOT NULL,
   `phone` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `college` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `paid` int(11) NOT NULL DEFAULT '0',
   `checked_in` int(11) NOT NULL DEFAULT '0',
   `user_password` varchar(100) NOT NULL,
-  `qr_code` varchar(100) NOT NULL,
-  PRIMARY KEY (`inno_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `qr_code` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`inno_id`, `name`, `gender`, `phone`, `email`, `college`, `paid`, `checked_in`, `user_password`, `qr_code`) VALUES
-(1, 'John', '', 2147483647, 'meJohn@gmail.com', 'abcd', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/meJohn@gmail.com.png'),
-(2, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
-(3, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
-(4, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png');
+INSERT INTO `users` (`inno_id`, `name`, `gender`, `phone`, `email`, `college`, `address`, `paid`, `checked_in`, `user_password`, `qr_code`) VALUES
+(1, 'John', '', 2147483647, 'meJohn@gmail.com', 'abcd', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/meJohn@gmail.com.png'),
+(2, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
+(3, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
+(4, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
+(8, 'Neelam', 'female', 2147483647, 'neelammahapatro36@gmail.com', 'CVR Hall, NIT Rourkela', 'CVR Hall, NIT Rourkela, Sector 1, Rourkela', 0, 0, '5f4dcc3b5aa765d61d8327deb882cf99', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ca_selection_responses`
+--
+ALTER TABLE `ca_selection_responses`
+  ADD PRIMARY KEY (`ca_applicant_id`),
+  ADD UNIQUE KEY `q2` (`q2`);
+
+--
+-- Indexes for table `college`
+--
+ALTER TABLE `college`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`eid`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`inno_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ca_selection_responses`
+--
+ALTER TABLE `ca_selection_responses`
+  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `college`
+--
+ALTER TABLE `college`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

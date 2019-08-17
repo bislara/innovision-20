@@ -2,7 +2,7 @@
 
 	include('../db.php');
 
-	include ('../../../vendor/autoload.php');
+	//include ('../../../vendor/autoload.php');
 	use \Firebase\JWT\JWT;
 	use Endroid\QrCode\QrCode;
 
@@ -175,6 +175,7 @@
             ];
 
             $secretKey = base64_decode(SECRET_KEY);             /// Here we will transform this array into JWT:
+            
             $jwt = JWT::encode(
 
                 $data, //Data to be encoded in the JWT
