@@ -1,11 +1,12 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2019 at 04:26 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Generation Time: Aug 15, 2019 at 12:24 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 5.6.39
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -119,6 +120,8 @@ CREATE TABLE `events` (
   `date` tinytext NOT NULL,
   `venue` mediumtext NOT NULL,
   `time` tinytext NOT NULL,
+  `date1` tinytext NOT NULL,
+  `time1` tinytext NOT NULL,
   `category` mediumtext NOT NULL,
   `coordinatorName1` tinytext NOT NULL,
   `coordinatorContact1` text NOT NULL,
@@ -137,11 +140,8 @@ CREATE TABLE `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`eid`, `title`, `description`, `rules`, `judging_criteria`, `date`, `venue`, `time`, `category`, `coordinatorName1`, `coordinatorContact1`, `coordinatorName2`, `coordinatorContact2`, `loginId`, `loginPassword`, `winner1`, `winner2`, `image_path`, `max_par`, `filled`) VALUES
-(1, 'event1', 'uwudwwnj', 'dewee', 'gerggeegegege', '12/11/2018', 'rm hall', '12:00 AM', 'abcd', 'Mr. AAAAA', '9856321470', 'Mr. BBBB', '8547963210', 'abc@gmail.com', '123', 'PPPP', 'QQQQQQ', '../images/event1.jpeg', 0, 0),
-(2, 'event2', 'cvbnm', 'fadhadgadhgad', 'dgygdugdgwyf', '3/11/2018', 'la lawns', '1:00 PM', 'qwerty', 'mr. FFFFF', '7854129630', 'mr. GGGGG', '7789654123', 'pqr@gmail.com', '123', 'Mr.QQQQ', 'Mr.WWWW', '../images/event2.jpeg', 0, 0),
-(3, 'uohen', 'htgbuj', 'jyhbj', 'hfgcvjl', 'jghbj', 'trfcvtgv', 'yrfgu', 'ytywagbfja', 'yshbedf', 'tzsgvb ', 'utftyg', 'utfvbjhm', NULL, NULL, NULL, NULL, NULL, 1, 0),
-(26, 'trdfugikhuhk', 'd57tfghijo', 'yrfguyhn ', 'trxdctubujml', 'yrfutiu', 'rdfughi', 'ytfuyhoj', 'yrfugin', 'trdfyug', 'tedsdryuy', 'rfdcftvbj', 'fgyuhio', NULL, NULL, NULL, NULL, NULL, 1, 0);
+INSERT INTO `events` (`eid`, `title`, `description`, `rules`, `judging_criteria`, `date`, `venue`, `time`, `date1`, `time1`, `category`, `coordinatorName1`, `coordinatorContact1`, `coordinatorName2`, `coordinatorContact2`, `loginId`, `loginPassword`, `winner1`, `winner2`, `image_path`, `max_par`, `filled`) VALUES
+(49, 'Test Event', 'This is a test event', 'no ruless', '', '2019-08-16', 'Main Building', '10:10', '2019-08-17', '12:12', '', '', '', '', '', NULL, NULL, NULL, NULL, '../../../assets/images/events/eid_49.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -252,6 +252,52 @@ ALTER TABLE `events`
 --
 ALTER TABLE `users`
   MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ca_selection_responses`
+--
+ALTER TABLE `ca_selection_responses`
+  ADD PRIMARY KEY (`ca_applicant_id`),
+  ADD UNIQUE KEY `q2` (`q2`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`eid`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`inno_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ca_selection_responses`
+--
+ALTER TABLE `ca_selection_responses`
+  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

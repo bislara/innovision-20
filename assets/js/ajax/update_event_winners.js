@@ -14,7 +14,7 @@ $(document).on("click", ".submit_button", function () {
                 //ajax
                 $.ajax({
                     type: "POST",
-                    url: "../apis/events/certificate.php",
+                    url: "../../../apis/events/certificate.php",
                     data: {
                         id: localStorage.loginid,
                         password: localStorage.password,

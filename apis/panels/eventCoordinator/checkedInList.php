@@ -16,29 +16,29 @@
 		else {
 
 			$query = mysqli_query($conn, "SELECT * FROM events_registration where event_id='".$eid."' AND checked_in = 1");
+            echo ($query);
+			// if ($query) {
 
-			if ($query) {
+			// 	$result = array();
+			// 	while($res = mysqli_fetch_array($query, MYSQL_ASSOC)) {
 
-				$result = array();
-				while($res = mysqli_fetch_array($query, MYSQL_ASSOC)) {
+		    // 		$query2 = mysqli_query($conn, "SELECT inno_id, name, email, phone, college FROM users where inno_id =".$res["inno_id"]);
+		    // 		if ($query2) {
 
-		    		$query2 = mysqli_query($conn, "SELECT inno_id, name, email, phone, college FROM users where inno_id =".$res["inno_id"]);
-		    		if ($query2) {
+		    // 			$result[] = mysqli_fetch_array($query2);
+		    // 		}
+		    // 		else {
 
-		    			$result[] = mysqli_fetch_array($query2);
-		    		}
-		    		else {
+			// 			echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
+		    // 		}
+			// 	}
 
-						echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
-		    		}
-				}
+			// 	echo(json_encode(array('status' => 'success', 'result' => $result)));
+			// }
+			// else {
 
-				echo(json_encode(array('status' => 'success', 'result' => $result)));
-			}
-			else {
-
-				echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
-		   	}
+			// 	echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
+		   	// }
 		}
 	}
 
