@@ -8,7 +8,7 @@
     $tokenId    = base64_encode(mcrypt_create_iv(32));
     $issuedAt   = time();
     $notBefore  = $issuedAt ;  //Adding 10 seconds
-    $expire     = $notBefore + 60; // Adding 60 seconds
+    $expire     = $notBefore + 600; // Adding 60 seconds
     $serverName = 'http://localhost/inno/';
 
 ?>

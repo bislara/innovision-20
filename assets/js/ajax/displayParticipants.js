@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "../../apis/panels/eventCoordinator/displayParticipants.php?q=" + localStorage.eid,
+        url: "../../../apis/panels/eventCoordinator/displayParticipants.php?q=" + localStorage.eid,
         success: function (data) {
             console.log(data);
             var d = JSON.parse(data).result;
