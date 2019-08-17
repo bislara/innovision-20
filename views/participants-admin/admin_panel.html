@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+    <script src="../../assets/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #FBC02D;padding: 2em;">
+    <br>
+    <div class="container">
+        <center>
+            <div class="row">
+                <h1>
+                    <b>Participants Admin Panel</b>
+                </h1>
+            </div>
+        </center>
+    </div>
+    <!-- include fetchllevent script get the DATA_ARRAY-->
+    <script src="../../assets/js/ajax/fetchingParticipantsList.js"></script>
+    <script type="text/javascript">
+        // $(document).ready(function(){
+        //         if(localeStorage.getItem("ca_token") === null)
+        //         {
+        //             window.location.assign("./ca_admin_login.html");
+        //         }
+
+        //     });
+        function populate(data_arr) {
+            var str;
+            for (var i = 0; i < data_arr.length; i++) {
+                str = "";
+                if (data_arr[i].checked_in == 0) str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox"> </td>';
+                else str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox" checked> </td>';
+                temp = temp + '<tr><td style="display:none" id="inno_id">' + data_arr[i].inno_id + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].inno_id + '</td><td>' + data_arr[i].name + '</td><td>' + data_arr[i].gender + '</td><td>' + data_arr[i].phone + '</td><td>' + data_arr[i].email + '</td><td>' + data_arr[i].college + '</td><td>' + data_arr[i].paid + '</td>' + str + '</tr>';
+            }
+            $("tbody").append(temp);
+        }
+    </script>
+    <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
+        <div class="row" style="margin-top: 3em;padding:1em;overflow-x: auto;overflow-y: auto;">
+            <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Inno ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Institution</th>
+                        <th>Paid?</th>
+                        <th>Checked In?</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"><button type="button" class="btn btn-info submit_button" style="margin-top: 2em;">Submit</button>
+        </div>
+        <div class="col-sm-8"></div>
+        <div class="col-sm-2"><button type="button" class="btn btn-info logout_button" style="margin-top: 2em;">Sign Out</button></div>
+    </div>
+    <!-- <script src="../assets/"></script> -->
+    <script>
+        $(document).on("click", ".logout_button", function() {
+            localStorage.clear();
+            window.location.assign("./index.html");
+        });
+    </script>
+
+    <script src="../../assets/js/ajax/updateParticipantsList.js"></script>
+
+</body>
+
+</html>

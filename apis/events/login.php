@@ -1,4 +1,3 @@
-<!-- EVENT ADMIN LOGIN API -->
 <?php
 
     include('../db.php');
