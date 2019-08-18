@@ -1,4 +1,3 @@
-<!-- EVENT-COORDINATOR LOGIN API -->
 <?php
 
     include('../db.php');

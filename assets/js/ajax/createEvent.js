@@ -1,21 +1,28 @@
-$(document).on("click", "#add", function () {
+// Event Create Handler
+$(document).on("click", "#newEvent", function() {    
+    $("#create_modal").modal("show");    
+});
+
+$(document).on("click", "#createEvent", function () {
     //alert("Hii");
-    var title = $("#title").val().toString();
-    var desc = $("#desc").val().toString();
-    var rules = $("#rules").val().toString();
-    var jc = $("#jc").val().toString();
-    var dat = $("#date").val().toString();
-    var time = $("#time").val().toString();
-    var dat1 = $("#date1").val().toString();
-    var time1 = $("#time1").val().toString();
-    var venue = $("#venue").val().toString();
-    var category = $("#category").val().toString();
+    var title = $("#create_modal #title").val().toString();
+    var desc = $("#create_modal #desc").val().toString();
+    var rules = $("#create_modal #rules").val().toString();
+    var jc = $("#create_modal #jc").val().toString();
+    var dat = $("#create_modal #date").val().toString();
+    var time = $("#create_modal #time").val().toString();
+    var dat1 = $("#create_modal #date1").val().toString();
+    var time1 = $("#create_modal #time1").val().toString();
+    var venue = $("#create_modal #venue").val().toString();
+    var category = $("#create_modal #category").val().toString();
     //var max_par = $("#max_participants").val().toString();
-    var full_name1 = $("#full_name_1").val().toString();
-    var cont1 = $("#contact_1").val().toString();
-    var full_name2 = $("#full_name_2").val().toString();
-    var cont2 = $("#contact_2").val().toString();
-    var imge = $("#fileToUpload").prop("files")[0];
+    var full_name1 = $("#create_modal #full_name_1").val().toString();
+    var cont1 = $("#create_modal #contact_1").val().toString();
+    var full_name2 = $("#create_modal #full_name_2").val().toString();
+    var cont2 = $("#create_modal #contact_2").val().toString();
+    var imge = $("#create_modal #fileToUpload").prop("files")[0];
+    var loginId = $("#create_modal #LoginId").val().toString();
+    var loginPassword = $("#create_modal #loginPassword").val().toString();
 
 
     var formObj = new FormData();
@@ -36,58 +43,37 @@ $(document).on("click", "#add", function () {
     formObj.append("coordinatorContact2", cont2);
     formObj.append("token", localStorage.cms_token);
     formObj.append("fileToUpload", imge);
-
-    console.log($("#title").val().toString());
-    console.log($("#desc").val().toString());
-    console.log($("#rules").val().toString());
-    console.log($("#jc").val().toString());
-    console.log($("#date").val().toString());
-    console.log($("#time").val().toString());
-    console.log($("#date1").val().toString());
-    console.log($("#time1").val().toString());
-    console.log($("#venue").val().toString());
-    console.log($("#category").val().toString());
-    //console.log($("#max_participants").val().toString());
-    console.log($("#full_name_1").val().toString());
-    console.log($("#contact_1").val().toString());
-    console.log($("#full_name_2").val().toString());
-    console.log($("#contact_2").val().toString());
-    console.log(($("#fileToUpload").prop("files"))[0]);
-
+    formObj.append("loginId",loginId);
+    formObj.append("loginPassword",loginPassword);
     for (var key of formObj.entries()) {
         console.log(key[0] + ', ' + key[1]);
     }
     $.ajax({
         type: "POST",
-        url: "../apis/events/createEvent.php",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
+        url: "../../../apis/events/createEvent.php",
         cache: false,
         contentType: false,
         processData: false,
-        data: formObj
-            // title: $("#title").val().toString(),
-            // description: $("#desc").val().toString(),
-            // rules: $("#rules").val().toString(),
-            // judging_criteria: $("#jc").val().toString(),
-            // date: $("#date").val().toString(),
-            // venue: $("#venue").val().toString(),
-            // time: $("#time").val().toString(),
-            // category: $("#category").val().toString(),
-            // max_par: $("#max_participants").val().toString(),
-            // coordinatorName1: $("#full_name_1").val().toString(),
-            // coordinatorContact1: $("#contact_1").val().toString(),
-            // coordinatorName2: $("#full_name_2").val().toString(),
-            // coordinatorContact2: $("#contact_2").val().toString(),
-
-            ,
+        data: formObj,
         success: function (data) {
-
             console.log(data);
             var d = JSON.parse(data);
             if (d.status == "success") {
-                swal("Event Updated Successfully", ": )", "success");
+                swal("Event Updated Successfully", ": )", "success")    
+                .then((value)=>{
+                    console.log("close");
+                    window.location.assign("manage_events.html");
+                })                            
             } else {
-                swal("Unable to upload", ": )", "error");
-            }
+                swal(d.result, ": )", "error")
+                .then((value)=>{
+                    console.log("close");
+                    window.location.assign("manage_events.html");
+                })               
+            }            
         },
         error: function (data) {
             alert("Error");

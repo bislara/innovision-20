@@ -91,6 +91,7 @@
 
       <div class="tab-content row justify-content-center" id="login_inno">
 
+<<<<<<< HEAD:views/login.html
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" href="#registration" role="tab" data-toggle="tab"> Registration </a>
@@ -102,15 +103,30 @@
         </ul>
         <!-- Schdule Day 1 -->
         <div role="tabpanel" class="register col-lg-7 tab-pane fade show active" id="registration">
+=======
+                </ul>
+                <!-- Schdule Day 1 -->
+                <div role="tabpanel" class="col-lg-7 tab-pane fade show active" id="registration" style="background-color: #0e1735;">
+                    
+                    <form class="form-horizontal" action="" method="post">
+                        <div id="error"></div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
+>>>>>>> master:views/login.php
 
           <form class="form-horizontal" action="" method="post">
             <div class="form-group">
               <label class="control-label col-sm-6" for="email" style="color:white;">Fist Name:</label>
 
+<<<<<<< HEAD:views/login.html
               <div class="col-sm-12">
+=======
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name" name="first_name">
+>>>>>>> master:views/login.php
 
                 <input type="text" class="form-control" id="email" placeholder="Enter First Name" name="first_name">
 
+<<<<<<< HEAD:views/login.html
               </div>
             </div>
 
@@ -131,6 +147,59 @@
 
               </div>
             </div>
+=======
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="email" style="color:white">Email:</label>
+                            <div class="col-sm-12">
+
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="phone" style="color:white">Contact No:</label>
+                            <div class="col-sm-12">
+
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter Your contact number" name="phone">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="college" style="color:white">College:</label>
+                            <div>
+
+                                <select name="college" id="college" class="col-sm-12 form-control">
+                                </select>
+                                <!--<input type="text" class="form-control" id="college" placeholder="Enter College" name="college">-->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="college" style="color:white">Address:</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
+                            </div>
+                        </div>
+                        <div class="form-group" style="color:white" id="gender">
+                            <label class="control-label col-sm-2" for="Gender" style="color:white">Gender:</label>
+                            <form > 
+                                <label> 
+                                    <input type="radio" name="gen" value="male"> &nbsp; Male &nbsp; 
+                                </label> 
+                                <label> 
+                                    <input type="radio" name="gen" value="female"> &nbsp; Female &nbsp; 
+                                </label> 
+                                <label> 
+                                    <input type="radio" name="gen" value="others"> &nbsp; Other &nbsp; 
+                                </label> 
+                            </form> 
+                        </div>
+                       
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="email" style="color:white">Password:</label>
+                            <div class="col-sm-12">
+
+                                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+>>>>>>> master:views/login.php
 
             <div class="form-group">
               <label class="control-label col-sm-6" for="email" style="color:white">Password:</label>
@@ -138,8 +207,12 @@
 
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
 
+<<<<<<< HEAD:views/login.html
               </div>
             </div>
+=======
+                                <input type="password" class="form-control" id="cpassword" placeholder="Enter confirmed password" name="r_password">
+>>>>>>> master:views/login.php
 
             <div class="form-group">
               <label class="control-label col-sm-6" for="pwd" style="color:white">Confirm Password:</label>
@@ -156,10 +229,20 @@
 
                   <label><input type="checkbox" name="remember"> Remember me</label>
 
+<<<<<<< HEAD:views/login.html
                 </div>
               </div>
 
             </div>
+=======
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-12" align="center">
+                                <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
+                                <button id="signup" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
+                                <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
+                            </div>
+                        </div>
+>>>>>>> master:views/login.php
 
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-12" align="center">
@@ -177,7 +260,11 @@
         <!-- Schdule Day 2 -->
         <div role="tabpanel" class="register col-lg-7  tab-pane fade" id="login" style="background-color: #0e1735;" align="center">
 
+<<<<<<< HEAD:views/login.html
           <form class="form-horizontal" action="" method="post">
+=======
+                                <input type="email" class="form-control" id="login_email" placeholder="Enter email" name="email">
+>>>>>>> master:views/login.php
 
             <div class="form-group">
               <label class="control-label col-sm-2" for="email" style="color:white">Email:</label>
@@ -185,8 +272,12 @@
 
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
 
+<<<<<<< HEAD:views/login.html
               </div>
             </div>
+=======
+                                <input type="password" class="form-control" id="login_password" placeholder="Enter password" name="password">
+>>>>>>> master:views/login.php
 
             <div class="form-group">
               <label class="control-label col-sm-2" for="pwd" style="color:white">Password:</label>
@@ -201,11 +292,20 @@
               <div class="col-sm-offset-2 col-sm-12" style="color: white; text-align: left;">
                 <div class="checkbox">
 
+<<<<<<< HEAD:views/login.html
                   <label><input type="checkbox" name="remember"> Remember me</label>
 
                 </div>
               </div>
             </div>
+=======
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-12" align="center">
+                                <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
+                                <button id="signin" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
+                                
+                                <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
+>>>>>>> master:views/login.php
 
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-12" align="center">
@@ -296,6 +396,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
         -->
+<<<<<<< HEAD:views/login.html
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -319,6 +420,142 @@
 
   <!-- Template Main Javascript File -->
   <script src="../assets/js/main.js"></script>
+=======
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <!-- #footer -->
+
+  
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../assets/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/easing/easing.min.js"></script>
+    <script src="../assets/lib/superfish/hoverIntent.js"></script>
+    <script src="../assets/lib/superfish/superfish.min.js"></script>
+    <script src="../assets/lib/wow/wow.min.js"></script>
+    <script src="../assets/lib/venobox/venobox.min.js"></script>
+    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="../assets/js/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="../assets/js/main.js"></script>
+    <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+     <script type="text/javascript">
+    $(document).ready(function(){
+            $.ajax({
+                url:'../apis/CollegeList/readCollege.php',
+                type: 'get',
+                success:function(response)
+                {
+                    response = JSON.parse(response)
+                    if(response.status=="success")
+                    {
+                        console.log(response.result)
+                        for(var i=0; i<response.result.length; i=i+1)
+                        {
+                            var x = document.getElementById("college");
+                              var option = document.createElement("option");
+                              option.text = response.result[i].college_name;
+                              option.value = response.result[i].college_name;
+                              x.add(option);
+                        }
+                    }             
+                }
+            });
+        $("#phone").focusout(function(){
+            var phone=$("#phone").val();
+            if(phone.length != 10){
+                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid phone number</strong></center></div>");
+            }
+            else{
+                $("#error").html("<div style=\"color:#4dff88;height:40px;padding : 10px;\"><strong><center>Valid phone number</strong></center></div>");
+            }   
+        });
+    
+         $('#signin').on('click', function(){
+         console.log("Here")      
+        var mail=$("#login_email").val();
+        var passw=$("#login_password").val();   
+            console.log(mail);
+            console.log(passw);
+            $.ajax({
+                url:'../apis/participantRegistration/login.php',
+                data:"email="+mail+"&password="+passw,
+                type: 'post',
+                success:function(response)
+                {
+                    var response = JSON.parse(response);
+                    console.log(response);
+                    if(response.status == "success"){
+                          console.log(response.result)
+                   }
+                  else if(response.status=="failure"){
+                    $("#error").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
+                  }               
+              }
+              });
+        });
+
+        $('#signup').on('click', function(){ 
+            var gender =  $('input[name=gen]:checked', '#gender').val(); 
+            var e = document.getElementById("college");
+            var college_name_input = e.options[e.selectedIndex].value;
+            var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
+            if($("#password").val() != $("#cpassword").val())
+            {
+                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Confirm your password</center></strong></div>");
+            }
+            else
+            {
+                $.ajax({
+                    url: '../apis/participantRegistration/registration.php',
+                    data:user_data,
+                    type: 'post',
+                    success: function(response) {
+                        /*var response = JSON.parse(response);
+                        console.log(response);*/
+                        if(response.status=="success")
+                            console.log(response.result);
+                        else
+                        {
+                            $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
+                            console.log(response.result);
+                        }
+                   }
+                });
+            }
+        });
+        $("#email").focusout(function(){
+            var email=$("#email").val();
+            var atpos = email.indexOf("@");
+            var dotpos = email.lastIndexOf(".");  
+            var link_email = "email="+email;
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length) {
+                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid email address</center></strong></div>");
+                    return false;
+            }
+            else{
+                $.ajax({
+                url: '../apis/participantRegistration/check_email.php',
+                type: 'post',
+                data:link_email,
+                    success: function(response) {
+                    $("#error").html(response);
+                    }
+                });
+            }
+        });
+    });
+    </script>
+>>>>>>> master:views/login.php
 </body>
 
 </html>
