@@ -1,7 +1,8 @@
 /*Signin and Registration ID*/
 
 #signin_id {
-    padding: 100px 0 60px 0;
+    padding: 60px 0 60px 0;
+    background: url(../images/intro-bg.jpg) top center;
     background-size: cover;
     overflow: hidden;
     position: relative;
@@ -9,18 +10,12 @@
 
 #signin_id:before {
     content: "";
-    background-color: rgba(6, 12, 34, 0.05);
+    background: rgba(6, 12, 34, 0.8);
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-}
-
-#signin_id .register {
-  background-color: #0e1735;
-  border-radius: 2.5%;
-  padding: 20px;
 }
 
 #signin_id .nav-tabs {

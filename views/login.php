@@ -2,33 +2,33 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Login/Register - Innovision'19</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+    <meta charset="utf-8">
+    <title>TheEvent - Bootstrap Event Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-  <!-- Favicons -->
-  <link href="../assets/images/favicon.png" rel="icon">
-  <link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="../assets/images/favicon.png" rel="icon">
+    <link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="../assets/lib/google-fonts/fonts.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="../assets/lib/google-fonts/fonts.css" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="../assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="../assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
-  <link href="../assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="../assets/lib/venobox/venobox.css" rel="stylesheet">
-  <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="../assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../assets/lib/venobox/venobox.css" rel="stylesheet">
+    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
-  <link href="../assets/css/login.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/login.css" rel="stylesheet">
 
-  <!-- =======================================================
+    <!-- =======================================================
     Theme Name: TheEvent
     Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
     Author: BootstrapMade.com
@@ -38,72 +38,57 @@
 
 <body>
 
-  <!--==========================
+    <!--==========================
     Header
   ============================-->
-  <header id="header">
-    <div class="container">
+    <header id="header">
+        <div class="container">
 
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <a href="#intro" class="scrollto"><img src="../assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
-        <!-- <h1><a href="#main"><span>Inno'19</span></a></h1> -->
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li class="dropdown">
-
-            <a class="dropbtn">Events</a>
-            <div class="dropdown-content">
-              <a href="#Events">Events</a>
-              <a href="#Workshops">Workshops</a>
-              <a href="#Paid-Workshops">Paid-Workshops</a>
-              <a href="#Cultural">Cultural</a>
+            <div id="logo" class="pull-left">
+                <!-- Uncomment below if you prefer to use a text logo -->
+                <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+                <a href="#intro" class="scrollto"><img src="../assets/images/logo.png" alt="" title=""></a>
             </div>
 
-          </li>
-          <li><a href="ISRpage.html">Innovision Social Regime</a></li>
-          <li><a href="FAQ.html">FAQ</a></li>
-          <!-- <li><a href="#hotels">Hotels</a></li>
-          <li><a href="#gallery">Gallery</a></li> -->
-          <li><a href="sponsor.html">Sponsors</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="menu-active buy-tickets"><a href="#">Login/Register</a></li>
-        </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-    </div>
-  </header>
-  <!-- #header -->
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#intro">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#venue">Venue</a></li>
 
-  <!--==========================
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#supporters">Sponsors</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
+    <!-- #header -->
+
+    <!--==========================
     Login and Registration Section
   ============================-->
 
 
-  <section id="signin_id" class="section-with-bg">
-    <div class="container wow fadeInUp">
+    <section id="signin_id" class="section-with-bg">
+        <div class="container wow fadeInUp">
 
 
 
-      <div class="tab-content row justify-content-center" id="login_inno">
+            <div class="tab-content row justify-content-center" id="login_inno">
 
-<<<<<<< HEAD:views/login.html
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" href="#registration" role="tab" data-toggle="tab"> Registration </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#login" role="tab" data-toggle="tab">Login</a>
-          </li>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#registration" role="tab" data-toggle="tab"> Registration </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login" role="tab" data-toggle="tab">Login</a>
+                    </li>
 
-        </ul>
-        <!-- Schdule Day 1 -->
-        <div role="tabpanel" class="register col-lg-7 tab-pane fade show active" id="registration">
-=======
                 </ul>
                 <!-- Schdule Day 1 -->
                 <div role="tabpanel" class="col-lg-7 tab-pane fade show active" id="registration" style="background-color: #0e1735;">
@@ -112,42 +97,14 @@
                         <div id="error"></div>
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
->>>>>>> master:views/login.php
 
-          <form class="form-horizontal" action="" method="post">
-            <div class="form-group">
-              <label class="control-label col-sm-6" for="email" style="color:white;">Fist Name:</label>
+                            <div class="col-sm-12">
 
-<<<<<<< HEAD:views/login.html
-              <div class="col-sm-12">
-=======
                                 <input type="text" class="form-control" id="name" placeholder="Enter Name" name="first_name">
->>>>>>> master:views/login.php
 
-                <input type="text" class="form-control" id="email" placeholder="Enter First Name" name="first_name">
+                            </div>
+                        </div>
 
-<<<<<<< HEAD:views/login.html
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label col-sm-6" for="email" style="color:white">Last Name:</label>
-              <div class="col-sm-12">
-
-                <input type="name" class="form-control" id="name" placeholder="Enter Last Name" name="last_name">
-
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label col-sm-6" for="email" style="color:white">Email:</label>
-              <div class="col-sm-12">
-
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-
-              </div>
-            </div>
-=======
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="email" style="color:white">Email:</label>
                             <div class="col-sm-12">
@@ -199,42 +156,30 @@
                             <div class="col-sm-12">
 
                                 <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
->>>>>>> master:views/login.php
 
-            <div class="form-group">
-              <label class="control-label col-sm-6" for="email" style="color:white">Password:</label>
-              <div class="col-sm-12">
+                            </div>
+                        </div>
 
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="pwd" style="color:white">Confirm Password:</label>
+                            <div class="col-sm-12">
 
-<<<<<<< HEAD:views/login.html
-              </div>
-            </div>
-=======
                                 <input type="password" class="form-control" id="cpassword" placeholder="Enter confirmed password" name="r_password">
->>>>>>> master:views/login.php
 
-            <div class="form-group">
-              <label class="control-label col-sm-6" for="pwd" style="color:white">Confirm Password:</label>
-              <div class="col-sm-12">
+                            </div>
+                        </div>
 
-                <input type="password" class="form-control" id="pwd" placeholder="Enter confirmed password" name="r_password">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10" style="color: white;text-align: left;">
+                                <div class="checkbox">
 
-              </div>
-            </div>
+                                    <label><input type="checkbox" name="remember"> Remember me</label>
 
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10" style="color: white;text-align: left;">
-                <div class="checkbox">
+                                </div>
+                            </div>
 
-                  <label><input type="checkbox" name="remember"> Remember me</label>
+                        </div>
 
-<<<<<<< HEAD:views/login.html
-                </div>
-              </div>
-
-            </div>
-=======
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
                                 <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
@@ -242,185 +187,135 @@
                                 <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
                             </div>
                         </div>
->>>>>>> master:views/login.php
 
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-12" align="center">
-                <a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>
-
-                <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
-              </div>
-            </div>
-
-          </form>
-
-        </div>
-        <!-- End Schdule Day 1 -->
-
-        <!-- Schdule Day 2 -->
-        <div role="tabpanel" class="register col-lg-7  tab-pane fade" id="login" style="background-color: #0e1735;" align="center">
-
-<<<<<<< HEAD:views/login.html
-          <form class="form-horizontal" action="" method="post">
-=======
-                                <input type="email" class="form-control" id="login_email" placeholder="Enter email" name="email">
->>>>>>> master:views/login.php
-
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="email" style="color:white">Email:</label>
-              <div class="col-sm-12">
-
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-
-<<<<<<< HEAD:views/login.html
-              </div>
-            </div>
-=======
-                                <input type="password" class="form-control" id="login_password" placeholder="Enter password" name="password">
->>>>>>> master:views/login.php
-
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="pwd" style="color:white">Password:</label>
-              <div class="col-sm-12">
-
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
-
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-12" style="color: white; text-align: left;">
-                <div class="checkbox">
-
-<<<<<<< HEAD:views/login.html
-                  <label><input type="checkbox" name="remember"> Remember me</label>
+                    </form>
 
                 </div>
-              </div>
-            </div>
-=======
+                <!-- End Schdule Day 1 -->
+
+                <!-- Schdule Day 2 -->
+                <div role="tabpanel" class="col-lg-7  tab-pane fade" id="login" style="background-color: #0e1735;" align="center">
+
+                    <form class="form-horizontal" action="" method="post">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email" style="color:white">Email:</label>
+                            <div class="col-sm-12">
+
+                                <input type="email" class="form-control" id="login_email" placeholder="Enter email" name="email">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd" style="color:white">Password:</label>
+                            <div class="col-sm-12">
+
+                                <input type="password" class="form-control" id="login_password" placeholder="Enter password" name="password">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-12" style="color: white; text-align: left;">
+                                <div class="checkbox">
+
+                                    <label><input type="checkbox" name="remember"> Remember me</label>
+
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
                                 <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
                                 <button id="signin" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
                                 
                                 <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
->>>>>>> master:views/login.php
 
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-12" align="center">
-                <a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>
+                            </div>
 
-                <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
+                        </div>
+                    </form>
 
-              </div>
+                </div>
+                <!-- End Schdule Day 2 -->
 
             </div>
-          </form>
-
         </div>
-        <!-- End Schdule Day 2 -->
-
-      </div>
-    </div>
-  </section>
+    </section>
 
 
 
-  <!--==========================
+    <!--==========================
     Footer
   ============================-->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-info">
-            <img src="../assets/images/logo.png" alt="TheEvenet">
-            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
-              cupiditate debitis accusamus repellat cumque.</p>
-          </div>
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <img src="../assets/images/logo.png" alt="TheEvenet">
+                        <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
+                            cupiditate debitis accusamus repellat cumque.</p>
+                    </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br> New York, NY 535022<br> United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            A108 Adam Street <br> New York, NY 535022<br> United States <br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
 
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-
-          </div>
-
         </div>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!--
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!--
           All the links in the footer should remain intact.
           You can delete the links only if you purchased the pro version.
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
         -->
-<<<<<<< HEAD:views/login.html
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer>
-  <!-- #footer -->
-
-  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-  <script src="../assets/lib/jquery/jquery.min.js"></script>
-  <script src="../assets/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/lib/easing/easing.min.js"></script>
-  <script src="../assets/lib/superfish/hoverIntent.js"></script>
-  <script src="../assets/lib/superfish/superfish.min.js"></script>
-  <script src="../assets/lib/wow/wow.min.js"></script>
-  <script src="../assets/lib/venobox/venobox.min.js"></script>
-  <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
-  <!-- Contact Form JavaScript File -->
-  <script src="../assets/js/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="../assets/js/main.js"></script>
-=======
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
         </div>
@@ -555,7 +450,6 @@
         });
     });
     </script>
->>>>>>> master:views/login.php
 </body>
 
 </html>
