@@ -2,7 +2,8 @@
 
 	include('../db.php');
 
-	if($_SERVER["REQUEST_METHOD"] === "GET") {
+	if($_SERVER["REQUEST_METHOD"] === "GET") 
+	{
 
 		$query = mysqli_query($conn, "SELECT * FROM college");
 		$result = array();
