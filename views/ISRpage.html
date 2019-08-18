@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Event Details</title>
+  <title>ISR - Innovision'19</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -18,7 +18,7 @@
   <!-- Bootstrap CSS File -->
   <link href="../assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
+  <!-- ../assets/libraries CSS Files -->
   <link href="../assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
   <link href="../assets/lib/venobox/venobox.css" rel="stylesheet">
@@ -26,8 +26,6 @@
 
   <!-- Main Stylesheet File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-  <link href="../assets/css/sweetalert.css" rel="stylesheet">
-
 
   <!-- =======================================================
     Theme Name: TheEvent
@@ -39,110 +37,91 @@
 
 <body>
 
-
   <!--==========================
   Header
 ============================-->
   <header id="header">
-    <div class="container">
+      <div class="container">
 
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <a href="#intro" class="scrollto"><img src="../assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
-        <!-- <h1><a href="#main"><span>Inno'19</span></a></h1> -->
-      </div>
+          <div id="logo" class="pull-left">
+              <!-- Uncomment below if you prefer to use a text logo -->
+              <a href="#intro" class="scrollto"><img src="../assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
+              <!-- <h1><a href="#main"><span>Inno'19</span></a></h1> -->
+          </div>
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li class="dropdown menu-active">
+          <nav id="nav-menu-container">
+              <ul class="nav-menu">
+                  <li><a href="#intro">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li class="dropdown">
 
-            <a class="dropbtn">Events</a>
-            <div class="dropdown-content">
-              <a href="eventsSection.html#EventsSection">Event Schedule</a>
-              <a href="eventsSection.html#Events">Events</a>
-              <a href="eventsSection.html#Workshops">Workshops</a>
-              <a href="eventsSection.html#Paid-Workshops">Paid-Workshops</a>
-              <a href="eventsSection.html#Cultural">Cultural</a>
-            </div>
+                      <a class="dropbtn dropping">Events</a>
+                      <div class="dropdown-content">
+                          <a href="eventsSection.html#EventsSection">Event Schedule</a>
+                          <a href="eventsSection.html#Events">Events</a>
+                          <a href="eventsSection.html#Workshops">Workshops</a>
+                          <a href="eventsSection.html#Paid-Workshops">Paid-Workshops</a>
+                          <a href="eventsSection.html#Cultural">Cultural</a>
+                      </div>
 
-          </li>
-          <li><a href="ISRpage.html">Innovision Social Regime</a></li>
-          <li><a href="FAQ.html">FAQ</a></li>
-          <!-- <li><a href="#hotels">Hotels</a></li>
+                  </li>
+                  <li class="menu-active"><a href="#">Innovision Social Regime</a></li>
+                  <li><a href="FAQ.html">FAQ</a></li>
+                  <!-- <li><a href="#hotels">Hotels</a></li>
                   <li><a href="#gallery">Gallery</a></li> -->
-          <li><a href="sponsor.html">Sponsors</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="buy-tickets"><a href="login.html">Login/Register</a></li>
-        </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-    </div>
+                  <li><a href="sponsor.html">Sponsors</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li class="buy-tickets"><a href="login.html">Login/Register</a></li>
+              </ul>
+          </nav>
+          <!-- #nav-menu-container -->
+      </div>
   </header>
   <!-- #header -->
 
-  <!-- <main id="main" class="main-page"> -->
 
   <!--==========================
-      Speaker Details Section
-    ============================-->
-  <section id="speakers-details" class="wow fadeIn">
-    <div class="container">
+Venue Section
+============================-->
+  <section id="venue" class="wow fadeInUp">
+
+    <div class="container-fluid venue-gallery-container">
+
       <div class="section-header">
-        <h2 id="eid_name"></h2>
-        <p>
-          Date : <b id="eid_date"> </b> <br>
-          Time : <b id="eid_time"> </b> <br>
-          Venue : <b id="eid_venue"> </b> <br>
-          <div class="event-register register"><a href="#" id="register">Register</a></div>
-          <!-- register button for events -->
-        </p>
+        <h2>Event Venue</h2>
+        <p>Event venue location info and gallery</p>
       </div>
 
-      <div class="row">
-        <div class="col-md-6" id="eid_img">
-          <!-- <img src="../assets/images/speakers/1.jpg" title="Event name" class="img-fluid"> -->
+      <div class="row no-gutters">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="venue-gallery">
+            <a href="assets/images/venue-gallery/1.jpg" class="venobox vbox-item" data-gall="venue-gallery">
+              <img src="../assets/images/venue-gallery/1.jpg" alt="" class="img-fluid">
+            </a>
+          </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="details">
-            <h2>Event Description</h2>
-
-            <p id="eid_des"></p>
-
+        <div class="col-lg-4 col-md-6">
+          <div class="venue-gallery">
+            <a href="assets/images/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
+              <img src="../assets/images/venue-gallery/2.jpg" alt="" class="img-fluid">
+            </a>
           </div>
+        </div>
 
-          <div class="details">
-            <h2>Event Rules</h2>
-
-            <p id="eid_rule"> </p>
-
+        <div class="col-lg-4">
+          <div class="venue-gallery">
+            <a href="assets/images/venue-gallery/3.jpg" class="venobox" data-gall="venue-gallery">
+              <img src="../assets/images/venue-gallery/3.jpg" alt="" class="img-fluid">
+            </a>
           </div>
-
-          <div class="details">
-            <h2>Judging Criteria</h2>
-
-            <p id="eid_judge"></p>
-
-          </div>
-
-          <div class="details">
-            <h2>Coordinators info</h2>
-
-            <p> <b id="eid_cd1">Name</b> : <em id="eid_no1">contact no.</em> </p>
-            <p> <b id="eid_cd2">Name</b> : <em id="eid_no2">contact no.</em> </p>
-
-          </div>
-
         </div>
 
       </div>
     </div>
 
   </section>
-
-  <!-- </main> -->
 
 
   <!--==========================
@@ -238,8 +217,6 @@
 
   <!-- Template Main Javascript File -->
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/ajax/event_individual.js"></script>
-  <script src="../assets/js/sweetalert.js"></script>
 </body>
 
 </html>
