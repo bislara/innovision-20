@@ -264,13 +264,14 @@ h6 {
 }
 
 .nav-menu a:not([href]):not([tabindex]) {
-    color: rgba(202, 206, 221, 0.8);
-    text-decoration: none;
+  color: rgba(202, 206, 221, 0.8);
+  text-decoration: none;
 }
 
 .nav-menu .menu-acive a:not([href]):not([tabindex]), .nav-menu a:not([href]):not([tabindex]):hover {
   color: #fff;
 }
+
 .nav-menu .menu-active a,
 .nav-menu a:hover {
   color: #fff;
@@ -377,9 +378,7 @@ h6 {
   display: block;
 }
 
-
 /* Mobile Nav Toggle */
-
 #mobile-nav-toggle {
   position: fixed;
   right: 0;
@@ -1087,11 +1086,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 15px;
 }
 
-
 /*--------------------------------------------------------------
 # Gallery Section
 --------------------------------------------------------------*/
-
 #gallery {
   padding: 60px;
   overflow: hidden;
