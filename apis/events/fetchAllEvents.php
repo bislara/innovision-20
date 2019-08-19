@@ -1,9 +1,8 @@
 <?php
-    $status="false";
+    
 	include('../db.php');
-    include('../panels/cms/verifyCMSAdmin.php');
-
-	if($_SERVER["REQUEST_METHOD"] === "GET"&&$status==="success") {
+    
+	if($_SERVER["REQUEST_METHOD"] === "GET") {
 
 		$query = mysqli_query($conn, "SELECT * FROM events");
 
