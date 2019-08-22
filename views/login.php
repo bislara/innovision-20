@@ -381,22 +381,22 @@
         var passw=$("#login_password").val();   
             console.log(mail);
             console.log(passw);
-            $.ajax({
-                url:'../apis/participantRegistration/login.php',
-                data:"email="+mail+"&password="+passw,
-                type: 'post',
-                success:function(response)
-                {
-                    var response = JSON.parse(response);
-                    console.log(response);
-                    if(response.status == "success"){
-                          console.log(response.result)
-                   }
-                  else if(response.status=="failure"){
-                    $("#error").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
-                  }               
-              }
-              });
+            // $.ajax({
+            //     url:'../apis/participantRegistration/login.php',
+            //     data:"email="+mail+"&password="+passw,
+            //     type: 'post',
+            //     success:function(response)
+            //     {
+            //         var response = JSON.parse(response);
+            //         console.log(response);
+            //         if(response.status == "success"){
+            //               console.log(response.result)
+            //        }
+            //       else if(response.status=="failure"){
+            //         $("#error").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
+            //       }               
+            //   }
+            //   });
         });
 
         $('#signup').on('click', function(){ 
