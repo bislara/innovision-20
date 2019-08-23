@@ -68,7 +68,7 @@
         </div>
     </header>
     <!-- #header -->
-
+    <!--Dummy header-->
     <!--==========================
     Login and Registration Section
   ============================-->
@@ -93,7 +93,11 @@
                 <!-- Schdule Day 1 -->
                 <div role="tabpanel" class="col-lg-7 tab-pane fade show active" id="registration" style="background-color: #0e1735;">
                     
+<<<<<<< HEAD:views/login.html
+                        <div id="error"></div>
+=======
                     <form class="form-horizontal" action="" method="post">
+>>>>>>> d297bc8c8098c19b0f5e6732a9620af760aa1323:views/login.html
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
 
@@ -126,6 +130,15 @@
 
                                 <select name="college" id="college" class="col-sm-12 form-control">
                                 </select>
+                                <!--<input type="text" class="form-control" id="college" placeholder="Enter College" name="college">-->
+                            </div>
+                        </div>
+                        <div class="form-group" id="college_add">
+                            <label class="control-label col-sm-2" for="college" style="color:white">College:</label>
+                            <div>
+
+                                <input type="text" class="form-control" id="new_college" placeholder="Enter Your College Name" name="college_add">
+
                                 <!--<input type="text" class="form-control" id="college" placeholder="Enter College" name="college">-->
                             </div>
                         </div>
@@ -177,16 +190,12 @@
                             </div>
                         </div>
 
-                    </form>
-
                 </div>
                 <!-- End Schdule Day 1 -->
 
                 <!-- Schdule Day 2 -->
                 <div role="tabpanel" class="col-lg-7  tab-pane fade" id="login" style="background-color: #0e1735;" align="center">
-
-                    <form class="form-horizontal" action="" method="post">
-
+                        <div id="error1"></div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email" style="color:white">Email:</label>
                             <div class="col-sm-12">
@@ -208,15 +217,19 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
+<<<<<<< HEAD:views/login.html
+                                <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
+                                <button id="login_button" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
+=======
                                 <!-- <a href="#" class="about-btn scrollto signin">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br> -->
                                 <button id="signin" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
+>>>>>>> d297bc8c8098c19b0f5e6732a9620af760aa1323:views/login.html
                                 
                                 <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
 
                             </div>
 
                         </div>
-                    </form>
 
                 </div>
                 <!-- End Schdule Day 2 -->
@@ -325,6 +338,9 @@
     <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script>
      <script type="text/javascript">
     $(document).ready(function(){
+        //if(localStorage.getItem("token") != null)
+            //window.location="./profile.html"
+            $('#college_add').hide();
             $.ajax({
                 url:'../apis/CollegeList/readCollege.php',
                 type: 'get',
@@ -342,9 +358,24 @@
                               option.value = response.result[i].college_name;
                               x.add(option);
                         }
+                              var x = document.getElementById("college");
+                              var option = document.createElement("option");
+                              option.text = "Other";
+                              option.value = "other";
+                              x.add(option);
                     }             
                 }
             });
+        $('#college').change(function()
+        {
+           selection = $(this).val();
+           switch(selection)
+           {
+               case 'other':
+                   $('#college_add').show();
+                   break;
+           }
+        });
         $("#phone").focusout(function(){
             var phone=$("#phone").val();
             if(phone.length != 10){
@@ -355,6 +386,28 @@
             }   
         });
     
+<<<<<<< HEAD:views/login.html
+         $('#login_button').on('click', function(){
+            var mail=$("#login_email").val();
+            var passw=$("#login_password").val();   
+            $.ajax({
+                url:'../apis/participantRegistration/login.php',
+                data:"email="+mail+"&password="+passw,
+                type: 'post',
+                success:function(response)
+                {
+                    var response = JSON.parse(response);
+                    console.log(response);
+                    if(response.status == "success"){
+                         localStorage.setItem("token", response.result);
+                        window.location='./profile.html';
+                   }
+                  else if(response.status=="failure"){
+                    $("#error").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
+                  }               
+              }
+              });
+=======
         $(document).on("click", ".signin", function () {
          // $('#signin').on('click', function(){
          console.log("Here")      
@@ -378,12 +431,37 @@
             //       }               
             //   }
             //   });
+>>>>>>> d297bc8c8098c19b0f5e6732a9620af760aa1323:views/login.html
         });
 
         $('#signup').on('click', function(){ 
             var gender =  $('input[name=gen]:checked', '#gender').val(); 
             var e = document.getElementById("college");
             var college_name_input = e.options[e.selectedIndex].value;
+            if(college_name_input=="other")
+            {
+                college_name_input = $("#new_college").val();
+                if(college_name_input)
+                {
+                    console.log(college_name_input)
+                    $.ajax({
+                        url: '../apis/CollegeList/createCollege.php',
+                        data: "cname="+college_name_input,
+                        type: 'post',
+                        success: function(response) {
+                            var response = JSON.parse(response);
+                            if(response.status=="success")
+                            {
+                                console.log("New College Created");
+                            }
+                            else
+                            {
+                                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.message+"</center></strong></div>");
+                            }
+                       }
+                    });
+                }
+            }
             var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
             if($("#password").val() != $("#cpassword").val())
             {
@@ -396,14 +474,22 @@
                     data:user_data,
                     type: 'post',
                     success: function(response) {
-                        /*var response = JSON.parse(response);
-                        console.log(response);*/
+                        var response = JSON.parse(response);
                         if(response.status=="success")
-                            console.log(response.result);
+                        {
+                            localStorage.setItem("token", response.message);
+                            var url='./profile.html';
+                            window.location=url;
+                        }
                         else
                         {
+<<<<<<< HEAD:views/login.html
+                            $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.message+"</center></strong></div>");
+                            //console.log(response.result);
+=======
                             $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
                             // console.log(response.result);
+>>>>>>> d297bc8c8098c19b0f5e6732a9620af760aa1323:views/login.html
                         }
                    }
                 });
