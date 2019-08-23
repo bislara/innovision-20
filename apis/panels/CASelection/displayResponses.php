@@ -12,8 +12,12 @@
 		}
 
 		else {
-			$result=array();
-			$result = mysqli_fetch_array($query);
+			$result = array();
+			// $result = mysqli_fetch_array($query);
+			while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) 
+			{
+    		$result[] = $res;
+			}
 			echo(json_encode(array('status' => 'success', 'result' => $result)));
 		}
 	}
