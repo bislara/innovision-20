@@ -35,7 +35,7 @@
     		
     	} catch (Exception $e) {
     		
-    		echo(json_encode(array('status' => 'failure', 'result' => $e->getMessage())));
+    		echo(json_encode(array('status' => 'failure', 'resultt' => $e->getMessage())));
     	}
 
     } else {

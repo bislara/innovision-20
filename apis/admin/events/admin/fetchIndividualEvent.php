@@ -2,7 +2,7 @@
 
 	include('../db.php');
 
-	$eid = $_GET['eid'];
+	$eid = $_GET['q'];
 
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != "") {
 

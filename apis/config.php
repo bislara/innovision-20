@@ -10,7 +10,7 @@
 
  
     $notBefore  = $issuedAt ;  //Adding 10 seconds
-    $expire     = $notBefore + 600; // Adding 60 seconds
+    $expire     = $notBefore + 3600; // Adding 60 seconds
     $serverName = 'http://localhost/inno/';
 
 ?>
