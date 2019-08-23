@@ -435,7 +435,8 @@ h6 {
 }
 
 #mobile-nav ul li a:hover {
-  color: #f82249;
+  /* color: #f82249; */
+  color: #fff;
 }
 
 #mobile-nav ul li li {
@@ -1031,7 +1032,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 # Hotels Section
 --------------------------------------------------------------*/
 #hotels {
-  padding: 100px 0;
+  padding: 100px 0 50px;
 }
 
 #hotels .hotel {
@@ -1085,6 +1086,38 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-style: italic;
   font-size: 15px;
 }
+
+/* ISR page modal css */
+
+.modal-design {
+  text-align: center;
+  position: relative;
+}
+
+.modal-design .hotel-img {
+  width: 70%;
+  margin: 10px auto 20px;
+}
+
+.modal-design .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.modal-design p {
+  color: #060c22;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.modal-design h5 {
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 5px;
+  padding: 5px 20px 20px;
+}
+
 
 /*--------------------------------------------------------------
 # Gallery Section
