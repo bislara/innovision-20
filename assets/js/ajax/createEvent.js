@@ -55,7 +55,7 @@ $(document).on("click", "#createEvent", function () {
         beforeSend: function(request){
             request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
         },
-        url: "../../../apis/events/createEvent.php",
+        url: "../../../apis/admin/events/admin/createEvent.php",
         cache: false,
         contentType: false,
         processData: false,

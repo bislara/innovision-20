@@ -1,7 +1,7 @@
 <?php
 
-    include('../db.php');
-    include('../panels/cms/verifyCMSAdmin.php');
+    include('../../../db.php');
+    include('./verifyEventAdmin.php');
     
 
     if (isset($status) && $status === "success") {
@@ -26,10 +26,10 @@
                         $id_que = mysqli_query($conn,"select eid from events");
                         $id_res = mysqli_fetch_all($id_que, MYSQLI_NUM);                            
                         $ext = pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION);
-                        $file_path_name = "../../assets/images/events/eid_".($id_res[mysqli_num_rows($id_que)-1][0]).('.').$ext;                
+                        $file_path_name = "../../../../assets/images/events/eid_".($id_res[mysqli_num_rows($id_que)-1][0]).('.').$ext;                
                         
                         if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path_name)) {
-                            $file_path_name="../".$file_path_name;
+                            $file_path_name=substr($file_path_name,3);
                             $img_path = $file_path_name;
                             $queryImageAdd = "update events set image_path='".mysqli_real_escape_string($conn,$img_path)."' where eid='".$id_res[mysqli_num_rows($id_que)-1][0]."'";
                             $resultImageAdd = mysqli_query($conn, $queryImageAdd);
