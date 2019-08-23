@@ -1,6 +1,6 @@
 <!-- Get all the registered events for a particular participant-->
 <?php
-    include('../db.php');
+    include('../../../db.php');
     $innoID = $_GET['q'];
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $innoID != "") 
 	{

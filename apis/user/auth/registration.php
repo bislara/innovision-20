@@ -1,12 +1,12 @@
 <?php
 
-	include('../db.php');
+	include('../../db.php');
 
-	//include ('../../../vendor/autoload.php');
+	include ('../../../vendor/autoload.php');
 	use \Firebase\JWT\JWT;
 	use Endroid\QrCode\QrCode;
 
-	include('../config.php');
+	include('../../config.php');
 
 	$name = $_POST["name"];
 	$gender = $_POST["gender"];
@@ -185,15 +185,13 @@
 
 			$query = mysqli_query($conn, "UPDATE users SET token = '".$jwt."' WHERE inno_id = ".$inno_id);
 			if ($query) {
-
-				error_reporting(0);
-
-				$qrcode = new QrCode(array('inno_id' => $inno_id, 'email' => $email));
-				$filepath = '../../images/qrcodes/'.$inno_id.'.png';				
+                error_reporting(0);
+			    $qrcode = new QrCode(json_encode(array('inno_id' => $inno_id, 'email' => $email)));
+				$filepath = '../../../assets/images/qrcodes/'.$inno_id.'.png';	
 				$qrcode->writeFile($filepath);
-				$query = mysqli_query($conn, "UPDATE users SET qr_code_path = '".$filepath."' WHERE inno_id = ".$inno_id);
-				echo(json_encode(array('status' => 'success', 'message' => 'Successfully Registered')));
-			} else{
+				$query = mysqli_query($conn, "UPDATE users SET qr_code = '".$filepath."' WHERE inno_id = ".$inno_id);
+				echo(json_encode(array('status' => 'success', 'message' => $jwt)));
+			}else{
 
 				echo(json_encode(array('status' => 'failure', 'message' => 'token not set')));
 			}

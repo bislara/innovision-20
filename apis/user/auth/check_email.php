@@ -1,5 +1,5 @@
 <?php 
-include('../db.php');
+include('../../db.php');
 
 $email=$_POST['email'];
 mysqli_real_escape_string($conn, $email);

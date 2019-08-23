@@ -1,12 +1,13 @@
 <?php
 
-    include ('../db.php');
+    include ('../../db.php');
 
     $email = $_POST["email"];
     $password = $_POST["password"];
-
+    mysqli_real_escape_string($conn, $email);
+    mysqli_real_escape_string($conn, $password);
     if (isset($email) && isset($password)) {
-
+        
         $query = mysqli_query($conn, "SELECT token FROM users WHERE email='".$email."' AND user_password='".md5($password)."'");
 
         if ($query) {
