@@ -94,7 +94,6 @@
                 <div role="tabpanel" class="col-lg-7 tab-pane fade show active" id="registration" style="background-color: #0e1735;">
                     
                     <form class="form-horizontal" action="" method="post">
-                        <div id="error"></div>
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
 
@@ -169,16 +168,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10" style="color: white;text-align: left;">
-                                <div class="checkbox">
-
-                                    <label><input type="checkbox" name="remember"> Remember me</label>
-
-                                </div>
-                            </div>
-
-                        </div>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
@@ -216,19 +205,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-12" style="color: white; text-align: left;">
-                                <div class="checkbox">
-
-                                    <label><input type="checkbox" name="remember"> Remember me</label>
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
-                                <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
+                                <!-- <a href="#" class="about-btn scrollto signin">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br> -->
                                 <button id="signin" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
                                 
                                 <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
@@ -353,7 +333,7 @@
                     response = JSON.parse(response)
                     if(response.status=="success")
                     {
-                        console.log(response.result)
+                        // console.log(response.result)
                         for(var i=0; i<response.result.length; i=i+1)
                         {
                             var x = document.getElementById("college");
@@ -375,7 +355,8 @@
             }   
         });
     
-         $('#signin').on('click', function(){
+        $(document).on("click", ".signin", function () {
+         // $('#signin').on('click', function(){
          console.log("Here")      
         var mail=$("#login_email").val();
         var passw=$("#login_password").val();   
@@ -422,7 +403,7 @@
                         else
                         {
                             $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
-                            console.log(response.result);
+                            // console.log(response.result);
                         }
                    }
                 });

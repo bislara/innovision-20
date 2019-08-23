@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 // Event Update Handler
 $(document).on("click", "#update", function() {
-    console.log("Hiii");
+    // console.log("Hiii");
     var eid = $(this).parents("tr").find("#eid").text();
     console.log(eid);
     $.ajax({

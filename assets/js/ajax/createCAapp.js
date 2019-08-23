@@ -2,7 +2,7 @@ $(document).on("click", ".submitform", function () {
     var college_name = "";
     if($("#q4s").val().localeCompare("select") == 0)
     {
-        //swal("Choose College",":|","warning");
+        swal("Choose College",":|","warning");
     }
     else
     {
@@ -22,7 +22,7 @@ $(document).on("click", ".submitform", function () {
     else {
         $.ajax({
             type: "POST",
-            url: "../apis/CASelectionApplication/createCAApplication.php",
+            url: "../../apis/CASelectionApplication/createCAApplication.php",
             data: {
                 q1: $("#q1").val().toString(),
                 q2: $("#q2").val().toString(),
@@ -41,34 +41,38 @@ $(document).on("click", ".submitform", function () {
             },
             success: function (data) {
                 if (JSON.parse(data).status == "success") {
-                    console.log($("#q4s").val().localeCompare("Others") == 0);
+                    // alert("hi lara");
+                    if (JSON.parse(data).result=="successful entry") {
+                    swal("Registration Successful !", ": )", "success");
+
+                    }
                     if ($("#q4s").val().localeCompare("Others") == 0) {
                         $.ajax({
                             type: "POST",
-                            url: "../apis/CollegeList/others/create.php",
+                            url: "../../apis/CollegeList/others/create.php",
                             data: {
                                 college: $("#q4i").val().toString()
                             },
                             success: function (data) {
-                                //console.log(JSON.parse(data).status);
+                                // swal("Good job!", "College Added", "success");
                             }
                         });
                     }
                     successAlert();
-                    // swal({icon: "success", 
-                    //     title: "Successfully registered",
-                    //     text: ":)",
-                    //     buttons: {
-                    //         sure : "Okay"
-                    //     },
-                    // }).then((value) => {
-                    //     switch(value){
-                    //         case "sure":
-                    //         location.reload(true);
-                    //         break;
-                    //     }
-                    // });
-                    //location.reload(true);
+                    swal({icon: "success", 
+                        title: "Successfully registered",
+                        text: ":)",
+                        buttons: {
+                            sure : "Okay"
+                        },
+                    }).then((value) => {
+                        switch(value){
+                            case "sure":
+                            location.reload(true);
+                            break;
+                        }
+                    });
+                    location.reload(true);
                 }
                 else {
                     failureAlert(JSON.parse(data));
@@ -85,11 +89,12 @@ $(document).on("click", ".submitform", function () {
                     //         break;
                     //     }
                     // });
-                    //swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
+                    // //swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
                 }
             },
             error: function (data) {
-                errorAlert();
+                // errorAlert();
+                swal("Bad luck!", "You clicked the button!", "failed");
                 // swal({icon: "error", 
                 //        title: "Failure",
                 //        text: "Could not process request! Try again later.",
