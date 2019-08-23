@@ -1,6 +1,6 @@
 <?php
 
-	include('../../db.php');
+	include('../../../db.php');
 
 	$inno_id = $_GET["q"];
 
@@ -9,7 +9,7 @@
 		$query = mysqli_query($conn, "SELECT * FROM users where inno_id ='".$inno_id."'");
 
 		if (mysqli_num_rows($query) == 0) {
-
+			echo($inno_id);
 			echo(json_encode(array('status' => 'failure', 'result' => 'inno_id not found')));
 		}
 
@@ -20,7 +20,7 @@
 			if ($query) {
 
 				$result = array();
-				while($res = mysqli_fetch_array($query, MYSQL_ASSOC)) {
+				while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 		    		$query2 = mysqli_query($conn, "SELECT title, date, venue, time FROM events where eid =".$res["event_id"]);
 		    		if ($query2) {

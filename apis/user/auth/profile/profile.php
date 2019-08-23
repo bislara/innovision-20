@@ -1,9 +1,9 @@
 <?php
 
-	include('../db.php');
+	include('../../../db.php');
 
 	$token = $_GET["q"];
-
+	$token = mysqli_real_escape_string($conn, $token);
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $token != "") {
 
 		$query = mysqli_query($conn, "SELECT * FROM users where token ='".$token."'");
