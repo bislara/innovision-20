@@ -1,6 +1,6 @@
 <?php
 
-	include('../../db.php');
+	include('../../../db.php');
 
 	$inno_id = $_GET["q"];
 

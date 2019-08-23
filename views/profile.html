@@ -88,16 +88,16 @@
             <div class="row" style="text-align: center;">
 
                 <div class="col-md-8">
-                    <h3 style="color: white;">Name : Roshan S </h3>
-                    <h3 style="color: white;">Email : roshan@gmail.com </h3>
-                    <h3 style="color: white;">College : nitr</h3>
-                    <h3 style="color: white;">Inno Id : 4356578</h3>
+                    <h3 style="color: white;" id="participant_name">Name : Roshan S </h3>
+                    <h3 style="color: white;" id ="participant_email">Email : roshan@gmail.com </h3>
+                    <h3 style="color: white;" id="participant_college">College : nitr</h3>
+                    <h3 style="color: white;" id = "participant_id"></h3>
                     <br><br>
                     <a href="#about" class="about-btn scrollto">&nbsp;&nbsp; PAYMENT &nbsp;&nbsp;</a> <br><br>
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <img src="../assets/images/qrcodes/40.png" style="position: relative;">
+                        <img id = "qr_image" src=" " style="position: relative;"/ >
                     </center>
                 </div>
             </div>
@@ -125,94 +125,44 @@
                             <div class="hotel-img">
                                 <img src="../assets/images/hotels/1.jpg" alt="Events 1" class="img-fluid">
                             </div>
-                            <h3 "><a href="# " >Events 1</a></h3>
+                            <h3><a href="# " >Events 1</a></h3>
   
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 ">
-            <div class="hotel ">
-              <div class="hotel-img ">
-                <img src="../assets/images/hotels/2.jpg " alt="Events 2 " class="img-fluid ">
-              </div>
-              <h3><a href="# ">Events 2</a></h3>
-             
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 ">
-            <div class="hotel ">
-              <div class="hotel-img ">
-                <img src="../assets/images/hotels/3.jpg " alt="Events 3 " class="img-fluid ">
-              </div>
-              <h3><a href="# ">Events 3</a></h3>
-             
-            </div>
-          </div>
-
-                <div class="col-lg-3 col-md-6 ">
-            <div class="hotel ">
-              <div class="hotel-img ">
-                <img src="../assets/images/hotels/3.jpg " alt="Events 4 " class="img-fluid ">
-              </div>
-              <h3><a href="# ">Events 4</a></h3>
-             
-            </div>
-          </div>
-
-
-        </div>
-        <br>
-        <div class="row " style="text-align: center; ">
-
-          <div class="col-lg-3 col-md-6 ">
-            <div class="hotel ">
-              <div class="hotel-img ">
-                <img src="../assets/images/hotels/1.jpg " alt="Events 1 " class="img-fluid ">
-              </div>
-              <h3 "><a href="#">Events 1</a></h3>
-
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hotel">
-                            <div class="hotel-img">
-                                <img src="../assets/images/hotels/2.jpg" alt="Events 2" class="img-fluid">
-                            </div>
-                            <h3><a href="#">Events 2</a></h3>
-
+                      <div class="col-lg-3 col-md-6 ">
+                        <div class="hotel ">
+                          <div class="hotel-img ">
+                            <img src="../assets/images/hotels/2.jpg " alt="Events 2 " class="img-fluid ">
+                          </div>
+                          <h3><a href="# ">Events 2</a></h3>
+                         
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hotel">
-                            <div class="hotel-img">
-                                <img src="../assets/images/hotels/3.jpg" alt="Events 3" class="img-fluid">
-                            </div>
-                            <h3><a href="#">Events 3</a></h3>
-
+                      <div class="col-lg-3 col-md-6 ">
+                        <div class="hotel ">
+                          <div class="hotel-img ">
+                            <img src="../assets/images/hotels/3.jpg " alt="Events 3 " class="img-fluid ">
+                          </div>
+                          <h3><a href="# ">Events 3</a></h3>
+                         
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="hotel">
-                            <div class="hotel-img">
-                                <img src="../assets/images/hotels/3.jpg" alt="Events 4" class="img-fluid">
-                            </div>
-                            <h3><a href="#">Events 4</a></h3>
-
+                      <div class="col-lg-3 col-md-6 ">
+                        <div class="hotel ">
+                          <div class="hotel-img ">
+                            <img src="../assets/images/hotels/3.jpg " alt="Events 4 " class="img-fluid ">
+                          </div>
+                          <h3><a href="# ">Events 4</a></h3>
+                         
                         </div>
-                    </div>
-
-
+                      </div>
                 </div>
 
-
+            <br>
             </div>
-
-
-
         </div>
     </section>
 
@@ -311,6 +261,81 @@
 
     <!-- Template Main Javascript File -->
     <script src="../assets/js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var q = localStorage.getItem("token");
+            if(q)
+            {                
+                //var id=0;
+                $.ajax({
+                url:'../apis/user/auth/profile/profile.php',
+                data: "q="+q,
+                type: 'get',
+                    success:function(response)
+                    {
+                        response = JSON.parse(response);
+                        if(response.status=="success")
+                        {
+                            var id = response.result[0];
+                            var name = response.result[1];
+                            var email = response.result[4];
+                            var college = response.result[6];
+                            var qr_path = "../assets/images/qrcodes/"+id+".png";
+                            document.getElementById("participant_id").innerHTML="Inno ID : "+id;
+                            document.getElementById("participant_name").innerHTML="Name : "+name;
+                            document.getElementById("participant_email").innerHTML="Email : "+email;
+                            document.getElementById("participant_college").innerHTML="College : "+college;
+                            document.getElementById("qr_image").src =qr_path;
+                             $.ajax({
+                                url:'../apis/user/auth/profile/registeredEventDetails.php',
+                                data: "q="+id,
+                                type: 'get',
+                                    success:function(response1)
+                                    {
+                                        response1 = JSON.parse(response1);
+                                        if(response1.status=="success")
+                                        {
+                                            console.log(response1.result)
+                                            var num_of_events = response1.result.length; 
+                                            //console.log(num_of_events);
+                                            for(var i=0; i<num_of_events; i=i+4)
+                                            {
+                                                var j=i;
+                                                $( "#profile_events" ).append("<div class='row' style='text-align: center;'>");
+                                                for(var j=i; j<i+4; j=j+1)
+                                                {
+                                                    if(j>=num_of_events)
+                                                        break;
+                                                    else
+                                                    {
+                                                        $( "#profile_events" ).append("<div class='col-lg-3 col-md-6'>                  <div class='hotel'><div class='hotel-img'><img src='../assets/images/hotels/1.jpg' alt='Events 1' class='img-fluid'></div><h3><a href='#'>Events 1</a></h3></div></div>");
+                                                    }
+                                                }
+                                                $( "#profile_events" ).append("</div>")
+                                            }
+                                        }
+                                        if(response1.status=="failure")
+                                        {
+
+                                            
+                                        }             
+                                    }
+                                });
+                        }
+                        if(response.status=="failure")
+                        {
+                            window.location="./login.html"
+                        }             
+                    }
+                });
+               
+            }
+            else
+            {
+                window.location="./login.html"
+            }
+        });
+    </script>
 </body>
 
 </html>
