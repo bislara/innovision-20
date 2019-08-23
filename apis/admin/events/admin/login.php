@@ -1,11 +1,11 @@
 <?php
 
-    include('../../../vendor/autoload.php');
+    include('../../../../vendor/autoload.php');
     use \Firebase\JWT\JWT; 
     //id: CMS_Admin
     //pwd: 69c1b56e10615a06ed14779e3d9bd833
 
-    include('../../config.php');
+    include('../../../config.php');
     include('./config.php');
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {            

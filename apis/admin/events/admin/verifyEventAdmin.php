@@ -1,11 +1,11 @@
 
 <?php
 
-	include('../../vendor/autoload.php');
+	include('../../../../vendor/autoload.php');
     use \Firebase\JWT\JWT; 
 
-    include('../config.php');
-    include('../panels/cms/config.php');
+    include('./config.php');
+    include('../../../config.php');
 
     $secretKey = base64_decode(SECRET_KEY);
     
