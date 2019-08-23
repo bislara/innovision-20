@@ -23,6 +23,7 @@ $(document).on("click", "#createEvent", function () {
     var imge = $("#create_modal #fileToUpload").prop("files")[0];
     var loginId = $("#create_modal #LoginId").val().toString();
     var loginPassword = $("#create_modal #loginPassword").val().toString();
+    var max_limit = $("#create_modal #max_limit").val().toString();
 
 
     var formObj = new FormData();
@@ -45,6 +46,7 @@ $(document).on("click", "#createEvent", function () {
     formObj.append("fileToUpload", imge);
     formObj.append("loginId",loginId);
     formObj.append("loginPassword",loginPassword);
+    formObj.append("max_limit",max_limit);
     for (var key of formObj.entries()) {
         console.log(key[0] + ', ' + key[1]);
     }
