@@ -1,5 +1,7 @@
 <?php
 	include('../../db.php');
+	include('verifyCaAdmin.php');
+
 
 	if(isset($_POST["ca_id"]))
 	{
