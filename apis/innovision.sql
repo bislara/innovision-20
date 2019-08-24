@@ -7,6 +7,7 @@
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.39
 
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -88,6 +89,25 @@ INSERT INTO `ca_selection_responses` (`ca_applicant_id`, `q1`, `q2`, `q3`, `q4`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `college`
+--
+
+CREATE TABLE `college` (
+  `id` int(11) NOT NULL,
+  `college_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `college`
+--
+
+INSERT INTO `college` (`id`, `college_name`) VALUES
+(1, 'VSSUT, Burla'),
+(2, 'CET , Bhubaneswar');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -158,6 +178,7 @@ CREATE TABLE `users` (
   `phone` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `college` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `paid` int(11) NOT NULL DEFAULT '0',
   `checked_in` int(11) NOT NULL DEFAULT '0',
   `user_password` varchar(100) NOT NULL,
@@ -168,11 +189,70 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`inno_id`, `name`, `gender`, `phone`, `email`, `college`, `paid`, `checked_in`, `user_password`, `qr_code`) VALUES
-(1, 'John', '', 2147483647, 'meJohn@gmail.com', 'abcd', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/meJohn@gmail.com.png'),
-(2, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
-(3, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
-(4, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png');
+INSERT INTO `users` (`inno_id`, `name`, `gender`, `phone`, `email`, `college`, `address`, `paid`, `checked_in`, `user_password`, `qr_code`) VALUES
+(1, 'John', '', 2147483647, 'meJohn@gmail.com', 'abcd', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/meJohn@gmail.com.png'),
+(2, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
+(3, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
+(4, 'Peter', '', 2147483647, 'contactPeter@gmail.com', 'nit', '', 0, 0, '17765d0e02d3455a5ae299e7091e9217', '../qrcodes/contactPeter@gmail.com.png'),
+(8, 'Neelam', 'female', 2147483647, 'neelammahapatro36@gmail.com', 'CVR Hall, NIT Rourkela', 'CVR Hall, NIT Rourkela, Sector 1, Rourkela', 0, 0, '5f4dcc3b5aa765d61d8327deb882cf99', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ca_selection_responses`
+--
+ALTER TABLE `ca_selection_responses`
+  ADD PRIMARY KEY (`ca_applicant_id`),
+  ADD UNIQUE KEY `q2` (`q2`);
+
+--
+-- Indexes for table `college`
+--
+ALTER TABLE `college`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`eid`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`inno_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ca_selection_responses`
+--
+ALTER TABLE `ca_selection_responses`
+  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `college`
+--
+ALTER TABLE `college`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
 
 --
 -- Indexes for dumped tables
