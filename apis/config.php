@@ -5,7 +5,7 @@
     define('SECRET_KEY','Innovision');  /// secret key can be a random string and keep in secret from anyone
     define('ALGORITHM','HS512');
 
-    $tokenId    = base64_encode("Neelam");
+    $tokenId    = base64_encode(mcrypt_create_iv(32));
     $issuedAt   = time();
 
  
