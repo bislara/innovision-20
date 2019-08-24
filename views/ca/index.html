@@ -21,8 +21,8 @@
     <!-- ../assets/libraries CSS Files -->
     <link href="../../assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../../assets/lib/venobox/venobox.css" rel="stylesheet">
-    <link href="../../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<!--     <link href="../../assets/lib/venobox/venobox.css" rel="stylesheet">
+    <link href="../../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
 
     <!-- Main Stylesheet File -->
     <link href="../../assets/css/style.css" rel="stylesheet">
@@ -199,7 +199,7 @@
 
         <div align="center" role="tabpanel" class="col-md-10 offset-md-1 tab-pane fade show active" id="registration_inno" style="background-color: #0e1735;text-align: left;" >
                     <br>
-                    <form class="form-horizontal" action="" method="post">
+                    <form class="form-horizontal" method="post">
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
 
@@ -453,21 +453,21 @@
     <script src="../../assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Form JavaScript File -->
-    <script src="../../assets/js/contactform.js"></script>
+    <!-- <script src="../../assets/js/contactform.js"></script> -->
 
     <!-- Template Main Javascript File -->
     <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/sweetalert.js"></script>
-    <script src="../../assets/js/sweetalert.min.js"></script>
     <script src="../../assets/js/ajax/createCAapp.js"></script>
-    <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="../../assets/js/sweetalert.js"></script>
+    <!-- <script src="../../assets/js/sweetalert.min.js"></script> -->
+    <!-- <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
     
   
     <script type="text/javascript">
       
       $(document).ready(function(){
             $.ajax({
-                url:'../../apis/CollegeList/readCollege.php',
+                url:'../../apis/misc/CollegeList/readCollege.php',
                 type: 'get',
                 success:function(response)
                 {
@@ -499,7 +499,7 @@
         $('#q4s').on('click', function(){
           var data=$("#q4s").val();
           if (data=='Others') {
-            console.log("bi")
+            // console.log("bi")
             $('#choose_clg').css("display","none")
             $('#enter_clg').css("display","block")
           } 

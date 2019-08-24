@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $.ajax({
     type: "POST",
-    url: "../../../apis/panels/CASelection/displayResponses.php",
+    url: "../../../apis/admin/ca/displayResponses.php",
     data: {
       token : localStorage.ca_token
     },
