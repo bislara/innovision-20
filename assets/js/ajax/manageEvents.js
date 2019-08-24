@@ -46,6 +46,9 @@ $(document).on("click", "#update", function() {
         beforeSend: function(request){
             request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
         },
+        data:{
+            eid:eid
+        },
         url: "../../../apis/admin/events/admin/fetchIndividualEvent.php?q=" + eid,
         success: function(data) {
             console.log(data);
@@ -104,25 +107,7 @@ $(document).on("click", "#submit_it", function () {
     console.log("update");
     const myForm = document.getElementById('updateEvents');
     var formObj = new FormData(myForm);
-     formObj.append("eid",$("#updateEvents").find("#eid")[0].attributes["value"].value.toString());
-    // formObj.append("title",$("#update_modal #title").val().toString());
-    // formObj.append("description",$("#update_modal #desc").val().toString());
-    // formObj.append("rules",$("#update_modal #rules").val().toString());
-    // formObj.append("judging_criteria",$("#update_modal #jc").val().toString());
-    // formObj.append("date",$("#update_modal #date").val().toString());
-    // formObj.append("time",$("#update_modal #time").val().toString());
-    // formObj.append("date1",$("#update_modal #date1").val().toString());
-    // formObj.append("time1",$("#update_modal #time1").val().toString());
-    // formObj.append("venue",$("#update_modal #venue").val().toString());
-    // formObj.append("category",$("#update_modal #category").val().toString());
-    // formObj.append("coordinatorName1",$("#update_modal #full_name_1").val().toString());
-    // formObj.append("coordinatorContact1",$("#update_modal #contact_1").val().toString());
-    // formObj.append("coordinatorName2",$("#update_modal #full_name_2").val().toString());
-    // formObj.append("coordinatorContact2",$("#update_modal #contact_2").val().toString());
-    // formObj.append("token",localStorage.cms_token);
-    // formObj.append("loginId",$("#update_modal #loginId").val().toString());
-    // formObj.append("loginPassword",$("#update_modal #loginPassword").val().toString());    
-    // formObj.append("max_limit",$("#update_modal #max_limit").val().toString());    
+     formObj.append("eid",$("#updateEvents").find("#eid")[0].attributes["value"].value.toString());    
      formObj.append("fileToUpload",$("#update_modal #fileToUpload").prop("files")[0]);
     console.log(formObj.getAll('fileToUpload'));
     

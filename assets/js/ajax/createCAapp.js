@@ -14,15 +14,15 @@ $(document).on("click", ".submitform", function () {
                 college_name = $("#q4s").val().toString();
             }
     }
-   
-    // console.log($("#q4").val());
+
+    console.log($("#q4").val());
     if ($("#q1").val().toString().localeCompare("") == 0 || $("#q2").val().toString().localeCompare("") == 0 || $("#q3").val().toString().localeCompare("") == 0 || college_name.localeCompare("") == 0 || $("#q5").val().toString().localeCompare("") == 0 || $("#q6").val().toString().localeCompare("") == 0 || $("#q7").val().toString().localeCompare("") == 0 || $("#q8").val().toString().localeCompare("") == 0 || $("#q9").val().toString().localeCompare("") == 0 || $("#q10").val().toString().localeCompare("") == 0 || $("#q11").val().toString().localeCompare("") == 0 || $("#q12").val().toString().localeCompare("") == 0 || $("#q13").val().toString().localeCompare("") == 0 || $("#q14").val().toString().localeCompare("") == 0) {
         swal("Fill Up All The Fields", ":|", "warning");
     }
     else {
         $.ajax({
             type: "POST",
-            url: "../../apis/CASelectionApplication/createCAApplication.php",
+            url: "../../apis/user/ca/createCAApplication.php",
             data: {
                 q1: $("#q1").val().toString(),
                 q2: $("#q2").val().toString(),
@@ -41,7 +41,8 @@ $(document).on("click", ".submitform", function () {
             },
             success: function (data) {
                 if (JSON.parse(data).status == "success") {
-                    // alert("hi lara");
+                    // console.log(data);
+                // }
                     if (JSON.parse(data).result=="successful entry") {
                     swal("Registration Successful !", ": )", "success");
 
@@ -49,16 +50,16 @@ $(document).on("click", ".submitform", function () {
                     if ($("#q4s").val().localeCompare("Others") == 0) {
                         $.ajax({
                             type: "POST",
-                            url: "../../apis/CollegeList/others/create.php",
+                            url: "../../apis/misc/CollegeList/others/create.php",
                             data: {
-                                college: $("#q4i").val().toString()
+                                cname: $("#q4i").val().toString()
                             },
                             success: function (data) {
                                 // swal("Good job!", "College Added", "success");
                             }
                         });
                     }
-                    successAlert();
+                    // successAlert();
                     swal({icon: "success", 
                         title: "Successfully registered",
                         text: ":)",
@@ -75,7 +76,7 @@ $(document).on("click", ".submitform", function () {
                     location.reload(true);
                 }
                 else {
-                    failureAlert(JSON.parse(data));
+                    // failureAlert(JSON.parse(data));
                     // swal({icon: "error", 
                     //     title: JSON.parse(data).status,
                     //     text: JSON.parse(data).result,
@@ -89,7 +90,7 @@ $(document).on("click", ".submitform", function () {
                     //         break;
                     //     }
                     // });
-                    // //swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
+                    swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
                 }
             },
             error: function (data) {
@@ -113,4 +114,5 @@ $(document).on("click", ".submitform", function () {
 
         });
     }
+    // return false;
 });

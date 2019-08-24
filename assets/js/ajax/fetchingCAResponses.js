@@ -1,12 +1,12 @@
 $(document).ready(function(){
   $.ajax({
     type: "POST",
-    url: "../../../apis/panels/CASelection/displayResponses.php",
-    data: {
-      token : localStorage.ca_token
+    url: "../../../apis/admin/ca/displayResponses.php",
+    beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
     },
     success: function (data) {
-        
+        console.log(data);
         var data_obj = JSON.parse(data);
         // console.log(data_obj);
         if(data_obj.status == "success")

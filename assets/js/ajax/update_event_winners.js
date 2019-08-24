@@ -14,10 +14,12 @@ $(document).on("click", ".submit_button", function () {
                 //ajax
                 $.ajax({
                     type: "POST",
-                    url: "../../../apis/events/certificate.php",
+                    url: "../../../apis/admin/events/coordinator/certificate.php",
+                    beforeSend: function(request){
+                        request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+                    },
                     data: {
-                        id: localStorage.loginid,
-                        password: localStorage.password,
+                        jwt:localStorage.jwt,
                         winner: $("#winners").val().toString(),
                         runner: $("#runners").val().toString()
                     },

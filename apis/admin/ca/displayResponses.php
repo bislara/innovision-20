@@ -1,6 +1,8 @@
 <?php
 
 	include('../../db.php');
+	include('verifyCaAdmin.php');
+
 
 	if($_SERVER["REQUEST_METHOD"] === "POST" ) {
 		

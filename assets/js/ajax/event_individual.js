@@ -1,13 +1,15 @@
-
+var url = location.href;
+var eid = url.split("?")[1].split("=")[1];
 $(document).ready(function () {
-	var url = location.href;
-    var eid = url.split("?")[1].split("=")[1];
+	
+	//eid = url.split("?")[1].split("=")[1];
 	if (eid == null || eid == "" || !eid) {
 		alert("Problem fetching the event details!");
+		window.location.href('eventsSection.html');
 	} else {
 		$.ajax({
 			type: "GET",
-			url: "../apis/admin/events/fetchIndividualEvent.php?eid=" + eid,
+			url: "../apis/admin/events/admin/fetchIndividualEvent.php?eid=" + eid,
 			success: function (data) {			
 				var dataArray = JSON.parse(data);
 				if (dataArray["status"] == "success") {
@@ -60,6 +62,8 @@ $(document).on("click", ".register", function () {
 	// alert("hi lara");
 	// localStorage.innoID = 3;
 	// console.log(localStorage.innoID);
+	eid = url.split("?")[1].split("=")[1];
+	console.log(localStorage.innoID);	
 	if (localStorage.innoID == null || localStorage.innoID == "" || !(localStorage.innoID)) {
 		swal("Please Login First to register.", ": [", "warning");
 	} else {

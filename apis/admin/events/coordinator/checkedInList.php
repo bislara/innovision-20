@@ -1,6 +1,15 @@
 <?php
 
-	include('../../db.php');
+	include('../../../db.php');
+	include('./verifyAdmin.php');
+	//verify Admin Credentials
+	if(isset($login_id)&&isset($login_pwd)){
+		$auth_verify=mysqli_query($conn,"SELECT * FROM events WHERE loginId='".$login_id."' AND loginPassword='".$login_pwd."'");
+		if(mysqli_num_rows($auth_verify)==0){
+			echo(json_encode(array('status' => 'failure', 'result' => 'Invalid Credentials')));	
+			return;		
+		}
+	}
 
 	$eid = $_GET["q"];
 
