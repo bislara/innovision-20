@@ -1,7 +1,7 @@
 <?php
 
 	include('../../../db.php');
-
+	include('./verifyEventAdmin.php');
 	$eid = $_GET['q'];
 
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != "") {

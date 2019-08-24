@@ -30,17 +30,17 @@
                 $status = "success";
             } else {
 
-                echo(json_encode(array('status' => 'failure', 'result' => 'unauthorised access')));
+                 return json_encode(array('status' => 'failure', 'result' => 'unauthorised access'));
             }
     		
     	} catch (Exception $e) {
     		
-    		echo(json_encode(array('status' => 'failure', 'resultt' => $e->getMessage())));
+    		 return json_encode(array('status' => 'failure', 'resultt' => $e->getMessage()));
     	}
 
     } else {
 
-    	echo(json_encode(array('status' => 'failure', 'result' => 'token missing'))); 
+    	 return json_encode(array('status' => 'failure', 'result' => 'token missing'));
 	}
 
 ?>
