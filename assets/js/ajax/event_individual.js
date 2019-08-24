@@ -1,12 +1,13 @@
-var url = location.href;
-var eid = url.split("?")[1].split("=")[1];
+
 $(document).ready(function () {
+	var url = location.href;
+    var eid = url.split("?")[1].split("=")[1];
 	if (eid == null || eid == "" || !eid) {
 		alert("Problem fetching the event details!");
 	} else {
 		$.ajax({
 			type: "GET",
-			url: "../apis/events/fetchIndividualEvent.php?eid=" + eid,
+			url: "../apis/admin/events/fetchIndividualEvent.php?eid=" + eid,
 			success: function (data) {			
 				var dataArray = JSON.parse(data);
 				if (dataArray["status"] == "success") {
@@ -64,7 +65,7 @@ $(document).on("click", ".register", function () {
 	} else {
 		$.ajax({
 			type: "POST",
-			url: "../apis/events/eventRegistration.php",
+			url: "../apis/user/eventRegistration.php",
 			data: {
 				innoID: localStorage.innoID,
 				eid: eid

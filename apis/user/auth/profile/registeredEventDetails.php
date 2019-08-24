@@ -22,7 +22,7 @@
 				$result = array();
 				while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
-		    		$query2 = mysqli_query($conn, "SELECT title, date, venue, time FROM events where eid =".$res["event_id"]);
+		    		$query2 = mysqli_query($conn, "SELECT eid, title, date, venue, time, image_path FROM events where eid =".$res["event_id"]);
 		    		if ($query2) {
 
 		    			$result[] = mysqli_fetch_array($query2);
