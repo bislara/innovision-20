@@ -1,15 +1,20 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
+        beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+        },
         url: "../../../apis/admin/events/coordinator/checkedInList.php?q=" + localStorage.eid,
         success: function (data) {
             //console.log(data);
-            if(JSON.parse(data).status==="failure")
+            data=JSON.parse(data);
+            console.log(data);
+            if(data.status==="failure")
                 window.location.assign("index.html");
-            var d = JSON.parse(data).result;            
+            data=data.result;
             var temp = '';
-            for (var i = 0; i < d.length; i++) {
-                temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + d[i].inno_id + '</td><td>' + d[i].name + '</td><td>' + d[i].phone + '</td><td>' + d[i].email + '</td><td>' + d[i].college + '</td></tr>';
+            for (var i = 0; i < data.length; i++) {
+                temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td></tr>';
             }
             $("#cil").append(temp);
         },

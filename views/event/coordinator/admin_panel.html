@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/lib/bootstrap/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
     <script src="../../../assets/lib/jquery/jquery.min.js"></script>
 </head>
@@ -174,9 +174,6 @@
             window.location.assign("./index.html");
         });
         $(document).ready(function() {
-            if (!(localStorage.loginid) || !(localStorage.password)) {
-                window.location.assign("./index.html");
-            }
             if (localStorage.bool == 1) {
                 $("#result").html("<h1>You Have Submitted !!!</h1>")
             }
