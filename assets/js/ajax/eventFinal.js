@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$.ajax({
 		type: "GET",
-		url: "../apis/events/fetchAllEvents.php",
+		url: "../apis/admin/events/admin/fetchAllEvents.php",
 		success: function (data) {
 			var dataArray = JSON.parse(data);
 			if (dataArray["status"] == "success") {
