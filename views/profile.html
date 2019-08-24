@@ -118,7 +118,7 @@
             </div>
 
             <div class="container" id="profile_events">
-                <div class="row" style="text-align: center;">
+                <!--<div class="row" style="text-align: center;">
 
                     <div class="col-lg-3 col-md-6">
                         <div class="hotel">
@@ -160,8 +160,8 @@
                         </div>
                       </div>
                 </div>
-
-            <br>
+            -->
+            
             </div>
         </div>
     </section>
@@ -261,81 +261,7 @@
 
     <!-- Template Main Javascript File -->
     <script src="../assets/js/main.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            var q = localStorage.getItem("token");
-            if(q)
-            {                
-                //var id=0;
-                $.ajax({
-                url:'../apis/user/auth/profile/profile.php',
-                data: "q="+q,
-                type: 'get',
-                    success:function(response)
-                    {
-                        response = JSON.parse(response);
-                        if(response.status=="success")
-                        {
-                            var id = response.result[0];
-                            var name = response.result[1];
-                            var email = response.result[4];
-                            var college = response.result[6];
-                            var qr_path = "../assets/images/qrcodes/"+id+".png";
-                            document.getElementById("participant_id").innerHTML="Inno ID : "+id;
-                            document.getElementById("participant_name").innerHTML="Name : "+name;
-                            document.getElementById("participant_email").innerHTML="Email : "+email;
-                            document.getElementById("participant_college").innerHTML="College : "+college;
-                            document.getElementById("qr_image").src =qr_path;
-                             $.ajax({
-                                url:'../apis/user/auth/profile/registeredEventDetails.php',
-                                data: "q="+id,
-                                type: 'get',
-                                    success:function(response1)
-                                    {
-                                        response1 = JSON.parse(response1);
-                                        if(response1.status=="success")
-                                        {
-                                            console.log(response1.result)
-                                            var num_of_events = response1.result.length; 
-                                            //console.log(num_of_events);
-                                            for(var i=0; i<num_of_events; i=i+4)
-                                            {
-                                                var j=i;
-                                                $( "#profile_events" ).append("<div class='row' style='text-align: center;'>");
-                                                for(var j=i; j<i+4; j=j+1)
-                                                {
-                                                    if(j>=num_of_events)
-                                                        break;
-                                                    else
-                                                    {
-                                                        $( "#profile_events" ).append("<div class='col-lg-3 col-md-6'>                  <div class='hotel'><div class='hotel-img'><img src='../assets/images/hotels/1.jpg' alt='Events 1' class='img-fluid'></div><h3><a href='#'>Events 1</a></h3></div></div>");
-                                                    }
-                                                }
-                                                $( "#profile_events" ).append("</div>")
-                                            }
-                                        }
-                                        if(response1.status=="failure")
-                                        {
-
-                                            
-                                        }             
-                                    }
-                                });
-                        }
-                        if(response.status=="failure")
-                        {
-                            window.location="./login.html"
-                        }             
-                    }
-                });
-               
-            }
-            else
-            {
-                window.location="./login.html"
-            }
-        });
-    </script>
+    <script src="../assets/js/ajax/user_profile_read.js"></script>
 </body>
 
 </html>

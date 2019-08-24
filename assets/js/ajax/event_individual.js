@@ -1,9 +1,8 @@
 var url = location.href;
-var eid;
-
+var eid = url.split("?")[1].split("=")[1];
 $(document).ready(function () {
 	
-	eid = url.split("?")[1].split("=")[1];
+	//eid = url.split("?")[1].split("=")[1];
 	if (eid == null || eid == "" || !eid) {
 		alert("Problem fetching the event details!");
 		window.location.href('eventsSection.html');
