@@ -1,6 +1,7 @@
 <?php
 
 	include('../../db.php');
+	include('verifyCaAdmin.php');
 
 	$ca_id = $_GET['ca_id'];
 
