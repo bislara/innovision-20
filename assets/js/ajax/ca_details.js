@@ -6,7 +6,7 @@ $(document).ready(function () {
 	} else {
 		$.ajax({
 			type: "GET",
-			url: "../../../apis/panels/CASelection/fetchIndividualCA.php?ca_id=" + ca_id,
+			url: "../../../apis/admin/ca/fetchIndividualCA.php?ca_id=" + ca_id,
 			success: function (data) {			
 				var dataArray = JSON.parse(data);
 				if (dataArray["status"] == "success") {
@@ -29,8 +29,6 @@ $(document).ready(function () {
 					}
 					$('#accept_ca').html(submit_ca);
 
-
-
 				}
 			}
 		});
@@ -41,7 +39,7 @@ $('#accept_ca').click(function () {
 
 		$.ajax({
 			type: "POST",
-			url: "../../../apis/panels/CASelection/CASelect.php",
+			url: "../../../apis/admin/ca/CASelect.php",
 			data: {
 				ca_id: ca_id
 			},

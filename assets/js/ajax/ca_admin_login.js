@@ -2,7 +2,7 @@ $(document).on("click", ".submit", function () {
         	//console.log($("#pwd").val());
             $.ajax({
                 type: "POST",
-                url: "../../../apis/panels/CASelection/login.php",
+                url: "../apis/admin/events/admin/login.php",
                 data: {
                     username: $("#id").val().toString(),
                     password: $("#pwd").val().toString()
