@@ -1,6 +1,6 @@
 <?php
 
-    include('../db.php');
+    include('../../../db.php');
 
         if( isset($_POST['loginid']) && isset($_POST['password'])) {
             $query = mysqli_query($conn, "SELECT * FROM events WHERE loginId='".mysqli_real_escape_string($conn, $_POST['loginid'])."' AND loginPassword='".mysqli_real_escape_string($conn, $_POST['password'])."'");

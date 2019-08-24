@@ -1,7 +1,7 @@
 $(document).on("click", ".submit", function () {
     $.ajax({
         type: "POST",
-        url: "../../../apis/events/login.php",
+        url: "../../../apis/admin/events/coordinator/login.php",
         data: {
             loginid: $("#id").val().toString(),
             password: $("#pwd").val().toString()

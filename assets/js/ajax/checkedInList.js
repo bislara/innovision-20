@@ -1,9 +1,11 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "../../../apis/panels/eventCoordinator/checkedInList.php?q=" + localStorage.eid,
+        url: "../../../apis/admin/events/coordinator/checkedInList.php?q=" + localStorage.eid,
         success: function (data) {
-            console.log(data);
+            //console.log(data);
+            if(JSON.parse(data).status==="failure")
+                window.location.assign("index.html");
             var d = JSON.parse(data).result;            
             var temp = '';
             for (var i = 0; i < d.length; i++) {
