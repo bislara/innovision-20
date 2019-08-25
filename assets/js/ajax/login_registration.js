@@ -1,6 +1,6 @@
  $(document).ready(function(){
-        if(localStorage.getItem("token") != null)
-            window.location="./profile.html"
+        //if(localStorage.getItem("token") != null)
+          //  window.location="./profile.html"
             $('#college_add').hide();
             $.ajax({
                 url:'../apis/misc/CollegeList/readCollege.php',
@@ -59,8 +59,9 @@
                 type: 'post',
                 success:function(response)
                 {
-                    var response = JSON.parse(response);
+                    
                     console.log(response);
+                    var response = JSON.parse(response);
                     if(response.status == "success"){
                          localStorage.setItem("token", response.result);
                         window.location='./profile.html';
