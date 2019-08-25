@@ -68,7 +68,7 @@
         </div>
     </header>
     <!-- #header -->
-
+    <!--Dummy header-->
     <!--==========================
     Login and Registration Section
   ============================-->
@@ -93,6 +93,7 @@
                 <!-- Schdule Day 1 -->
                 <div role="tabpanel" class="col-lg-7 tab-pane fade show active" id="registration" style="background-color: #0e1735;">
                     
+                  <div id="error"></div>
                     <form class="form-horizontal" action="" method="post">
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
@@ -126,6 +127,15 @@
 
                                 <select name="college" id="college" class="col-sm-12 form-control">
                                 </select>
+                                <!--<input type="text" class="form-control" id="college" placeholder="Enter College" name="college">-->
+                            </div>
+                        </div>
+                        <div class="form-group" id="college_add">
+                            <label class="control-label col-sm-2" for="college" style="color:white">College:</label>
+                            <div>
+
+                                <input type="text" class="form-control" id="new_college" placeholder="Enter Your College Name" name="college_add">
+
                                 <!--<input type="text" class="form-control" id="college" placeholder="Enter College" name="college">-->
                             </div>
                         </div>
@@ -177,16 +187,12 @@
                             </div>
                         </div>
 
-                    </form>
-
                 </div>
                 <!-- End Schdule Day 1 -->
 
                 <!-- Schdule Day 2 -->
                 <div role="tabpanel" class="col-lg-7  tab-pane fade" id="login" style="background-color: #0e1735;" align="center">
-
-                    <form class="form-horizontal" action="" method="post">
-
+                        <div id="error1"></div>
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email" style="color:white">Email:</label>
                             <div class="col-sm-12">
@@ -208,15 +214,14 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
-                                <!-- <a href="#" class="about-btn scrollto signin">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br> -->
-                                <button id="signin" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
+
+                                <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
+                                <button id="login_button" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
                                 
-                                <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
 
                             </div>
 
                         </div>
-                    </form>
 
                 </div>
                 <!-- End Schdule Day 2 -->
@@ -323,114 +328,8 @@
     <!-- Template Main Javascript File -->
     <script src="../assets/js/main.js"></script>
     <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script>
-     <script type="text/javascript">
-    $(document).ready(function(){
-            $.ajax({
-                url:'../apis/CollegeList/readCollege.php',
-                type: 'get',
-                success:function(response)
-                {
-                    response = JSON.parse(response)
-                    if(response.status=="success")
-                    {
-                        // console.log(response.result)
-                        for(var i=0; i<response.result.length; i=i+1)
-                        {
-                            var x = document.getElementById("college");
-                              var option = document.createElement("option");
-                              option.text = response.result[i].college_name;
-                              option.value = response.result[i].college_name;
-                              x.add(option);
-                        }
-                    }             
-                }
-            });
-        $("#phone").focusout(function(){
-            var phone=$("#phone").val();
-            if(phone.length != 10){
-                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid phone number</strong></center></div>");
-            }
-            else{
-                $("#error").html("<div style=\"color:#4dff88;height:40px;padding : 10px;\"><strong><center>Valid phone number</strong></center></div>");
-            }   
-        });
-    
-        $(document).on("click", ".signin", function () {
-         // $('#signin').on('click', function(){
-         console.log("Here")      
-        var mail=$("#login_email").val();
-        var passw=$("#login_password").val();   
-            console.log(mail);
-            console.log(passw);
-            $.ajax({
-                url:'../apis/participantRegistration/login.php',
-                data:"email="+mail+"&password="+passw,
-                type: 'post',
-                success:function(response)
-                {
-                    var response = JSON.parse(response);
-                    console.log(response);
-                    if(response.status == "success"){
-                          console.log(response.result)
-                   }
-                  else if(response.status=="failure"){
-                    $("#error").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
-                  }               
-              }
-              });
-        });
-
-        $('#signup').on('click', function(){ 
-            var gender =  $('input[name=gen]:checked', '#gender').val(); 
-            var e = document.getElementById("college");
-            var college_name_input = e.options[e.selectedIndex].value;
-            var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
-            if($("#password").val() != $("#cpassword").val())
-            {
-                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Confirm your password</center></strong></div>");
-            }
-            else
-            {
-                $.ajax({
-                    url: '../apis/participantRegistration/registration.php',
-                    data:user_data,
-                    type: 'post',
-                    success: function(response) {
-                        /*var response = JSON.parse(response);
-                        console.log(response);*/
-                        if(response.status=="success")
-                            console.log(response.result);
-                        else
-                        {
-                            $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
-                            // console.log(response.result);
-                        }
-                   }
-                });
-            }
-        });
-        $("#email").focusout(function(){
-            var email=$("#email").val();
-            var atpos = email.indexOf("@");
-            var dotpos = email.lastIndexOf(".");  
-            var link_email = "email="+email;
-            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length) {
-                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid email address</center></strong></div>");
-                    return false;
-            }
-            else{
-                $.ajax({
-                url: '../apis/participantRegistration/check_email.php',
-                type: 'post',
-                data:link_email,
-                    success: function(response) {
-                    $("#error").html(response);
-                    }
-                });
-            }
-        });
-    });
-    </script>
+    <script src="../assets/js/sweetalert.js"></script>
+     <script src="../assets/js/ajax/login_registration.js"> </script>
 </body>
 
 </html>
