@@ -5,6 +5,43 @@
     <link rel="stylesheet" href="../../assets/lib/bootstrap/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
     <script src="../../assets/lib/jquery/jquery.min.js"></script>
+    <style>
+        .x{
+            background-color: white; 
+            text-align: center;
+            height: 300px;
+            width: 800px;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
+
+
+        }
+        .y{
+            text-align: center;
+            height: 30px;
+            width: 300px;
+        }
+        .search{
+            text-align: center;
+            margin: 10px;
+        }
+        .z{
+            height: 30px;
+            width: 100px;
+            border: none;
+            color: #000;
+            background: #FBC02D;
+            border-radius: 3px;
+            margin: 20px;
+
+
+        }
+       
+        
+
+
+    </style>
 </head>
 
 <body style="background-color: #FBC02D;padding: 2em;">
@@ -61,10 +98,21 @@
             </table>
         </div>
     </div>
+
     <div class="row">
         <div class="col-sm-2"><button type="button" class="btn btn-info submit_button" style="margin-top: 2em;">Submit</button>
         </div>
-        <div class="col-sm-8"></div>
+        <div class="col-sm-8"><br><br>
+            <div class="x">
+                <div class="search" style="margin: 30px;"><br>
+                    <input type="email" class="form-control" placeholder="search..">
+                    <button class="z">search</button>
+                    <button class="z">Update</button>
+            
+
+                 </div>
+            </div>
+        </div>
         <div class="col-sm-2"><button type="button" class="btn btn-info logout_button" style="margin-top: 2em;">Sign Out</button></div>
     </div>
     <!-- <script src="../assets/"></script> -->
