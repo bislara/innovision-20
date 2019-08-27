@@ -155,7 +155,7 @@ h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
-  background: rgba(6, 12, 34, 0.98);
+  background: rgba(6, 12, 34, 0.85);
 }
 
 #header.header-scrolled,
@@ -180,7 +180,7 @@ h6 {
 #header #logo h1 span {
   font-size: 1.6rem;
   font-weight: 800;
-  background:  -webkit-linear-gradient(45deg, #28c3d4, #f82249);
+  background:  -webkit-linear-gradient(45deg, #13b1cd, #f82249);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -191,7 +191,7 @@ h6 {
 }
 
 #header #logo img {
-  padding: 0 0 5px 0;
+  padding: 0 0 7px 0;
   margin: 0 10px 0 0;
   max-height: 55px;
 }
@@ -500,7 +500,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../images/intro-bg.jpg) top center;
+  background: url(../images/space-odessey.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -691,6 +691,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   position: relative;
   color: #fff;
   padding: 60px 0 40px 0;
+  margin-bottom: 10px;
 }
 
 #about:before {
@@ -1494,6 +1495,33 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #e0072f;
 }
 
+/* ============ */
+
+#quotes{
+  background-color: rgba(6, 12, 34, 0.8);
+  text-align: center;
+  padding: 50px;
+}
+
+#quotes em {
+  color: #fff;
+}
+
+.quote-text{
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.quote-image{
+  margin: 20px;
+  width: 10%;
+  border-radius: 40%;
+}
+
+
+/* ============ */
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1524,7 +1552,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info img {
-  height: 40px;
+  width: 50%;
   margin-bottom: 10px;
 }
 
@@ -1764,5 +1792,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 460px) {
   #subscribe button {
     margin-top: 10px;
+  }
+
+  #quotes img {
+    width: 50%;
+  }
+  #quotes h2 {
+    font-size: 1.3rem;
   }
 }
