@@ -178,7 +178,11 @@ h6 {
 }
 
 #header #logo h1 span {
-  color: #f82249;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background:  -webkit-linear-gradient(45deg, #28c3d4, #f82249);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #header #logo h1 a,
@@ -187,9 +191,9 @@ h6 {
 }
 
 #header #logo img {
-  padding: 0;
-  margin: 0;
-  max-height: 50px;
+  padding: 0 0 5px 0;
+  margin: 0 10px 0 0;
+  max-height: 55px;
 }
 
 /*--------------------------------------------------------------
@@ -1696,7 +1700,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   #header {
     background: rgba(6, 12, 34, 0.98);
     height: 70px;
-    padding: 15px 0;
+    padding: 10px 0;
     transition: all 0.5s;
   }
 
