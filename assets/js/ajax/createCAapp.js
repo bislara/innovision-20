@@ -1,3 +1,89 @@
+$(document).ready(function () {
+    
+    var ca_id= localStorage.token;
+
+    if (ca_id == null || ca_id == "" || !ca_id) {
+        alert("Problem fetching the CA details!");
+        window.location.href('profile.html');
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "../../apis/user/ca/fetchCA_user.php",
+            data : {
+                token : ca_id
+            },
+            success: function (data) {  
+
+                var dataArray = JSON.parse(data);
+                console.log(dataArray);
+                if (dataArray["status"] == "success") { 
+                    var eventArr = dataArray["result"];
+
+                    var q1=eventArr["q1"];
+                    $('#q1').val(q1);
+                    
+                    var q2=eventArr["q2"];
+                    $('#q2').val(q2);
+
+                    var q3=eventArr["q3"];
+                    $('#q3').val(q3);
+
+                    var q4=eventArr["q4"];
+                    $('#q4s').val(q4);
+
+                    var q5=eventArr["q5"];
+                    $('#q5').val(q5);
+
+                    var q6=eventArr["q6"];
+                    $('#q6').val(q6);
+
+                    var q7=eventArr["q7"];
+                    $('#q7').val(q7);
+
+                    var q8=eventArr["q8"];
+                    $('#q8').val(q8);
+
+                    var q9=eventArr["q9"];
+                    $('#q9').val(q9);
+
+                    var q10=eventArr["q10"];
+                    $('#q10').val(q10);
+
+                    var q11=eventArr["q11"];
+                    $('#q11').val(q11);
+
+                    var q12=eventArr["q12"];
+                    $('#q12').val(q12);
+
+                    var q13=eventArr["q13"];
+                    $('#q13').val(q13);
+
+                    var q14=eventArr["q14"];
+                    $('#q14').val(q14);
+                    
+                }
+                else if(dataArray["status"]=="new CA")
+                {
+                    var eventArr = dataArray["result"];
+
+                    var q1=eventArr["name"];
+                    $('#q1').val(q1);
+                    
+                    var q2=eventArr["email"];
+                    $('#q2').val(q2);
+
+                    var q3=eventArr["phone"];
+                    $('#q3').val(q3);
+
+                    var q4=eventArr["college"];
+                    $('#q4s').val(q4);
+
+                }
+            }
+        });
+    } 
+});
+
 $(document).on("click", ".submitform", function () {
     var college_name = "";
     if($("#q4s").val().localeCompare("select") == 0)
@@ -5,7 +91,7 @@ $(document).on("click", ".submitform", function () {
         swal("Choose College",":|","warning");
     }
     else
-    {
+    { 
          if ($("#q4s").val().localeCompare("Others") == 0) {
         college_name = $("#q4i").val().toString();
         }
@@ -114,5 +200,5 @@ $(document).on("click", ".submitform", function () {
 
         });
     }
-    // return false;
+    return false;
 });

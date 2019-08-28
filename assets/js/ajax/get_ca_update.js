@@ -12,7 +12,7 @@ $(document).ready(function () {
 			url: "../../apis/user/ca/fetchCA_user.php?ca_id=" + ca_id,
 			success: function (data) {			
 				var dataArray = JSON.parse(data);
-				if (dataArray["status"] == "success") {
+				if (dataArray["status"] == "success") { 
 					var eventArr = dataArray["result"];
 
 					var q1=eventArr["q1"];

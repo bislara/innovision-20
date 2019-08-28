@@ -456,15 +456,21 @@
     <!-- <script src="../../assets/js/contactform.js"></script> -->
 
     <!-- Template Main Javascript File -->
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/ajax/createCAapp.js"></script>
-    <script src="../../assets/js/sweetalert.js"></script>
+   
     <!-- <script src="../../assets/js/sweetalert.min.js"></script> -->
     <!-- <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
     
   
     <script type="text/javascript">
       
+      $(document).ready(function() {
+            if (!(localStorage.token))
+                {
+                    swal("Login First to apply for CA.", ":(", "error");
+                    window.location.assign("../login.html");
+                }
+        });
+
       $(document).ready(function(){
             $.ajax({
                 url:'../../apis/misc/CollegeList/readCollege.php',
@@ -508,5 +514,8 @@
 
     </script>
 
+     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/ajax/createCAapp.js"></script>
+    <script src="../../assets/js/sweetalert.js"></script>        
 
 </html>
