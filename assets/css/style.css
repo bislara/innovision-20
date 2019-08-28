@@ -155,7 +155,7 @@ h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
-  background: rgba(6, 12, 34, 0.98);
+  background: rgba(6, 12, 34, 0.85);
 }
 
 #header.header-scrolled,
@@ -178,7 +178,11 @@ h6 {
 }
 
 #header #logo h1 span {
-  color: #f82249;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background:  -webkit-linear-gradient(45deg, #13b1cd, #f82249);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #header #logo h1 a,
@@ -187,9 +191,9 @@ h6 {
 }
 
 #header #logo img {
-  padding: 0;
-  margin: 0;
-  max-height: 50px;
+  padding: 0 0 7px 0;
+  margin: 0 10px 0 0;
+  max-height: 55px;
 }
 
 /*--------------------------------------------------------------
@@ -496,7 +500,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../images/intro-bg.jpg) top center;
+  background: url(../images/space-odessey.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -1490,9 +1494,46 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #e0072f;
 }
 
+/* ============ */
+
+#quotes{
+  position: relative;
+  text-align: center;
+  padding: 20px 20px 100px 20px;
+}
+
+#quotes em {
+  color: #a5a9b3;
+}
+
+.quote-text{
+  padding-left: 200px;
+  padding-right: 200px;
+  color: #0e1b4d;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.quote-image{
+  margin: 20px;
+  width: 20%;
+  border-radius: 40%;
+}
+
+#quotes .play-btn {
+  width: 40%;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+/* ============ */
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 #footer {
   background: #101522;
   padding: 0 0 25px 0;
@@ -1502,7 +1543,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer .footer-top {
   background: #040919;
-  padding: 60px 0 30px 0;
+  padding: 60px 0 40px 0;
 }
 
 #footer .footer-top .footer-info {
@@ -1520,7 +1561,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info img {
-  height: 40px;
+  width: 50%;
   margin-bottom: 10px;
 }
 
@@ -1680,6 +1721,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   #subscribe {
     background-attachment: fixed;
   }
+
+  .quote-text {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -1696,7 +1743,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   #header {
     background: rgba(6, 12, 34, 0.98);
     height: 70px;
-    padding: 15px 0;
+    padding: 10px 0;
     transition: all 0.5s;
   }
 
@@ -1737,6 +1784,32 @@ body.mobile-nav-active #mobile-nav-toggle {
   #faq #faq-list i {
     top: 13px;
   }
+
+  #footer .footer-top .footer-info img {
+    width: 30%;
+    float: left;
+    padding-right: 15px;
+  }
+
+  #quotes .quote-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5rem;
+  }
+  #quotes img {
+    width: 20%;
+    margin-top: 0;
+  }
+  #quotes em {
+    font-size: 1rem;
+  }
+
+  #quotes .play-btn{
+    width: 70px;
+    height: 50px;
+    top: 50%;
+    left: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1749,11 +1822,45 @@ body.mobile-nav-active #mobile-nav-toggle {
   #venue .venue-info h3 {
     font-size: 24px;
   }
+
+  .quote-text {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.5rem;
+  }
+
+  #quotes img {
+    width: 30%;
+  }
+  #quotes h2 {
+    font-size: 1.3rem;
+  }
+
 }
 
 @media (max-width: 480px) {
   #schedule .nav-tabs a {
     padding: 8px 30px;
+  }
+
+  #quotes .quote-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1rem;
+  }
+  #quotes img {
+    width: 58%;
+    margin-top: 0;
+  }
+  #quotes em {
+    font-size: 0.8rem;
+  }
+
+  #quotes .play-btn{
+    width: 60px;
+    height: 50px;
+    top: 50%;
+    left: 0;
   }
 }
 
