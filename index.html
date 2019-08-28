@@ -51,7 +51,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li class="menu-active"><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li class="dropdown">
 
@@ -490,24 +490,42 @@
 
     <!-- ========== -->
 
-    <section id="quotes">
+    <section id="quotes" class="section-with-bg wow fadeInUp">
 
-      <div id="quote-carousel" class="carousel slide" data-ride="false">
+      <div id="quote-carousel" class="carousel slide" data-ride="carousel">
 
         <div class="carousel-inner">
 
           <div class="carousel-item active container-fluid">
-            <h2 class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-            <button class="btn btn-outline-danger btn-lg" type="button" name="button"><i class="fa fa-play-circle"></i></button>
-            <img class="quote-image" src="assets/images/speakers/1.jpg" alt="dog-profile">
-            <em>Pebbles, New York</em>
+            <div class="row">
+
+              <div class="name-qoute col-lg-9 col-sm-9 col-8">
+                <h2 class="quote-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</h2>
+                <img class="quote-image" src="assets/images/speakers/1.jpg" alt="dog-profile">
+                <em>Pebbles, New York</em> <br>
+              </div>
+
+              <div class="name-qoute col-lg-3 col-sm-3 col-4">
+                <button class="play-btn btn btn-outline-danger btn-lg" type="button" name="button"><i class="fa fa-play-circle"></i></button>
+              </div>
+
+            </div>
           </div>
 
           <div class="carousel-item container-fluid">
-            <h2 class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-            <button class="btn btn-outline-danger btn-lg" type="button" name="button"><i class="fa fa-play-circle"></i></button>
-            <img class="quote-image" src="assets/images/speakers/2.jpg" alt="lady-profile">
-            <em>Beverly, Illinois</em>
+            <div class="row">
+
+              <div class="name-quote col-lg-9 col-sm-9 col-8">
+                <h2 class="quote-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</h2>
+                <img class="quote-image" src="assets/images/speakers/2.jpg" alt="lady-profile">
+                <em>Beverly, Illinois</em>
+              </div>
+
+              <div class="name-quote col-lg-3 col-sm-3 col-4">
+                <button class="play-btn btn btn-outline-danger btn-lg" type="button" name="button"><i class="fa fa-play-circle"></i></button>
+              </div>
+
+            </div>
           </div>
 
         </div>
@@ -564,7 +582,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <img src="assets/images/logo.png" alt="TheEvenet">
+            <img src="assets/images/inno_logo.png" alt="TheEvenet">
             <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
               cupiditate debitis accusamus repellat cumque.</p>
           </div>
@@ -574,13 +592,13 @@
             <ul>
               <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="https://twitter.com/nitrourkela?s=17">NITR Twitter</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <!-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
@@ -589,24 +607,33 @@
               <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br> New York, NY 535022<br> United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <b>Student Activity Center</b> <br>
+              <strong>National Institute of Technology</strong> <br>
+              <em>Sector 1, Rourkela - 769008</em> <br>
+              <strong>Phone:</strong> +1 5589 55488 55 <br>
+              <strong>Email:</strong> <a href="mailto:contactus@innonitr.com">contactus@innonitr.com</a> <br>
             </p>
 
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://twitter.com/innonitr?lang=en" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/innonitr/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/inno.nitr/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
             </div>
 
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <img src="assets/images/nitrlogo.png" alt="TheEvenet">
+            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
+              cupiditate debitis accusamus repellat cumque.
+            </p>
           </div>
 
         </div>
@@ -615,7 +642,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+        &copy; Copyright <strong>National Institute of Technology, Rourkela</strong>.
       </div>
       <div class="credits">
         <!--
@@ -624,7 +651,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">Innovision Web Team</a>
       </div>
     </div>
   </footer>
