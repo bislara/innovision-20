@@ -14,7 +14,10 @@ $(document).on("click", ".submit_button", function(){
       // console.log(res);
       $.ajax({
         type : "POST", 
-        url : "../apis/panels/admin_participants/updateCheckInStatus.php",
+        url : "../../apis/admin/participant/updateCheckInStatus.php",
+        beforeSend: function(request){
+          request.setRequestHeader('Authorization', 'Bearer ' + localStorage.admin_token);
+        },
         data: {
             id_list: res
         },
