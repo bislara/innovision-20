@@ -2,6 +2,13 @@
 
     include('../../db.php');
 
+    include ('../../../vendor/autoload.php');
+    use \Firebase\JWT\JWT;
+    use Endroid\QrCode\QrCode;
+
+    include('../../config.php');
+    $secretKey = base64_decode(SECRET_KEY);
+
     $ca_id=$_POST['ca_id'];
     $q1=$_POST['q1'];
     $q2=$_POST['q2'];
@@ -21,6 +28,23 @@
     // echo (json_encode(array('status' => 'success', 'result' => $ca_id)));
     if ($_SERVER["REQUEST_METHOD"] === "POST" && $ca_id!="") {
 
+        try
+        {
+            $decoded = JWT::decode($jwt, $secretKey, array(ALGORITHM));
+            $decoded_array = (array) $decoded;
+            $data = $decoded_array['data']; 
+            $inno_id = $data->inno_id;
+            $email = $data->email;
+            
+            //basicInfo
+            $query1 = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code FROM users where inno_id ='".$inno_id."'");
+            if (mysqli_num_rows($query1) == 0) {
+                return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
+            } else {
+                $basicInfo = mysqli_fetch_array($query1,MYSQLI_ASSOC);           
+            }
+
+
         if( isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']) && isset($_POST['q4'])&& isset($_POST['q5']) && isset($_POST['q6']) && isset($_POST['q7']) && isset($_POST['q8']) && isset($_POST['q9']) && isset($_POST['q10']) && isset($_POST['q11']) && isset($_POST['q12']) && isset($_POST['q13']) && isset($_POST['q14'])) {   
 
             $query = "UPDATE ca_selection_responses SET q1 = '".$q1."',q2 = '".$q2."',q3 = '".$q3."',q4 = '".$q4."',q5 = '".$q5."',q6 = '".$q6."', q7 = '".$q7."', q8 = '".$q8."',q9 = '".$q9."',q10 = '".$q10."', q11 = '".$q11."', q12 = '".$q12."',q13 = '".$q13."', q14 = '".$q14."'  WHERE ca_applicant_id = '".$ca_id."' ";
@@ -37,6 +61,11 @@
                 echo(json_encode(array('status' => 'failure', 'result' => 'entry failed. try again')));
             }
         }
-    // echo $_POST['q1'];
+    }
+    catch(Exception $e)
+    {
+            echo json_encode(array('status' => 'failure', 'result' => $e->getMessage()));
+    }
+
     }
 ?>
