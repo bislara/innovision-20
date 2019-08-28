@@ -8,12 +8,18 @@
 
     include('../../config.php');
 
-	$jwt = $_GET["q"];
+    $headers = apache_request_headers();
+
+    $authHeader= $headers["Authorization"];
+    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
+
+	
     $secretKey = base64_decode(SECRET_KEY);
     
     if($_SERVER["REQUEST_METHOD"] === "GET" && $jwt != "") {
         try 
         {
+
             $decoded = JWT::decode($jwt, $secretKey, array(ALGORITHM));
             $decoded_array = (array) $decoded;
             $data = $decoded_array['data']; 
