@@ -37,7 +37,7 @@ $(document).ready(function(){
                                             break;
                                         else
                                         {
-                                            var image_path = regevents[j]['image_path']
+                                            var image_path = regevents[j]['image_path'].substr(6);
                                             var event_name = regevents[j]['title']
                                             var eid = regevents[j]['eid']
                                             var link = "./event-details.html?eid="+eid;
