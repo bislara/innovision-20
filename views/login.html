@@ -217,7 +217,7 @@
 
                             <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
                             <button id="login_button" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</button>
-                            <button id="forgot_password" class="about-btn scrollto">&nbsp;&nbsp; FORGOT PASSWORD&nbsp;&nbsp;</button>
+                            <button id="forgot_password" data-toggle="modal" data-target="#forgotPasswordModal" class="about-btn scrollto">&nbsp;&nbsp; FORGOT PASSWORD&nbsp;&nbsp;</button>
                         </div>
 
                     </div>
@@ -228,6 +228,33 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Modal for forgot password -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Password Recovery</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <div class="col-sm-12" style="display: inline">
+                        <input type="text" id="recoveryEmail" name="recoveryEmail" placeholder="Registered Email Here">
+                    </div>
+                    <div class="col-sm-12" style="display: inline">
+                        <button type="button" class="btn btn-info" id="recoveryEmailBtn">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
