@@ -2,12 +2,13 @@ $(document).on("click", ".submit", function () {
         	//console.log($("#pwd").val());
             $.ajax({
                 type: "POST",
-                url: "../apis/panels/admin_participants/login.php",
+                url: "../../apis/admin/participant/login.php",
                 data: {
                     username: $("#id").val().toString(),
                     password: $("#pwd").val().toString()
                 },
                 success: function (data) {
+                    console.log(data);
                     var dataSet = JSON.parse(data);
                     if(dataSet["status"].localeCompare("success") == 0)
                     {

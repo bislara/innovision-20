@@ -91,10 +91,11 @@
                                     $output = '../../../../assets/images/event_results/'.$runner_arr[$x].'A'.$e_id.'.jpg';
                                     $image = imagecreatefromjpeg('../../../../assets/images/event_results/result.jpg');
                                     $font_color = imagecolorallocate($image, 0, 0, 0);
-                                    $text = imagettftext($image,15,0,340,280,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf",strtoupper($row4['name']));
-                                    $text1 = imagettftext($image,13,0,460,360,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf",$row5['title']);
-                                    $text2 = imagettftext($image,15,0,200,320,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf",$row4['college']);
-                                    $text3 = imagettftext($image,15,0,200,360,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf","Runner");
+                                    $font=__DIR__.'\\Charmonman-Bold.ttf';
+                                    $text = imagettftext($image,15,0,340,280,$font_color,$font,strtoupper($row4['name']));
+                                    $text1 = imagettftext($image,13,0,460,360,$font_color,$font,$row5['title']);
+                                    $text2 = imagettftext($image,15,0,200,320,$font_color,$font,$row4['college']);
+                                    $text3 = imagettftext($image,15,0,200,360,$font_color,$font,"Runner");
                                     imagejpeg($image,$output);
 
                                     $flag3 = 1;
@@ -133,10 +134,11 @@
                             $output = '../../../../assets/images/event_results/'.$winner_arr[$x].'A'.$e_id.'.jpg';
                             $image = imagecreatefromjpeg('../../../../assets/images/event_results/result.jpg');
                             $font_color = imagecolorallocate($image, 0, 0, 0);
-                            $text = imagettftext($image,15,0,340,280,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf",strtoupper($row4['name']));
-                            $text1 = imagettftext($image,13,0,460,360,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf",$row5['title']);
-                            $text2 = imagettftext($image,15,0,200,320,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf",$row4['college']);
-                            $text3 = imagettftext($image,15,0,200,360,$font_color,"../../../../assets/fonts/Charmonman/Charmonman-Bold.ttf","Winner");
+                            $font=__DIR__.'\\Charmonman-Bold.ttf';
+                            $text = imagettftext($image,15,0,340,280,$font_color,$font,strtoupper($row4['name']));
+                            $text1 = imagettftext($image,13,0,460,360,$font_color,$font,$row5['title']);
+                            $text2 = imagettftext($image,15,0,200,320,$font_color,$font,$row4['college']);
+                            $text3 = imagettftext($image,15,0,200,360,$font_color,$font,"Winner");
                             imagejpeg($image,$output);
                            
                             $flag4 = 1;
