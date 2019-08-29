@@ -27,7 +27,9 @@
 			if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
 
 				echo(json_encode(array('status' => 'failure', 'result' => 'Name should only contain letters and spaces')));
+				return 0;
 			}
+			return 1;
 		}
 	}
 
@@ -36,7 +38,9 @@
 		if ($gender != 'male' && $gender != 'female' && $gender != 'others') {
 
 			echo(json_encode(array('status' => 'failure', 'result' => 'Invalid gender')));
+			return 0;
 		}
+		return 1;
 	}
 
 	function validatePhone($phone) {
@@ -44,7 +48,9 @@
 		if (!preg_match("/^[789]\d{9}$/", $phone)) {
 
 			echo(json_encode(array('status' => 'failure', 'result' => 'Phone number should have 10 digits and should start with 7,8, or 9')));
+			return 0;
 		}
+		return 1;
 	}
 
 	function checkExistingCollege($college) {
@@ -62,13 +68,17 @@
 		if ($college == '') {
 
 			echo(json_encode(array('status' => 'failure', 'result' => 'College is required')));
+			return 0;
 		} else {
 
 			if (!checkExistingCollege($college)) {
 
 				echo(json_encode(array('status' => 'failure', 'result' => 'College not found in our records')));
+				return 0;
+
 			}
 		}
+		return 1;
 	}
 
 	function validateAddress($address) {
@@ -76,7 +86,9 @@
 		if ($address == '') {
 
 			echo(json_encode(array('status' => 'failure', 'result' => 'Address is required')));
+			return 0;
 		}
+		return 1;
 	}
 
 	function checkExistingEmail($email) {
@@ -118,7 +130,10 @@
 		if (strlen($password) < 7) {
 
 			echo (json_encode(array('status' => 'failure', 'result' => 'Password needs to have 8-32 characters')));
+			return 0;
 		}
+		else
+			return 1;
 	}
 	
 	// function validateAccomodation($accomodation) {
@@ -131,28 +146,23 @@
 
 	if ( isset($name) && isset($gender) && isset($phone) && isset($college) && isset($address) && isset($email) && isset($password)) {
 		// /echo'<script>HIIIIIII</script>';
-		validateName($name);
-		validateGender($gender);
-		validatePhone($phone);
-		validateCollege($college);
-		validateAddress($address);
 		//validateEmail($email);
-		validatePassword($password);
+		//validatePassword($password);
 		//validateAccomodation($accomodation);
-		if(validateEmail($email))
+		if(validateEmail($email) && validatePassword($password) && validateGender($gender) && validatePhone($phone) && validateName($name) && validateCollege($college) && validateAddress($address))
 		{
-		$name = mysqli_real_escape_string($conn, $name);
-		$gender = mysqli_real_escape_string($conn, $gender);
-		$phone = mysqli_real_escape_string($conn, $phone);
-		$address = mysqli_real_escape_string($conn, $address);
-		$email = mysqli_real_escape_string($conn, $email);
-		$college = mysqli_real_escape_string($conn, $college);
-		//$accomodation = mysqli_real_escape_string($conn, $accomodation);
-		$password = mysqli_real_escape_string($conn, md5($password));
+			$name = mysqli_real_escape_string($conn, $name);
+			$gender = mysqli_real_escape_string($conn, $gender);
+			$phone = mysqli_real_escape_string($conn, $phone);
+			$address = mysqli_real_escape_string($conn, $address);
+			$email = mysqli_real_escape_string($conn, $email);
+			$college = mysqli_real_escape_string($conn, $college);
+			//$accomodation = mysqli_real_escape_string($conn, $accomodation);
+			$password = mysqli_real_escape_string($conn, md5($password));
 
-		$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."')";
+			$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."')";
 
-		$query = mysqli_query($conn, $q);
+			$query = mysqli_query($conn, $q);
 
 		if ($query) {
 
@@ -182,16 +192,16 @@
                 $secretKey, // The signing key
                 ALGORITHM
             );
-
-			$query = mysqli_query($conn, "UPDATE users SET token = '".$jwt."' WHERE inno_id = ".$inno_id);
-			if ($query) {
-                error_reporting(0);
+            if($jwt)
+            {
+			    error_reporting(0);
 			    $qrcode = new QrCode(json_encode(array('inno_id' => $inno_id, 'email' => $email)));
 				$filepath = '../../../assets/images/qrcodes/'.$inno_id.'.png';	
 				$qrcode->writeFile($filepath);
 				$query = mysqli_query($conn, "UPDATE users SET qr_code = '".$filepath."' WHERE inno_id = ".$inno_id);
 				echo(json_encode(array('status' => 'success', 'message' => $jwt)));
-			}else{
+			}
+			else{
 
 				echo(json_encode(array('status' => 'failure', 'message' => 'token not set')));
 			}
@@ -199,7 +209,7 @@
 
 			echo(json_encode(array('status' => 'failure', 'message' => 'DB operation failed')));
 		}
-		}
+	}
 		
 	}
 

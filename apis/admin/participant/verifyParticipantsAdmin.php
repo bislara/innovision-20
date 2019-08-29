@@ -1,7 +1,7 @@
 
 <?php
 
-	include('../../../../vendor/autoload.php');
+    include('../../../vendor/autoload.php');
     use \Firebase\JWT\JWT; 
 
     include('../../config.php');
@@ -9,7 +9,9 @@
 
     $secretKey = base64_decode(SECRET_KEY);
 
-    $jwt = $_POST["token"];
+    $headers = apache_request_headers();
+    $authHeader= $headers["Authorization"];
+    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
 
     if (isset($jwt) && $jwt ) {
 

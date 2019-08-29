@@ -6,28 +6,28 @@
     <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
     <script src="../../assets/lib/jquery/jquery.min.js"></script>
     <style>
-        .x{
-            background-color: white; 
+        .x {
+            background-color: white;
             text-align: center;
             height: 85%;
             width: 100%;
             border-radius: 5px;
             box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
             position: relative;
-            
-
-
         }
-        .y{
+        
+        .y {
             text-align: center;
             height: 30px;
             width: 300px;
         }
-        .search{
+        
+        .search {
             text-align: center;
             margin: 10px;
         }
-        .z{
+        
+        .z {
             height: 30px;
             width: 100px;
             border: none;
@@ -35,13 +35,7 @@
             background: #FBC02D;
             border-radius: 3px;
             margin: 20px;
-
-
         }
-       
-        
-
-
     </style>
 </head>
 
@@ -58,48 +52,7 @@
     </div>
     <!-- include fetchllevent script get the DATA_ARRAY-->
     <script src="../../assets/js/ajax/fetchingParticipantsList.js"></script>
-    <script type="text/javascript">
-        // $(document).ready(function(){
-        //         if(localeStorage.getItem("ca_token") === null)
-        //         {
-        //             window.location.assign("./ca_admin_login.html");
-        //         }
-
-        //     });
-        function populate(data_arr) {
-            var str;
-            for (var i = 0; i < data_arr.length; i++) {
-                str = "";
-                if (data_arr[i].checked_in == 0) str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox"> </td>';
-                else str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox" checked> </td>';
-                temp = temp + '<tr><td style="display:none" id="inno_id">' + data_arr[i].inno_id + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].inno_id + '</td><td>' + data_arr[i].name + '</td><td>' + data_arr[i].gender + '</td><td>' + data_arr[i].phone + '</td><td>' + data_arr[i].email + '</td><td>' + data_arr[i].college + '</td><td>' + data_arr[i].paid + '</td>' + str + '</tr>';
-            }
-            $("tbody").append(temp);
-        }
-    </script>
-    <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
-        <div class="row" style="margin-top: 3em;padding:1em;overflow-x: auto;overflow-y: auto;">
-            <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Inno ID</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Phone Number</th>
-                        <th>Email Address</th>
-                        <th>Institution</th>
-                        <th>Paid?</th>
-                        <th>Checked In?</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
+    <div class="container">
 
     <div class="row">
         <div class="col-sm-2"><button type="button" class="btn btn-info submit_button" style="margin-top: 2em;">Submit</button>
@@ -107,17 +60,38 @@
         <div class="col-sm-8"><br>
             <div class="x">
                 <div class="search" style="margin: 30px;"><br>
-                    <input type="email" class="form-control" placeholder="search..">
-                    <button class="z">search</button>
-                    <button class="z">Update</button>
-            
+                    <input type="text" id="inputId" class="form-control" placeholder="search..">
+                    <button class="z" id="searchBtn">search</button>
+                    <button class="z submit_button">Update</button>
+                </div>
+                <table class="table table-bordered table-responsive table-sc" style="display:table;background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Inno ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Phone Number</th>
+                            <th>Email Address</th>
+                            <th>Institution</th>
+                            <th>Paid?</th>
+                            <th>Checked In?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                 </div>
+                    </tbody>
+                </table>
             </div>
         </div>
 
-        <div class="col-sm-2">
-            <button type="button" class="btn btn-info logout_button" style="margin-top: 2em;">Sign Out</button></div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-6"><button type="button" class="btn btn-info logout_button" style="margin-top: 2em;">Sign Out</button></div>
+
     </div>
     <!-- <script src="../assets/"></script> -->
     <script>
