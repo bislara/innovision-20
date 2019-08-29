@@ -101,104 +101,162 @@ $(document).on("click", ".submitform", function () {
             }
     }
 
-    console.log($("#q4").val());
     if ($("#q1").val().toString().localeCompare("") == 0 || $("#q2").val().toString().localeCompare("") == 0 || $("#q3").val().toString().localeCompare("") == 0 || college_name.localeCompare("") == 0 || $("#q5").val().toString().localeCompare("") == 0 || $("#q6").val().toString().localeCompare("") == 0 || $("#q7").val().toString().localeCompare("") == 0 || $("#q8").val().toString().localeCompare("") == 0 || $("#q9").val().toString().localeCompare("") == 0 || $("#q10").val().toString().localeCompare("") == 0 || $("#q11").val().toString().localeCompare("") == 0 || $("#q12").val().toString().localeCompare("") == 0 || $("#q13").val().toString().localeCompare("") == 0 || $("#q14").val().toString().localeCompare("") == 0) {
         swal("Fill Up All The Fields", ":|", "warning");
     }
     else {
+        var ca_id= localStorage.token;
+
         $.ajax({
             type: "POST",
-            url: "../../apis/user/ca/createCAApplication.php",
-            data: {
-                q1: $("#q1").val().toString(),
-                q2: $("#q2").val().toString(),
-                q3: $("#q3").val().toString(),
-                q4: college_name,
-                q5: $("#q5").val().toString(),
-                q6: $("#q6").val().toString(),
-                q7: $("#q7").val().toString(),
-                q8: $("#q8").val().toString(),
-                q9: $("#q9").val().toString(),
-                q10: $("#q10").val().toString(),
-                q11: $("#q11").val().toString(),
-                q12: $("#q12").val().toString(),
-                q13: $("#q13").val().toString(),
-                q14: $("#q14").val().toString()
+            url: "../../apis/user/ca/checkCA_user.php",
+            data : {
+                token : ca_id
             },
-            success: function (data) {
-                if (JSON.parse(data).status == "success") {
-                    // console.log(data);
-                // }
-                    if (JSON.parse(data).result=="successful entry") {
-                    swal("Registration Successful !", ": )", "success");
+            success: function (data) {  
 
-                    }
-                    if ($("#q4s").val().localeCompare("Others") == 0) {
-                        $.ajax({
-                            type: "POST",
-                            url: "../../apis/misc/CollegeList/others/create.php",
-                            data: {
-                                cname: $("#q4i").val().toString()
-                            },
-                            success: function (data) {
-                                // swal("Good job!", "College Added", "success");
-                            }
-                        });
-                    }
-                    // successAlert();
-                    swal({icon: "success", 
-                        title: "Successfully registered",
-                        text: ":)",
-                        buttons: {
-                            sure : "Okay"
+                var dataArray = JSON.parse(data);
+                console.log(dataArray);
+                if (dataArray["result"] == "update") { 
+
+                            $.ajax({
+                                type: "POST",
+                                url: "../../apis/user/ca/updateCAapplication.php",
+                                data: {
+                                    ca_id: ca_id,
+                                    q1: $("#q1").val().toString(),
+                                    q2: $("#q2").val().toString(),
+                                    q3: $("#q3").val().toString(),
+                                    q4: college_name,
+                                    q5: $("#q5").val().toString(),
+                                    q6: $("#q6").val().toString(),
+                                    q7: $("#q7").val().toString(),
+                                    q8: $("#q8").val().toString(),
+                                    q9: $("#q9").val().toString(),
+                                    q10: $("#q10").val().toString(),
+                                    q11: $("#q11").val().toString(),
+                                    q12: $("#q12").val().toString(),
+                                    q13: $("#q13").val().toString(),
+                                    q14: $("#q14").val().toString()
+                                },
+                                success: function (data) {
+                                    console.log(data);
+                                    
+
+                                    console.log(JSON.parse(data).result);
+                                    if (JSON.parse(data).status == "success") {
+                                        // console.log(data);
+                                    // }
+                                        if (JSON.parse(data).result=="successful entry") {
+                                        swal("Update Successful !", ": )", "success");
+
+                                        }
+                                        if ($("#q4s").val().localeCompare("Others") == 0) {
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "../../apis/misc/CollegeList/others/create.php",
+                                                data: {
+                                                    cname: $("#q4i").val().toString()
+                                                },
+                                                success: function (data) {
+                                                    // swal("Good job!", "College Added", "success");
+                                                }
+                                            });
+                                        }
+                                        location.reload(true);
+                                    }
+                                    else {
+                                        
+                                        swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
+                                    }
+                                },
+                                error: function (data) {
+                                    // errorAlert();
+                                    swal("Bad luck!", "You clicked the button!", "failed");
+                                    
+                                }
+
+                            });
+
+                }
+                else if(dataArray["result"]=="create")
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: "../../apis/user/ca/createCAApplication.php",
+                        data: {
+                            token:ca_id,
+                            q1: $("#q1").val().toString(),
+                            q2: $("#q2").val().toString(),
+                            q3: $("#q3").val().toString(),
+                            q4: college_name,
+                            q5: $("#q5").val().toString(),
+                            q6: $("#q6").val().toString(),
+                            q7: $("#q7").val().toString(),
+                            q8: $("#q8").val().toString(),
+                            q9: $("#q9").val().toString(),
+                            q10: $("#q10").val().toString(),
+                            q11: $("#q11").val().toString(),
+                            q12: $("#q12").val().toString(),
+                            q13: $("#q13").val().toString(),
+                            q14: $("#q14").val().toString()
                         },
-                    }).then((value) => {
-                        switch(value){
-                            case "sure":
-                            location.reload(true);
-                            break;
+                        success: function (data) {
+                            console.log(data);
+                            if (JSON.parse(data).status == "success") {
+                                // console.log(data);
+                            // }
+                                if (JSON.parse(data).result=="successful entry") {
+                                swal("Registration Successful !", ": )", "success");
+
+                                }
+                                if ($("#q4s").val().localeCompare("Others") == 0) {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "../../apis/misc/CollegeList/others/create.php",
+                                        data: {
+                                            cname: $("#q4i").val().toString()
+                                        },
+                                        success: function (data) {
+                                            // swal("Good job!", "College Added", "success");
+                                        }
+                                    });
+                                }
+                                // successAlert();
+                                swal({icon: "success", 
+                                    title: "Successfully registered",
+                                    text: ":)",
+                                    buttons: {
+                                        sure : "Okay"
+                                    },
+                                }).then((value) => {
+                                    switch(value){
+                                        case "sure":
+                                        location.reload(true);
+                                        break;
+                                    }
+                                });
+                                location.reload(true);
+                            }
+                            else {
+                               
+                                swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
+                            }
+                        },
+                        error: function (data) {
+                            // errorAlert();
+                            swal("Bad luck!", "You clicked the button!", "failed");
+                            
                         }
+
                     });
-                    location.reload(true);
+
                 }
-                else {
-                    // failureAlert(JSON.parse(data));
-                    // swal({icon: "error", 
-                    //     title: JSON.parse(data).status,
-                    //     text: JSON.parse(data).result,
-                    //     buttons: {
-                    //         sure : "Okay"
-                    //     },
-                    // }).then((value) => {
-                    //     switch(value){
-                    //         case "sure":
-                    //         location.reload(true);
-                    //         break;
-                    //     }
-                    // });
-                    swal(JSON.parse(data).status, JSON.parse(data).result, "error"); 
-                }
-            },
-            error: function (data) {
-                // errorAlert();
-                swal("Bad luck!", "You clicked the button!", "failed");
-                // swal({icon: "error", 
-                //        title: "Failure",
-                //        text: "Could not process request! Try again later.",
-                //        buttons: {
-                //            sure : "Okay"
-                //        },
-                //    }).then((value) => {
-                //        switch(value){
-                //            case "sure":
-                //            location.reload(true);
-                //            break;
-                //        }
-                //    });
-                //swal("Failure", "Could not process request! Try again later.", "error");
             }
 
         });
+
+
     }
     return false;
 });
