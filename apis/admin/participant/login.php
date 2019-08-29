@@ -1,7 +1,6 @@
-<!-- PARTICIPANT ADMIN LOGIN -->
 <?php
 
-    include('../../../../vendor/autoload.php');
+    include('../../../vendor/autoload.php');
     use \Firebase\JWT\JWT; 
 
     include('../../config.php');
@@ -9,7 +8,7 @@
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {
 
-        if ($_POST["username"] === 'Participants_Admin' && md5($_POST["password"]) === '08d0ba5b097dd12cf04db02a5f459fd4') {
+        if ($_POST["username"] === 'admin' && md5($_POST["password"]) === '21232f297a57a5a743894a0e4a801fc3') {
 
             $data = [
 

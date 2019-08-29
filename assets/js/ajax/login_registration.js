@@ -157,3 +157,23 @@
             }
         });
     });
+
+$(document).on("click","#recoveryEmailBtn",function(){
+    var email=$("#recoveryEmail");
+    if(email.length!==""){
+        $.ajax({
+            url: '../apis/user/auth/forgot_password.php',
+            data: {
+                email: email
+            },
+            type: 'POST',
+            success: function(response) {
+                var response = JSON.parse(response);
+                var msg=response.status;
+                $("#forgotPasswordModal modal-body").html("<h1>"+msg+"</h1>");
+           }
+        });
+    }else{
+
+    }
+});
