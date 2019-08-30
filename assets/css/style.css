@@ -976,7 +976,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 # Venue Section
 --------------------------------------------------------------*/
 #venue {
-  padding: 110px 0;
+  padding: 110px 0 20px;
 }
 
 #venue .container-fluid {
@@ -1499,7 +1499,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #quotes{
   position: relative;
   text-align: center;
-  padding: 20px 20px 100px 20px;
+  padding: 50px 20px 60px 20px;
 }
 
 #quotes em {
@@ -1514,18 +1514,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   line-height: 1.5;
 }
 
-.quote-image{
-  margin: 20px;
-  width: 20%;
-  border-radius: 40%;
+#quotes .youtube-link {
+  position: relative;
 }
 
 #quotes .play-btn {
-  width: 40%;
-  height: 60px;
+  height: 100%;
+  width: 58%;
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 0;
+  left: 10%;
 }
 
 /* ============ */
@@ -1796,19 +1794,12 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-right: 20px;
     font-size: 1.5rem;
   }
-  #quotes img {
-    width: 20%;
-    margin-top: 0;
-  }
+  
   #quotes em {
     font-size: 1rem;
   }
 
   #quotes .play-btn{
-    width: 70px;
-    height: 50px;
-    top: 50%;
-    left: 0;
   }
 }
 
@@ -1829,9 +1820,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 1.5rem;
   }
 
-  #quotes img {
-    width: 30%;
-  }
   #quotes h2 {
     font-size: 1.3rem;
   }
@@ -1843,24 +1831,27 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding: 8px 30px;
   }
 
+  #quotes .youtube-link {
+    height: 200px;
+  }
+
   #quotes .quote-text {
     padding-left: 20px;
     padding-right: 20px;
     font-size: 1rem;
-  }
-  #quotes img {
-    width: 58%;
-    margin-top: 0;
   }
   #quotes em {
     font-size: 0.8rem;
   }
 
   #quotes .play-btn{
-    width: 60px;
-    height: 50px;
-    top: 50%;
-    left: 0;
+    position: absolute;
+    top: 10%;
+    left: 16%;
+    width: 68%;
+    height: 76%;
+    padding-top: 20px;
+
   }
 }
 
