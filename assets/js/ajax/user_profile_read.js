@@ -10,10 +10,13 @@ $(document).ready(function(){
                 //var id=0;
                 $.ajax({
                 url:'../apis/user/auth/profile.php',
-                data: "q="+q,
+                beforeSend: function(request){
+                    request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
                 type: 'get',
                     success:function(response)
                     {
+                        console.log(response);
                         response = JSON.parse(response);
                         if(response.status=="success")
                         {
@@ -45,7 +48,7 @@ $(document).ready(function(){
                                             break;
                                         else
                                         {
-                                            var image_path = regevents[j]['image_path']
+                                            var image_path = regevents[j]['image_path'].substr(6);
                                             var event_name = regevents[j]['title']
                                             var eid = regevents[j]['eid']
                                             var link = "./event-details.html?eid="+eid;
@@ -63,8 +66,11 @@ $(document).ready(function(){
                         }                               
                         if(response.status=="failure")
                         {
-                            //swal("You have not registered.", ": [", "warning");
-                            window.location="./login.html"
+                            swal("You have not registered.", ": [", "warning")    
+                            .then((value)=>{
+                                window.location="./login.html";
+                            }) 
+                            
                         }             
                     }
                 });

@@ -1,6 +1,7 @@
 <?php
 
 	include('../../db.php');
+	include('./verifyParticipantsAdmin.php');
 
 	$id_list = $_POST['id_list'];
 
