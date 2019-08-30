@@ -51,45 +51,45 @@
     <!--==========================
     Header
   ============================-->
-    <header id="header">
-        <div class="container">
+   <header id="header">
+    <div class="container">
 
-            <div id="logo" class="pull-left">
-                <!-- Uncomment below if you prefer to use a text logo -->
-                <a href="#intro" class="scrollto"><img src="../../assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
-                <!-- <h1><a href="#main"><span>Inno'19</span></a></h1> -->
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <a href="#intro" class="scrollto"><img src="../../assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
+        <h1><a href="#main"><span>inno'19</span></a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../index.html#about">About</a></li>
+          <li class="dropdown menu-active">
+
+            <a class="dropbtn dropping">Events</a>
+            <div class="dropdown-content">
+              <a href="../eventsSection.html#EventsSection">Event Schedule</a>
+                <a href="../eventsSection.html#flagships">Flagship Events</a>
+                <a href="../eventsSection.html#events">Events</a>
+                <a href="../eventsSection.html#workshops">Workshops</a>
+                <a href="../eventsSection.html#paidworkshops">Workshops (Paid)</a>
+                <a href="../eventsSection.html#exhibitions">Exhibitions</a>
+                <a href="../eventsSection.html#cultural">Cultural </a>
             </div>
 
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li><a href="#intro">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li class="dropdown menu-active">
-
-                        <a class="dropbtn">Events</a>
-                        <div class="dropdown-content">
-                            <a href="../eventsSection.html#flagships">Flagship Events</a>
-                            <a href="../eventsSection.html#events">Events</a>
-                            <a href="../eventsSection.html#workshops">Workshops</a>
-                            <a href="../eventsSection.html#paidworkshops">Workshops (Paid)</a>
-                            <a href="../eventsSection.html#exhibitions">Exhibitions</a>
-                            <a href="../eventsSection.html#cultural">Cultural </a>
-
-                        </div>
-
-                    </li>
-                    <!-- <li><a href="#schedule">Schedule</a></li>
-          <li><a href="#venue">Venue</a></li>
-          <li><a href="#hotels">Hotels</a></li> -->
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#supporters">Sponsors</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li>
-                </ul>
-            </nav>
-            <!-- #nav-menu-container -->
-        </div>
-    </header>
+          </li>
+          <li><a href="../ISRpage.html">Innovision Social Regime</a></li>
+          <li><a href="../FAQ.html">FAQ</a></li>
+          <!-- <li><a href="#hotels">Hotels</a></li>
+                  <li><a href="#gallery">Gallery</a></li> -->
+          <li><a href="../sponsor.html">Sponsors</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="buy-tickets"><a href="../login.html">Login/Register</a></li>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+     </div>
+</header>>
     <!-- #header -->
 
 
@@ -456,15 +456,21 @@
     <!-- <script src="../../assets/js/contactform.js"></script> -->
 
     <!-- Template Main Javascript File -->
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/ajax/createCAapp.js"></script>
-    <script src="../../assets/js/sweetalert.js"></script>
+   
     <!-- <script src="../../assets/js/sweetalert.min.js"></script> -->
     <!-- <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
     
   
     <script type="text/javascript">
       
+      $(document).ready(function() {
+            if (!(localStorage.token))
+                {
+                    swal("Login First to apply for CA.", ":(", "error");
+                    window.location.assign("../login.html");
+                }
+        });
+
       $(document).ready(function(){
             $.ajax({
                 url:'../../apis/misc/CollegeList/readCollege.php',
@@ -508,5 +514,8 @@
 
     </script>
 
+     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/ajax/createCAapp.js"></script>
+    <script src="../../assets/js/sweetalert.js"></script>        
 
 </html>

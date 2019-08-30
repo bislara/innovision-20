@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 					var submit_ca="";
 					if (eventArr["selected"]==1) {
-					submit_ca=submit_ca+"Already a CA";
+					submit_ca=submit_ca+"Unselect";
 					}
 					else
 					{
