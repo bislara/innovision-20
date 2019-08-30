@@ -1,7 +1,12 @@
 $(document).ready(function(){
+            $("#ca_button1").hide();
             var q = localStorage.getItem("token");
+            $("#ca_button1").on('click', function(){ 
+                
+                window.location = './ca/index.html';
+                });
             if(q)
-            {                
+            {                               
                 //var id=0;
                 $.ajax({
                 url:'../apis/user/auth/profile.php',
@@ -19,6 +24,9 @@ $(document).ready(function(){
                             var name = response.result['basicInfo']['name'];
                             var email = response.result['basicInfo']['email'];
                             var college = response.result['basicInfo']['college'];
+                            var ca_id = response.result['basicInfo']['ca_id'];
+                            if(ca_id != 0)
+                                $("#ca_button1").show();
                             var qr_path = "../assets/images/qrcodes/"+id+".png";
                             document.getElementById("participant_id").innerHTML="Inno ID : "+id;
                             document.getElementById("participant_name").innerHTML="Name : "+name;
@@ -74,3 +82,5 @@ $(document).ready(function(){
                 window.location="./login.html"
             }
         });
+
+
