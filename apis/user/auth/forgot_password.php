@@ -6,7 +6,7 @@ require '../../../vendor/phpmailer/phpmailer/src/Exception.php';
 require '../../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../../../vendor/phpmailer/phpmailer/src/SMTP.php';
 require '../../../vendor/autoload.php';
-include ('../db.php');
+include ('../../db.php');
 $email = $_POST['email'];
 
 
@@ -18,7 +18,7 @@ $email = $_POST['email'];
 
             if (mysqli_num_rows($query) == 1) {
 
-                $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+                $mail = new PHPMailer;                              // Passing `true` enables exceptions
                 try {
                     //Server settings
                     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
@@ -47,7 +47,7 @@ $email = $_POST['email'];
                     //echo mysqli_fetch_array($query)["user_password"];
                      echo(json_encode(array('status' => 'success', 'result' => 'Mail has been sent to your registered mail.Check SPAM folder')));
                 } catch (Exception $e) {
-                    echo(json_encode(array('status' => 'failure', 'result' => 'Something Went Wrong.Check your internet connection')));
+                    echo(json_encode(array('status' => 'failure', 'result' => $mail->ErrorInfo)));
                 }
 
                                
