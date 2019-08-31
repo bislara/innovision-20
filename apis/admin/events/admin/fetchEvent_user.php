@@ -14,7 +14,7 @@
 	
 	 $secretKey = base64_decode(SECRET_KEY);
 	
-	if($_SERVER["REQUEST_METHOD"] === "POST" && $eid != "" && $jwt!="") {
+	if($_SERVER["REQUEST_METHOD"] === "POST" && $eid != "") {
 		try
         {
         	$decoded = JWT::decode($jwt, $secretKey, array(ALGORITHM));
@@ -28,7 +28,7 @@
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
             } else {
                      
-                    $query ="SELECT * FROM events WHERE eid=$eid";
+                    $query ="SELECT eid,title,description,rules,judging_criteria,date,venue,time,date1,time1,category,coordinatorName1,coordinatorContact1,coordinatorName2,coordinatorContact2,image_path FROM events WHERE eid=$eid";
 
 					$result =mysqli_query($conn, $query);
 					 // echo $result;
@@ -56,7 +56,13 @@
 	   }
 	   catch(Exception $e) 
         {
-            echo json_encode(array('status' => 'failure', 'result' => $e->getMessage()));
+            // echo json_encode(array('status' => 'failure', 'result' => $e->getMessage()));
+            $query ="SELECT eid,title,description,rules,judging_criteria,date,venue,time,date1,time1,category,coordinatorName1,coordinatorContact1,coordinatorName2,coordinatorContact2,image_path FROM events WHERE eid=$eid";
+
+            $result =mysqli_query($conn, $query);
+            $res = mysqli_fetch_array($result);
+            echo(json_encode(array('status' => 'success', 'result' => $res)));
+            
         }
 	}
 
