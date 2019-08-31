@@ -976,7 +976,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 # Venue Section
 --------------------------------------------------------------*/
 #venue {
-  padding: 110px 0 20px;
+  padding: 110px 0 100px;
 }
 
 #venue .container-fluid {
@@ -1499,8 +1499,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 #quotes{
   position: relative;
   text-align: center;
-  padding: 50px 20px 60px 20px;
+  padding: 30px 20px 130px 20px;
 }
+
+
 
 #quotes em {
   color: #a5a9b3;
@@ -1512,6 +1514,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #0e1b4d;
   font-size: 2.5rem;
   line-height: 1.5;
+}
+
+#quotes .quote-btn {
+  width: 7%;
+}
+#quotes .quote-btn:focus,
+#quotes .quote-btn:hover {
+  color: #000;
 }
 
 #quotes .youtube-link {
@@ -1800,6 +1810,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 
   #quotes .play-btn{
+    width: 70%;
+    height: 60%;
+    top: 18%;
+    left: 0;
   }
 }
 
@@ -1836,8 +1850,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 
   #quotes .quote-text {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 5px 20px;
     font-size: 1rem;
   }
   #quotes em {
@@ -1847,11 +1860,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   #quotes .play-btn{
     position: absolute;
     top: 10%;
-    left: 16%;
-    width: 68%;
-    height: 76%;
+    left: 10%;
+    width: 79%;
+    height: 80%;
     padding-top: 20px;
 
+  }
+  #quotes .quote-btn {
+    width: 10%;
   }
 }
 
