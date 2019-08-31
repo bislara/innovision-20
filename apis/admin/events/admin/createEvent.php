@@ -35,8 +35,7 @@
                         $file_path_name = "../../../../assets/images/events/eid_".($id_res[mysqli_num_rows($id_que)-1][0]).('.').$ext;                
                         
                         if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path_name)) {
-                            $file_path_name=substr($file_path_name,3);
-                            $img_path = $file_path_name;
+                            $img_path = "assets/images/events/eid_".($id_res[mysqli_num_rows($id_que)-1][0]).('.').$ext;
                             $queryImageAdd = "update events set image_path='".mysqli_real_escape_string($conn,$img_path)."' where eid='".$id_res[mysqli_num_rows($id_que)-1][0]."'";
                             $resultImageAdd = mysqli_query($conn, $queryImageAdd);
                             echo(json_encode(array('status' => 'success', 'result' => 'successful entry')));
