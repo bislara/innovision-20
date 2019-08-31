@@ -3,7 +3,7 @@ $(document).ready(function () {
     var ca_id= localStorage.token;
 
     if (ca_id == null || ca_id == "" || !ca_id) {
-        alert("Problem fetching the CA details!");
+        // alert("Problem fetching the CA details!");
         window.location.href('profile.html');
     } else {
         $.ajax({
@@ -61,6 +61,8 @@ $(document).ready(function () {
                     var q14=eventArr["q14"];
                     $('#q14').val(q14);
                     
+                    $('#regist').html("Update");
+
                 }
                 else if(dataArray["status"]=="new CA")
                 {
@@ -78,6 +80,8 @@ $(document).ready(function () {
                     var q4=eventArr["college"];
                     $('#q4s').val(q4);
 
+                    $('#regist').html("Register");
+                    
                 }
             }
         });

@@ -337,7 +337,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-12" align="center">
                                 <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
-                                <button class="about-btn scrollto submitform" >&nbsp;&nbsp; REGISTER&nbsp;&nbsp;</button>
+                                <button class="about-btn scrollto submitform" id="regist">&nbsp;&nbsp; &nbsp;&nbsp;</button>
                                 <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
                             </div>
                         </div>
@@ -477,7 +477,7 @@
                 type: 'get',
                 success:function(response)
                 {
-                    console.log(response)
+                    // console.log(response)
                     response = JSON.parse(response)
                     if(response.status=="success")
                     {
