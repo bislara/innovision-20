@@ -17,7 +17,7 @@ $(document).ready(function () {
 				eid: eid
 			},
 			success: function (data) {
-				console.log(data);
+				// console.log(data);
 
 				var dataArray = JSON.parse(data);
 
@@ -126,7 +126,7 @@ $(document).ready(function () {
 $(document).on("click", ".register", function () {
 	// alert("hi lara");
 	// localStorage.innoID = 3;
-	console.log(eid);
+	// console.log(eid);
 	// eid = url.split("?")[1].split("=")[1];
     var q = localStorage.getItem("token");
 

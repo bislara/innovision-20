@@ -88,19 +88,19 @@ $(document).ready(function () {
 				        return aParts[0] - bParts[0] || aParts[1] - bParts[1];
 				    };
 
-				    function getNumericParts(time) {
-				        // accounts formats of 9:15 AM and 09:15:30 but does not handle AM/PM in comparison
+				function getNumericParts(time) {
+			
 				        return time.split(':');
-				    }
+				    };
 				
 
 				event_day1.sort(sortTimes);
 				event_day2.sort(sortTimes);
 				event_day3.sort(sortTimes);
 
-				console.log(event_day3);
-				console.log(event_day2);
-				console.log(event_day1);
+				// console.log(event_day3);
+				// console.log(event_day2);
+				// console.log(event_day1);
 
 				//day 1 events
 				if (event_day1.length==0) 
