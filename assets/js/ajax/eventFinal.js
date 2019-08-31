@@ -48,29 +48,29 @@ $(document).ready(function () {
 
 					else{
 
-					if (eventArray[i]["date"][0] == "2" || eventArray[i]["date"][1] == "2") {
+					if (eventArray[i]["date"][0] == "1" || eventArray[i]["date"][1] == "1") {
 
 						event_day1.push(eventArray[i]);
 					}
 					
-					else if (eventArray[i]["date"][0] == "3" || eventArray[i]["date"][1] == "3") {
+					else if (eventArray[i]["date"][0] == "2" || eventArray[i]["date"][1] == "2") {
 						event_day2.push(eventArray[i]);
 					}
 
 
-					else if (eventArray[i]["date"][0] == "4" || eventArray[i]["date"][1] == "4") {
+					else if (eventArray[i]["date"][0] == "3" || eventArray[i]["date"][1] == "3") {
 						event_day3.push(eventArray[i]);
 					}
 
-					if (eventArray[i]["date1"][0] == "3" || eventArray[i]["date1"][1] == "3") {
+					if (eventArray[i]["date1"][0] == "2" || eventArray[i]["date1"][1] == "2") {
 						event_day2.push(eventArray[i]);
 					}
 
-					else if (eventArray[i]["date1"][0] == "2" || eventArray[i]["date1"][1] == "2") {
+					else if (eventArray[i]["date1"][0] == "1" || eventArray[i]["date1"][1] == "1") {
 						event_day1.push(eventArray[i]);
 					}
 
-					else if (eventArray[i]["date1"][0] == "4" || eventArray[i]["date1"][1] == "4") {
+					else if (eventArray[i]["date1"][0] == "3" || eventArray[i]["date1"][1] == "3") {
 						event_day3.push(eventArray[i]);
 					}
 
@@ -78,17 +78,17 @@ $(document).ready(function () {
 				 }
 				 else
 				 {
-					if (eventArray[i]["date"][0] == "2" || eventArray[i]["date"][1] == "2") {
+					if (eventArray[i]["date"][0] == "1" || eventArray[i]["date"][1] == "1") {
 
 						event_day1.push(eventArray[i]);
 					}
 					
-					else if (eventArray[i]["date"][0] == "3" || eventArray[i]["date"][1] == "3") {
+					else if (eventArray[i]["date"][0] == "2" || eventArray[i]["date"][1] == "2") {
 						event_day2.push(eventArray[i]);
 					}
 
 
-					else if (eventArray[i]["date"][0] == "4" || eventArray[i]["date"][1] == "4") {
+					else if (eventArray[i]["date"][0] == "3" || eventArray[i]["date"][1] == "3") {
 						event_day3.push(eventArray[i]);
 					}				 	
 				 }
@@ -134,14 +134,14 @@ $(document).ready(function () {
 					for (var i = 0; i < event_day1.length ; i++) {
 						// console.log(event_day1[i]['eid']);
 						if (event_day1[i]['time'].split(':')[0]<12) {
-							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day1[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
+							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day1[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
 						}
 						else if (event_day1[i]['time'].split(':')[0]=12) {
-							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day1[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
+							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day1[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
 						}
 						else
 						{
-							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day1[i]['time'].split(':')[0]-12) + ':' + event_day1[i]['time'].split(':')[1] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
+							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day1[i]['time'].split(':')[0]-12) + ':' + event_day1[i]['time'].split(':')[1] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
 						}
 					}
 					$('#day-1').html(e);
@@ -161,14 +161,14 @@ $(document).ready(function () {
 					for (var i = 0; i < event_day2.length ; i++) {
 						// console.log(event_day1[i]['eid']);
 						if (event_day2[i]['time'].split(':')[0]<12) {
- 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day2[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
+ 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day2[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
 						}
 						else if (event_day2[i]['time'].split(':')[0]=12) {
- 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day2[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
+ 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day2[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
 						}					
 						else
 						{
- 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day2[i]['time'].split(':')[0]-12) + ':' + event_day2[i]['time'].split(':')[1]  + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
+ 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day2[i]['time'].split(':')[0]-12) + ':' + event_day2[i]['time'].split(':')[1]  + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
 						}
  						
 					}
@@ -189,14 +189,14 @@ $(document).ready(function () {
 					for (var i = 0; i < event_day3.length ; i++) {
 						// console.log(event_day1[i]['eid']);
 						if (event_day3[i]['time'].split(':')[0]<12) {
-							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day3[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
+							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day3[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
 						}
 						else if (event_day3[i]['time'].split(':')[0]=12) {
-							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day3[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
+							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day3[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
 						}
 						else
 						{
-							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day3[i]['time'].split(':')[0]-12) + ':' + event_day3[i]['time'].split(':')[1] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
+							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day3[i]['time'].split(':')[0]-12) + ':' + event_day3[i]['time'].split(':')[1] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="../'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
 						}
 
 					}
@@ -216,7 +216,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_paidworkshops.length) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 1]["eid"] +'" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 2]["eid"] +'" value="' + event_paidworkshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 1]["eid"] +'" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 2]["eid"] +'" value="' + event_paidworkshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 							$("#paidworkshops").children("center").append(str);
@@ -229,7 +229,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_paidworkshops.length - (event_paidworkshops.length) % 3) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 1]["eid"] +'" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 2]["eid"] +'" value="' + event_paidworkshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 1]["eid"] +'" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 2]["eid"] +'" value="' + event_paidworkshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 							$("#paidworkshops").children("center").append(str);
@@ -237,12 +237,12 @@ $(document).ready(function () {
 						}
 						if ((event_paidworkshops.length) % 3 == 1) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 						} else if ((event_paidworkshops.length) % 3 == 2) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 1]["eid"] +'" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_paidworkshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';								str = str + '</div>'
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index]["eid"] +'" value="' + event_paidworkshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index]["image_path"]+ '" alt=" Event ' + event_paidworkshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_paidworkshops[3 * index + 1]["eid"] +'" value="' + event_paidworkshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_paidworkshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_paidworkshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';								str = str + '</div>'
 
 						}
 						$("#paidworkshops").children("center").append(str);
@@ -263,7 +263,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_flagships.length) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 1]["eid"] +'" value="' + event_flagships[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index + 1]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 2]["eid"] +'" value="' + event_flagships[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index + 2]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 1]["eid"] +'" value="' + event_flagships[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index + 1]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 2]["eid"] +'" value="' + event_flagships[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index + 2]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 							$("#flagship").children("center").append(str);
@@ -275,7 +275,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_flagships.length - (event_flagships.length) % 3) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 1]["eid"] +'" value="' + event_flagships[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index + 1]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 2]["eid"] +'" value="' + event_flagships[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index + 2]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 1]["eid"] +'" value="' + event_flagships[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index + 1]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 2]["eid"] +'" value="' + event_flagships[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index + 2]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 							$("#flagship").children("center").append(str);
@@ -283,13 +283,13 @@ $(document).ready(function () {
 						}
 						if ((event_flagships.length) % 3 == 1) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 	
 						} else if ((event_flagships.length) % 3 == 2) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 1]["eid"] +'" value="' + event_flagships[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_flagships[3 * index + 1]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_flagships[3 * index]["eid"] +'" value="' + event_flagships[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index]["image_path"]+ '" alt=" Event ' + event_flagships[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_flagships[3 * index + 1]["eid"] +'" value="' + event_flagships[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_flagships[3 * index + 1]["image_path"] + '" alt=" Event ' + event_flagships[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 						}
@@ -308,7 +308,7 @@ $(document).ready(function () {
 						var str='';
 						while (index < (event_events.length) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 1]["eid"] +'" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 2]["eid"] +'" value="' + event_events[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 2]["image_path"] + '" alt=" Event ' + event_events[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 1]["eid"] +'" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 2]["eid"] +'" value="' + event_events[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index + 2]["image_path"] + '" alt=" Event ' + event_events[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 							$("#events").children("center").append(str);							 
@@ -322,19 +322,19 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_events.length - (event_events.length) % 3) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 1]["eid"] +'" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 2]["eid"] +'" value="' + event_events[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 2]["image_path"] + '" alt=" Event ' + event_events[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 1]["eid"] +'" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 2]["eid"] +'" value="' + event_events[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index + 2]["image_path"] + '" alt=" Event ' + event_events[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 							index = index + 1;
 							// console.log(str)
 						}
 						if ((event_events.length) % 3 == 1) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 						} else if ((event_events.length) % 3 == 2) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 1]["eid"] +'" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_events[3 * index]["eid"] +'" value="' + event_events[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index]["image_path"]+ '" alt=" Event ' + event_events[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_events[3 * index + 1]["eid"] +'" value="' + event_events[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_events[3 * index + 1]["image_path"] + '" alt=" Event ' + event_events[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 						}
@@ -354,7 +354,7 @@ $(document).ready(function () {
 						var str= "";
 						while (index < (event_workshops.length) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 1]["eid"] +'" value="' + event_workshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 2]["eid"] +'" value="' + event_workshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 1]["eid"] +'" value="' + event_workshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 2]["eid"] +'" value="' + event_workshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 							$("#workshops").children("center").append(str);
 							index = index + 1;
@@ -366,19 +366,19 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_workshops.length - (event_workshops.length) % 3) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 1]["eid"] +'" value="' + event_workshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 2]["eid"] +'" value="' + event_workshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 1]["eid"] +'" value="' + event_workshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 2]["eid"] +'" value="' + event_workshops[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index + 2]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 							$("#workshops").children("center").append(str);
 							index = index + 1;
 						}
 						if ((event_workshops.length) % 3 == 1) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 						} else if ((event_workshops.length) % 3 == 2) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 1]["eid"] +'" value="' + event_workshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_workshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_workshops[3 * index]["eid"] +'" value="' + event_workshops[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index]["image_path"]+ '" alt=" Event ' + event_workshops[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_workshops[3 * index + 1]["eid"] +'" value="' + event_workshops[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_workshops[3 * index + 1]["image_path"] + '" alt=" Event ' + event_workshops[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'
 
 						}
@@ -399,7 +399,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_exhibitions.length) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 1]["eid"] +'" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index + 1]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 2]["eid"] +'" value="' + event_exhibitions[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index + 2]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 1]["eid"] +'" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index + 1]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 2]["eid"] +'" value="' + event_exhibitions[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index + 2]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 							$("#exhibitions").children("center").append(str);
 							index = index + 1;
@@ -411,7 +411,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_exhibitions.length - (event_exhibitions.length) % 3) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 1]["eid"] +'" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index + 1]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 2]["eid"] +'" value="' + event_exhibitions[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index + 2]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 1]["eid"] +'" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index + 1]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 2]["eid"] +'" value="' + event_exhibitions[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index + 2]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 							$("#exhibitions").children("center").append(str);
 							index = index + 1;
@@ -419,12 +419,12 @@ $(document).ready(function () {
 						}
 						if ((event_exhibitions.length) % 3 == 1) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 
 						} else if ((event_exhibitions.length) % 3 == 2) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 1]["eid"] +'" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_exhibitions[3 * index + 1]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index]["eid"] +'" value="' + event_exhibitions[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index]["image_path"]+ '" alt=" Event ' + event_exhibitions[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_exhibitions[3 * index + 1]["eid"] +'" value="' + event_exhibitions[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_exhibitions[3 * index + 1]["image_path"] + '" alt=" Event ' + event_exhibitions[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 
 						}
@@ -445,7 +445,7 @@ $(document).ready(function () {
 						var str = "";
 						while (index < (event_cultural.length) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 1]["eid"] +'" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index + 1]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 2]["eid"] +'" value="' + event_cultural[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index + 2]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 1]["eid"] +'" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index + 1]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 2]["eid"] +'" value="' + event_cultural[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index + 2]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 
 							$("#cultural").children("center").append(str);
@@ -458,7 +458,7 @@ $(document).ready(function () {
 						var str="";
 						while (index < (event_cultural.length - (event_cultural.length) % 3) / 3) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 1]["eid"] +'" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index + 1]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 2]["eid"] +'" value="' + event_cultural[3 * index + 2]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index + 2]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 1]["eid"] +'" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index + 1]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 2]["eid"] +'" value="' + event_cultural[3 * index + 2]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index + 2]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 2]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 
 							$("#cultural").children("center").append(str);
@@ -466,12 +466,12 @@ $(document).ready(function () {
 						}
 						if ((event_cultural.length) % 3 == 1) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-4"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 
 						} else if ((event_cultural.length) % 3 == 2) {
 							str = str + '<div class="row">';
-							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 1]["eid"] +'" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="speaker"><img src="' + event_cultural[3 * index + 1]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
+							str = str + '<div class="col-lg-4 col-md-6 offset-md-2"><a href="../views/event-details.html?eid='+ event_cultural[3 * index]["eid"] +'" value="' + event_cultural[3 * index]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index]["image_path"]+ '" alt=" Event ' + event_cultural[3 * index]["eid"] + '" class="img-fluid"></div></a></div><div class="col-lg-4 col-md-6"><a href="../views/event-details.html?eid='+ event_cultural[3 * index + 1]["eid"] +'" value="' + event_cultural[3 * index + 1]["eid"] + '"><div class="speaker"><img src="../' + event_cultural[3 * index + 1]["image_path"] + '" alt=" Event ' + event_cultural[3 * index + 1]["eid"] + '" class="img-fluid"></div></a></div>';	
 							str = str + '</div>'			
 
 						}

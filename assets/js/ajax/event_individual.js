@@ -36,7 +36,7 @@ $(document).ready(function () {
 					var venue=eventArr["venue"];
 					$('#eid_venue').html(venue);
 
-					var img='<img src="'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
+					var img='<img src="../'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
 					$('#eid_img').html(img);
 
 					var des=eventArr["description"];
@@ -91,7 +91,7 @@ $(document).ready(function () {
 					var venue=eventArr["venue"];
 					$('#eid_venue').html(venue);
 
-					var img='<img src="'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
+					var img='<img src="../'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
 					$('#eid_img').html(img);
 
 					var des=eventArr["description"];
