@@ -37,6 +37,8 @@ $(document).ready(function () {
 				
 				for (var i = 0; i < eventArray.length; i++) {
 
+				 if(eventArray[i]["date1"]!="")
+				 {
 					if (eventArray[i]["date1"][0]-eventArray[i]["date"][0]>1 || eventArray[i]["date1"][1]-eventArray[i]["date"][1]>1) 
 					{
 						event_day3.push(eventArray[i]);
@@ -73,6 +75,23 @@ $(document).ready(function () {
 					}
 
 					}
+				 }
+				 else
+				 {
+					if (eventArray[i]["date"][0] == "2" || eventArray[i]["date"][1] == "2") {
+
+						event_day1.push(eventArray[i]);
+					}
+					
+					else if (eventArray[i]["date"][0] == "3" || eventArray[i]["date"][1] == "3") {
+						event_day2.push(eventArray[i]);
+					}
+
+
+					else if (eventArray[i]["date"][0] == "4" || eventArray[i]["date"][1] == "4") {
+						event_day3.push(eventArray[i]);
+					}				 	
+				 }
 				}
 
 				// console.log(event_day3);
@@ -117,6 +136,9 @@ $(document).ready(function () {
 						if (event_day1[i]['time'].split(':')[0]<12) {
 							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day1[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
 						}
+						else if (event_day1[i]['time'].split(':')[0]=12) {
+							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day1[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
+						}
 						else
 						{
 							e= e+ '<a href="event-details.html?eid='+event_day1[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + (event_day1[i]['time'].split(':')[0]-12) + ':' + event_day1[i]['time'].split(':')[1] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day1[i]['image_path'] +'" alt="'+ event_day1[i]['title'] +' "></div><h4>' + event_day1[i]['title'] +'</h4><p>Venue : ' +event_day1[i]['venue'] + '</p></div></div></a>'
@@ -129,7 +151,7 @@ $(document).ready(function () {
 				//day 2 events
 				if (event_day2.length==0) 
 				{
-					var e='<div class="row schedule-item"><div class="col-md-12"><h4>No events on Day 1</h4></div></div>';
+					var e='<div class="row schedule-item"><div class="col-md-12"><h4>No events on Day 2</h4></div></div>';
 					$('#day-2').html(e);
 				}
 				else
@@ -140,6 +162,9 @@ $(document).ready(function () {
 						// console.log(event_day1[i]['eid']);
 						if (event_day2[i]['time'].split(':')[0]<12) {
  							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day2[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
+						}
+						else if (event_day2[i]['time'].split(':')[0]=12) {
+ 							e= e+ '<a href="event-details.html?eid='+event_day2[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day2[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day2[i]['image_path'] +'" alt="'+ event_day2[i]['title'] +' "></div><h4>' + event_day2[i]['title'] +'</h4><p>Venue : ' +event_day2[i]['venue'] + '</p></div></div></a>'
 						}					
 						else
 						{
@@ -154,7 +179,7 @@ $(document).ready(function () {
 				//day 3 events
 				if (event_day3.length==0) 
 				{
-					var e='<div class="row schedule-item"><div class="col-md-12"><h4>No events on Day 1</h4></div></div>';
+					var e='<div class="row schedule-item"><div class="col-md-12"><h4>No events on Day 3</h4></div></div>';
 					$('#day-3').html(e);
 				}
 				else
@@ -165,6 +190,9 @@ $(document).ready(function () {
 						// console.log(event_day1[i]['eid']);
 						if (event_day3[i]['time'].split(':')[0]<12) {
 							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day3[i]['time'] + ' AM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
+						}
+						else if (event_day3[i]['time'].split(':')[0]=12) {
+							e= e+ '<a href="event-details.html?eid='+event_day3[i]['eid']+'"><div class="row schedule-item"><div class="col-md-2"><time>' + event_day3[i]['time'] + ' PM</time></div><div class="col-md-10"><div class="speaker"><img src="'+ event_day3[i]['image_path'] +'" alt="'+ event_day3[i]['title'] +' "></div><h4>' + event_day3[i]['title'] +'</h4><p>Venue : ' +event_day3[i]['venue'] + '</p></div></div></a>'
 						}
 						else
 						{
