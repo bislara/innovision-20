@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2019 at 07:28 PM
+-- Generation Time: Aug 31, 2019 at 04:11 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.31
 
@@ -50,7 +50,8 @@ INSERT INTO `ca_selection_questions` (`question_id`, `question`) VALUES
 ('q10', 'How many students do you think you can convince into bringing to Innovision this year? What\'s your strategy to promote Innovision?'),
 ('q11', 'Social Media platforms that you are active on?'),
 ('q12', 'Languages that you are fluent in'),
-('q13', 'What makes you unique from others?');
+('q13', 'What makes you unique from others?'),
+('q14', 'Paste the link to your CV below');
 
 -- --------------------------------------------------------
 
@@ -140,13 +141,6 @@ CREATE TABLE `events` (
   `results_submitted` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`eid`, `title`, `description`, `rules`, `judging_criteria`, `date`, `venue`, `time`, `date1`, `time1`, `category`, `coordinatorName1`, `coordinatorContact1`, `coordinatorName2`, `coordinatorContact2`, `loginId`, `loginPassword`, `winner1`, `winner2`, `image_path`, `max_limit`, `filled`, `results_submitted`) VALUES
-(3, 'Event 1', 'Event 1', 'Event 1', 'Event 1', '2019-08-02', 'Event 1', '11:11', '2019-08-03', '22:22', 'Event 1', 'Event 1', 'Event 1', 'Event 1', 'Event 1', '123', '123', NULL, NULL, '../../../assets/images/events/eid_3.png', 1234, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -157,14 +151,6 @@ CREATE TABLE `events_registration` (
   `inno_id` int(11) NOT NULL,
   `event_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `events_registration`
---
-
-INSERT INTO `events_registration` (`inno_id`, `event_id`) VALUES
-(4, 3),
-(5, 3);
 
 -- --------------------------------------------------------
 
@@ -183,16 +169,9 @@ CREATE TABLE `users` (
   `paid` int(11) NOT NULL DEFAULT 0,
   `checked_in` int(11) NOT NULL DEFAULT 0,
   `user_password` varchar(100) NOT NULL,
-  `qr_code` varchar(100) NOT NULL
+  `qr_code` varchar(100) NOT NULL,
+  `ca_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`inno_id`, `name`, `gender`, `phone`, `email`, `college`, `address`, `paid`, `checked_in`, `user_password`, `qr_code`) VALUES
-(4, 'innovision', 'male', 2147483647, 'inno@inno.com', 'VSSUT, Burla', 'NIT Rourkela', 0, 1, '25f9e794323b453885f5181f1b624d0b', '../../../assets/images/qrcodes/4.png'),
-(5, 'test', 'female', 2147483647, 'test@test.com', 'VSSUT, Burla', 'NIT Rourkela', 0, 0, '25f9e794323b453885f5181f1b624d0b', '../../../assets/images/qrcodes/5.png');
 
 --
 -- Indexes for dumped tables
@@ -231,25 +210,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `ca_selection_responses`
 --
 ALTER TABLE `ca_selection_responses`
-  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

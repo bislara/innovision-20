@@ -8,12 +8,18 @@
 
     include('../../config.php');
 
-	$jwt = $_GET["q"];
+    $headers = apache_request_headers();
+
+    $authHeader= $headers["Authorization"];
+    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
+
+	
     $secretKey = base64_decode(SECRET_KEY);
     
     if($_SERVER["REQUEST_METHOD"] === "GET" && $jwt != "") {
         try 
         {
+
             $decoded = JWT::decode($jwt, $secretKey, array(ALGORITHM));
             $decoded_array = (array) $decoded;
             $data = $decoded_array['data']; 
@@ -23,7 +29,7 @@
             $regEvents=[];
             $certificates=[];
             //basicInfo
-            $query = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code FROM users where inno_id ='".$inno_id."'");
+            $query = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code, ca_id FROM users where inno_id ='".$inno_id."'");
             if (mysqli_num_rows($query) == 0) {
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
             } else {

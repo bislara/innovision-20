@@ -16,39 +16,19 @@
 
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != "") {
 
-		$query = mysqli_query($conn, "SELECT * FROM events where eid ='".$eid."'");
+		$result = $conn->query("SELECT inno_id, name, email, phone, college FROM users where inno_id =ANY(SELECT inno_id FROM events_registration WHERE event_id='".$eid."')");
 
-		if (mysqli_num_rows($query) == 0) {
+		if (mysqli_num_rows($result) == 0) {
 
 			echo(json_encode(array('status' => 'failure', 'result' => 'eid not found')));
 		}
 
 		else {
-
-			$query = mysqli_query($conn, "SELECT * FROM events_registration where event_id=".$eid);
-
-			if ($query) {
-
-				$result = array();
-				while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-
-		    		$query2 = mysqli_query($conn, "SELECT inno_id, name, email, phone, college FROM users where inno_id =".$res["inno_id"]);
-		    		if ($query2) {
-
-		    			$result[] = mysqli_fetch_array($query2);
-		    		}
-		    		else {
-
-						echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
-		    		}
-				}
-
-				echo(json_encode(array('status' => 'success', 'result' => $result)));
+			$res=array();
+			while($row=$result->fetch_assoc()){
+				array_push($res,$row);
 			}
-			else {
-
-				echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
-		   	}
+			echo(json_encode(array('status' => 'success','result' =>$res)));
 		}
 	}
 

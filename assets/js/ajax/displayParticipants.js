@@ -19,7 +19,7 @@ $(document).ready(function () {
             for (var i = 0; i < data.length; i++) {
                 temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td></tr>';
             }
-            //console.log(temp);
+            console.log(temp);
             $("#dp").append(temp);
         },
         error: function (data) {
