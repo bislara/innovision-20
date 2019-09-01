@@ -1,2 +1,2 @@
 # Innovision-19
-Official website for the annual techno-management festival of NITR.
+Official website for the annual techno-management festival of NIT Rourkela.
