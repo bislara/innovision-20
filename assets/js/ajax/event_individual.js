@@ -17,7 +17,7 @@ $(document).ready(function () {
 				eid: eid
 			},
 			success: function (data) {
-				console.log(data);
+				// console.log(data);
 
 				var dataArray = JSON.parse(data);
 
@@ -36,7 +36,7 @@ $(document).ready(function () {
 					var venue=eventArr["venue"];
 					$('#eid_venue').html(venue);
 
-					var img='<img src="'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
+					var img='<img src="../'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
 					$('#eid_img').html(img);
 
 					var des=eventArr["description"];
@@ -91,7 +91,7 @@ $(document).ready(function () {
 					var venue=eventArr["venue"];
 					$('#eid_venue').html(venue);
 
-					var img='<img src="'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
+					var img='<img src="../'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
 					$('#eid_img').html(img);
 
 					var des=eventArr["description"];
@@ -126,8 +126,8 @@ $(document).ready(function () {
 $(document).on("click", ".register", function () {
 	// alert("hi lara");
 	// localStorage.innoID = 3;
-	// console.log(localStorage.innoID);
-	eid = url.split("?")[1].split("=")[1];
+	// console.log(eid);
+	// eid = url.split("?")[1].split("=")[1];
     var q = localStorage.getItem("token");
 
 	// console.log(q);	
@@ -149,7 +149,7 @@ $(document).on("click", ".register", function () {
 
 				} else if (dataArr["status"] == "registration done") {
 					swal("Registration Successful !", ": )", "success");
-					window.location.reload();
+					window.location.assign('event-details.html?eid='+ eid);
 
 				} else if (dataArr["status"] == "failure") {
 					swal("Registration failed! Please try again.", ":(", "error");
@@ -157,7 +157,8 @@ $(document).on("click", ".register", function () {
 				}
 				else if (dataArr["status"] == "DeRegistration done") {
 					swal("De registration Successful !", ": )", "success");
-					window.location.reload();
+					window.location.assign('event-details.html?eid='+ eid);
+					
 				}
 			}
 		});
