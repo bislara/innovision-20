@@ -140,7 +140,7 @@ jQuery(document).ready(function( $ ) {
     var ticketType = button.data('ticket-type');
     var modal = $(this);
     modal.find('#ticket-type').val(ticketType);
-  })
+  });
 
 // custom code
 

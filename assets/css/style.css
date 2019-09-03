@@ -150,15 +150,17 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-    height: 80px;
-    padding: 20px 0;
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    transition: all 0.5s;
-    z-index: 997;
-    background: rgba(6, 12, 34, 0.98);
+  height: 80px;
+  padding: 20px 0;
+  position: fixed;
+  /* changed by BiswaBehera "position relative to fixed" */
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+  background: rgba(6, 12, 34, 0.85);
+
 }
 
 #header.header-scrolled,
@@ -181,7 +183,12 @@ h6 {
 }
 
 #header #logo h1 span {
-    color: #f82249;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background:  -webkit-linear-gradient(45deg, #13b1cd, #f82249);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 #header #logo h1 a,
@@ -190,9 +197,10 @@ h6 {
 }
 
 #header #logo img {
-    padding: 0;
-    margin: 0;
-    max-height: 50px;
+  padding: 0 0 7px 0;
+  margin: 0 10px 0 0;
+  max-height: 55px;
+
 }
 
 
@@ -509,12 +517,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #intro {
-    width: 100%;
-    height: 100vh;
-    background: url(../images/intro-bg.jpg) top center;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/space-odessey.jpg) top center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+
 }
 
 #intro:before {
@@ -1004,7 +1013,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #venue {
-    padding: 60px 0;
+  padding: 110px 0 100px;
+
 }
 
 #venue .container-fluid {
@@ -1504,6 +1514,50 @@ body.mobile-nav-active #mobile-nav-toggle {
     background: #e0072f;
 }
 
+/* ============ */
+
+#quotes{
+  position: relative;
+  text-align: center;
+  padding: 30px 20px 130px 20px;
+}
+
+
+
+#quotes em {
+  color: #a5a9b3;
+}
+
+.quote-text{
+  padding-left: 200px;
+  padding-right: 200px;
+  color: #0e1b4d;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+#quotes .quote-btn {
+  width: 7%;
+}
+#quotes .quote-btn:focus,
+#quotes .quote-btn:hover {
+  color: #000;
+}
+
+#quotes .youtube-link {
+  position: relative;
+}
+
+#quotes .play-btn {
+  height: 100%;
+  width: 58%;
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+
+/* ============ */
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -1517,8 +1571,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top {
-    background: #040919;
-    padding: 60px 0 30px 0;
+  background: #040919;
+  padding: 60px 0 40px 0;
+
 }
 
 #footer .footer-top .footer-info {
@@ -1536,8 +1591,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info img {
-    height: 40px;
-    margin-bottom: 10px;
+  width: 50%;
+  margin-bottom: 10px;
+
 }
 
 #footer .footer-top .footer-info p {
@@ -1685,15 +1741,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (min-width: 1024px) {
-    #intro {
-        background-attachment: fixed;
-    }
-    #about {
-        background-attachment: fixed;
-    }
-    #subscribe {
-        background-attachment: fixed;
-    }
+  #intro {
+    background-attachment: fixed;
+  }
+
+  #about {
+    background-attachment: fixed;
+  }
+
+  #subscribe {
+    background-attachment: fixed;
+  }
+
+  .quote-text {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.8rem;
+  }
+
 }
 
 @media (max-width: 1199px) {
@@ -1706,42 +1771,73 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 991px) {
-    #header {
-        background: rgba(6, 12, 34, 0.98);
-        height: 70px;
-        padding: 15px 0;
-        transition: all 0.5s;
-    }
-    #nav-menu-container {
-        display: none;
-    }
-    #mobile-nav-toggle {
-        display: inline;
-    }
-    #intro .intro-container {
-        top: 70px;
-    }
-    #intro h1 {
-        font-size: 34px;
-    }
-    #intro p {
-        font-size: 16px;
-    }
-    #schedule .nav-tabs a {
-        padding: 8px 60px;
-    }
+  #header {
+    background: rgba(6, 12, 34, 0.98);
+    height: 70px;
+    padding: 10px 0;
+    transition: all 0.5s;
+  }
+
+  #nav-menu-container {
+    display: none;
+  }
+
+  #mobile-nav-toggle {
+    display: inline;
+  }
+
+  #intro .intro-container {
+    top: 70px;
+  }
+
+  #intro h1 {
+    font-size: 34px;
+  }
+
+  #intro p {
+    font-size: 16px;
+  }
+
+  #schedule .nav-tabs a {
+    padding: 8px 60px;
+  }
 }
 
 @media (max-width: 768px) {
-    .back-to-top {
-        bottom: 15px;
-    }
-    #faq #faq-list a {
-        font-size: 18px;
-    }
-    #faq #faq-list i {
-        top: 13px;
-    }
+  .back-to-top {
+    bottom: 15px;
+  }
+
+  #faq #faq-list a {
+    font-size: 18px;
+  }
+
+  #faq #faq-list i {
+    top: 13px;
+  }
+
+  #footer .footer-top .footer-info img {
+    width: 30%;
+    float: left;
+    padding-right: 15px;
+  }
+
+  #quotes .quote-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5rem;
+  }
+  
+  #quotes em {
+    font-size: 1rem;
+  }
+
+  #quotes .play-btn{
+    width: 70%;
+    height: 60%;
+    top: 18%;
+    left: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1751,15 +1847,51 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 574px) {
-    #venue .venue-info h3 {
-        font-size: 24px;
-    }
+  #venue .venue-info h3 {
+    font-size: 24px;
+  }
+
+  .quote-text {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.5rem;
+  }
+
+  #quotes h2 {
+    font-size: 1.3rem;
+  }
+
 }
 
 @media (max-width: 480px) {
-    #schedule .nav-tabs a {
-        padding: 8px 30px;
-    }
+  #schedule .nav-tabs a {
+    padding: 8px 30px;
+  }
+
+  #quotes .youtube-link {
+    height: 200px;
+  }
+
+  #quotes .quote-text {
+    padding: 5px 20px;
+    font-size: 1rem;
+  }
+  #quotes em {
+    font-size: 0.8rem;
+  }
+
+  #quotes .play-btn{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 79%;
+    height: 80%;
+    padding-top: 20px;
+
+  }
+  #quotes .quote-btn {
+    width: 10%;
+  }
 }
 
 @media (max-width: 460px) {

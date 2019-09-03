@@ -29,7 +29,7 @@
 			if ($query) {
 
 				$result = array();
-				while($res = mysqli_fetch_array($query, MYSQL_ASSOC)) {
+				while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 		    		$query2 = mysqli_query($conn, "SELECT inno_id, name, email, phone, college FROM users where inno_id =".$res["inno_id"]);
 		    		if ($query2) {

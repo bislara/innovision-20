@@ -6,12 +6,12 @@ $(document).ready(function(){
             request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
     },
     success: function (data) {
-        console.log(data);
+        // console.log(data);
         var data_obj = JSON.parse(data);
         // console.log(data_obj);
         if(data_obj.status == "success")
         {
-          console.log(data_obj.result);
+          // console.log(data_obj.result);
           var data_arr = data_obj.result;
           var temp=0;
           for (var i = 0; i < data_arr.length; i++) {
