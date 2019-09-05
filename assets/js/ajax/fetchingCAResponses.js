@@ -1,17 +1,17 @@
 $(document).ready(function(){
   $.ajax({
     type: "POST",
-    url: "../../../apis/panels/CASelection/displayResponses.php",
-    data: {
-      token : localStorage.ca_token
+    url: "../../../apis/admin/ca/displayResponses.php",
+    beforeSend: function(request){
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
     },
     success: function (data) {
-        
+        // console.log(data);
         var data_obj = JSON.parse(data);
         // console.log(data_obj);
         if(data_obj.status == "success")
         {
-          console.log(data_obj.result);
+          // console.log(data_obj.result);
           var data_arr = data_obj.result;
           var temp=0;
           for (var i = 0; i < data_arr.length; i++) {
