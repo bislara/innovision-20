@@ -15,7 +15,8 @@
 
 	
     $secretKey = base64_decode(SECRET_KEY);
-    
+    if (isset($jwt) && $jwt )
+    {    
     if($_SERVER["REQUEST_METHOD"] === "GET" && $jwt != "") {
         try 
         {
@@ -70,5 +71,10 @@
         }
         
 	}
+}
+else
+{
+    echo json_encode(array('status' => 'failure', 'result' => 'token missing'));
+}
 
 ?>

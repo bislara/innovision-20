@@ -279,7 +279,11 @@ h6 {
   text-decoration: none;
 }
 
-.nav-menu .menu-acive a:not([href]):not([tabindex]), .nav-menu a:not([href]):not([tabindex]):hover {
+.nav-menu .menu-acive a:not([href]):not([tabindex]) {
+  color: #fff;
+}
+
+.nav-menu a:not([href]):not([tabindex]):hover {
   color: #fff;
 }
 
