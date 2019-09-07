@@ -83,6 +83,10 @@ $(document).ready(function () {
                     $('#regist').html("Register");
                     
                 }
+                else
+                {
+                    window.location.assign("../login.html");
+                }
             }
         });
     } 
@@ -227,19 +231,19 @@ $(document).on("click", ".submitform", function () {
                                     });
                                 }
                                 // successAlert();
-                                swal({icon: "success", 
-                                    title: "Successfully registered",
-                                    text: ":)",
-                                    buttons: {
-                                        sure : "Okay"
-                                    },
-                                }).then((value) => {
-                                    switch(value){
-                                        case "sure":
-                                        location.reload(true);
-                                        break;
-                                    }
-                                });
+                                // swal({icon: "success", 
+                                //     title: "Successfully registered",
+                                //     text: ":)",
+                                //     buttons: {
+                                //         sure : "Okay"
+                                //     },
+                                // }).then((value) => {
+                                //     switch(value){
+                                //         case "sure":
+                                //         location.reload(true);
+                                //         break;
+                                //     }
+                                // });
                                 location.reload(true);
                             }
                             else {

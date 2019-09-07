@@ -124,12 +124,12 @@ $(document).ready(function () {
 				//day 1 events
 				if (event_day1.length==0) 
 				{
+					// console.log(event_day1.length);
 					var e='<div class="row schedule-item"><div class="col-md-12"><h4>No events on Day 1</h4></div></div>';
-					$('day-1').html(e);
+					$('#day-1').html(e);
 				}
 				else
 				{
-
 					var e='';
 					for (var i = 0; i < event_day1.length ; i++) {
 						// console.log(event_day1[i]['eid']);
