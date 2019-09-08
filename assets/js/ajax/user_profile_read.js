@@ -16,7 +16,7 @@ $(document).ready(function(){
                 type: 'get',
                     success:function(response)
                     {
-                        console.log(response);
+                        //console.log(response);
                         response = JSON.parse(response);
                         if(response.status=="success")
                         {
@@ -25,6 +25,7 @@ $(document).ready(function(){
                             var email = response.result['basicInfo']['email'];
                             var college = response.result['basicInfo']['college'];
                             var ca_id = response.result['basicInfo']['ca_id'];
+                            var has_submitted_feedack = response.result['basicInfo']['submitted_feedback'];
                             if(ca_id != 0)
                                 $("#ca_button1").show();
                             var qr_path = "../assets/images/qrcodes/"+id+".png";
@@ -33,8 +34,9 @@ $(document).ready(function(){
                             document.getElementById("participant_email").innerHTML="Email : "+email;
                             document.getElementById("participant_college").innerHTML="College : "+college;
                             document.getElementById("qr_image").src =qr_path;
-                            console.log(response.result['regEvents'])
+                            //console.log(response.result['regEvents'])
                             regevents = response.result['regEvents']
+                            certificates = response.result['certificates'];
                             if(regevents.length > 0)
                             {
                                 var num_of_events = regevents.length; 
@@ -62,8 +64,34 @@ $(document).ready(function(){
                             }
                             else
                             {
-                                $( "#profile_events" ).append("<div class='row' style='text-align: center;'><h2 style='color:white;'><center>You have not Registered for any event</center></h2></div>")
+                                $( "#profile_events" ).append("<h2 style='color:white;'><center>No Event</center></h2>")
                                             
+                            }
+                            if(has_submitted_feedack == 1)
+                            {
+                                if(certificates.length > 0)
+                                {
+                                    $("#user_certificate").append("<div class='section-header'>   <h2 style='color: white; font-size: 26px;'>Your Certificate</h2> </div>");                              
+                                    var num_of_cert=certificates.length;
+                                    for(var i=0; i<num_of_cert; i=i+4)
+                                    {
+                                        var j=i;
+                                        var temp="";
+                                        for(var j=i; j<i+4; j=j+1)
+                                        {
+                                            if(j>=num_of_cert)
+                                                break;
+                                            else
+                                            {
+                                                var cert_image_path = certificates[j]['img_path'];
+                                                temp = temp+"<div class='col-lg-3 col-md-6'><div class='hotel'><div class='hotel-img'><a href="+cert_image_path+" download><img src='"+cert_image_path+"' alt='Certificate' class='img-fluid'></a></div></div></div>"
+                                                //temp = temp+"<div class='col-lg-3 col-md-6'>                  <div class='hotel'><div class='hotel-img'><img src='../"+image_path+"' alt='"+event_name+"' class='img-fluid'></div><h3><a href="+link+">"+event_name+"</a></h3></div></div>"
+
+                                            }
+                                        }
+                                        $( "#user_certificate" ).append("<div class='row' style='text-align: center;'>"+temp+"</div><br>")
+                                    }
+                                }
                             }             
                         }                               
                         if(response.status=="failure")

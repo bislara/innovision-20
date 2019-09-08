@@ -30,7 +30,7 @@
             $regEvents=[];
             $certificates=[];
             //basicInfo
-            $query = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code, ca_id FROM users where inno_id ='".$inno_id."'");
+            $query = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code, ca_id, submitted_feedback FROM users where inno_id ='".$inno_id."'");
             if (mysqli_num_rows($query) == 0) {
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
             } else {
@@ -52,16 +52,18 @@
                 }
             }    
             //Certificate
-            /*$query = mysqli_query($conn, "SELECT img_path FROM certificate where inno_id ='".$inno_id."'");
-            if (mysqli_num_rows($query) == 1) {
-                $certificates = mysqli_fetch_array($query,MYSQLI_ASSOC);            
-            } */
+            $sql2 = "SELECT img_path FROM certificate where inno_id ='".$inno_id."'";
+            $query = mysqli_query($conn, $sql2);
 
-
+            if (mysqli_num_rows($query) >0) 
+            {
+                $certificates = mysqli_fetch_all($query,MYSQLI_ASSOC);            
+            }
+            
             $result = (object) [
                 'basicInfo'=>$basicInfo,
                 'regEvents'=>$regEvents,
-                //'certificates'=>$certificates
+                'certificates'=>$certificates
             ];
             echo json_encode(array('status' => 'success', 'result' => $result));
         }

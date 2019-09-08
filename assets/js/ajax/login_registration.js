@@ -1,6 +1,25 @@
  $(document).ready(function(){
-        //if(localStorage.getItem("token") != null)
-          //  window.location="./profile.html"
+        
+        if(localStorage.getItem("token") != null)
+        {
+            q = localStorage.getItem("token")
+            $.ajax({
+                url:'../apis/user/auth/profile.php',
+                beforeSend: function(request){
+                    request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                type: 'get',
+                success:function(response)
+                {
+                    //console.log(response)
+                    response = JSON.parse(response);
+                    if(response.status=="success")
+                    {
+                        window.location="./profile.html"
+                    }             
+                }
+            });            
+        }
             $('#college_add').hide();
             $.ajax({
                 url:'../apis/misc/CollegeList/readCollege.php',
@@ -122,12 +141,12 @@
                         {
                             localStorage.setItem("token", response.message);
                             var url='./profile.html';
-                            //swal("successfully registered", ":)", "success");
+                            swal("successfully registered", ":)", "success");
                             window.location=url;
                         }
                         else
                         {
-                             //swal(response.message, ": [", "warning");
+                            swal(response.message, ": [", "warning");
                             $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
                         }
                    }
