@@ -10,7 +10,7 @@ $payment_detail = implode(",",$_POST);
 if(isset($payment_id) && isset($payment_req_id) && $status == 'Credit')
 {
     //FIND A RECORD FROM THE TABLE WITH THE payment_id AND UPDATE IT
-    $query = mysqli_query($conn,"UPDATE users SET payment_status ='Y', payment_detail='".$payment_detail."' WHERE payment_id ='".$payment_req_id."'");
+    $query = mysqli_query($conn,"UPDATE users SET paid =1, payment_detail='".$payment_detail."' WHERE payment_id ='".$payment_req_id."'");
 
     if($query)
     {

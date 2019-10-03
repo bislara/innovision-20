@@ -8,6 +8,7 @@ $(document).ready(function(){
             if(q)
             {                               
                 //var id=0;
+                document.getElementById("pay_now").innerHTML=" Pay Now";
                 $.ajax({
                 url:'../apis/user/auth/profile.php',
                 beforeSend: function(request){
@@ -28,6 +29,11 @@ $(document).ready(function(){
                             if(ca_id != 0)
                                 $("#ca_button1").show();
                             var qr_path = "../assets/images/qrcodes/"+id+".png";
+                            var paid=response.result['basicInfo']['paid'];
+                            // console.log(paid);
+                            if (paid==1) {
+                                document.getElementById("pay_now").innerHTML="Paid";
+                            }
                             document.getElementById("participant_id").innerHTML="Inno ID : "+id;
                             document.getElementById("participant_name").innerHTML="Name : "+name;
                             document.getElementById("participant_email").innerHTML="Email : "+email;

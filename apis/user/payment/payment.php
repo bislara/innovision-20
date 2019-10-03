@@ -24,12 +24,12 @@
 						"X-Auth-Token:5db8e09ddcadf9f22d317ad14d83c84c"));
 		$payload = Array(
 			'purpose' => 'INNOVISION REGISTRATION FEES',
-			'amount' => '500',
+			'amount' => '600',
 			'phone' => $phone,
 			'buyer_name' => $name,
 			'redirect_url' => 'https://innonitr.com/profile.html',
 			'send_email' => true,
-			'webhook' => 'https://innonitr.com/apis/participantRegistration/webhook.php',
+			'webhook' => 'https://innonitr.com/apis/payment/webhook.php',
 			'send_sms' => true,
 			'email' => $email,
 			'allow_repeated_payments' => false
@@ -60,8 +60,7 @@
 		$query = mysqli_query($conn,"UPDATE users SET payment_id ='".$payment_id."', long_url ='".$long_url."' WHERE email ='".$email."'");
 
 		 if ($query) {
-
-           
+   
 				  echo(json_encode(array('status' => 'success', 'long_url' => $long_url)));
 		
 		}
