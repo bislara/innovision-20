@@ -25,7 +25,8 @@ $(document).ready(function(){
                             var email = response.result['basicInfo']['email'];
                             var college = response.result['basicInfo']['college'];
                             var ca_id = response.result['basicInfo']['ca_id'];
-                            if(ca_id != 0)
+                            // console.log(ca_id);
+                            // if(ca_id != 0)
                                 $("#ca_button1").show();
                             var qr_path = "../assets/images/qrcodes/"+id+".png";
                             document.getElementById("participant_id").innerHTML="Inno ID : "+id;
