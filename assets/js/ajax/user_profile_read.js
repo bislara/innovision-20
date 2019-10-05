@@ -52,7 +52,7 @@ $(document).ready(function(){
                                             var event_name = regevents[j]['title']
                                             var eid = regevents[j]['eid']
                                             var link = "./event-details.html?eid="+eid;
-                                            temp = temp+"<div class='col-lg-3 col-md-6'><div class='hotel'><div class='hotel-img'><img src='"+image_path+"' alt='"+event_name+"' class='img-fluid'></div><h3><a href="+link+">"+event_name+"</a></h3></div></div>"
+                                            temp = temp+"<div class='col-lg-3 col-md-6'><div class='hotel'><div class='hotel-img'><img src=../"+image_path+" alt='"+event_name+"' class='img-fluid'></div><h3><a href="+link+">"+event_name+"</a></h3></div></div>"
                                             //temp = temp+"<div class='col-lg-3 col-md-6'>                  <div class='hotel'><div class='hotel-img'><img src='../"+image_path+"' alt='"+event_name+"' class='img-fluid'></div><h3><a href="+link+">"+event_name+"</a></h3></div></div>"
 
                                         }
