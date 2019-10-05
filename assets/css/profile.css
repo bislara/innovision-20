@@ -59,6 +59,7 @@
     background-size: cover;
     overflow: hidden;
     position: relative;
+    padding-top: 100px;
 }
 
 #profile_inno:before {

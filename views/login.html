@@ -75,7 +75,7 @@
                   <li><a href="#gallery">Gallery</a></li> -->
                     <li><a href="sponsor.html">Sponsors</a></li>
                     <!-- <li><a href="#contact">Contact</a></li> -->
-                    <!-- <li class="buy-tickets"><a href="login.html">Login/Register</a></li> -->
+                    <li class="buy-tickets" id="log_btn"><a href="login.html">Login/Register</a></li>
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
@@ -390,6 +390,24 @@
     <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/ajax/login_registration.js">
     </script>
+    <script>
+      var q = localStorage.getItem("token");
+      if(q)
+      {
+            $.ajax({
+                url:'../apis/user/auth/profile.php',
+                beforeSend: function(request){
+                    request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                type: 'get',
+                    success:function(response)
+                    {
+                   $("#log_btn").hide();
+              }
+            });
+      }
+    </script>
+
 </body>
 
 </html>
