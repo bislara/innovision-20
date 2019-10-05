@@ -45,33 +45,35 @@
 
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
-        <a href="#intro" class="scrollto"><img src="assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
-        <h1><a href="#main"><span>inno'19</span></a></h1>
+        <a href="#" class="scrollto"><img src="assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
+        <h1><a href="#"><span>inno'19</span></a></h1>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <!-- <li><a href="#about">About</a></li> -->
           <li class="dropdown">
 
             <a class="dropbtn dropping">Events</a>
             <div class="dropdown-content">
               <a href="views/eventsSection.html#EventsSection">Event Schedule</a>
-              <a href="views/eventsSection.html#Events">Events</a>
-              <a href="views/eventsSection.html#Workshops">Workshops</a>
-              <a href="views/eventsSection.html#Paid-Workshops">Paid-Workshops</a>
-              <a href="views/eventsSection.html#Cultural">Cultural</a>
+              <a href="views/eventsSection.html#flagships">Flagship Events</a>
+              <a href="views/eventsSection.html#events">Events</a>
+              <a href="views/eventsSection.html#workshops">Workshops</a>
+              <a href="views/eventsSection.html#paidworkshops">Workshops (Paid)</a>
+              <a href="views/eventsSection.html#exhibitions">Exhibitions</a>
+              <a href="views/eventsSection.html#cultural">Cultural</a>
             </div>
 
           </li>
-          <li><a href="views/ISRpage.html">Innovision Social Regime</a></li>
+          <li><a href="views/ISRpage.html">I.S.R</a></li>
           <li><a href="views/FAQ.html">FAQ</a></li>
           <!-- <li><a href="#hotels">Hotels</a></li>
                   <li><a href="#gallery">Gallery</a></li> -->
           <li><a href="views/sponsor.html">Sponsors</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="buy-tickets"><a href="views/login.html">Login/Register</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+          <li class="buy-tickets" id="log_btn"><a href="views/login.html">Login/Register</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -87,7 +89,7 @@
       <h1 class="mb-4 pb-0">The Annual<br><span>Tech-Fest</span><br> of NITR</h1>
       <p class="mb-4 pb-0">3-5 November, Downtown Conference Center, New York</p>
       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-      <a href="#about" class="about-btn scrollto">About The Event</a>
+      <a href="#about" class="about-btn scrollto">About The Fest</a>
     </div>
   </section>
 
@@ -584,8 +586,10 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <img src="assets/images/inno_logo.png" alt="TheEvenet">
-            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
+            <img src="assets/images/inno_logo.png" alt="Inno logo">
+            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro.
+              Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore
+              consequatur ad voluptate
               cupiditate debitis accusamus repellat cumque.</p>
           </div>
 
@@ -632,8 +636,11 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <img src="assets/images/nitrlogo.png" alt="TheEvenet">
-            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
+            <a href="https://www.nitrkl.ac.in" target="_blank"> <img src="assets/images/nitrlogo.png"
+                alt="NITR Logo"> </a>
+            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro.
+              Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore
+              consequatur ad voluptate
               cupiditate debitis accusamus repellat cumque.
             </p>
           </div>
@@ -677,6 +684,23 @@
 
   <!-- Template Main Javascript File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    var q = localStorage.getItem("token");
+      if(q)
+      {
+            $.ajax({
+                url:'apis/user/auth/profile.php',
+                beforeSend: function(request){
+                    request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                type: 'get',
+                    success:function(response)
+                    {
+                   $("#log_btn").hide();
+              }
+            });
+      }
+  </script>
 </body>
 
 </html>

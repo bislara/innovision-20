@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TheEvent - Bootstrap Event Template</title>
+    <title>Login/Register</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -39,36 +39,50 @@
 <body>
 
     <!--==========================
-    Header
-  ============================-->
+  Header
+============================-->
     <header id="header">
         <div class="container">
 
             <div id="logo" class="pull-left">
                 <!-- Uncomment below if you prefer to use a text logo -->
-                <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-                <a href="#intro" class="scrollto"><img src="../assets/images/logo.png" alt="" title=""></a>
+                <a href="../index.html" class="scrollto"><img src="../assets/images/Innovision_Logo.png" alt="inno logo"
+                        title="Innovision'19"></a>
+                <h1><a href="#"><span>inno'19</span></a></h1>
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#intro">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#speakers">Speakers</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#venue">Venue</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <!-- <li><a href="#about">About</a></li> -->
+                    <li class="dropdown">
 
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#supporters">Sponsors</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                        <a class="dropbtn dropping">Events</a>
+                        <div class="dropdown-content">
+                            <a href="eventsSection.html#EventsSection">Event Schedule</a>
+                            <a href="eventsSection.html#flagships">Flagship Events</a>
+                            <a href="eventsSection.html#events">Events</a>
+                            <a href="eventsSection.html#workshops">Workshops</a>
+                            <a href="eventsSection.html#paidworkshops">Workshops (Paid)</a>
+                            <a href="eventsSection.html#exhibitions">Exhibitions</a>
+                            <a href="eventsSection.html#cultural">Cultural</a>
+                        </div>
 
+                    </li>
+                    <li><a href="ISRpage.html">I.S.R</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <!-- <li><a href="#hotels">Hotels</a></li>
+                  <li><a href="#gallery">Gallery</a></li> -->
+                    <li><a href="sponsor.html">Sponsors</a></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                    <li class="buy-tickets" id="log_btn"><a href="login.html">Login/Register</a></li>
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
         </div>
     </header>
     <!-- #header -->
-    <!--Dummy header-->
+    
     <!--==========================
     Login and Registration Section
   ============================-->
@@ -267,8 +281,10 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-info">
-                        <img src="../assets/images/logo.png" alt="TheEvenet">
-                        <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
+                        <img src="../assets/images/inno_logo.png" alt="TheEvenet">
+                        <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et
+                            totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id
+                            quis. In inventore consequatur ad voluptate
                             cupiditate debitis accusamus repellat cumque.</p>
                     </div>
 
@@ -277,39 +293,56 @@
                         <ul>
                             <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="https://twitter.com/nitrourkela?s=17">NITR
+                                    Twitter</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
+                    <!-- <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div> -->
 
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
                         <p>
-                            A108 Adam Street <br> New York, NY 535022<br> United States <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <b>Student Activity Center</b> <br>
+                            <strong>National Institute of Technology</strong> <br>
+                            <em>Sector 1, Rourkela - 769008</em> <br>
+                            <strong>Phone:</strong> +1 5589 55488 55 <br>
+                            <strong>Email:</strong> <a href="mailto:contactus@innonitr.com">contactus@innonitr.com</a>
+                            <br>
                         </p>
 
                         <div class="social-links">
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://twitter.com/innonitr?lang=en" class="twitter"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/innonitr/" class="facebook"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/inno.nitr/" class="instagram"><i
+                                    class="fa fa-instagram"></i></a>
+                            <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
                         </div>
 
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <a href="https://www.nitrkl.ac.in" target="_blank"> <img src="../assets/images/nitrlogo.png"
+                                alt="NITR Logo"> </a>
+                        <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et
+                            totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id
+                            quis. In inventore consequatur ad voluptate
+                            cupiditate debitis accusamus repellat cumque.
+                        </p>
                     </div>
 
                 </div>
@@ -318,7 +351,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+                &copy; Copyright <strong>National Institute of Technology, Rourkela</strong>.
             </div>
             <div class="credits">
                 <!--
@@ -327,7 +360,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
         -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="#">Innovision Web Team</a>
             </div>
         </div>
     </footer>
@@ -357,6 +390,24 @@
     <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/ajax/login_registration.js">
     </script>
+    <script>
+      var q = localStorage.getItem("token");
+      if(q)
+      {
+            $.ajax({
+                url:'../apis/user/auth/profile.php',
+                beforeSend: function(request){
+                    request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                type: 'get',
+                    success:function(response)
+                    {
+                   $("#log_btn").hide();
+              }
+            });
+      }
+    </script>
+
 </body>
 
 </html>

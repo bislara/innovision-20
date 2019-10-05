@@ -69,7 +69,7 @@
                   else if(response.status=="failure"){
                     //swal(response.result, ": [", "warning");
                     console.log(response.result)
-                    $("#error").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
+                    $("#error1").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
                   }               
               }
               });
