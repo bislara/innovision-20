@@ -6,7 +6,7 @@
 
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != "") {
 
-		$query ="SELECT eid,title,description,rules,judging_criteria,date,venue,time,date1,time1,category,coordinatorName1,coordinatorContact1,coordinatorName2,coordinatorContact2,image_path,loginId,loginPassword FROM events WHERE eid=$eid";
+		$query ="SELECT * FROM events WHERE eid=$eid";
 
 		$result =mysqli_query($conn, $query);
 		// echo $result;
