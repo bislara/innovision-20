@@ -154,7 +154,7 @@ $(document).on("click", ".submitform", function () {
                                         if ($("#q4s").val().localeCompare("Others") == 0) {
                                             $.ajax({
                                                 type: "POST",
-                                                url: "../../apis/misc/CollegeList/others/create.php",
+                                                url: "../../apis/misc/collegeList/others/create.php",
                                                 data: {
                                                     cname: $("#q4i").val().toString()
                                                 },
@@ -212,7 +212,7 @@ $(document).on("click", ".submitform", function () {
                                 if ($("#q4s").val().localeCompare("Others") == 0) {
                                     $.ajax({
                                         type: "POST",
-                                        url: "../../apis/misc/CollegeList/others/create.php",
+                                        url: "../../apis/misc/collegeList/others/create.php",
                                         data: {
                                             cname: $("#q4i").val().toString()
                                         },
