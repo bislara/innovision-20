@@ -29,12 +29,11 @@
                 if( in_array( pathinfo( $_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION), $allowedExtension)) {
                         
                     $ext = pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION);
-                    $file_path_name = "../../../../assets/images/events/eid_".($eid).('.').$ext;    
-                    $query="UPDATE events SET image_path='".$file_path_name."' WHERE eid='".$eid."'";
+                    $file_path_name = "../../../../assets/images/events/eid_".($eid).('.').$ext;                       
                     
                     if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path_name)) {
-                        $file_path_name=substr($file_path_name,3);
-                        $query="UPDATE events SET image_path='".$file_path_name."' WHERE eid='".$eid."'";
+                        $img_path = "assets/images/events/eid_".($eid).('.').$ext;
+                        $query="UPDATE events SET image_path='".$img_path."' WHERE eid='".$eid."'";
                         mysqli_query($conn, $query);
                         echo(json_encode(array('status' => 'success', 'result' => 'successful entry')));
                     }

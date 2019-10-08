@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2019 at 04:11 PM
+-- Generation Time: Oct 07, 2019 at 10:31 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.31
 
@@ -21,37 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `innovision`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ca_selection_questions`
---
-
-CREATE TABLE `ca_selection_questions` (
-  `question_id` varchar(3) NOT NULL,
-  `question` tinytext NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ca_selection_questions`
---
-
-INSERT INTO `ca_selection_questions` (`question_id`, `question`) VALUES
-('q1', 'Name'),
-('q2', 'E-mail'),
-('q3', 'Contact'),
-('q4', 'Institution'),
-('q5', 'Course'),
-('q6', 'Year of study'),
-('q7', 'Positions of responsibility held in college'),
-('q8', 'Have you ever been to Innovision earlier? When?'),
-('q9', 'Write in brief about what you know about Innovision.'),
-('q10', 'How many students do you think you can convince into bringing to Innovision this year? What\'s your strategy to promote Innovision?'),
-('q11', 'Social Media platforms that you are active on?'),
-('q12', 'Languages that you are fluent in'),
-('q13', 'What makes you unique from others?'),
-('q14', 'Paste the link to your CV below');
 
 -- --------------------------------------------------------
 
@@ -74,7 +43,6 @@ CREATE TABLE `ca_selection_responses` (
   `q11` mediumtext NOT NULL,
   `q12` mediumtext NOT NULL,
   `q13` mediumtext NOT NULL,
-  `q14` mediumtext NOT NULL,
   `selected` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -162,14 +130,13 @@ CREATE TABLE `users` (
   `inno_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `gender` text NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `college` varchar(100) NOT NULL,
   `address` varchar(255) NOT NULL,
   `paid` int(11) NOT NULL DEFAULT 0,
   `checked_in` int(11) NOT NULL DEFAULT 0,
   `user_password` varchar(100) NOT NULL,
-  `qr_code` varchar(100) NOT NULL,
   `ca_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -210,13 +177,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `ca_selection_responses`
 --
 ALTER TABLE `ca_selection_responses`
-  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ca_applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -228,7 +195,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `inno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
