@@ -28,12 +28,12 @@ $(document).ready(function(){
                             // console.log(ca_id);
                             // if(ca_id != 0)
                                 $("#ca_button1").show();
-                            var qr_path = "../assets/images/qrcodes/"+id+".png";
+                            
                             document.getElementById("participant_id").innerHTML="Inno ID : "+id;
                             document.getElementById("participant_name").innerHTML="Name : "+name;
                             document.getElementById("participant_email").innerHTML="Email : "+email;
                             document.getElementById("participant_college").innerHTML="College : "+college;
-                            document.getElementById("qr_image").src =qr_path;
+                            
                             console.log(response.result['regEvents'])
                             regevents = response.result['regEvents']
                             if(regevents.length > 0)
