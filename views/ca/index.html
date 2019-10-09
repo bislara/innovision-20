@@ -3,40 +3,29 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Events Section</title>
+    <title>Innovision'19</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link href="../../assets/images/favicon.png" rel="icon">
-    <link href="../../assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/images/Innovision_Logo.ico" rel="icon">
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="../../assets/lib/google-fonts/fonts.css" rel="stylesheet">
+    <link href="assets/lib/google-fonts/fonts.css" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link href="../../assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- ../assets/libraries CSS Files -->
-    <link href="../../assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../assets/lib/animate/animate.min.css" rel="stylesheet">
-<!--     <link href="../../assets/lib/venobox/venobox.css" rel="stylesheet">
-    <link href="../../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
+    <!-- Libraries CSS Files -->
+    <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="assets/lib/animate/animate.min.css" rel="stylesheet"> -->
+    <link href="assets/lib/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
-    <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../../assets/css/login.css" rel="stylesheet">
-    <link href="../../assets/css/sweetalert.css" rel="stylesheet">
-
-    <style type="text/css">
-      #choose_clg {
-        display: block;
-      }
-      #enter_clg {
-        display: none;
-      }
-    </style>
+    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
     Theme Name: TheEvent
@@ -49,319 +38,582 @@
 <body>
 
     <!--==========================
-    Header
-  ============================-->
-   <header id="header">
-    <div class="container">
+  Header
+============================-->
+    <header id="header">
+        <div class="container">
 
-      <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <a href="#intro" class="scrollto"><img src="../../assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
-        <h1><a href="#main"><span>inno'19</span></a></h1>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="../../index.html#about">About</a></li>
-          <li class="dropdown menu-active">
-
-            <a class="dropbtn dropping">Events</a>
-            <div class="dropdown-content">
-              <a href="../eventsSection.html#EventsSection">Event Schedule</a>
-                <a href="../eventsSection.html#flagships">Flagship Events</a>
-                <a href="../eventsSection.html#events">Events</a>
-                <a href="../eventsSection.html#workshops">Workshops</a>
-                <a href="../eventsSection.html#paidworkshops">Workshops (Paid)</a>
-                <a href="../eventsSection.html#exhibitions">Exhibitions</a>
-                <a href="../eventsSection.html#cultural">Cultural </a>
+            <div id="logo" class="pull-left">
+                <!-- Uncomment below if you prefer to use a text logo -->
+                <a href="#" class="scrollto"><img src="assets/images/Innovision_Logo.png" alt="" title="Innovision'19"></a>
+                <h1><a href="#"><span>inno'19</span></a></h1>
             </div>
 
-          </li>
-          <li><a href="../ISRpage.html">Innovision Social Regime</a></li>
-          <li><a href="../FAQ.html">FAQ</a></li>
-          <!-- <li><a href="#hotels">Hotels</a></li>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#">Home</a></li>
+                    <!-- <li><a href="#about">About</a></li> -->
+                    <li class="dropdown">
+
+                        <a class="dropbtn dropping">Events</a>
+                        <div class="dropdown-content">
+                            <a href="views/eventsSection.html#EventsSection">Event Schedule</a>
+                            <a href="views/eventsSection.html#flagships">Flagship Events</a>
+                            <a href="views/eventsSection.html#events">Events</a>
+                            <a href="views/eventsSection.html#workshops">Workshops</a>
+                            <a href="views/eventsSection.html#paidworkshops">Workshops (Paid)</a>
+                            <a href="views/eventsSection.html#exhibitions">Exhibitions</a>
+                            <a href="views/eventsSection.html#cultural">Cultural</a>
+                        </div>
+
+                    </li>
+                    <!-- <li><a href="views/ISRpage.html">I.S.R</a></li> -->
+                    <li><a href="views/FAQ.html">FAQ</a></li>
+                    <!-- <li><a href="#hotels">Hotels</a></li>
                   <li><a href="#gallery">Gallery</a></li> -->
-          <li><a href="../sponsor.html">Sponsors</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="buy-tickets"><a href="../login.html">Login/Register</a></li>
-        </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-     </div>
-</header>>
+                    <li><a href="views/sponsor.html">Sponsors</a></li>
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                    <li class="buy-tickets" id="log_btn"><a href="views/login.html">Login/Register</a></li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
     <!-- #header -->
 
+    <!--==========================
+    Intro Section
+  ============================-->
+    <section id="intro">
+        <div class="intro-container wow fadeIn">
+            <h1 class="mb-4 pb-0">The Annual<br><span>Tech-Fest</span><br> of NITR</h1>
+            <p class="mb-4 pb-0">1-3 November, NIT Rourkela, Rourkela-8, Odisha.</p>
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <a href="#about" class="about-btn scrollto">About The Fest</a>
+        </div>
+    </section>
 
-
-
-    <div id="EventsSection">
+    <main id="main">
 
         <!--==========================
-        Schedule Section
-      ============================-->
-        <section  class="section-with-bg" style="    padding: 100px 0 60px 0;">
-            <div class="container wow fadeInUp">
+      Venue Section
+    ============================-->
+        <section id="venue" class="section-with-bg wow fadeInUp">
+
+            <div class="container-fluid">
+
                 <div class="section-header">
-                    <h2>Campus Ambassador Registration</h2>
+                    <h2>Gallery</h2>
+                    <p>moments captured during Innovision'18</p>
                 </div>
+            </div>
 
-             <h3 style="font-size: 1.5rem; font-weight: 550;">About</h3>
-            <p>
-                Be the face of your college and represent eastern India’s most massive techno-management fest: Innovision. The wait for such an opportunity is over, here's your ticket of a lifetime to develop professional impersonality skills. Innovision, NIT Rourkela launches Campus Ambassador programme to enrich the culture of technology and management in your college. Campus Ambassador (CA) will represent Innovision, NIT Rourkela by publicising the events conducted in eastern region’s most significant techno-management fest in their colleges by sharing posts online, putting up posters, word of mouth publicity and any other innovative idea they can think of.
-            </p>
-            <br>
-             <h3 style="font-size: 1.5rem; font-weight: 550;">Incentives</h3>
-            <ul>
-                <li>Registration fee waiver: All selected CAs will get a registration fee waiver based on their performance. (Refer to the table below for more details)</li>
-                <li>CA Exclusive Merchandise: All selected CAs will be given exclusive merchandise to flaunt the spirit of Innovision.</li>
-                <li>Certificate: Top performing CAs will be awarded a Certificate of Appreciation by Innovision, NIT Rourkela recognizing their diligent efforts.</li>
-            </ul>
-            <br>
-             <h3 style="font-size: 1.5rem; font-weight: 550;">Responsibility</h3>
-            <ul>
-                <li>
-                    Publicity: Displaying the posters of Innovision 2018 within 2-3 days of receiving them on college bulletins and notice boards.
-                </li>
-                <li>
-                    Social Media: Publicizing the events of Innovision on various Social media platforms like Facebook, Twitter, Instagram by sharing the posts of Innovision and spreading the reach.
-                </li>
-                <li>
-                    In-campus management: Managing the entire contingent of students from your college during the fest.
-                </li>
-            </ul>
-            <br>
-             <h3 style="font-size: 1.5rem; font-weight: 550;">FAQ's</h3>
-            
-            <ul>
-                
-                    <li style="font-family: 'Quicksand', sans-serif;color: #888">Who is a CA?<br><span style="display: block;color: black;">Ans.
-                    CA stands for Campus Ambassador. He/she will essentially be the point of contact between Team
-                    Innovision and the college junta.</span></li>
-                    <br>
-                    
-                    <li style="font-family: 'Quicksand', sans-serif;color: #888">Is there any eligibility criteria to become a CA?<br><span style="display: block;color: black;">Ans. Any student from any certified college irrespective of the year of study can apply for the CA programme of Innovision 2018.</span></li>
+            <div class="container-fluid venue-gallery-container">
+                <div class="row no-gutters">
 
-                    <br>
-
-                    <li style="font-family: 'Quicksand', sans-serif;color: #888">Can there be more than one CA from a college?<br><span style="display: block;color: black;">Ans.
-                    CA stands for Campus Ambassador. He/she will essentially be the point of contact between Team
-                    Innovision and the college junta.</span></li>
-                    <br>
-                    <li style="font-family: 'Quicksand', sans-serif;color: #888">Is there any minimum limit on the number
-                  of participants from a college?<br><span style="display: block;color: black;">Ans. A minimum number
-                    of 15 participants need to be registered from a particular college, else the CA selection from that
-                    college will be revoked.</span></li>
-                    <br>
-                    <li style="font-family: 'Quicksand', sans-serif;color: #888">How do I apply?<br><span style="display: block;color: black;">Step
-                    1: Fill out the form below.</span><span style="display: block;color: black;">Step 2: Upload your CV
-                    and any relevant certificates to a cloud storage service like Google Drive or Dropbox and copy the
-                    link to the folder.</span><span style="display: block;color: black;">Step 3: Paste the link to the
-                    folder at the end of the form and click on submit.</span></li>
-                    <br>
-
-            </ul>
-            
-
-            <div style="padding-top:5%;font-family: 'Source Sans Pro', sans-serif;color: black;" id="perks">
-
-        <div class="row" style="text-align: center;margin-top: 0.8em;">
-          <div class="col-md-10 offset-md-1">
- 
-            <table class="table" style="font-family: 'Quicksand', sans-serif;">
-              <thead>
-                <tr>
-                  <th style="color: black;">No. of Participants</th>
-                  <th style="color: black;">Perks</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>15-25</td>
-                  <td>Certificate</td>
-                </tr>
-                <tr>
-                  <td>26-50</td>
-                  <td>Certificate + Fee waiver of (₹10 per registration)</td>
-                </tr>
-                <tr>
-                  <td>50+</td>
-                  <td> Certificate + Full fee waiver + Prime CA Merchandise</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-        <!-- RGISTER -->
-    <div class="row">
-
-        <div align="center" role="tabpanel" class="col-md-10 offset-md-1 tab-pane fade show active" id="registration_inno" style="background-color: #0e1735;text-align: left;" >
-                    <br>
-                    <form class="form-horizontal" method="post">
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="Name" style="color:white;">Name:</label>
-
-                            <div class="col-sm-12">
-
-                                <input name="contactName" type="text" id="q1" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="form-control">
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/1.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/1.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="email" style="color:white">Email:</label>
-                            <div class="col-sm-12">
-
-                                <input name="contactEmail" type="email" id="q2" placeholder="Email" value="" required="" aria-required="true" class="form-control">
-
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="phone" style="color:white">Contact No:</label>
-                            <div class="col-sm-12">
-
-                                <input name="contactSubject" type="text" id="q3" placeholder="Phone" value="" class="form-control">
-
-                            </div>
-                        </div>
-                        <div class="form-group" id="choose_clg">
-                          <label class="control-label col-sm-6" for="college" style="color:white">Choose College:</label>
-                          <div>
-                          <select class="col-sm-12 form-control valid" id="q4s" >
-                                          <!-- <option value="select">--Select College--</option> -->
-                            </select>
-                            </div>
-                          </div>
-
-                          <div class="form-group" id="enter_clg">
-                          <label class="control-label col-sm-6" for="college" style="color:white">Enter College:</label>
-                          <div>
-                          
-                              <input name="contactSubject" type="text" id="q4i" placeholder="College Name" value="" class="form-control">                                          
-                            </div>
-                          </div>
-
-                        <div class="form-group" style="color:white" id="gender">
-                            <label class="control-label col-sm-6" for="Gender" style="color:white">Year of Study:</label>
-                            <select class="full-width col-sm-12 form-control" id="q6" >
-                                <option value="1st Yr">First</option>
-                                <option value="2nd Yr">Second</option>
-                                <option value="3rd Yr">Third</option>
-                                <option value="4th Yr">Fourth</option>
-                                <option value="5th Yr">Fifth</option>
-                                <option value="others">Others</option>
-                            </select> 
-                        </div>
-                       
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="college" style="color:white">Course: </label>
-                            <div class="col-sm-12">
-                                <input name="course" type="text" id="q5" placeholder="Course" value="" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color: white;">Have you ever held or are currently holding
-              a position of responsibility in your college?</label>
-                            <div class="col-sm-12">
-                        <textarea name="contactMessage" id="q7" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-                    </div>
                     </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">Have you ever been to Innovision earlier? If
-              yes, when?</label>
-                            <div class="col-sm-12">
-
-                               <textarea name="contactMessage" id="q8" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/2-8.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/2-8.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">What do you know about Innovision? Write in brief.</label>
-                            <div class="col-sm-12">
+                    </div>
 
-                               <textarea name="contactMessage" id="q9" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC00048-2-2.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC00048-2-2.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">How many students from your college do you think you can convince to participate in Innovision ‘19? What will be your strategy to promote Innovision ’19 in your college?</label>
-                            <div class="col-sm-12">
-
-                               <textarea name="contactMessage" id="q10" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC00289.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC00289.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">Which social media platforms are you active on?</label>
-                            <div class="col-sm-12">
+                    </div>
 
-                               <textarea name="contactMessage" id="q11" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC_0069.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC_0069.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">Which languages are you fluent in?</label>
-                            <div class="col-sm-12">
+                    </div>
 
-                               <textarea name="contactMessage" id="q12" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC_0081.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC_0081.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">What makes you unique?</label>
-                            <div class="col-sm-12">
+                    </div>
 
-                               <textarea name="contactMessage" id="q13" placeholder="Your answer here" rows="7" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC_0179.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC_0179.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
-    
-                        <div class="form-group">
-                            <label class="control-label col-sm-12" style="color:white">Paste the link to your CV folder below.</label>
-                            <div class="col-sm-12">
+                    </div>
 
-                               <textarea name="contactMessage" id="q14" placeholder="Your answer here" rows="2" cols="50" required="" aria-required="true" class="form-control"></textarea>
-
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC_2590.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC_2590.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-12" align="center">
-                                <!--<a href="#about" class="about-btn scrollto">&nbsp;&nbsp; SUBMIT&nbsp;&nbsp;</a> <br>-->
-                                <button class="about-btn scrollto submitform" id="regist">&nbsp;&nbsp; &nbsp;&nbsp;</button>
-                                <!-- <center><button type="submit" class="btn btn-default" style="color:black">Submit</button></center> -->
-                            </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC_4868-4.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC_4868-4.jpg" alt="" class="img-fluid">
+                            </a>
                         </div>
+                    </div>
 
-                    </form>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/DSC_6207.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/DSC_6207.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/IMG_1782.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/IMG_1782.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="venue-gallery">
+                            <a href="assets/images/home_page_gallery/IMG_7685.jpg" class="venobox" data-gall="venue-gallery">
+                                <img src="assets/images/home_page_gallery/IMG_7685.jpg" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
-    
-
-
-      </div>
-    
-
-      </div>
-
-
             </div>
 
         </section>
 
+        <!--==========================
+      Hotels Section
+    ============================-->
+        <!-- <section id="hotels" class="section-with-bg wow fadeInUp">
 
+      <div class="container">
+        <div class="section-header">
+          <h2>Hotels</h2>
+          <p>Her are some nearby hotels</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="assets/images/hotels/1.jpg" alt="Hotel 1" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 1</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>0.4 Mile from the Venue</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="assets/images/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 2</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-full"></i>
+              </div>
+              <p>0.5 Mile from the Venue</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="assets/images/hotels/3.jpg" alt="Hotel 3" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 3</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>0.6 Mile from the Venue</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section> -->
+
+        <!--==========================
+      Gallery Section
+    ============================-->
+        <!-- <section id="gallery" class="wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Check our gallery from the recent events</p>
+        </div>
+      </div>
+
+      <div class="owl-carousel gallery-carousel">
+        <a href="assets/images/gallery/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/1.jpg" alt=""></a>
+        <a href="assets/images/gallery/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/2.jpg" alt=""></a>
+        <a href="assets/images/gallery/3.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/3.jpg" alt=""></a>
+        <a href="assets/images/gallery/4.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/4.jpg" alt=""></a>
+        <a href="assets/images/gallery/5.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/5.jpg" alt=""></a>
+        <a href="assets/images/gallery/6.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/6.jpg" alt=""></a>
+        <a href="assets/images/gallery/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/7.jpg" alt=""></a>
+        <a href="assets/images/gallery/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/8.jpg" alt=""></a>
+      </div>
+
+    </section> -->
+
+
+
+        <!-- ==========================
+      Subscribe Section
+    ============================-->
+        <!-- <section id="subscribe">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Newsletter</h2>
+          <p>Rerum numquam illum recusandae quia mollitia consequatur.</p>
+        </div>
+
+        <form method="POST" action="#">
+          <div class="form-row justify-content-center">
+            <div class="col-auto">
+              <input type="text" class="form-control" placeholder="Enter your Email">
+            </div>
+            <div class="col-auto">
+              <button type="submit">Subscribe</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </section> -->
+
+        <!--==========================
+      Buy Ticket Section
+    ============================-->
+        <!-- <section id="buy-tickets" class="section-with-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Buy Tickets</h2>
+          <p>Velit consequatur consequatur inventore iste fugit unde omnis eum aut.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Standard Access</h5>
+                <h6 class="card-price text-center">$150</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Community Access</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li>
+                </ul>
+                <hr>
+                <div class="text-center">
+                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Pro Access</h5>
+                <h6 class="card-price text-center">$250</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li>
+                </ul>
+                <hr>
+                <div class="text-center">
+                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        <!-- Pro Tier -->
+        <!-- <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>
+                <h6 class="card-price text-center">$350</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Workshop Access</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>After Party</li>
+                </ul>
+                <hr>
+                <div class="text-center">
+                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Buy Now</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+
+        <!-- Modal Order Form -->
+        <!-- <div id="buy-ticket-modal" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Buy Tickets</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="#">
+              <div class="form-group">
+                <input type="text" class="form-control" name="your-name" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="your-email" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <select id="ticket-type" name="ticket-type" class="form-control">
+                  <option value="">-- Select Your Ticket Type --</option>
+                  <option value="standard-access">Standard Access</option>
+                  <option value="pro-access">Pro Access</option>
+                  <option value="premium-access">Premium Access</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn">Buy Now</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
+
+  </section> -->
+
+        <!--==========================
+      Contact Section
+    ============================-->
+        <!-- <section id="contact" class="section-bg wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Nihil officia ut sint molestiae tenetur.</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>A108 Adam Street, NY 535022, USA</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section> -->
+        <!-- #contact -->
+
+        <!-- ========== -->
+
+        <!-- <section id="quotes" class="section-with-bg wow fadeInUp">
+
+      <div id="quote-carousel" class="carousel slide quote-content" data-ride="false">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active container-fluid">
+            <div class="quote-row row">
+
+              <div class="col-lg-7 col-md-6 col-sm-6 col-12">
+                <h2 class="quote-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</h2>
+                <em>Pebbles, New York</em> <br>
+              </div>
+
+              <div class="youtube-link col-lg-5 col-md-6 col-sm-6 col-12">
+                <iframe class="play-btn" src="https://www.youtube.com/embed/zAGVQLHvwOY" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="carousel-item container-fluid">
+            <div class="row">
+
+              <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <h2 class="quote-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</h2>
+                <em>Beverly, Illinois</em>
+              </div>
+
+              <div class="youtube-link col-lg-6 col-md-6 col-sm-6 col-12">
+                <iframe class="play-btn" src="https://www.youtube.com/embed/zAGVQLHvwOY" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev quote-btn" href="#quote-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a class="carousel-control-next quote-btn" href="#quote-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+
+      </div>
+
+    </section> -->
+
+        <!-- ========== -->
+
+
+    </main>
+
+
+    <!--==========================
+    About Section
+  ============================-->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-inno row">
+                    <h2 class="col-lg-12">About The Event</h2>
+                    <p class="col-lg-6">
+                        Innovision, the annual techno-management fest of NIT Rourkela is organized in the first week of November spanning over three days and three nights. Commenced with a motto of providing technocrats all over the country a platform to showcase their technical
+                        skills and talent, Innovision has come a long way over the years since its inception.
+                    </p>
+                    <p class="col-lg-6">
+                        It is one of the largest technical fests in the eastern region of the Indian subcontinent today which has made an impact on several college going students across the country. With different, captivating themes each year, the fest has recorded an immense
+                        participation in the past and this year will be no different.
+                    </p>
+                    <p class="col-lg-4 offset-lg-4">Brace yourselves as the much awaited fest, INNOVISION 2K19 with ‘A Space Opera’ as its theme, takes off this November!
+                    </p>
+                </div>
+                <div class="info col-lg-4">
+                    <h3>Where</h3>
+                    <p>NIT Rourkela, Sector-1, Rourkela-8, Odisha.</p>
+                </div>
+                <div class="info col-lg-4 offset-lg-4">
+                    <h3>When</h3>
+                    <p>Friday to Sunday : 1-3 November</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--==========================
@@ -373,49 +625,60 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-info">
-                        <img src="../../assets/images/logo.png" alt="TheEvenet">
-                        <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate
-                            cupiditate debitis accusamus repellat cumque.</p>
+                        <img src="assets/images/inno_logo.png" alt="Inno logo">
+                        <p>Innovision is the annual techno-management festival of NIT Rourkela organized by the students. It has been fuelling innovations and encouraging millions since 2004 and is a unique forum where the youth gets the opportunity to explore
+                            and experience science and technology in all its myriad forms. .
+                        </p>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="www.nitrkl.ac.in">NITR home page</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="https://www.nitrkl.ac.in/SAC/">SAC @NITR</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="http://gallery.nitrkl.ac.in/">NITR gallery</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="https://twitter.com/nitrourkela?s=17">NITR Twitter</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="https://mondaymorning.nitrkl.ac.in">Monday Morning
+                  @NITR</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
+                    <!-- <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div> -->
 
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
                         <p>
-                            A108 Adam Street <br> New York, NY 535022<br> United States <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <b>Student Activity Center</b> <br>
+                            <strong>National Institute of Technology</strong> <br>
+                            <em>Sector 1, Rourkela - 769008</em> <br>
+                            <strong>Phone:</strong> +91 9668081541 <br>
+                            <strong>Email:</strong> <a href="mailto:contactus@innonitr.com">contactus@innonitr.com</a> <br>
                         </p>
 
                         <div class="social-links">
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://twitter.com/innonitr?lang=en" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/innonitr/" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/inno.nitr/" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
                         </div>
 
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <a href="https://www.nitrkl.ac.in" target="_blank"> <img src="assets/images/nitrlogo.png" alt="NITR Logo"> </a>
+                        <p>NIT Rourkela (formerly REC Rourkela) is an institute of national importance, with UG, PG, and research programs in engineering and science. It is a publicly funded institute of higher learning for engineering and technology located
+                            in the steel city of Rourkela, Odisha, India. It is one of the 30 National Institutes of Technology in India and has been recognized as an Institute of National Importance by the National Institutes of Technology Act, 2007.
+                        </p>
                     </div>
 
                 </div>
@@ -424,7 +687,7 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+                &copy; Copyright <strong>National Institute of Technology, Rourkela</strong>.
             </div>
             <div class="credits">
                 <!--
@@ -433,7 +696,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
         -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="#">Innovision Tech Team</a>
             </div>
         </div>
     </footer>
@@ -441,81 +704,37 @@
 
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-    <!-- JavaScript ../assets/libraries -->
-    <script src="../../assets/lib/jquery/jquery.min.js"></script>
-    <script src="../../assets/lib/jquery/jquery-migrate.min.js"></script>
-    <script src="../../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/lib/easing/easing.min.js"></script>
-    <script src="../../assets/lib/superfish/hoverIntent.js"></script>
-    <script src="../../assets/lib/superfish/superfish.min.js"></script>
-    <script src="../../assets/lib/wow/wow.min.js"></script>
-    <script src="../../assets/lib/venobox/venobox.min.js"></script>
-    <script src="../../assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="assets/lib/jquery/jquery.min.js"></script>
+    <script src="assets/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/lib/easing/easing.min.js"></script>
+    <script src="assets/lib/superfish/hoverIntent.js"></script>
+    <script src="assets/lib/superfish/superfish.min.js"></script>
+    <script src="assets/lib/wow/wow.min.js"></script>
+    <script src="assets/lib/venobox/venobox.min.js"></script>
+    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Form JavaScript File -->
-    <!-- <script src="../../assets/js/contactform.js"></script> -->
+    <script src="assets/js/contactform.js"></script>
 
     <!-- Template Main Javascript File -->
-   
-    <!-- <script src="../../assets/js/sweetalert.min.js"></script> -->
-    <!-- <script src= "https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
-    
-  
-    <script type="text/javascript">
-      
-      $(document).ready(function() {
-            if (!(localStorage.token))
-                {
-                    swal("Login First to apply for CA.", ":(", "error");
-                    window.location.assign("../login.html");
-                }
-        });
-
-      $(document).ready(function(){
+    <script src="assets/js/main.js"></script>
+    <script>
+        var q = localStorage.getItem("token");
+        if (q) {
             $.ajax({
-                url:'../../apis/misc/CollegeList/readCollege.php',
+                url: 'apis/user/auth/profile.php',
+                beforeSend: function(request) {
+                    request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
                 type: 'get',
-                success:function(response)
-                {
-                    // console.log(response)
-                    response = JSON.parse(response)
-                    if(response.status=="success")
-                    {
-                        // console.log(response.result)
-                        for(var i=0; i<response.result.length; i=i+1)
-                        {
-                            var x = document.getElementById("q4s");
-                              var option = document.createElement("option");
-                              option.text = response.result[i].college_name;
-                              option.value = response.result[i].college_name;
-                              x.add(option);
-                        }
-                              var x = document.getElementById("q4s");
-                              var option = document.createElement("option");
-                              option.text = "Others";
-                              option.value = "Others";
-                              option.id="other";
-                              x.add(option);
-                    }             
+                success: function(response) {
+                    $("#log_btn").hide();
                 }
             });
-          });
-
-
-        $('#q4s').on('click', function(){
-          var data=$("#q4s").val();
-          if (data=='Others') {
-            // console.log("bi")
-            $('#choose_clg').css("display","none")
-            $('#enter_clg').css("display","block")
-          } 
-            
-        });
-
+        }
     </script>
-
-     <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/ajax/createCAapp.js"></script>
-    <script src="../../assets/js/sweetalert.js"></script>        
+</body>
 
 </html>

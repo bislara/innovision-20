@@ -4,7 +4,6 @@
 
     include ('../../../vendor/autoload.php');
     use \Firebase\JWT\JWT;
-    use Endroid\QrCode\QrCode;
 
     include('../../config.php');
     $secretKey = base64_decode(SECRET_KEY);
@@ -21,7 +20,7 @@
             $inno_id = $data->inno_id;
             $email = $data->email;
         
-            $query1 = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code FROM users where inno_id ='".$inno_id."'");
+            $query1 = mysqli_query($conn, "SELECT inno_id, name, email, college FROM users where inno_id ='".$inno_id."'");
 
             if (mysqli_num_rows($query1) == 0) {
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));

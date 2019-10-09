@@ -57,9 +57,6 @@ $(document).ready(function () {
 
                     var q13=eventArr["q13"];
                     $('#q13').val(q13);
-
-                    var q14=eventArr["q14"];
-                    $('#q14').val(q14);
                     
                     $('#regist').html("Update");
 
@@ -105,7 +102,7 @@ $(document).on("click", ".submitform", function () {
             }
     }
 
-    if ($("#q1").val().toString().localeCompare("") == 0 || $("#q2").val().toString().localeCompare("") == 0 || $("#q3").val().toString().localeCompare("") == 0 || college_name.localeCompare("") == 0 || $("#q5").val().toString().localeCompare("") == 0 || $("#q6").val().toString().localeCompare("") == 0 || $("#q7").val().toString().localeCompare("") == 0 || $("#q8").val().toString().localeCompare("") == 0 || $("#q9").val().toString().localeCompare("") == 0 || $("#q10").val().toString().localeCompare("") == 0 || $("#q11").val().toString().localeCompare("") == 0 || $("#q12").val().toString().localeCompare("") == 0 || $("#q13").val().toString().localeCompare("") == 0 || $("#q14").val().toString().localeCompare("") == 0) {
+    if ($("#q1").val().toString().localeCompare("") == 0 || $("#q2").val().toString().localeCompare("") == 0 || $("#q3").val().toString().localeCompare("") == 0 || college_name.localeCompare("") == 0 || $("#q5").val().toString().localeCompare("") == 0 || $("#q6").val().toString().localeCompare("") == 0 || $("#q7").val().toString().localeCompare("") == 0 || $("#q8").val().toString().localeCompare("") == 0 || $("#q9").val().toString().localeCompare("") == 0 || $("#q10").val().toString().localeCompare("") == 0 || $("#q11").val().toString().localeCompare("") == 0 || $("#q12").val().toString().localeCompare("") == 0 || $("#q13").val().toString().localeCompare("") == 0 ) {
         swal("Fill Up All The Fields", ":|", "warning");
     }
     else {
@@ -140,8 +137,7 @@ $(document).on("click", ".submitform", function () {
                                     q10: $("#q10").val().toString(),
                                     q11: $("#q11").val().toString(),
                                     q12: $("#q12").val().toString(),
-                                    q13: $("#q13").val().toString(),
-                                    q14: $("#q14").val().toString()
+                                    q13: $("#q13").val().toString()
                                 },
                                 success: function (data) {
                                     console.log(data);
@@ -158,7 +154,7 @@ $(document).on("click", ".submitform", function () {
                                         if ($("#q4s").val().localeCompare("Others") == 0) {
                                             $.ajax({
                                                 type: "POST",
-                                                url: "../../apis/misc/CollegeList/others/create.php",
+                                                url: "../../apis/misc/collegeList/others/create.php",
                                                 data: {
                                                     cname: $("#q4i").val().toString()
                                                 },
@@ -167,7 +163,7 @@ $(document).on("click", ".submitform", function () {
                                                 }
                                             });
                                         }
-                                        location.reload(true);
+                                        //location.reload(true);
                                     }
                                     else {
                                         
@@ -202,8 +198,7 @@ $(document).on("click", ".submitform", function () {
                             q10: $("#q10").val().toString(),
                             q11: $("#q11").val().toString(),
                             q12: $("#q12").val().toString(),
-                            q13: $("#q13").val().toString(),
-                            q14: $("#q14").val().toString()
+                            q13: $("#q13").val().toString()
                         },
                         success: function (data) {
                             console.log(data);
@@ -217,7 +212,7 @@ $(document).on("click", ".submitform", function () {
                                 if ($("#q4s").val().localeCompare("Others") == 0) {
                                     $.ajax({
                                         type: "POST",
-                                        url: "../../apis/misc/CollegeList/others/create.php",
+                                        url: "../../apis/misc/collegeList/others/create.php",
                                         data: {
                                             cname: $("#q4i").val().toString()
                                         },

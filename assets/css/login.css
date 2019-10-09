@@ -1,7 +1,7 @@
 /*Signin and Registration ID*/
 
 #signin_id {
-    padding: 60px 0 60px 0;
+    padding: 100px 0 60px 0;
     background: url(../images/intro-bg.jpg) top center;
     background-size: cover;
     overflow: hidden;
@@ -29,7 +29,7 @@
 
 #signin_id .nav-tabs li {
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     /*width: 40vw;*/
 }
 
@@ -47,6 +47,10 @@
     color: #fff;
 }
 
+#signin_id .nav-item {
+    margin-right: 1.5em;
+}
+
 #signin_id .sub-heading {
     text-align: center;
     font-size: 18px;
@@ -56,7 +60,14 @@
 
 #signin_id .tab-pane {
     transition: ease-in-out .2s;
+    padding: 1.5em;
+    border-radius: 2em;
 }
+
+#signin_id .form-control {
+    border-radius: 0.5em;
+}
+
 
 #login_inno .about-btn {
     font-family: "Raleway", sans-serif;
@@ -102,5 +113,13 @@
 
 #registration_inno .about-btn:hover {
     background: #f82249;
+    color: #fff;
+}
+
+.form-group #forgot_password {
+    border: 0;
+}
+
+.form-group #login_button {
     color: #fff;
 }
