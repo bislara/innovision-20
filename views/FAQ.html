@@ -67,7 +67,7 @@
                   <li><a href="#gallery">Gallery</a></li> -->
                     <li><a href="sponsor.html">Sponsors</a></li>
                     <!-- <li><a href="#contact">Contact</a></li> -->
-                    <li class="buy-tickets" id="log_btn"><a href="login.html">Login/Register</a></li>
+                    <li class="buy-tickets"><a href="login.html"  id="log_btn">Login/Register</a></li>
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
@@ -292,7 +292,9 @@
                 type: 'get',
                     success:function(response)
                     {
-                   $("#log_btn").hide();
+                   // $("#log_btn").hide();
+                    $('#log_btn').html('Profile').attr('href','profile.html')
+
               }
             });
       }
