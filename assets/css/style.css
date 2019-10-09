@@ -162,7 +162,7 @@ h6 {
 #header.header-fixed {
   background: rgba(6, 12, 34, 0.98);
   height: 70px;
-  padding: 15px 0;
+  padding: 10px 0;
   transition: all 0.5s;
 }
 
@@ -702,7 +702,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding: 60px 0 40px 0;
+  padding: 40px 0 40px 0;
 }
 
 #about:before {
@@ -715,11 +715,17 @@ body.mobile-nav-active #mobile-nav-toggle {
   right: 0;
 }
 
+#about .about-inno {
+  border-bottom: 2px solid #f82249;
+}
+
 #about h2 {
+  text-align: center;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #fff;
+  border-bottom: 1px solid #f82249;
 }
 
 #about h3 {
@@ -731,9 +737,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about p {
+  text-align: center;
   font-size: 14px;
   margin-bottom: 20px;
   color: #fff;
+}
+
+#about .info {
+  margin-top: 0.35em;
+}
+#about .info p{
+  text-align: left;
 }
 
 /*--------------------------------------------------------------
@@ -1192,7 +1206,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 # supporters Section
 --------------------------------------------------------------*/
 #supporters {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 #supporters .supporters-wrap {
