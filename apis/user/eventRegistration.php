@@ -3,7 +3,6 @@
 
 	include ('../../vendor/autoload.php');
     use \Firebase\JWT\JWT;
-    use Endroid\QrCode\QrCode;
 
     include('../config.php');
 

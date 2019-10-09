@@ -3,7 +3,7 @@
           //  window.location="./profile.html"
             $('#college_add').hide();
             $.ajax({
-                url:'../apis/misc/CollegeList/readCollege.php',
+                url:'../apis/misc/collegeList/readCollege.php',
                 type: 'get',
                 success:function(response)
                 {
@@ -86,7 +86,7 @@
                 {
                    // console.log(college_name_input)
                     $.ajax({
-                        url: '../apis/misc/CollegeList/others/create.php',
+                        url: '../apis/misc/collegeList/others/create.php',
                         data: "cname="+college_name_input,
                         type: 'post',
                         success: function(response) {

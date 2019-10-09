@@ -4,7 +4,6 @@
 
 	include ('../../../vendor/autoload.php');
 	use \Firebase\JWT\JWT;
-	use Endroid\QrCode\QrCode;
 
 	include('../../config.php');
 
@@ -194,11 +193,7 @@
             );
             if($jwt)
             {
-			    error_reporting(0);
-			    $qrcode = new QrCode(json_encode(array('inno_id' => $inno_id, 'email' => $email)));
-				$filepath = '../../../assets/images/qrcodes/'.$inno_id.'.png';	
-				$qrcode->writeFile($filepath);
-				$query = mysqli_query($conn, "UPDATE users SET qr_code = '".$filepath."' WHERE inno_id = ".$inno_id);
+			    error_reporting(0);			    
 				echo(json_encode(array('status' => 'success', 'message' => $jwt)));
 			}
 			else{
