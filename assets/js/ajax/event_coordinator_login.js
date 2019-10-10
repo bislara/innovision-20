@@ -7,6 +7,7 @@ $(document).on("click", ".submit", function () {
             password: $("#pwd").val().toString()
         },
         success: function (data) {
+        	console.log(data);
             data=JSON.parse(data);
             if (data.status == "success") {
                 localStorage.cms_token=data.result.jwt;
@@ -14,7 +15,7 @@ $(document).on("click", ".submit", function () {
                 localStorage.name=data.result.name;
                 window.location.assign("./admin_panel.html");
             } else {
-                alert(data.message);
+                //alert(data.message);
             }
         },
         error: function (data) {

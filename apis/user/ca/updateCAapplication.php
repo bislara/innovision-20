@@ -4,7 +4,6 @@
 
     include ('../../../vendor/autoload.php');
     use \Firebase\JWT\JWT;
-    use Endroid\QrCode\QrCode;
 
     include('../../config.php');
     $secretKey = base64_decode(SECRET_KEY);
@@ -23,7 +22,6 @@
     $q11=$_POST['q11'];
     $q12=$_POST['q12'];
     $q13=$_POST['q13'];
-    $q14=$_POST['q14'];
     
     // echo (json_encode(array('status' => 'success', 'result' => $ca_id)));
     if ($_SERVER["REQUEST_METHOD"] === "POST" && $jwt!="") {
@@ -43,14 +41,14 @@
             $ca_id=$ress1['ca_id'];
             
             //basicInfo
-            $query1 = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code FROM users where inno_id ='".$inno_id."'");
+            $query1 = mysqli_query($conn, "SELECT inno_id, name, email, college FROM users where inno_id ='".$inno_id."'");
             if (mysqli_num_rows($query1) == 0) {
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
             } else {
             
-            if( isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']) && isset($_POST['q4'])&& isset($_POST['q5']) && isset($_POST['q6']) && isset($_POST['q7']) && isset($_POST['q8']) && isset($_POST['q9']) && isset($_POST['q10']) && isset($_POST['q11']) && isset($_POST['q12']) && isset($_POST['q13']) && isset($_POST['q14'])) {   
+            if( isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']) && isset($_POST['q4'])&& isset($_POST['q5']) && isset($_POST['q6']) && isset($_POST['q7']) && isset($_POST['q8']) && isset($_POST['q9']) && isset($_POST['q10']) && isset($_POST['q11']) && isset($_POST['q12']) && isset($_POST['q13']) ) {   
 
-                $query = "UPDATE ca_selection_responses SET q1 = '".$q1."',q2 = '".$q2."',q3 = '".$q3."',q4 = '".$q4."',q5 = '".$q5."',q6 = '".$q6."', q7 = '".$q7."', q8 = '".$q8."',q9 = '".$q9."',q10 = '".$q10."', q11 = '".$q11."', q12 = '".$q12."',q13 = '".$q13."', q14 = '".$q14."'  WHERE ca_applicant_id = '".$ca_id."' ";
+                $query = "UPDATE ca_selection_responses SET q1 = '".$q1."',q2 = '".$q2."',q3 = '".$q3."',q4 = '".$q4."',q5 = '".$q5."',q6 = '".$q6."', q7 = '".$q7."', q8 = '".$q8."',q9 = '".$q9."',q10 = '".$q10."', q11 = '".$q11."', q12 = '".$q12."',q13 = '".$q13."' WHERE ca_applicant_id = '".$ca_id."' ";
                 // echo $query;
                 $result = mysqli_query($conn, $query);
                 

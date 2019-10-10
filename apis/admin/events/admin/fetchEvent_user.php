@@ -23,7 +23,7 @@
             $inno_id = $data->inno_id;
             $email = $data->email;
          	// echo $inno_id;
-            $query = mysqli_query($conn, "SELECT inno_id, name, email, college, qr_code FROM users where inno_id ='".$inno_id."'");
+            $query = mysqli_query($conn, "SELECT inno_id, name, email, college FROM users where inno_id ='".$inno_id."'");
             if (mysqli_num_rows($query) == 0) {
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
             } else {
