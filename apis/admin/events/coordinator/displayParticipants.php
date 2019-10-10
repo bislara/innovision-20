@@ -20,7 +20,7 @@
 
 		if (mysqli_num_rows($result) == 0) {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'eid not found')));
+			echo(json_encode(array('status' => 'empty', 'result' => 'No Participants registered to this event')));
 		}
 
 		else {
