@@ -88,8 +88,9 @@
 
 				// Prepare new cURL resource
 				$req = curl_init('https://www.thecollegefever.com/v1/booking/bookticket');
-				//setting up the session token in auth Cookie				
-				curl_setopt($req, CURLOPT_COOKIE, "auth=".$session_token.";path=/; domain=.thecollegefever.com;");
+				//setting up the session token in auth Cookie		
+				$_COOKIE['auth']=$session_token;
+				curl_setopt($req, CURLOPT_COOKIE, "auth=".$session_token.";path=/; domain=thecollegefever.com;");
 				curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($req, CURLINFO_HEADER_OUT, true);
 				curl_setopt($req, CURLOPT_POST, true);
