@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#ca_button1').hide();
+	$('#ca_button1').html('WANNA BE A CA !');
 	var q = localStorage.getItem('token');
 	$('#ca_button1').on('click', function() {
 		window.location = './ca/index.html';
@@ -13,7 +13,7 @@ $(document).ready(function() {
 			},
 			type: 'get',
 			success: function(response) {
-				console.log(response);
+				// console.log(response);
 				response = JSON.parse(response);
 				if (response.status == 'success') {
 					var id = response.result['basicInfo']['inno_id'];
@@ -22,15 +22,15 @@ $(document).ready(function() {
 					var college = response.result['basicInfo']['college'];
 					var ca_id = response.result['basicInfo']['ca_id'];
 					// console.log(ca_id);
-					 if(ca_id != 0)
-					$('#ca_button1').show();
+					if(ca_id != 0)
+						$('#ca_button1').html('EDIT CA APPLICATION');
 
-					document.getElementById('participant_id').innerHTML = 'Inno ID : ' + id;
-					document.getElementById('participant_name').innerHTML = 'Name : ' + name;
-					document.getElementById('participant_email').innerHTML = 'Email : ' + email;
-					document.getElementById('participant_college').innerHTML = 'College : ' + college;
+					document.getElementById('participant_id').innerHTML = '<b>Inno ID</b> : ' + id;
+					document.getElementById('participant_name').innerHTML = '<b>Name</b> : ' + name;
+					document.getElementById('participant_email').innerHTML = '<b>Email</b> : ' + email;
+					document.getElementById('participant_college').innerHTML = '<b>College</b> : ' + college;
 
-					console.log(response.result['regEvents']);
+					// console.log(response.result['regEvents']);
 					regevents = response.result['regEvents'];
 					if (regevents.length > 0) {
 						var num_of_events = regevents.length;
@@ -46,15 +46,15 @@ $(document).ready(function() {
 									var link = './event-details.html?eid=' + eid;
 									temp =
 										temp +
-										"<div class='col-lg-3 col-md-6'><div class='hotel'><div class='hotel-img'><img src=../" +
+										"<div class='col-lg-3 col-6 col-md-6'><div class='hotel'><div class='hotel-img'><a href=" +
+										link +
+										"><img src=../" +
 										image_path +
 										" alt='" +
 										event_name +
-										"' class='img-fluid'></div><h3><a href=" +
-										link +
-										'>' +
+										"' class='img-fluid'></div><h3>" +
 										event_name +
-										'</a></h3></div></div>';
+										'</h3></a></div></div>';
 									//temp = temp+"<div class='col-lg-3 col-md-6'>                  <div class='hotel'><div class='hotel-img'><img src='../"+image_path+"' alt='"+event_name+"' class='img-fluid'></div><h3><a href="+link+">"+event_name+"</a></h3></div></div>"
 								}
 							}
@@ -69,15 +69,25 @@ $(document).ready(function() {
 					}
 				}
 				if (response.status == 'failure') {
-					swal('You have not registered.', ': [', 'warning').then((value) => {
+					swal('Please Login First to open profile page !', ': [', 'warning').then((value) => {
 						window.location = './login.html';
 					});
 				}
 			}
 		});
 	} else {
-		swal('You have not registered.', ': [', 'warning');
-		window.location = './login.html';
+		    swal('Please Login First to open profile page !', ': [', 'warning').then((value) => {
+						window.location = './login.html';
+					});
+		// swal('You have not registered.', ': [', 'warning');
+		// window.location = './login.html';
+				// swal({
+				// title: "Please Login First to open profile page !",
+				// text: ": )",
+				// type: "warning"
+				// }, function() {
+				// window.location = './login.html';
+				// });
 	}
 });
 
@@ -97,4 +107,8 @@ $('#paymentBtn').click(()=>{
 			window.location="https://www.thecollegefever.com"+url;
         }
     });
+})
+$('#signoutBtn').click(()=>{
+	localStorage.removeItem('token');
+	window.location='/';
 })

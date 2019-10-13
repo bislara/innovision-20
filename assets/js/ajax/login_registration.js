@@ -20,6 +20,19 @@
                 }
             });            
         }
+
+
+});
+function myFunction() {
+  var x = document.getElementById("error");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+$(document).ready(function(){
+        //if(localStorage.getItem("token") != null)
+          //  window.location="./profile.html"
+
             $('#college_add').hide();
             $.ajax({
                 url:'../apis/misc/collegeList/readCollege.php',
@@ -62,10 +75,14 @@
         $("#phone").focusout(function(){
             var phone=$("#phone").val();
             if(phone.length != 10){
-                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid phone number</strong></center></div>");
+            	$("#error").html("Not a valid phone number");
+                // $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid phone number</strong></center></div>");
+            	myFunction();
             }
             else{
-                $("#error").html("<div style=\"color:#4dff88;height:40px;padding : 10px;\"><strong><center>Valid phone number</strong></center></div>");
+                // $("#error").html("<div style=\"color:#4dff88;height:40px;padding : 10px;\"><strong><center>Valid phone number</strong></center></div>");
+            	$("#error").html("Valid phone number");
+				myFunction();
             }   
         });
 
@@ -89,6 +106,8 @@
                     //swal(response.result, ": [", "warning");
                     console.log(response.result)
                     $("#error1").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
+                  	// $("#error1").html(response.result);
+					// myFunction();
                   }               
               }
               });
@@ -117,7 +136,9 @@
                             else
                             {
 
-                                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.message+"</center></strong></div>");
+                                // $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.message+"</center></strong></div>");
+                            	$("#error").html(response.message);
+								myFunction();
                             }
                        }
                     });
@@ -126,7 +147,9 @@
             var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
             if($("#password").val() != $("#cpassword").val())
             {
-                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Confirm your password</center></strong></div>");
+                // $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Confirm your password</center></strong></div>");
+            	$("#error").html("Confirm your password");
+				myFunction();
             }
             else
             {
@@ -148,6 +171,10 @@
                         {
                             swal(response.message, ": [", "warning");
                             $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
+                             //swal(response.message, ": [", "warning");
+                            // $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>"+response.result+"</center></strong></div>");
+                        	$("#error").html(response.result);
+							myFunction();
                         }
                    }
                 });
@@ -161,8 +188,10 @@
             var dotpos = email.lastIndexOf(".");  
             var link_email = "email="+email;
             if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length) {
-                $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid email address</center></strong></div>");
-                    return false;
+                // $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Not a valid email address</center></strong></div>");
+                $("#error").html("Not a valid email address");
+				myFunction();   
+            	return false;
             }
             else{
                 $.ajax({
@@ -170,7 +199,9 @@
                 type: 'post',
                 data:link_email,
                     success: function(response) {
+                    // $("#error").html(response);
                     $("#error").html(response);
+					myFunction();
                     }
                 });
             }
@@ -192,7 +223,5 @@ $(document).on("click","#recoveryEmailBtn",function(){
                 $("#forgotPasswordModal modal-body").html("<h1>"+msg+"</h1>");
            }
         });
-    }else{
-
     }
 });

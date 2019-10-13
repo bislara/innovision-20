@@ -1,8 +1,53 @@
 /*Signin and Registration ID*/
 
+#error {
+  visibility: hidden;
+  min-width: 250px;
+    margin-left: -125px;
+    background-color: #0e1735;
+    color: #f82249;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 66vh;
+    font-size: 18px;
+    border-color: #f82249;
+    border-style: solid;
+}
+
+#error.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 66vh; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 66vh; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 66vh; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 66vh; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
 #signin_id {
     padding: 100px 0 60px 0;
-    background: url(../images/intro-bg.jpg) top center;
+    background: url(../images/stars.jpg) top center;
     background-size: cover;
     overflow: hidden;
     position: relative;
@@ -10,7 +55,7 @@
 
 #signin_id:before {
     content: "";
-    background: rgba(6, 12, 34, 0.8);
+    background: rgba(6, 12, 34, 0.5);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -29,7 +74,7 @@
 
 #signin_id .nav-tabs li {
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     /*width: 40vw;*/
 }
 
@@ -41,6 +86,19 @@
     color: #fff;
     padding: 10px 100px;
 }
+
+@media only screen and (max-width: 600px) {
+#signin_id .nav-tabs a {
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #0e1b4d;
+    color: #fff;
+    padding: 10px 40px;
+    margin-right: -18px;
+}
+}
+
 
 #signin_id .nav-tabs a.active {
     background-color: #f82249;
@@ -117,6 +175,7 @@
 }
 
 .form-group #forgot_password {
+	display: none;
     border: 0;
 }
 

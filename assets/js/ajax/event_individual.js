@@ -132,7 +132,7 @@ $(document).on("click", ".register", function () {
 
 	// console.log(q);	
 	if (q == null || q == "" || !(q)) {
-		swal("Please Login First to register.", ": [", "warning");
+		swal("Please Login First to register for the event.", ": [", "warning");
 	} else {
 		$.ajax({
 			type: "POST",
@@ -148,17 +148,31 @@ $(document).on("click", ".register", function () {
 					swal("You have already registered for the event.", ":)", "warning");
 
 				} else if (dataArr["status"] == "registration done") {
-					swal("Registration Successful !", ": )", "success");
-					window.location.assign('event-details.html?eid='+ eid);
+					// swal("Registration Successful !", ": )", "success");
+					// window.location.assign('event-details.html?eid='+ eid);
+                	swal({
+           			title: "Registration Successful !",
+            		text: ": )",
+            		type: "success"
+        			}, function() {
+            			window.location = 'event-details.html?eid='+ eid;
+        			});
 
 				} else if (dataArr["status"] == "failure") {
-					swal("Registration failed! Please try again.", ":(", "error");
+					swal("Session Expired! Please login to register for the event.", ":(", "error");
 
 				}
 				else if (dataArr["status"] == "DeRegistration done") {
-					swal("De registration Successful !", ": )", "success");
-					window.location.assign('event-details.html?eid='+ eid);
-					
+					// swal("De registration Successful !", ": )", "success");
+					// window.location.assign('event-details.html?eid='+ eid);
+					swal({
+           			title: "De registration Successful !",
+            		text: ": )",
+            		type: "success"
+        			}, function() {
+            			window.location = 'event-details.html?eid='+ eid;
+        			});
+
 				}
 			}
 		});
