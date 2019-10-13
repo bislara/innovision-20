@@ -478,7 +478,7 @@ h6 {
 }
 
 #mobile-nav ul li a:hover {
-    color: #f82249;
+    color: #8186d5;
 }
 
 #mobile-nav ul li li {
@@ -498,14 +498,15 @@ h6 {
     color: #f82249;
 }
 
-#mobile-nav ul .menu-item-active {
-    color: #f82249;
-}
-
-
 /* login button */
 
 #mobile-nav .buy-tickets {
+	/* border-top: 1px solid #f82249;
+	border-bottom: 1px solid #f82249; */
+	background-color: #3c4245;
+}
+
+#mobile-nav ul .menu-active {
     background-color: #f82249;
 }
 
@@ -736,7 +737,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     overflow: hidden;
     position: relative;
     color: #fff;
-    padding: 40px 0 40px 0;
+    padding: 2em 0.5em ;
 }
 
 #about:before {
@@ -771,7 +772,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about p {
-    text-align: center;
+    text-align: justify;
     font-size: 14px;
     margin-bottom: 20px;
     color: #fff;
@@ -795,10 +796,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #speakers h3 {
-    padding-top: 75px;
-    /* this section is added by BiswaBehera for h3's in the speaker ids */
+    padding-top: 50px;
     font-size: 1.5rem;
     font-weight: 550;
+}
+
+#speakers .target {
+	height: 25px;
 }
 
 #speakers .speaker {
@@ -814,54 +818,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
-/*
-  Changed by BiswaBehera "this section has been commented out coz they are not used"
-
-  #speakers .speaker .details {
-  background: rgba(6, 12, 34, 0.76);
-  position: absolute;
-  left: 0;
-  bottom: -30px;
-  right: 0;
-  text-align: center;
-  padding-top: 10px;
-  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-#speakers .speaker .details h3 {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-#speakers .speaker .details p {
-  color: #fff;
-  font-size: 15px;
-  margin-bottom: 10px;
-  font-style: italic;
-}
-
-#speakers .speaker .details .social {
-  height: 30px;
-}
-
-#speakers .speaker .details a {
-  color: #fff;
-}
-
-#speakers .speaker .details a:hover {
-  color: #f82249;
-}
-
-#speakers .speaker:hover .details {
-  bottom: 0;
-}
-
-#speakers-details {
-  padding: 60px 0;
-} */
-
 
 /* ---------- event details ------------- */
 
@@ -871,42 +827,23 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding: 100px 0 60px 0;
 }
 
+#speakers-details .details {
+	margin-top: 2em;
+}
+
 #speakers-details .details h2 {
     color: #112363;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
-}
-
-#speakers-details .details .social {
-    margin-bottom: 15px;
-}
-
-#speakers-details .details .social a {
-    background: #e9edfb;
-    color: #112363;
-    line-height: 1;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    padding-top: 9px;
-}
-
-#speakers-details .details .social a:hover {
-    background: #f82249;
-    color: #fff;
-}
-
-#speakers-details .details .social a i {
-    font-size: 18px;
+	border-bottom: 2px solid #f82249;
 }
 
 #speakers-details .details p {
     color: #112363;
     font-size: 15px;
     margin-bottom: 10px;
+	text-align: justify;
 }
 
 
@@ -1670,6 +1607,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info p {
+	text-align: justify;
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
