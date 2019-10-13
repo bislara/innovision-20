@@ -14,7 +14,8 @@ $(document).ready(function () {
             data=data.result;
             var temp = '';
             for (var i = 0; i < data.length; i++) {
-                temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td></tr>';
+
+                temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td><td>'+'<center><a href=\"uncheck_event.html?inno_id='+data[i].inno_id+'\"><button class="btn btn-primary">Uncheck</button></a></center>' +'</td></tr>';
             }
             $("#cil").append(temp);
         },

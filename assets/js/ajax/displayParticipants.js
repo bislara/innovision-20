@@ -17,7 +17,10 @@ $(document).ready(function () {
             data=data.result;
             var temp = '';
             for (var i = 0; i < data.length; i++) {
-                temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td></tr>';
+                if(data[i].checkInStatus == "0")
+                {
+                        temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td><td>' + '<center><a href=\"check_in_event.html?inno_id='+data[i].inno_id+'\"><button class="btn btn-primary">Check In</button></a></center>' +'</td></tr>';
+                }
             }
             console.log(temp);
             $("#dp").append(temp);

@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `ca_selection_responses`
 --
 
+
 CREATE TABLE `ca_selection_responses` (
   `ca_applicant_id` int(11) NOT NULL,
   `q1` tinytext NOT NULL,
@@ -117,7 +118,8 @@ CREATE TABLE `events` (
 
 CREATE TABLE `events_registration` (
   `inno_id` int(11) NOT NULL,
-  `event_id` int(11) NOT NULL
+  `event_id` int(11) NOT NULL,
+  `checkInStatus` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
