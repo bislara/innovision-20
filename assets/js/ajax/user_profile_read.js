@@ -108,3 +108,7 @@ $('#paymentBtn').click(()=>{
         }
     });
 })
+$('#signoutBtn').click(()=>{
+	localStorage.removeItem('token');
+	window.location='/';
+})
