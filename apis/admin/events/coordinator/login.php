@@ -10,7 +10,7 @@
         	
             if(mysqli_num_rows($query) == 0)
             {
-            echo mysqli_error($conn); return;
+            	// echo mysqli_error($conn); return;
                 echo json_encode(array('status'=>'failure','message'=>'invalid credentials'));
             }
             else
