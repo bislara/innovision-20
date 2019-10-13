@@ -52,12 +52,15 @@
                         <a class="dropbtn dropping">Events</a>
                         <div class="dropdown-content">
                             <a href="eventsSection.html#EventsSection">Event Schedule</a>
-                            <a href="eventsSection.html#flagships">Flagship Events</a>
-                            <a href="eventsSection.html#events">Events</a>
-                            <a href="eventsSection.html#workshops">Workshops</a>
-                            <a href="eventsSection.html#paidworkshops">Workshops (Paid)</a>
-                            <a href="eventsSection.html#exhibitions">Exhibitions</a>
-                            <a href="eventsSection.html#cultural">Cultural</a>
+                            <a href="eventsSection.html#flagships1">Flagship Events</a>
+                            <a href="eventsSection.html#events1">Events</a>
+                            <a href="eventsSection.html#workshops1">Workshops</a>
+                            <a href="eventsSection.html#workshops2">Workshops (Paid)</a>
+                            <a href="eventsSection.html#exhibitions1">Exhibitions</a>
+                            <a href="eventsSection.html#cultural1">Cultural</a>
+                        	<a href="eventsSection.html#funevents1">Fun Events</a>
+                        	<a href="eventsSection.html#preinnoevents1">Pre-inno Events</a>
+                        	<a href="eventsSection.html#special1">Special Events</a>
                         </div>
 
                     </li>
@@ -67,7 +70,7 @@
                   <li><a href="#gallery">Gallery</a></li> -->
                     <li><a href="sponsor.html">Sponsors</a></li>
                     <!-- <li><a href="#contact">Contact</a></li> -->
-                    <li class="buy-tickets"><a href="login.html"  id="log_btn">Login/Register</a></li>
+                    <li class="buy-tickets"><a href="login.html"  class="log_btn">Login/Register</a></li>
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
@@ -181,7 +184,7 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="fa fa-angle-right"></i> <a href="www.nitrkl.ac.in">NITR home page</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="https://www.nitrkl.ac.in">NITR home page</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="https://www.nitrkl.ac.in/SAC/">SAC @NITR</a>
                             </li>
                             <li><i class="fa fa-angle-right"></i> <a href="http://gallery.nitrkl.ac.in/">NITR
@@ -212,7 +215,7 @@
                             <strong>National Institute of Technology</strong> <br>
                             <em>Sector 1, Rourkela - 769008</em> <br>
                             <strong>Phone:</strong> +91 9668081541 <br>
-                            <strong>Email:</strong> <a href="mailto:contactus@innonitr.com">contactus@innonitr.com</a>
+                            <strong>Email:</strong> <a href="mailto:contactus.innovision@gmail.com">contactus.innovision@gmail.com</a>
                             <br>
                         </p>
 
@@ -265,7 +268,6 @@
     </footer>
     <!-- #footer -->
     
-
     <script src="../assets/lib/jquery/jquery.min.js"></script>
     <script src="../assets/lib/jquery/jquery-migrate.min.js"></script>
     <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -275,12 +277,14 @@
     <script src="../assets/lib/wow/wow.min.js"></script>
     <script src="../assets/lib/venobox/venobox.min.js"></script>
     <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
+	
     <!-- Contact Form JavaScript File -->
-    <script src="../assets/js/contactform.js"></script>
     <!-- Template Main Javascript File -->
+    
+    <script src="../assets/js/contactform.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script>
+	<script>
+    $(document).ready(function() {
       var q = localStorage.getItem("token");
       if(q)
       {
@@ -293,11 +297,20 @@
                     success:function(response)
                     {
                    // $("#log_btn").hide();
-                    $('#log_btn').html('Profile').attr('href','profile.html')
+                   	response = JSON.parse(response);
+                    if (response.status == "success") {
+                   // $("#log_btn").hide();
+                   $('.log_btn').html('Profile').attr('href','profile.html')
+                  	}
+                    else
+                    {
+                       $('.log_btn').html('Login/Registration').attr('href','login.html')
+                    }
 
               }
             });
       }
+    })
     </script>
 
 

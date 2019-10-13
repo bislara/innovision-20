@@ -57,12 +57,15 @@
 
             <a class="dropbtn dropping">Events</a>
             <div class="dropdown-content">
-              <a href="#flagships">Flagship Events</a>
-              <a href="#events">Events</a>
-              <a href="#workshops">Workshops</a>
-              <a href="#paidworkshops">Workshops (Paid)</a>
-              <a href="#exhibitions">Exhibitions</a>
-              <a href="#cultural">Cultural</a>
+              <a href="#flagships1">Flagship Events</a>
+              <a href="#events1">Events</a>
+              <a href="#workshops1">Workshops</a>
+              <a href="#workshops2">Workshops (Paid)</a>
+              <a href="#exhibitions1">Exhibitions</a>
+              <a href="#cultural1">Cultural</a>
+              <a href="#funevents1">Fun Events</a>
+              <a href="#preinnoevents1">Pre-inno Events</a>
+              <a href="#special1">Special Events</a>
             </div>
 
           </li>
@@ -72,7 +75,7 @@
                   <li><a href="#gallery">Gallery</a></li> -->
           <li><a href="sponsor.html">Sponsors</a></li>
           <!-- <li><a href="#contact">Contact</a></li> -->
-          <li class="buy-tickets" id="log_btn"><a href="login.html">Login/Register</a></li>
+          <li class="buy-tickets"><a href="login.html" class="log_btn">Login/Register</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -163,7 +166,7 @@
 
 
         <!--==========================
-          Speakers Section
+          Events Section
         ============================-->
         <section id="speakers" class="wow fadeInUp">
             <div class="container">
@@ -172,56 +175,113 @@
                     <p>Here is the list of all Events.</p>
                 </div>
 
-            <h3>Flagships</h3>
-
-                <div id="flagships">
+                
+                <div class="target" id="flagships1">
+                	
                 </div>
+                <h3>Flagships</h3>
+                
+                <div id="flagships">
 
+                </div>
+                
+            
 
-                  <h3>Events</h3>
+				<div class="target" id="events1">
+                	
+                </div>
+                <h3>Events</h3>
                 <div id="events">
                     <!-- <div class="row"> -->
-
-                        <!-- <div class="col-lg-4 col-md-6"> -->
-                           <!--  <a href="event-details.html">
-                            <div class="speaker">
-                                <img src="../assets/images/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
-                            </div>
-                            </a> -->
-                        <!-- </div> -->
-
+                
+                    <!-- <div class="col-lg-4 col-md-6"> -->
+                    <!--  <a href="event-details.html">
+                                            <div class="speaker">
+                                                <img src="../assets/images/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
+                                            </div>
+                                            </a> -->
+                    <!-- </div> -->
+                
                     <!-- </div> -->
                 </div>
 
 
-            <h3>Workshops</h3>
 
+			    <div class="target" id="workshops1">
+            	    
+                </div>
+                <h3>Workshops</h3>
+                
                 <div id="workshops">
-
+                
                 </div>
 
-            <h3>Workshops(Paid) </h3>
-
+            
+                <div class="target" id="workshops2">
+				    
+                </div>
+                <h3>Workshops(Paid) </h3>
+                
                 <div id="paidworkshops">
-
+                
                 </div>
 
 
-
-            <h3>Exhibitions</h3>
-
+			    <div class="target" id="exhibitions1">
+				    
+                </div>
+                <h3>Exhibitions</h3>
+                
                 <div id="exhibitions">
-
+                
                 </div>
 
-              <h3>Cultural</h3>
 
+            
+                <div class="target" id="cultural1">
+			    	
+                </div>
+                <h3>Cultural</h3>
+                
                 <div id="cultural">
+                
+                </div>
+            
+                
+                
+                <div class="target" id="funevents1">
+			    	
+                </div>
+                <h3>Fun Events</h3>
+                
+                <div id="funevents">
+                
+                </div>
+            
+                
+                
+                <div class="target" id="special1">
+			    	
+                </div>
+                <h3>Special Events</h3>
+                
+                <div id="special">
+                
+                </div>
 
+
+
+                <div class="target" id="preinnoevents1">
+			    	
+                </div>
+                <h3>Pre-Inno Events</h3>
+                
+                <div id="preinnoevents">
+                
                 </div>
 
             </div>
-
+			
         </section>
 
     </div>
@@ -249,7 +309,7 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="fa fa-angle-right"></i> <a href="www.nitrkl.ac.in">NITR home page</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="https://www.nitrkl.ac.in">NITR home page</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="https://www.nitrkl.ac.in/SAC/">SAC @NITR</a>
                             </li>
                             <li><i class="fa fa-angle-right"></i> <a href="http://gallery.nitrkl.ac.in/">NITR
@@ -280,7 +340,7 @@
                             <strong>National Institute of Technology</strong> <br>
                             <em>Sector 1, Rourkela - 769008</em> <br>
                             <strong>Phone:</strong> +91 9668081541 <br>
-                            <strong>Email:</strong> <a href="mailto:contactus@innonitr.com">contactus@innonitr.com</a>
+                            <strong>Email:</strong> <a href="mailto:contactus.innovision@gmail.com">contactus.innovision@gmail.com</a>
                             <br>
                         </p>
 
@@ -352,7 +412,7 @@
     <!-- Template Main Javascript File -->
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/ajax/eventFinal.js"></script>
-    <script src="../assets/js/ajax/check_login.js"></script>
+<!--     <script src="../assets/js/ajax/check_login.js"></script> -->
     <script>
       var q = localStorage.getItem("token");
       if(q)
@@ -365,7 +425,12 @@
                 type: 'get',
                     success:function(response)
                     {
-                   $("#log_btn").hide();
+                    // console.log(response);
+                   	response = JSON.parse(response);
+                    if (response.status == "success") {
+                   // $("#log_btn").hide();
+                   $('.log_btn').html('Profile').attr('href','profile.html')
+                  }
               }
             });
       }

@@ -44,9 +44,9 @@
 
 	function validatePhone($phone) {
 
-		if (!preg_match("/^[789]\d{9}$/", $phone)) {
+		if (!preg_match("/^[6789]\d{9}$/", $phone)) {
 
-			echo(json_encode(array('status' => 'failure', 'result' => 'Phone number should have 10 digits and should start with 7,8, or 9')));
+			echo(json_encode(array('status' => 'failure', 'result' => 'Phone number should have 10 digits and should start with 6,7,8, or 9')));
 			return 0;
 		}
 		return 1;
