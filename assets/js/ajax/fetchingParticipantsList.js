@@ -13,7 +13,7 @@ function populate(data_arr) {
 $(document).on("click", "#searchBtn", function(){
   var inp=$("#inputId").val();
   if(inp==="") 
-    return ;
+    inp=0;
   $.ajax({
     type: "GET",
     beforeSend: function(request){
