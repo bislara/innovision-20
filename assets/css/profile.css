@@ -55,15 +55,16 @@
 
 #profile_inno {
     width: 100%;
-    background: url(../images/intro-bg.jpg) top center;
+    background: url(../images/stars.jpg) top center;
     background-size: cover;
     overflow: hidden;
     position: relative;
+    padding-top: 100px;
 }
 
 #profile_inno:before {
     content: "";
-    background: rgba(6, 12, 34, 0.8);
+    background: rgba(6, 12, 34, 0.5);
     position: absolute;
     bottom: 0;
     top: 0;

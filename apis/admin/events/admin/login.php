@@ -10,7 +10,7 @@
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {            
 
-        if ($_POST["username"] === 'admin' && md5($_POST["password"]) === '21232f297a57a5a743894a0e4a801fc3') {
+        if ($_POST["username"] === 'event_admin' && md5($_POST["password"]) === 'caf4cb848d7d98b3e1be259546e24279') {
 
             $data = [
 

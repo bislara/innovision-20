@@ -131,6 +131,14 @@ h6 {
     margin-bottom: 10px;
 }
 
+.section-header h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
 .section-header p {
     text-align: center;
     padding: 0;
@@ -150,24 +158,23 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-  height: 80px;
-  padding: 20px 0;
-  position: fixed;
-  /* changed by BiswaBehera "position relative to fixed" */
-  left: 0;
-  top: 0;
-  right: 0;
-  transition: all 0.5s;
-  z-index: 997;
-  background: rgba(6, 12, 34, 0.85);
-
+    height: 80px;
+    padding: 20px 0;
+    position: fixed;
+    /* changed by BiswaBehera "position relative to fixed" */
+    left: 0;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+    z-index: 997;
+    background: rgba(6, 12, 34, 0.9);
 }
 
 #header.header-scrolled,
 #header.header-fixed {
     background: rgba(6, 12, 34, 0.98);
     height: 70px;
-    padding: 15px 0;
+    padding: 10px 0;
     transition: all 0.5s;
 }
 
@@ -183,12 +190,11 @@ h6 {
 }
 
 #header #logo h1 span {
-  font-size: 1.6rem;
-  font-weight: 800;
-  background:  -webkit-linear-gradient(45deg, #13b1cd, #f82249);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: -webkit-linear-gradient(45deg, #13b1cd, #f82249);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #header #logo h1 a,
@@ -197,10 +203,9 @@ h6 {
 }
 
 #header #logo img {
-  padding: 0 0 7px 0;
-  margin: 0 10px 0 0;
-  max-height: 55px;
-
+    padding: 0 0 7px 0;
+    margin: 0 10px 0 0;
+    max-height: 55px;
 }
 
 
@@ -289,6 +294,19 @@ h6 {
     font-weight: 600;
     font-size: 14px;
     outline: none;
+}
+
+.nav-menu a:not([href]):not([tabindex]) {
+    color: rgba(202, 206, 221, 0.8);
+    text-decoration: none;
+}
+
+.nav-menu .menu-acive a:not([href]):not([tabindex]) {
+    color: #fff;
+}
+
+.nav-menu a:not([href]):not([tabindex]):hover {
+    color: #fff;
 }
 
 .nav-menu .menu-active a,
@@ -386,7 +404,6 @@ h6 {
 }
 
 .dropdown-content a {
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -461,7 +478,7 @@ h6 {
 }
 
 #mobile-nav ul li a:hover {
-    color: #f82249;
+    color: #8186d5;
 }
 
 #mobile-nav ul li li {
@@ -481,9 +498,20 @@ h6 {
     color: #f82249;
 }
 
-#mobile-nav ul .menu-item-active {
-    color: #f82249;
+/* login button */
+
+#mobile-nav .buy-tickets {
+	/* border-top: 1px solid #f82249;
+	border-bottom: 1px solid #f82249; */
+	background-color: #3c4245;
 }
+
+#mobile-nav ul .menu-active {
+    background-color: #f82249;
+}
+
+
+/* ============ */
 
 #mobile-body-overly {
     width: 100%;
@@ -517,13 +545,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #intro {
-  width: 100%;
-  height: 100vh;
-  background: url(../images/space-odessey.jpg) top center;
-  background-size: cover;
-  overflow: hidden;
-  position: relative;
-
+    width: 100%;
+    height: 100vh;
+    background: url(../images/space-odessey.jpg) top center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
 }
 
 #intro:before {
@@ -710,7 +737,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     overflow: hidden;
     position: relative;
     color: #fff;
-    padding: 60px 0 40px 0;
+    padding: 2em 0.5em ;
 }
 
 #about:before {
@@ -723,11 +750,17 @@ body.mobile-nav-active #mobile-nav-toggle {
     right: 0;
 }
 
+#about .about-inno {
+    border-bottom: 2px solid #f82249;
+}
+
 #about h2 {
+    text-align: center;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #fff;
+    border-bottom: 1px solid #f82249;
 }
 
 #about h3 {
@@ -739,9 +772,18 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about p {
+    text-align: justify;
     font-size: 14px;
     margin-bottom: 20px;
     color: #fff;
+}
+
+#about .info {
+    margin-top: 0.35em;
+}
+
+#about .info p {
+    text-align: left;
 }
 
 
@@ -751,14 +793,16 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #speakers {
     padding: 30px 0 30px 0;
-    /* Changed by BiswaBehera "padding top from 30px to 50px" */
 }
 
 #speakers h3 {
-    padding-top: 75px;
-    /* this section is added by BiswaBehera for h3's in the speaker ids */
+    padding-top: 50px;
     font-size: 1.5rem;
     font-weight: 550;
+}
+
+#speakers .target {
+	height: 25px;
 }
 
 #speakers .speaker {
@@ -774,54 +818,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
-/*
-  Changed by BiswaBehera "this section has been commented out coz they are not used"
-
-  #speakers .speaker .details {
-  background: rgba(6, 12, 34, 0.76);
-  position: absolute;
-  left: 0;
-  bottom: -30px;
-  right: 0;
-  text-align: center;
-  padding-top: 10px;
-  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-#speakers .speaker .details h3 {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-#speakers .speaker .details p {
-  color: #fff;
-  font-size: 15px;
-  margin-bottom: 10px;
-  font-style: italic;
-}
-
-#speakers .speaker .details .social {
-  height: 30px;
-}
-
-#speakers .speaker .details a {
-  color: #fff;
-}
-
-#speakers .speaker .details a:hover {
-  color: #f82249;
-}
-
-#speakers .speaker:hover .details {
-  bottom: 0;
-}
-
-#speakers-details {
-  padding: 60px 0;
-} */
-
 
 /* ---------- event details ------------- */
 
@@ -831,42 +827,23 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding: 100px 0 60px 0;
 }
 
+#speakers-details .details {
+	margin-top: 2em;
+}
+
 #speakers-details .details h2 {
     color: #112363;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
-}
-
-#speakers-details .details .social {
-    margin-bottom: 15px;
-}
-
-#speakers-details .details .social a {
-    background: #e9edfb;
-    color: #112363;
-    line-height: 1;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    padding-top: 9px;
-}
-
-#speakers-details .details .social a:hover {
-    background: #f82249;
-    color: #fff;
-}
-
-#speakers-details .details .social a i {
-    font-size: 18px;
+	border-bottom: 2px solid #f82249;
 }
 
 #speakers-details .details p {
     color: #112363;
     font-size: 15px;
     margin-bottom: 10px;
+	text-align: justify;
 }
 
 
@@ -1013,8 +990,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #venue {
-  padding: 110px 0 100px;
-
+    padding: 110px 0 100px;
 }
 
 #venue .container-fluid {
@@ -1028,7 +1004,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #venue .venue-info {
-    background: url("../images/venue-info-bg.jpg") top center no-repeat;
+    background: url("../assets/images/venue-info-bg.jpg") top center no-repeat;
     background-size: cover;
     position: relative;
     padding-top: 60px;
@@ -1067,6 +1043,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #venue .venue-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
     transition: all ease-in-out 0.4s;
 }
 
@@ -1081,7 +1060,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #hotels {
-    padding: 60px 0;
+    padding: 100px 0 50px;
 }
 
 #hotels .hotel {
@@ -1137,6 +1116,38 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
+/* ISR page modal css */
+
+.modal-design {
+    text-align: center;
+    position: relative;
+}
+
+.modal-design .hotel-img {
+    width: 70%;
+    margin: 10px auto 20px;
+}
+
+.modal-design .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.modal-design p {
+    color: #060c22;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.modal-design h5 {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 5px;
+    padding: 5px 20px 20px;
+}
+
+
 /*--------------------------------------------------------------
 # Gallery Section
 --------------------------------------------------------------*/
@@ -1189,7 +1200,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #supporters {
-    padding: 60px 0;
+    padding: 50px 0;
 }
 
 #supporters .supporters-wrap {
@@ -1231,7 +1242,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #faq {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
 #faq #faq-list {
@@ -1514,47 +1525,48 @@ body.mobile-nav-active #mobile-nav-toggle {
     background: #e0072f;
 }
 
+
 /* ============ */
 
-#quotes{
-  position: relative;
-  text-align: center;
-  padding: 30px 20px 130px 20px;
+#quotes {
+    position: relative;
+    text-align: center;
+    padding: 30px 20px 130px 20px;
 }
-
-
 
 #quotes em {
-  color: #a5a9b3;
+    color: #a5a9b3;
 }
 
-.quote-text{
-  padding-left: 200px;
-  padding-right: 200px;
-  color: #0e1b4d;
-  font-size: 2.5rem;
-  line-height: 1.5;
+.quote-text {
+    padding-left: 200px;
+    padding-right: 200px;
+    color: #0e1b4d;
+    font-size: 2.5rem;
+    line-height: 1.5;
 }
 
 #quotes .quote-btn {
-  width: 7%;
+    width: 7%;
 }
+
 #quotes .quote-btn:focus,
 #quotes .quote-btn:hover {
-  color: #000;
+    color: #000;
 }
 
 #quotes .youtube-link {
-  position: relative;
+    position: relative;
 }
 
 #quotes .play-btn {
-  height: 100%;
-  width: 58%;
-  position: absolute;
-  top: 0;
-  left: 10%;
+    height: 100%;
+    width: 58%;
+    position: absolute;
+    top: 0;
+    left: 10%;
 }
+
 
 /* ============ */
 
@@ -1571,9 +1583,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top {
-  background: #040919;
-  padding: 60px 0 40px 0;
-
+    background: #040919;
+    padding: 60px 0 40px 0;
 }
 
 #footer .footer-top .footer-info {
@@ -1591,12 +1602,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info img {
-  width: 50%;
-  margin-bottom: 10px;
-
+    width: 50%;
+    margin-bottom: 10px;
 }
 
 #footer .footer-top .footer-info p {
+	text-align: justify;
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
@@ -1741,24 +1752,20 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (min-width: 1024px) {
-  #intro {
-    background-attachment: fixed;
-  }
-
-  #about {
-    background-attachment: fixed;
-  }
-
-  #subscribe {
-    background-attachment: fixed;
-  }
-
-  .quote-text {
-    padding-left: 50px;
-    padding-right: 50px;
-    font-size: 1.8rem;
-  }
-
+    #intro {
+        background-attachment: fixed;
+    }
+    #about {
+        background-attachment: fixed;
+    }
+    #subscribe {
+        background-attachment: fixed;
+    }
+    .quote-text {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -1771,73 +1778,61 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 991px) {
-  #header {
-    background: rgba(6, 12, 34, 0.98);
-    height: 70px;
-    padding: 10px 0;
-    transition: all 0.5s;
-  }
-
-  #nav-menu-container {
-    display: none;
-  }
-
-  #mobile-nav-toggle {
-    display: inline;
-  }
-
-  #intro .intro-container {
-    top: 70px;
-  }
-
-  #intro h1 {
-    font-size: 34px;
-  }
-
-  #intro p {
-    font-size: 16px;
-  }
-
-  #schedule .nav-tabs a {
-    padding: 8px 60px;
-  }
+    #header {
+        background: rgba(6, 12, 34, 0.98);
+        height: 70px;
+        padding: 10px 0;
+        transition: all 0.5s;
+    }
+    #nav-menu-container {
+        display: none;
+    }
+    #mobile-nav-toggle {
+        display: inline;
+    }
+    #intro .intro-container {
+        top: 70px;
+    }
+    #intro h1 {
+        font-size: 34px;
+    }
+    #intro p {
+        font-size: 16px;
+    }
+    #schedule .nav-tabs a {
+        padding: 8px 60px;
+    }
 }
 
 @media (max-width: 768px) {
-  .back-to-top {
-    bottom: 15px;
-  }
-
-  #faq #faq-list a {
-    font-size: 18px;
-  }
-
-  #faq #faq-list i {
-    top: 13px;
-  }
-
-  #footer .footer-top .footer-info img {
-    width: 30%;
-    float: left;
-    padding-right: 15px;
-  }
-
-  #quotes .quote-text {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 1.5rem;
-  }
-  
-  #quotes em {
-    font-size: 1rem;
-  }
-
-  #quotes .play-btn{
-    width: 70%;
-    height: 60%;
-    top: 18%;
-    left: 0;
-  }
+    .back-to-top {
+        bottom: 15px;
+    }
+    #faq #faq-list a {
+        font-size: 18px;
+    }
+    #faq #faq-list i {
+        top: 13px;
+    }
+    #footer .footer-top .footer-info img {
+        width: 30%;
+        float: left;
+        padding-right: 15px;
+    }
+    #quotes .quote-text {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.5rem;
+    }
+    #quotes em {
+        font-size: 1rem;
+    }
+    #quotes .play-btn {
+        width: 70%;
+        height: 60%;
+        top: 18%;
+        left: 0;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1847,55 +1842,52 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 574px) {
-  #venue .venue-info h3 {
-    font-size: 24px;
-  }
-
-  .quote-text {
-    padding-left: 50px;
-    padding-right: 50px;
-    font-size: 1.5rem;
-  }
-
-  #quotes h2 {
-    font-size: 1.3rem;
-  }
-
+    #venue .venue-info h3 {
+        font-size: 24px;
+    }
+    .quote-text {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 1.5rem;
+    }
+    #quotes h2 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 480px) {
-  #schedule .nav-tabs a {
-    padding: 8px 30px;
-  }
-
-  #quotes .youtube-link {
-    height: 200px;
-  }
-
-  #quotes .quote-text {
-    padding: 5px 20px;
-    font-size: 1rem;
-  }
-  #quotes em {
-    font-size: 0.8rem;
-  }
-
-  #quotes .play-btn{
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 79%;
-    height: 80%;
-    padding-top: 20px;
-
-  }
-  #quotes .quote-btn {
-    width: 10%;
-  }
+    #schedule .nav-tabs a {
+        padding: 8px 30px;
+    }
+    #quotes .youtube-link {
+        height: 200px;
+    }
+    #quotes .quote-text {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+    #quotes em {
+        font-size: 0.8rem;
+    }
+    #quotes .play-btn {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 79%;
+        height: 80%;
+        padding-top: 20px;
+    }
+    #quotes .quote-btn {
+        width: 10%;
+    }
 }
 
 @media (max-width: 460px) {
     #subscribe button {
         margin-top: 10px;
     }
+}
+
+a:hover {
+    cursor: pointer;
 }
