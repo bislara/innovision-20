@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#ca_button1').html('WANNA BE A CA !');
+	$('#ca_button1').html('APPLY FOR CA !');
 	var q = localStorage.getItem('token');
 	$('#ca_button1').on('click', function() {
 		window.location = './ca/index.html';
