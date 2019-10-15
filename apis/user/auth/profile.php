@@ -29,7 +29,7 @@
             $regEvents=[];
             $certificates=[];
             //basicInfo
-            $query = mysqli_query($conn, "SELECT inno_id, name, email, college, ca_id FROM users where inno_id ='".$inno_id."'");
+            $query = mysqli_query($conn, "SELECT * FROM users where inno_id ='".$inno_id."'");
             if (mysqli_num_rows($query) == 0) {
                 return json_encode(array('status' => 'failure', 'result' => 'inno_id not found'));
             } else {

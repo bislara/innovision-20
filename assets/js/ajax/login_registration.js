@@ -46,6 +46,23 @@ $(document).ready(function(){
                  $('#college_add').hide();
         });
     
+		// ca_id_application
+        $('#ca_id_add').hide();
+         $('#ca_apply').change(function()
+        {
+            var ca_res =  $('input[name=ca_s]:checked', '#ca_apply').val(); 
+           // selection = $(this).val();
+           switch(ca_res)
+           {
+               case 'Yes':
+                   $('#ca_id_add').show();
+                   break;
+           }
+           if(ca_res != "Yes")
+                 $('#ca_id_add').hide();
+        });
+
+
         $("#phone").focusout(function(){
             var phone=$("#phone").val();
             if(phone.length != 10){
@@ -79,9 +96,10 @@ $(document).ready(function(){
                   else if(response.status=="failure"){
                     //swal(response.result, ": [", "warning");
                     console.log(response.result)
-                    $("#error1").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
+                    // $("#error1").html('<div style="background-color:#ff6666;height:40px;padding:10px;width:50%;border-radius:10px;">'+response.result+'</div>');
                   	// $("#error1").html(response.result);
 					// myFunction();
+					swal("Incorrect Id or Password!", "", "error");
                   }               
               }
               });
@@ -89,6 +107,17 @@ $(document).ready(function(){
     
         $('#signup').on('click', function(){ 
             var gender =  $('input[name=gen]:checked', '#gender').val(); 
+        
+        	var ca_response =  $('input[name=ca_s]:checked', '#ca_apply').val();
+            if (ca_response=="Yes")
+            {
+                ca_response=$("#enter_ca").val();
+            }
+            else
+            {
+                ca_response=0;
+            }
+        
             var e = document.getElementById("college");
             var college_name_input = e.options[e.selectedIndex].value;
             if(college_name_input=="other")
@@ -118,8 +147,10 @@ $(document).ready(function(){
                     });
                 }
             }
-            var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
-            if($("#password").val() != $("#cpassword").val())
+            // var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
+            var user_data="name="+$("#name").val()+"&gender="+gender+"&phone="+$("#phone").val()+"&ca_res="+ca_response+"&college="+college_name_input+"&address="+$("#address").val()+"&email="+$("#email").val()+"&password="+$("#password").val();
+
+        	if($("#password").val() != $("#cpassword").val())
             {
                 // $("#error").html("<div style=\"color:#ff6666;height:40px;padding : 10px;\"><center><strong>Confirm your password</center></strong></div>");
             	$("#error").html("Confirm your password");
