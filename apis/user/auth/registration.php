@@ -204,7 +204,6 @@
 				echo(json_encode(array('status' => 'failure', 'message' => 'token not set')));
 			}
 		} else {
-
 			echo(json_encode(array('status' => 'failure', 'message' => 'DB operation failed')));
 		}
 	}
