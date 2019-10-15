@@ -38,7 +38,7 @@ $email = $_POST['email'];
                 
 
 
-                    echo 'hello';return;
+                    // echo 'hello';return;
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
                     $mail->Subject = "Inno'18 Password reset link";
