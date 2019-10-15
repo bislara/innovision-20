@@ -138,6 +138,7 @@ CREATE TABLE `users` (
   `checked_in` int(11) NOT NULL DEFAULT 0,
   `user_password` varchar(100) NOT NULL,
   `ca_id` int(11) NOT NULL DEFAULT 0,
+  `ca_response` int(11) NOT NULL DEFAULT 0,
   `payment_response` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
