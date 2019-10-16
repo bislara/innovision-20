@@ -28,11 +28,15 @@ $(document).ready(function() {
 					}else{
 						$('#paidMsg').hide();
 					}
-
+                
+					$('#participant_ca_id').hide();
 					// console.log(ca_id);
 					if(ca_id != 0)
+                    {
+                    	$('#participant_ca_id').show();
 						$('#ca_button1').html('EDIT CA APPLICATION');
-
+                    	document.getElementById('participant_ca_id').innerHTML = '<b>CA ID</b> : ' + ca_id;
+                    }
 					document.getElementById('participant_id').innerHTML = '<b>Inno ID</b> : ' + id;
 					document.getElementById('participant_name').innerHTML = '<b>Name</b> : ' + name;
 					document.getElementById('participant_email').innerHTML = '<b>Email</b> : ' + email;
