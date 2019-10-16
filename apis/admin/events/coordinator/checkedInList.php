@@ -24,9 +24,8 @@
 
 		else {
 
-			$query = mysqli_query($conn, "SELECT * from users where inno_id=ANY(SELECT inno_id FROM events_registration where event_id='".$eid."') AND checked_in = 1");
-            //echo ("SELECT * from users where inno_id=ANY(SELECT inno_id FROM events_registration where event_id='".$eid."') AND checked_in = 1");
-			if ($query) {
+			$query = mysqli_query($conn, "SELECT * from users where inno_id=ANY(SELECT inno_id FROM events_registration where checkInStatus='1' AND event_id='".$eid."') ");
+            if ($query) {
 
 				$result = array();
 				while($res = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
