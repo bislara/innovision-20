@@ -13,9 +13,11 @@ $(document).ready(function(){
         {
           // console.log(data_obj.result);
           var data_arr = data_obj.result;
+          var ca_arr=data_obj.under_ca;
           var temp=0;
           for (var i = 0; i < data_arr.length; i++) {
-                    temp = temp + '<tr><td style="display:none">' + data_arr[i].ca_applicant_id + '</td><td>' + (i + 1) + '</td ><td>'+ data_arr[i].q1 +'</td><td>' + data_arr[i].q2 + '</td><td>' + data_arr[i].q3 + '</td><td>' + data_arr[i].q4 + '</td><td align="center"> ' + data_arr[i].selected + ' </td><td align="center"><a href="ca_individual.html?ca_id='+ data_arr[i].ca_applicant_id +'"> <button type="button" class="btn btn-info" > Show More </button></a> </td></tr> ';
+                    // temp = temp + '<tr><td style="display:none">' + data_arr[i].ca_applicant_id + '</td><td>' + (i + 1) + '</td ><td>'+ data_arr[i].q1 +'</td><td>' + data_arr[i].q2 + '</td><td>' + data_arr[i].q3 + '</td><td>' + data_arr[i].q4 + '</td><td align="center"> ' + data_arr[i].selected + ' </td><td align="center"><a href="ca_individual.html?ca_id='+ data_arr[i].ca_applicant_id +'"> <button type="button" class="btn btn-info" > Show More </button></a> </td></tr> ';
+					temp = temp + '<tr><td>' + data_arr[i].ca_applicant_id + '</td><td>'+ data_arr[i].q1 +'</td><td>' + data_arr[i].q2 + '</td><td>' + data_arr[i].q3 + '</td><td>' + data_arr[i].q4 + '</td><td align="center">'+ ca_arr[i] +'</td><td align="center"> ' + data_arr[i].selected + ' </td><td align="center"><a href="ca_individual.html?ca_id='+ data_arr[i].ca_applicant_id +'"> <button type="button" class="btn btn-info" > Show More </button></a> </td></tr> ';
 
               }
           $('tbody').append(temp);
