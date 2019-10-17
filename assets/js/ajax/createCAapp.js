@@ -148,7 +148,14 @@ $(document).on("click", ".submitform", function () {
                                         // console.log(data);
                                     // }
                                         if (JSON.parse(data).result=="successful entry") {
-                                        swal("Update Successful !", ": )", "success");
+                                        // swal("Update Successful !", ": )", "success");
+                                        swal({
+                    					title: "Update Successful !",
+                    					text: ": )",
+                    					type: "success"
+                    					}, function() {
+                        					window.location = '../profile.html';
+                    					});
 
                                         }
                                         if ($("#q4s").val().localeCompare("Others") == 0) {
@@ -206,8 +213,15 @@ $(document).on("click", ".submitform", function () {
                                 // console.log(data);
                             // }
                                 if (JSON.parse(data).result=="successful entry") {
-                                swal("Registration Successful !", ": )", "success");
-
+                               	 // swal("Registration Successful !", ": )", "success");
+									 swal({
+                    					title: "Registration Successful !",
+                    					text: ": )",
+                    					type: "success"
+                    					}, function() {
+                        					window.location = '../profile.html';
+                    					});
+                                
                                 }
                                 if ($("#q4s").val().localeCompare("Others") == 0) {
                                     $.ajax({
@@ -231,11 +245,14 @@ $(document).on("click", ".submitform", function () {
                                 }).then((value) => {
                                     switch(value){
                                         case "sure":
-                                        location.reload(true);
+                                        // location.reload(true);
+                                         window.location = '../profile.html';
+
                                         break;
                                     }
                                 });
-                                location.reload(true);
+                                // location.reload(true);
+                                 window.location = '../profile.html';
                             }
                             else {
                                

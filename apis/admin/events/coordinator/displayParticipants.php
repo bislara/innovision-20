@@ -16,7 +16,7 @@
 
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != "") {
 
-		$result = $conn->query("SELECT inno_id, name, email, phone, college FROM users where inno_id =ANY(SELECT inno_id FROM events_registration WHERE event_id='".$eid."')");
+		$result = $conn->query("SELECT u.inno_id, u.name, u.email, u.phone, u.college, e.checkInStatus FROM users u, events_registration e where u.inno_id = e.inno_id AND e.event_id='".$eid."' ORDER BY u.inno_id");
 
 		if (mysqli_num_rows($result) == 0) {
 

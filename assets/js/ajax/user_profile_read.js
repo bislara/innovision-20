@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#ca_button1').html('WANNA BE A CA !');
+	$('#ca_button1').html('APPLY FOR CA !');
 	var q = localStorage.getItem('token');
 	$('#ca_button1').on('click', function() {
 		window.location = './ca/index.html';
@@ -21,10 +21,22 @@ $(document).ready(function() {
 					var email = response.result['basicInfo']['email'];
 					var college = response.result['basicInfo']['college'];
 					var ca_id = response.result['basicInfo']['ca_id'];
+					var paid=parseInt(response.result['basicInfo']['paid']);
+					console.log(paid);
+					if(paid){
+						$('#paymentBtn').hide();
+					}else{
+						$('#paidMsg').hide();
+					}
+                
+					$('#participant_ca_id').hide();
 					// console.log(ca_id);
 					if(ca_id != 0)
+                    {
+                    	$('#participant_ca_id').show();
 						$('#ca_button1').html('EDIT CA APPLICATION');
-
+                    	document.getElementById('participant_ca_id').innerHTML = '<b>CA ID</b> : ' + ca_id;
+                    }
 					document.getElementById('participant_id').innerHTML = '<b>Inno ID</b> : ' + id;
 					document.getElementById('participant_name').innerHTML = '<b>Name</b> : ' + name;
 					document.getElementById('participant_email').innerHTML = '<b>Email</b> : ' + email;
@@ -104,7 +116,7 @@ $('#paymentBtn').click(()=>{
 			console.log(response);
 			response=JSON.parse(response);
 			let url=JSON.parse(response.result).pgUrl;
-			window.location="https://www.thecollegefever.com"+url;
+			window.location=url;
         }
     });
 })

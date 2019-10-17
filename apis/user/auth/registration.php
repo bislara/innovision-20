@@ -10,6 +10,7 @@
 	$name = $_POST["name"];
 	$gender = $_POST["gender"];
 	$phone = $_POST["phone"];
+	$ca_response = $_POST["ca_res"];
 	$college = $_POST["college"];
 	$address = $_POST["address"];
 	$email = $_POST["email"];
@@ -143,7 +144,7 @@
 	// 	}
 	// }
 
-	if ( isset($name) && isset($gender) && isset($phone) && isset($college) && isset($address) && isset($email) && isset($password)) {
+	if ( isset($name) && isset($gender) && isset($phone) && isset($college) && isset($address) && isset($email) && isset($ca_response) && isset($password)) {
 		// /echo'<script>HIIIIIII</script>';
 		//validateEmail($email);
 		//validatePassword($password);
@@ -155,11 +156,13 @@
 			$phone = mysqli_real_escape_string($conn, $phone);
 			$address = mysqli_real_escape_string($conn, $address);
 			$email = mysqli_real_escape_string($conn, $email);
+        	$ca_response = mysqli_real_escape_string($conn, $ca_response);
 			$college = mysqli_real_escape_string($conn, $college);
 			//$accomodation = mysqli_real_escape_string($conn, $accomodation);
 			$password = mysqli_real_escape_string($conn, md5($password));
 
-			$q = "INSERT INTO users (name, gender, phone, college, address, email, user_password) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."')";
+			// $q = "INSERT INTO users (name, gender, phone, college, address, email, user_password) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$password."')";
+			$q = "INSERT INTO users (name, gender, phone, college, address, email, ca_response, user_password) VALUES('".$name."','".$gender."','".$phone."','".$college."','".$address."','".$email."','".$ca_response."','".$password."')";
 
 			$query = mysqli_query($conn, $q);
 
