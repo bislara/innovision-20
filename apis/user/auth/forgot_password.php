@@ -72,11 +72,13 @@ $email = $_POST['email'];
                     $secretKey, // The signing key
                     ALGORITHM
                 );
+				// The HTML-formatted body of the email
+                $bodyHtml = "Hello user, <br><br>
+								we have got a 'forgot password' request for your account ".$row['email']." at Innovision 2019, <br>
+                    			if you do not recognize this request you might simply ignore this link, your account is still safe. <br>
+                    			In order to change your password please follow this link: <br>
+								<a href='https://innonitr.com/views/forgot_password.html?q=".$jwt."'>HERE</a>";
 
-                
-
-                // The HTML-formatted body of the email
-                $bodyHtml = 'Your password change link is <a href="https://innonitr.com/views/forgot_password.html?q='.$jwt.'">HERE</a>';
 
                 $mail = new PHPMailer(true);
 
@@ -102,7 +104,9 @@ $email = $_POST['email'];
                     $mail->Body       = $bodyHtml; 	
                     $mail->AltBody    = $bodyText;
                     $mail->Send();
-                    echo(json_encode(array('status' => 'success', 'result' => 'Mail has been sent to your registered mail.Check SPAM folder')));
+                	$query = mysqli_query($conn, "UPDATE users SET reset_init='1' WHERE email='".$email."'");
+                	
+                    echo(json_encode(array('status' => 'success', 'result' => 'Mail has been sent to your registered mail.Check SPAM folder , The reset link will expire within 24hrs.')));
                 } catch (phpmailerException $e) {
                     echo(json_encode(array('status' => 'failure', 'result' => "An error occurred. {$e->errorMessage()}")));
                 } catch (Exception $e) {

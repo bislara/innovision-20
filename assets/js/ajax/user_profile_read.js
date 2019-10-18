@@ -23,7 +23,11 @@ $(document).ready(function() {
 					var ca_id = response.result['basicInfo']['ca_id'];
 					var paid=parseInt(response.result['basicInfo']['paid']);
 					console.log(paid);
-					if(paid==2){
+                	console.log('hello');
+					if(paid==1){
+                    	$('#paymentBtn').hide();
+                    }
+                	else if(paid==2){
 						$('#paymentBtn').hide();
                     	$('#paidMsg').html('You are an NITian,no need to pay !');
 					}else{

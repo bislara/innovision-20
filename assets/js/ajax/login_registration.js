@@ -223,8 +223,8 @@ $(document).on("click","#recoveryEmailBtn",function(){
             success: function(response) {
                 console.log(response);
                 var response = JSON.parse(response);
-                var msg=response.status;
-                $("#forgotPasswordModal modal-body").html("<h1>"+msg+"</h1>");
+                var msg=response.result;
+                $("#forgotPasswordModal .modal-body").html("<h1>"+msg+"</h1>");
            }
         });
     }else{
