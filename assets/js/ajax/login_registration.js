@@ -212,7 +212,7 @@ $(document).ready(function(){
     });
 
 $(document).on("click","#recoveryEmailBtn",function(){
-    var email=$("#recoveryEmail");
+    var email=$("#recoveryEmail").val();
     if(email.length!==""){
         $.ajax({
             url: '../apis/user/auth/forgot_password.php',
@@ -221,6 +221,7 @@ $(document).on("click","#recoveryEmailBtn",function(){
             },
             type: 'POST',
             success: function(response) {
+                console.log(response);
                 var response = JSON.parse(response);
                 var msg=response.status;
                 $("#forgotPasswordModal modal-body").html("<h1>"+msg+"</h1>");
