@@ -23,8 +23,9 @@ $(document).ready(function() {
 					var ca_id = response.result['basicInfo']['ca_id'];
 					var paid=parseInt(response.result['basicInfo']['paid']);
 					console.log(paid);
-					if(paid){
+					if(paid==2){
 						$('#paymentBtn').hide();
+                    	$('#paidMsg').html('You are an NITian,no need to pay !');
 					}else{
 						$('#paidMsg').hide();
 					}
@@ -40,7 +41,7 @@ $(document).ready(function() {
 					document.getElementById('participant_id').innerHTML = '<b>Inno ID</b> : ' + id;
 					document.getElementById('participant_name').innerHTML = '<b>Name</b> : ' + name;
 					document.getElementById('participant_email').innerHTML = '<b>Email</b> : ' + email;
-					document.getElementById('participant_college').innerHTML = '<b>College</b> : ' + college;
+                    document.getElementById('participant_college').innerHTML = '<b>College</b> : ' + college;
 
 					// console.log(response.result['regEvents']);
 					regevents = response.result['regEvents'];
@@ -104,6 +105,10 @@ $(document).ready(function() {
 });
 
 $('#paymentBtn').click(()=>{
+	
+	var p = $('#paymentBtn');
+	p.text("Processing...");
+
     var q = localStorage.getItem('token');
     $.ajax({
         url: '../apis/user/payment/payment.php',
