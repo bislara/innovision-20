@@ -92,6 +92,45 @@
     <!--==========================
       Speaker Details Section
     ============================-->
+    <div class="modal fade" id="details_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Provide Details to register for this Event</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="DetailsForm">
+                        <div class="form-group">
+                            <label for="graduation_year">Graduation Year:</label>
+                            <select name="year" id="graduation_year" class="col-sm-12 form-control">
+                                <option value="2020">2020</option>
+                                  <option value="2021">2021</option>
+                                  <option value="2022">2022</option>
+                                  <option value="2023">2023</option>
+                                  <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">CGPA:</label><br>
+                            <input type="number" id="cgpa" name="cgpa" value="" class="col-sm-12 form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Link to your CV:</label><br>
+                            <input type="text" id="cvLink" name="cvLink" value="" class="col-sm-12 form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Number of Active Backlogs:</label><br>
+                            <input type="number" id="backlogs" name="backlogs" value="" class="col-sm-12 form-control">
+                        </div>                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="detailsButton">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <section id="speakers-details" class="wow fadeIn">
         <div class="container">
             <div class="section-header">
