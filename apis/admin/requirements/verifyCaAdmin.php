@@ -4,15 +4,15 @@
 	include('../../../vendor/autoload.php');
     use \Firebase\JWT\JWT; 
 
-    include('./config.php');
     include('../../config.php');
+    include('./config.php');
 
     $secretKey = base64_decode(SECRET_KEY);
     
-    $headers = apache_request_headers();
+    // $headers = apache_request_headers();
 
-    $authHeader= $headers["Authorization"];
-    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
+    // $authHeader= $headers["Authorization"];
+    // list($jwt) = sscanf( $authHeader, 'Bearer %s');    
     
     if (isset($jwt) && $jwt ) {
 
@@ -25,7 +25,7 @@
     		);
             // echo ($DecodedDataArray->data->inno_id);
             // echo ($DecodedDataArray->data->email);
-    		if ($DecodedDataArray->data->inno_id === INNO_ID && $DecodedDataArray->data->email === EMAIL) {
+    		if ($DecodedDataArray->data->req_id === REQ_ID && $DecodedDataArray->data->email === EMAIL) {
 
                 $status = "success";
             } else {

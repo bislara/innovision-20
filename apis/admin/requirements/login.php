@@ -10,7 +10,7 @@
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {            
 
-        if ($_POST["username"] === 'ca_admin' && md5($_POST["password"]) === '1a06a8154ad792ed2b73fc935a5724ba') {
+        if ($_POST["username"] === 'req_admin' && md5($_POST["password"]) === '67813b02e9bf0e264b65a66a87ab5f56') {
 
             $data = [
 
@@ -21,7 +21,7 @@
                 'exp'  => $expire,
                 'data' => [
 
-                    'inno_id'  => CA_ID,
+                    'req_id'  => REQ_ID,
                     'email'    => EMAIL,
 
                 ]
