@@ -1,35 +1,60 @@
 <?php
-include ('../db.php');
-    $new_pwd = md5($_POST['new_pwd']);
-    $old_pwd = $_POST['old_pwd'];
-    $email = $_POST['mail'];
 
-    //echo $old_pwd;
-     $query = mysqli_query($conn,"SELECT * FROM users WHERE email='".$email."' AND user_password='".$old_pwd."'");
-    // $query = mysqli_query($conn,"UPDATE users SET user_password ='".$new_pwd."' WHERE email='".$email."' AND user_password='".$old_pwd."'");
+use \Firebase\JWT\JWT;
+require '../../../vendor/autoload.php';
 
-     if ($query) {
-            
-            if (mysqli_num_rows($query) == 1) {
-            $query1 = mysqli_query($conn,"UPDATE users SET user_password ='".$new_pwd."' WHERE email='".$email."' AND user_password='".$old_pwd."'");
-                if($query1)
-                {
-                     echo(json_encode(array('status' => 'success', 'result' => 'Password Updated')));
-                }
-                else
-                {
-                     echo(json_encode(array('status' => 'failure', 'result' => 'Password Could not be Updated')));
-                }
+include ('../../db.php');
+include ('../../config.php');  
 
-           
-            }
-            else
+    $new_password= $_POST['password'];
+    $jwt = $_POST['token'];
+	$secretKey = base64_decode(SECRET_KEY);
+
+    if (isset($jwt) && $jwt ){
+        if($_SERVER["REQUEST_METHOD"] === "POST" && $jwt != ""){
+        	
+            try 
             {
-                  echo(json_encode(array('status' => 'failure', 'result' => 'The Link Is broken or expired.Please visit THE ACTIVE LINK SENT TO YOUR REGISTERED MAIL(in spam folder)')));
-            }
-           
-        } else {
+				
+                $decoded = JWT::decode($jwt, $secretKey, array(ALGORITHM));
+            	
+                $decoded_array = (array) $decoded;
+                $data = $decoded_array['data'];                 
+                $email = $data->email;
+            	// print_r($data);return;
+            	$new_password=md5($new_password);
+                $query = mysqli_query($conn, "SELECT * FROM users where email ='".$email."'");
+                if (mysqli_num_rows($query) == 1) {
+                	$rst = mysqli_fetch_array($query)["reset_init"];
+                	if($rst){
+						$query=mysqli_query($conn,"UPDATE users set user_password='".$new_password."',reset_init='0' WHERE email='".$email."'");
+                	
+						if($query){
+							echo(json_encode(array('status' => 'success', 'result' => 'Password Updated')));
+						}else{
+							echo(json_encode(array('status' => 'failure', 'result' => 'Password Could not be Updated')));
+						}
+                    
+                    }else{
+						echo(json_encode(array('status' => 'failure', 'result' => 'Link Expired')));
+					}
+                	
+                    
+                }else{
+                    return json_encode(array('status' => 'failure', 'result' => 'Multiple Emails'));
+                }
 
-            echo(json_encode(array('status' => 'failure', 'result' => 'DB operation failed')));
+            }
+            catch(Exception $e) 
+            {
+                echo json_encode(array('status' => 'failuree', 'result' => $e->getMessage()));
+            }
+        }else{
+            echo json_encode(array('status' => 'failure', 'result' => 'Invalid Request'));    
         }
+    }else{
+        echo json_encode(array('status' => 'failure', 'result' => 'token missing'));
+    }
+    
+   
 ?>

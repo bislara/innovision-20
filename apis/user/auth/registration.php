@@ -170,6 +170,11 @@
 
 			$query = mysqli_query($conn, 'SELECT inno_id FROM users WHERE email="'.$email.'"');
 			$inno_id = mysqli_fetch_array($query)["inno_id"];
+			if($college == "NATIONAL INSTITUTE OF TECHNOLOGY, ROURKELA")
+			{
+				$query_pay = mysqli_query($conn, 'UPDATE users set paid = 2  WHERE inno_id="'.$inno_id.'"');
+				$inst_checkin = mysqli_query($conn, 'UPDATE users set checked_in=1 WHERE inno_id="'.$inno_id.'"');
+			}
 
 			$data = [
 
@@ -204,7 +209,6 @@
 				echo(json_encode(array('status' => 'failure', 'message' => 'token not set')));
 			}
 		} else {
-
 			echo(json_encode(array('status' => 'failure', 'message' => 'DB operation failed')));
 		}
 	}
