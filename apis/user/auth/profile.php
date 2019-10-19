@@ -6,6 +6,9 @@
     use \Firebase\JWT\JWT;
 
     include('../../config.php');
+	
+	header('Cache-Control: no-store');
+	
 
     $headers = apache_request_headers();
 

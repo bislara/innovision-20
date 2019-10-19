@@ -16,27 +16,18 @@
 	$inno_id = $_GET["i"];
 	//echo($inno_id);
 	if($_SERVER["REQUEST_METHOD"] === "GET" && $eid != ""  && $inno_id != "") {
-
 		$query = mysqli_query($conn, "SELECT * FROM events_registration where inno_id='".$inno_id."' AND event_id ='".$eid."'");
-
 		if (mysqli_num_rows($query) == 0) {
-
 			echo(json_encode(array('status' => 'failure', 'result' => 'Invalid Input')));
 		}
-
 		else {
-
-
 			$query = mysqli_query($conn, "UPDATE events_registration SET checkInStatus = 0 where inno_id='".$inno_id."' AND event_id = '".$eid."'");
             if ($query) {
-
 				echo(json_encode(array('status' => 'success', 'result' => 'Unchecked ')));
 			}
 			else {
-
 				echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
 		   	}
 		}
 	}
-
 ?>
