@@ -222,9 +222,8 @@ $(document).on("click","#recoveryEmailBtn",function(){
             type: 'POST',
             success: function(response) {
                 console.log(response);
-                var response = JSON.parse(response);
-                var msg=response.result;
-                $("#forgotPasswordModal .modal-body").html("<h1>"+msg+"</h1>");
+            
+                $("#forgotPasswordModal .modal-body").html("<h1>Mail has been sent to your registered mail.Check INBOX/SPAM folder , The reset link will expire within 24hrs.</h1>");
            }
         });
     }else{

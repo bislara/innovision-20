@@ -148,7 +148,7 @@
     border-radius: 0.5em;
 }
 
-#login_inno .about-btn {
+#login_inno .about-btn, #registration_inno .about-btn {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
     font-size: 14px;
@@ -166,30 +166,7 @@
     background: #0e1735;
 }
 
-#login_inno .about-btn:hover {
-    background: #f82249;
-    color: #fff;
-}
-
-#registration_inno .about-btn {
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 12px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    line-height: 1;
-    margin: 10px;
-    color: #f82249;
-    -webkit-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-    border: 2px solid #f82249;
-    background: #0e1735;
-}
-
-#registration_inno .about-btn:hover {
+#login_inno .about-btn:hover, #registration_inno .about-btn:hover {
     background: #f82249;
     color: #fff;
 }
@@ -197,3 +174,14 @@
 .form-group #login_button {
     color: #fff;
 }
+
+#login_inno #forgot_password {
+	border: 0;
+}
+#login_inno #forgot_password:hover {
+	background: none;
+}
+
+
+
+
