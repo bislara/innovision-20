@@ -498,12 +498,13 @@ h6 {
     color: #f82249;
 }
 
+
 /* login button */
 
 #mobile-nav .buy-tickets {
-	/* border-top: 1px solid #f82249;
+    /* border-top: 1px solid #f82249;
 	border-bottom: 1px solid #f82249; */
-	background-color: #3c4245;
+    background-color: #3c4245;
 }
 
 #mobile-nav ul .menu-active {
@@ -737,7 +738,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     overflow: hidden;
     position: relative;
     color: #fff;
-    padding: 2em 0.5em ;
+    padding: 2em 0.5em;
 }
 
 #about:before {
@@ -780,13 +781,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #about .info {
     margin-top: 0.35em;
-	text-align: center;
+    text-align: center;
 }
 
 #about .info p {
-	text-align: center;
-	font-size: 15px;
-} 
+    text-align: center;
+    font-size: 15px;
+}
 
 
 /*--------------------------------------------------------------
@@ -804,7 +805,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #speakers .target {
-	height: 25px;
+    height: 25px;
 }
 
 #speakers .speaker {
@@ -820,7 +821,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
-
 /* ---------- event details ------------- */
 
 #speakers-details {
@@ -830,7 +830,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #speakers-details .details {
-	margin-top: 2em;
+    margin-top: 2em;
 }
 
 #speakers-details .details h2 {
@@ -838,14 +838,14 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
-	border-bottom: 2px solid #f82249;
+    border-bottom: 2px solid #f82249;
 }
 
 #speakers-details .details p {
     color: #112363;
     font-size: 15px;
     margin-bottom: 10px;
-	text-align: justify;
+    text-align: justify;
 }
 
 
@@ -1574,7 +1574,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info p {
-	text-align: justify;
+    text-align: justify;
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
@@ -1857,4 +1857,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 a:hover {
     cursor: pointer;
+}
+
+.requirements .row {
+    padding: 20px;
 }
