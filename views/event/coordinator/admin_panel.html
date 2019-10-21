@@ -95,6 +95,9 @@
             $("#checkit").html('All Registration for event_ = ' + localStorage.name);
         });
     </script>
+    <br>
+    <br>
+    <center><button class="btn btn-primary" onclick="location.href = 'req.html?eid='+localStorage.eid">View Requirements</button></center>
     <div class="container-fluid" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top:2em">
         <div class="row" style="padding:1em;overflow-x: auto;overflow-y: auto;">
             <h1>NOTICE</h1>
@@ -117,7 +120,7 @@
             <center>
                 <h1 id="checkit"></h1>
             </center>
-            <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+            <table id="event-registered" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -133,7 +136,28 @@
 
                 </tbody>
             </table>
+            <table id="special-event-registered" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Inno ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Institution</th>
+                        <th>Graduation Year</th>
+                        <th>Number of Backlogs</th>
+                        <th>CV Link</th>
+                        <th>CGPA</th>
+                        <th>Click to Check-In</th>
+                    </tr>
+                </thead>
+                <tbody id="dp-special">
+
+                </tbody>
+            </table>
         </div>
+
     </div>
 
 
@@ -143,7 +167,9 @@
                 <h1>Checked In List</h1>
             </center>
             <br>
-            <table class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+
+            <table id = "checkedin-table"class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+
                 <thead>
                     <tr>
                         <th>#</th>
@@ -156,6 +182,26 @@
                     </tr>
                 </thead>
                 <tbody id="cil">
+
+                </tbody>
+            </table>
+            <table id = "special-checkedin-table"class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Inno ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Institution</th>
+                        <th>Graduation Year</th>
+                        <th>Number of Backlogs</th>
+                        <th>CV Link</th>
+                        <th>CGPA</th>
+                        <th>Click to Uncheck</th>
+                    </tr>
+                </thead>
+                <tbody id="cil-special">
 
                 </tbody>
             </table>
