@@ -12,8 +12,9 @@
 		$result =mysqli_query($conn, $query);
 		// echo $result;
 		if (mysqli_num_rows($result) < 1) {
-			$sql = "INSERT INTO requirements (eid) VALUES ('$eid')";
+			$sql = "INSERT INTO requirements (eid) VALUES ($eid)";
 			$result1 =mysqli_query($conn, $sql);
+        	// echo mysqli_error($conn);return;
 			// if(mysqli_num_rows($result1) >0)
 			
 			echo(json_encode(array('status' => 'added', 'result' => 'Added event')));
