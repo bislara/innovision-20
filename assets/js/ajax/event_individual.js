@@ -2,15 +2,13 @@
 var url = location.href;
 var eid = url.split("?")[1].split("=")[1];
 var status;
-
-setMetaTags=()=>{
-	$('head').append('<meta property="og:title" content="'+eventArr["title"]+'">');
-	$('head').append('<meta property="og:description" content="'+eventArr["description"]+'">');					
-	$('head').append('<meta property="og:image" content="../'+eventArr["image_path"] +'">');
-	$('head').append('<meta property="og:image:width" content="806">');
-	$('head').append('<meta property="og:image:height" content="280">');
+setMetaTags=(eventArr)=>{
+	$('head').prepend('<meta property="og:title" content="'+eventArr["title"]+'">');
+	$('head').prepend('<meta property="og:description" content="'+eventArr["description"]+'">');					
+	$('head').prepend('<meta property="og:image" content="../'+eventArr["image_path"] +'">');
+	$('head').prepend('<meta property="og:image:width" content="806">');
+	$('head').prepend('<meta property="og:image:height" content="280">');
 }
-
 function registerEvent()
 {
 	$.ajax({
@@ -115,8 +113,7 @@ $(document).ready(function () {
 					$('#eid_cd2').html(cd2);
 					
 					var no2=eventArr["coordinatorContact2"];
-					$('#eid_no2').html(no2);
-
+					$('#eid_no2').html(no2);                
 					if (dataArray['register_status']==1) {
 						status = 0;
 						$('#register').html("DeRegister");
@@ -125,7 +122,8 @@ $(document).ready(function () {
 					{
 						status = 1;
 						$('#register').html("Register");
-					}
+                    }
+                    setMetaTags(eventArr);
 
 				}
 			}
@@ -177,11 +175,8 @@ $(document).ready(function () {
 					$('#eid_no2').html(no2);
 					// populate(eventArr);
 					status = 1;
-					$('#register').html("Register");
-					
-
-                
-                	
+					$('#register').html("Register");                
+                    setMetaTags(eventArr);
 				}
 			}
 		});

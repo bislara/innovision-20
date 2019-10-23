@@ -26,7 +26,7 @@ $email = $_POST['email'];
 
                 // Replace recipient@example.com with a "To" address. If your account
                 // is still in the sandbox, this address must be verified.
-                $recipient = 'arishh2@gmail.com';
+                $recipient = $email;
 
                 // Replace smtp_username with your Amazon SES SMTP user name.
                 $usernameSmtp = 'AKIAWM52EINHF5LMRNW4';

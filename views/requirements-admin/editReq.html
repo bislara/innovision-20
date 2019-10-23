@@ -1,0 +1,108 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="edit.css">
+<script src="../../assets/lib/jquery/jquery.min.js"></script>
+
+<body style="background-color: #FBC02D">
+    <br>
+    <div class="container">
+        <center>
+            <div class="row">
+                <h1 style="display: inline">
+                    <b>Event Requirements</b>
+                </h1>
+                <button style="float: left;" class="btn btn-info" onclick="location.href = 'eventList.html'">Back</button>
+
+                <button style="float: right" class="btn btn-info logout-button" onclick="location.href = 'index.html'">Logout</button>
+            </div>
+                <h3 id="event_name"></h3>
+        </center>
+    </div>
+    
+    <div class="container" style="background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);margin-top: 10vh;">
+        
+        <div class="buttons">
+            <button class="btn" id="stn">stationary</button>
+            <button class="btn" id="wood">wooden</button>
+            <button class="btn" id="elec">electrical</button>
+            <button class="btn" id="misc">misc</button>
+        </div>
+        
+        <form class="text-center">
+
+            <div class="form-group stn">
+                <h3>Add the requirements from Stationary category</h3>
+                <textarea placeholder="Left Items" type="text" id="stnRequired" rows="10" cols="75"></textarea>
+                <textarea placeholder="Items given" type="text" id="stnleft" rows="10" cols="45"></textarea>
+            </div>
+            
+            <div class="form-group wood">
+                <h3>Add the requirements from Wooden category</h3>
+                <textarea placeholder="Left Items" type="text" id="woodRequired" rows="10" cols="75"></textarea>
+                <textarea placeholder="Items given" type="text" id="woodLeft" rows="10" cols="45"></textarea>
+            </div>
+            
+            <div class="form-group elec">
+                <h3>Add the requirements from Electrical category</h3>
+                <textarea placeholder="Left Items" type="text" id="elecRrequired" rows="10" cols="75"></textarea>
+                <textarea placeholder="Items given" type="text" id="elecLeft" rows="10" cols="45"></textarea>
+            </div>
+            
+            <div class="form-group misc">
+                <h3>Add the requirements from miscellaneous category</h3>
+                <textarea placeholder="Left Items" type="text" id="miscRequired" rows="10" cols="75"></textarea>
+                <textarea placeholder="Items given" type="text" id="miscLeft" rows="10" cols="45"></textarea>
+            </div>
+
+            <br> <br>
+
+            <button class="submit btn btn-dark btn-lg" type="submit" id="submit_req">Submit</button>
+
+        </form>
+
+    </div>
+  
+
+    <script src="../../assets/lib/jquery/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../assets/lib/sweetalert/sweetalert.js"></script>
+    <script src="../../assets/js/ajax/req_details.js"></script>
+
+
+    
+    <script>
+
+        $(document).ready(function() {
+            
+            $(".form-group").hide();
+
+            var buttonDiv = document.querySelector(".buttons");
+            buttonDiv.addEventListener("click", function(button) {
+                $(".submit").show();
+
+                var className = button.target.attributes.id.nodeValue;
+                console.log(className);
+                
+                $(`.${className}`).toggle();
+                
+            });
+
+        });
+
+    </script>
+
+    <script>
+        $(document).on("click", ".logout-button", function() {
+            window.location.assign("./index.html");
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+            if (!(localStorage.cms_token)) window.location.assign("./index.html");
+        });
+    </script>
+
+</body>
+
+</html>
