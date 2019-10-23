@@ -1,6 +1,16 @@
+
 var url = location.href;
 var eid = url.split("?")[1].split("=")[1];
 var status;
+
+setMetaTags=()=>{
+	$('head').append('<meta property="og:title" content="'+eventArr["title"]+'">');
+	$('head').append('<meta property="og:description" content="'+eventArr["description"]+'">');					
+	$('head').append('<meta property="og:image" content="../'+eventArr["image_path"] +'">');
+	$('head').append('<meta property="og:image:width" content="806">');
+	$('head').append('<meta property="og:image:height" content="280">');
+}
+
 function registerEvent()
 {
 	$.ajax({
@@ -142,10 +152,10 @@ $(document).ready(function () {
 					var venue=eventArr["venue"];
 					$('#eid_venue').html(venue);
 
-					var img='<img src="../'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';
+					var img='<img src="../'+ eventArr["image_path"] +'" title="Event" class="img-fluid">';                	
 					$('#eid_img').html(img);
 
-					var des=eventArr["description"];
+					var des=eventArr["description"];                	
 					$('#eid_des').html(des);
 										
 					var rule=eventArr["rules"];
@@ -168,6 +178,10 @@ $(document).ready(function () {
 					// populate(eventArr);
 					status = 1;
 					$('#register').html("Register");
+					
+
+                
+                	
 				}
 			}
 		});

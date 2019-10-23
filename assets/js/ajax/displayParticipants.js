@@ -12,7 +12,7 @@ function checkInFun(inno_id)
                 data=JSON.parse(data);
                 if(data.status==="failure"){
                     alert(data.result);
-                    window.location.assign("index.html");                
+                    //window.location.assign("index.html");                
                 }
                 else
                     window.location.assign("admin_panel.html");
