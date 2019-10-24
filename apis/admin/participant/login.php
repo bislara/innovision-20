@@ -8,7 +8,7 @@
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {
 
-        if ($_POST["username"] === 'participant_admin' && md5($_POST["password"]) === 'ec48be7ca80a2f6df6c4f6c4b40043d9') {
+        if ($_POST["username"] === 'participant_admin' && md5($_POST["password"]) === '688276b4840a6ea2977b59723b46c29e') {
 
             $data = [
 

@@ -4,6 +4,9 @@
 	include('./verifyParticipantsAdmin.php');
 
 	$id=$_GET['q'];
+
+	
+
 		
 		if (isset($status) && $status === "success") {			
         	$query = mysqli_query($conn, "SELECT count(*) cnt FROM users where paid='1'");	
@@ -22,9 +25,6 @@
 
 			echo(json_encode(array('status' => 'success', 'result' => $result,'paid'=>$count['cnt'])));
 		}
-
-		echo(json_encode(array('status' => 'success', 'result' => $result)));
-	}
 	
 
 ?>
