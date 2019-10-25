@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-	<meta name="title" content="This is event title">
+    <meta name="title" content="This is event title">
 
     <!-- Favicons -->
     <link href="../assets/images/Innovision_Logo.ico" rel="icon">
@@ -48,8 +48,7 @@
 
             <div id="logo" class="pull-left">
                 <!-- Uncomment below if you prefer to use a text logo -->
-                <a href="../index.html" class="scrollto"><img src="../assets/images/Innovision_Logo.png" alt="inno logo"
-                        title="Innovision'19"></a>
+                <a href="../index.html" class="scrollto"><img src="../assets/images/Innovision_Logo.png" alt="inno logo" title="Innovision'19"></a>
                 <h1><a href="#"><span>innovision'19</span></a></h1>
             </div>
 
@@ -63,14 +62,14 @@
                         <div class="dropdown-content">
                             <a href="eventsSection.html#EventsSection">Event Schedule</a>
                             <a href="eventsSection.html#flagships1">Flagship Events</a>
-                        	<a href="eventsSection.html#preinnoevents1">Pre-inno Events</a>
+                            <a href="eventsSection.html#preinnoevents1">Pre-inno Events</a>
                             <a href="eventsSection.html#events1">Events</a>
                             <a href="eventsSection.html#workshops1">Workshops</a>
                             <a href="eventsSection.html#workshops2">Workshops (Paid)</a>
                             <a href="eventsSection.html#exhibitions1">Exhibitions</a>
                             <a href="eventsSection.html#cultural1">Pro Shows</a>
-                        	<a href="eventsSection.html#funevents1">Fun Events</a>
-                        	<a href="eventsSection.html#special1">Special Events</a>
+                            <a href="eventsSection.html#funevents1">Fun Events</a>
+                            <a href="eventsSection.html#special1">Special Events</a>
                         </div>
 
                     </li>
@@ -122,7 +121,7 @@
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Number of Active Backlogs:</label><br>
                             <input type="number" id="backlogs" name="backlogs" value="" class="col-sm-12 form-control">
-                        </div>                        
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -137,10 +136,11 @@
             <div class="section-header">
                 <h2 id="eid_name"></h2>
                 <p>
-                    Date : <b id="eid_date"> </b> <br>
-                    Time : <b id="eid_time"> </b> <br>
-                    Venue : <b id="eid_venue"> </b>  <br>
-                    <div class="event-register register"><a href="#" id="register"></a></div>
+                    Date : <b id="eid_date"> </b> <br> Time : <b id="eid_time"> </b> <br> Venue : <b id="eid_venue"> </b> <br>
+                    <div class="event-register">
+                        <a href="#" id="register" class="register"></a>
+                        <a href="javascript:void(0)" style="display: none;" id="paymentBtn">Payment</a>
+                    </div>
                     <!-- register button for events -->
                 </p>
             </div>
@@ -200,12 +200,9 @@
 
                     <div class="col-lg-3 col-md-6 footer-info">
                         <img src="../assets/images/inno_logo.png" alt="Inno logo">
-                        <p>Innovision is the annual techno-management festival of NIT Rourkela organized by the
-                            students. It has
-                            been fuelling innovations and encouraging millions since 2004 and is a unique forum where
-                            the youth gets
-                            the opportunity to explore and experience science and technology in all its myriad forms.
-                            .</p>
+                        <p>Innovision is the annual techno-management festival of NIT Rourkela organized by the students. It has been fuelling innovations and encouraging millions since 2004 and is a unique forum where the youth gets the opportunity to explore
+                            and experience science and technology in all its myriad forms. .
+                        </p>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
@@ -260,17 +257,9 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-info">
-                        <a href="https://www.nitrkl.ac.in" target="_blank"> <img src="../assets/images/nitrlogo.png"
-                                alt="NITR Logo"> </a>
-                        <p>NIT Rourkela (formerly REC Rourkela) is an institute of national importance, with UG, PG, and
-                            research
-                            programs in engineering and science. It is a publicly funded institute of higher learning
-                            for engineering
-                            and technology located in the steel city of Rourkela, Odisha, India. It is one of the 30
-                            National
-                            Institutes of Technology in India and has been recognized as an Institute of National
-                            Importance by the
-                            National Institutes of Technology Act, 2007.
+                        <a href="https://www.nitrkl.ac.in" target="_blank"> <img src="../assets/images/nitrlogo.png" alt="NITR Logo"> </a>
+                        <p>NIT Rourkela (formerly REC Rourkela) is an institute of national importance, with UG, PG, and research programs in engineering and science. It is a publicly funded institute of higher learning for engineering and technology located
+                            in the steel city of Rourkela, Odisha, India. It is one of the 30 National Institutes of Technology in India and has been recognized as an Institute of National Importance by the National Institutes of Technology Act, 2007.
                         </p>
                     </div>
 
@@ -315,30 +304,28 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/ajax/event_individual.js"></script>
-<!--     <script src="../assets/js/ajax/check_login.js"></script> -->
+    <!--     <script src="../assets/js/ajax/check_login.js"></script> -->
     <script>
-      var q = localStorage.getItem("token");
-      if(q)
-      {
+        var q = localStorage.getItem("token");
+        if (q) {
             $.ajax({
-                url:'../apis/user/auth/profile.php',
-                beforeSend: function(request){
+                url: '../apis/user/auth/profile.php',
+                beforeSend: function(request) {
                     request.setRequestHeader('Authorization', 'Bearer ' + q);
                 },
                 type: 'get',
-                    success:function(response)
-                    {
-                  response = JSON.parse(response);
+                success: function(response) {
+                    response = JSON.parse(response);
                     if (response.status == "success") {
-                   // $("#log_btn").hide();
-                   $('.log_btn').html('Profile').attr('href','profile.html')
-                  }
-              }
+                        // $("#log_btn").hide();
+                        $('.log_btn').html('Profile').attr('href', 'profile.html')
+                    }
+                }
             });
-      }
+        }
     </script>
 
 
-    </body>
+</body>
 
 </html>

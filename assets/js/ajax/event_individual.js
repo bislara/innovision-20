@@ -2,6 +2,7 @@
 var url = location.href;
 var eid = url.split("?")[1].split("=")[1];
 var status;
+var dataArray;
 setMetaTags=(eventArr)=>{
 	$('head').prepend('<meta property="og:title" content="'+eventArr["title"]+'">');
 	$('head').prepend('<meta property="og:description" content="'+eventArr["description"]+'">');					
@@ -74,7 +75,7 @@ $(document).ready(function () {
 			success: function (data) {
 				// console.log(data);
 
-				var dataArray = JSON.parse(data);
+				dataArray = JSON.parse(data);
 
 				if (dataArray["status"] == "success") {
 					var eventArr = dataArray["result"];
@@ -123,7 +124,9 @@ $(document).ready(function () {
 						status = 1;
 						$('#register').html("Register");
                     }
-                    setMetaTags(eventArr);
+					setMetaTags(eventArr);
+					if(eventArr['category']==='paidworkshops')
+						$('#paymentBtn').show();
 
 				}
 			}
@@ -134,7 +137,7 @@ $(document).ready(function () {
 			type: "GET",
 			url: "../apis/admin/events/admin/fetchIndividualEvent.php?eid=" + eid,
 			success: function (data) {			
-				var dataArray = JSON.parse(data);
+				dataArray = JSON.parse(data);
 				if (dataArray["status"] == "success") {
 					var eventArr = dataArray["result"];
 
@@ -176,7 +179,9 @@ $(document).ready(function () {
 					// populate(eventArr);
 					status = 1;
 					$('#register').html("Register");                
-                    setMetaTags(eventArr);
+					setMetaTags(eventArr);
+					if(eventArr['category']==='paidworkshops')
+						$('#paymentBtn').show();
 				}
 			}
 		});
@@ -245,11 +250,7 @@ $(document).on("click", "#detailsButton", function () {
 	//registerEvent();		
 	
 });
-$(document).on("click", ".register", function () {
-	// alert("hi lara");
-	// localStorage.innoID = 3;
-	// console.log(eid);
-	// eid = url.split("?")[1].split("=")[1];
+$(document).on("click", ".register", function () {	
     var q = localStorage.getItem("token");
     console.log(eid);
 	// console.log(q);	
@@ -272,3 +273,36 @@ $(document).on("click", ".register", function () {
 		registerEvent();		
 	}
 });
+
+$('#paymentBtn').click(()=>{
+	
+	var p = $('#paymentBtn');
+	p.text("Processing...");
+
+	var q = localStorage.getItem('token');
+	var url = location.href;
+	var eid = url.split("?")[1].split("=")[1];		
+    $.ajax({
+        url: '../apis/user/payment/specialPayment.php',
+        beforeSend: function(request) {
+            request.setRequestHeader('Authorization', 'Bearer ' + q);
+		},
+		data:{
+			eid:eid,
+			title:dataArray["result"]["title"]
+		},
+        type: 'POST',
+        success:(response)=>{
+            
+			console.log(response);
+			response=JSON.parse(response);
+			if (response["status"] == "failure") {
+				swal("Please login to pay for the event.", ":(", "error");
+				var p = $('#paymentBtn').text('Payment');				
+			}else{
+				let url=JSON.parse(response.result).pgUrl;
+				window.location=url;
+			}			
+        }
+    });
+})
