@@ -1,0 +1,23 @@
+
+h3 {
+    margin-top: 2em;
+}
+.btn {
+    margin: 1em 3em;
+}
+
+.submit {
+    display: none;
+}
+
+
+/* =================================== */
+
+.req-link {
+    text-decoration: none;
+    color: azure;
+    padding: 0.5 2em;
+    background-color: chocolate;
+    border-radius: 0.5em;
+    border: 2px solid #ffffff;
+}

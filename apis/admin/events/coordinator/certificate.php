@@ -20,7 +20,7 @@
             $row1 = mysqli_fetch_assoc($result1);
             if(mysqli_num_rows($result1) > 0){
 
-                if($row1['college'] == 'National Institute of Technology' || $row1['checked_in'] == 1){
+                if($row1['college'] == 'NATIONAL INSTITUTE OF TECHNOLOGY, ROURKELA' || $row1['checked_in'] == 1){
                     $flag1 = 1;
                 }
                  else{
@@ -44,7 +44,7 @@
             $row1 = mysqli_fetch_assoc($result1);
               if(mysqli_num_rows($result1) > 0){
 
-                if($row1['college'] == 'National Institute of Technology' || $row1['checked_in'] == 1){
+                if($row1['college'] == 'NATIONAL INSTITUTE OF TECHNOLOGY, ROURKELA' || $row1['checked_in'] == 1){
                     $flag2 = 1;
                 }
                 else{
@@ -61,7 +61,7 @@
             }
         }
         if($flag1 == 0 || $flag2 == 0){
-            echo(json_encode(array('status' => 'failure', 'message' => 'Wrong Data. Some inno_ids have not checked into inno\' 18 or inno_id not found')));
+            echo(json_encode(array('status' => 'failure', 'message' => 'Wrong Data. Some inno_ids have not checked into inno\' 19 or inno_id not found')));
         }
         else{
              //UPDATE THE EVENT ROW WITH WINNER AND RUNNER

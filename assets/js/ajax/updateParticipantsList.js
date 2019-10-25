@@ -11,7 +11,7 @@ $(document).on("click", ".submit_button", function(){
         else sel = 0;
         res.push({'inno_id': cid, 'checked_in': sel});
       }
-      // console.log(res);
+      console.log(res);
       $.ajax({
         type : "POST", 
         url : "../../apis/admin/participant/updateCheckInStatus.php",
@@ -23,8 +23,9 @@ $(document).on("click", ".submit_button", function(){
         },
         success: function(data)
         {
+          console.log(data);
           alert((JSON.parse(data)).result);
-          location.reload();
+          //location.reload();
         },
         error: function(data)
         {

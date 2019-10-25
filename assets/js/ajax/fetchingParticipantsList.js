@@ -1,4 +1,3 @@
-
 function populate(data_arr) {
   var str;
   var temp = '';
@@ -21,10 +20,11 @@ $(document).on("click", "#searchBtn", function(){
     },
     url: "../../apis/admin/participant/displayParticipantsList.php?q="+inp,
     success: function (data) {
-        console.log(data);
+        // console.log(data);
         var data_obj = JSON.parse(data);
         if(data_obj.status == "success")
         {
+        	$('#paidCount').html(data_obj.paid);
           populate(data_obj.result);
         }
       },

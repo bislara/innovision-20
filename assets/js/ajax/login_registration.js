@@ -212,7 +212,7 @@ $(document).ready(function(){
     });
 
 $(document).on("click","#recoveryEmailBtn",function(){
-    var email=$("#recoveryEmail");
+    var email=$("#recoveryEmail").val();
     if(email.length!==""){
         $.ajax({
             url: '../apis/user/auth/forgot_password.php',
@@ -221,9 +221,9 @@ $(document).on("click","#recoveryEmailBtn",function(){
             },
             type: 'POST',
             success: function(response) {
-                var response = JSON.parse(response);
-                var msg=response.status;
-                $("#forgotPasswordModal modal-body").html("<h1>"+msg+"</h1>");
+                console.log(response);
+            
+                $("#forgotPasswordModal .modal-body").html("<h1>Mail has been sent to your registered mail.Check INBOX/SPAM folder , The reset link will expire within 24hrs.</h1>");
            }
         });
     }else{

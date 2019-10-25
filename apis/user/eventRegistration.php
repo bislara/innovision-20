@@ -37,7 +37,14 @@
 		else
 		{
 			$sql2 = "DELETE FROM events_registration WHERE inno_id='".$inno_id."' and event_id='".$_POST["eid"]."'";
+
 			$res2 = mysqli_query($conn, $sql2);
+			if($_POST["eid"] == 105)
+			{
+				$sql3 = "DELETE FROM special_event WHERE inno_id='".$inno_id."' and event_id='".$_POST["eid"]."'";
+
+				$res3 = mysqli_query($conn, $sql3);
+			}
 			if($res2)
 			{
 				echo(json_encode(array("status"=>"DeRegistration done")));
