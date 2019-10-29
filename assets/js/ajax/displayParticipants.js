@@ -96,7 +96,7 @@ $(document).ready(function () {
                     {
                         if(data[i].checkInStatus==0)
                         {
-                            temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td><td>'+'<center><button class="btn btn-primary" onclick="checkInFun('+data[i].inno_id +')">Check In</button></center>' +'</td></tr>';
+                            temp = temp + '<tr><td>' + (i + 1) + '</td><td>' + data[i].inno_id + '</td><td>' + data[i].name + '</td><td>' + data[i].phone + '</td><td>' + data[i].email + '</td><td>' + data[i].college + '</td><td>' + data[i].paid + '</td><td>'+'<center><button class="btn btn-primary" onclick="checkInFun('+data[i].inno_id +')">Check In</button></center>' +'</td></tr>';
                         }
                         /*else
                         {

@@ -29,7 +29,7 @@
 		}
 		else
 		{
-			$result = $conn->query("SELECT u.inno_id, u.name, u.email, u.phone, u.college, e.checkInStatus FROM users u, events_registration e where u.inno_id = e.inno_id AND e.event_id='".$eid."' ORDER BY u.inno_id");
+			$result = $conn->query("SELECT u.inno_id, u.name, u.email, u.phone, u.college,u.paid, e.checkInStatus FROM users u, events_registration e where u.inno_id = e.inno_id AND e.event_id='".$eid."' ORDER BY u.inno_id");
 			if (mysqli_num_rows($result) == 0) {
 				echo(json_encode(array('status' => 'empty', 'result' => 'No Participants registered to this event')));
 			}
