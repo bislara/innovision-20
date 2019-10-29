@@ -74,7 +74,6 @@
                             <a href="views/eventsSection.html#events1">Events</a>
                             <a href="views/eventsSection.html#workshops1">Workshops</a>
                             <a href="views/eventsSection.html#workshops2">Workshops (Paid)</a>
-                        	<a href="views/eventsSection.html#guestlect">Guest Lectures</a>
                             <a href="views/eventsSection.html#exhibitions1">Exhibitions</a>
                             <a href="views/eventsSection.html#cultural1">Pro Shows</a>
                         	<a href="views/eventsSection.html#funevents1">Fun Events</a>
@@ -96,20 +95,20 @@
             <!-- #nav-menu-container -->
         </div>
     </header>
-    <div>
+    
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: #ffffff;  font-family: 'Open Sans';">Contact Us</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="color: #000000;  font-family: 'Open Sans';">Contact Us</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-            <p style="font-family: 'Open Sans';">Krishnaja:<a href="tel:6281630205" style="margin-left: 10px;"><i class="fa fa-phone">6281630205</i></a></p>
+            <p style="color: #000000;  font-family: 'Open Sans';" id="txt">Krishnaja:<a href="tel:6281630205" style="margin-left: 10px;"><i class="fa fa-phone">6281630205</i></a></p>
             
-            <p style="font-family: 'Open Sans';">Ritik Purohit:<a href="tel:7008546399" style="margin-left: 10px;"><i class="fa fa-phone">7008546399</i></a></p>
+            <p style="color: #000;  font-family: 'Open Sans';">Ritik Purohit:<a href="tel:7008546399" style="margin-left: 10px;"><i class="fa fa-phone">7008546399</i></a></p>
 
       </div>
       <div class="modal-footer">
@@ -459,6 +458,19 @@
                 }
             });
         }
+    </script>
+    <script>
+        var x= setInterval(changetxt,20);
+
+        function changetxt(){
+            var x=document.getElementById("txt");
+            x.innerHTML.changetxt = x.innerHTML.changetxt == "sakshi" :"satyajit" : "Krishnaja" ;
+
+
+          }
+        
+
+
     </script>
 </body>
 

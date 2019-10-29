@@ -82,15 +82,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: #ffffff;  font-family: 'Open Sans';">Contact Us</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="color: #000; font-family: 'Open Sans';">Contact Us</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-            <p style="font-family: 'Open Sans';" id="txt">Krishnaja:<a href="tel:6281630205" style="margin-left: 10px;"><i class="fa fa-phone">6281630205</i></a></p>
+            <p style="font-family: 'Open Sans'; color: #000;" id="txt">Krishnaja:<a href="tel:6281630205" style="margin-left: 10px;"><i class="fa fa-phone">6281630205</i></a></p>
             
-            <p style="font-family: 'Open Sans';">Ritik Purohit:<a href="tel:7008546399" style="margin-left: 10px;"><i class="fa fa-phone">7008546399</i></a></p>
+            <p style="font-family: 'Open Sans'; color: #000;">Ritik Purohit:<a href="tel:7008546399" style="margin-left: 10px;"><i class="fa fa-phone">7008546399</i></a></p>
 
       </div>
       <div class="modal-footer">
@@ -365,11 +365,11 @@
     })
     </script>
     <script>
-        var x= setInterval(changetxt,200);
+        var x= setInterval(changetxt,20);
 
         function changetxt(){
             var x=document.getElementById("txt");
-            x.style.changetxt = x.style.changetxt == "sakshi" :"satyajit" : "Krishnaja" ;
+            x.html.changetxt = x.html.changetxt == "sakshi" :"satyajit" : "Krishnaja" ;
 
 
           }
