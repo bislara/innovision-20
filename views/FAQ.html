@@ -67,9 +67,11 @@
                     </li>
                     <!-- <li><a href="ISRpage.html">I.S.R</a></li> -->
                     <li class="menu-active"><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#exampleModal">ContactUs</a></li>
                     <!-- <li><a href="#hotels">Hotels</a></li>
                   <li><a href="#gallery">Gallery</a></li> -->
                     <li><a href="sponsor.html">Sponsors</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#exampleModal">ContactUs</a></li>
                     <!-- <li><a href="#contact">Contact</a></li> -->
                     <li class="buy-tickets"><a href="login.html"  class="log_btn">Login/Register</a></li>
                 </ul>
@@ -78,6 +80,27 @@
         </div>
     </header>
     <!-- #header -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: #ffffff;  font-family: 'Open Sans';">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <p style="color: #ffffff;  font-family: 'Open Sans';" id="txt">Krishnaja:<a href="tel:6281630205" style="margin-left: 10px;"><i class="fa fa-phone">6281630205</i></a></p>
+            
+            <p style="color: #ffffff;  font-family: 'Open Sans';">Ritik Purohit:<a href="tel:7008546399" style="margin-left: 10px;"><i class="fa fa-phone">7008546399</i></a></p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -342,6 +365,23 @@
             });
       }
     })
+    </script>
+    <script>
+        var x= setInterval(changetxt,200);
+
+        function changetxt(){
+            var x=document.getElementById("txt");
+            x.style.changetxt = x.style.changetxt == "sakshi" :"satyajit" : "Krishnaja" ;
+
+
+          }
+        
+
+
+
+
+
+
     </script>
 
 
