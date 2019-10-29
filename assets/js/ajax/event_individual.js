@@ -1,12 +1,13 @@
-
 var url = location.href;
 var eid = url.split("?")[1].split("=")[1];
 var status;
 var dataArray;
 setMetaTags=(eventArr)=>{
-	$('head').prepend('<meta property="og:title" content="'+eventArr["title"]+'">');
-	$('head').prepend('<meta property="og:description" content="'+eventArr["description"]+'">');					
-	$('head').prepend('<meta property="og:image" content="../'+eventArr["image_path"] +'">');
+	$('head').prepend('<title>'+eventArr["title"]+'</title>');
+	$('head').prepend('<meta name="keywords" content="'+eventArr["title"]+'">');
+	$('head').prepend('<meta name="title" content="'+eventArr["title"]+',innovision,inno nitrkl">');
+	$('head').prepend('<meta name="description" content="'+eventArr["description"]+'">');					
+	$('head').prepend('<meta name="image" content="../'+eventArr["image_path"] +'">');
 	$('head').prepend('<meta property="og:image:width" content="806">');
 	$('head').prepend('<meta property="og:image:height" content="280">');
 }
