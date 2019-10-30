@@ -29,6 +29,16 @@ function registerEvent()
 				} else if (dataArr["status"] == "registration done") {
 					// swal("Registration Successful !", ": )", "success");
 					// window.location.assign('event-details.html?eid='+ eid);
+        			// swal({
+        			// title: "Registration Successful !",
+        			// text: ": )",
+        			// type: "success"
+        			// }, function() {
+        			// window.location = 'event-details.html?eid='+ eid;
+        			// });
+        			
+                	if (eid!=148) {
+
                 	swal({
            			title: "Registration Successful !",
             		text: ": )",
@@ -36,6 +46,13 @@ function registerEvent()
         			}, function() {
             			window.location = 'event-details.html?eid='+ eid;
         			});
+                }
+                else if (eid==148) {
+                	swal("Registration Successful !", ": )", "success");
+					window.location.assign('https://participate.redbull.com/en/registration/red-bull-river-runes/college-qualifiers/red-bull-river-runes-2019?athleteTypeId=78b26e5ef1a811e98cde0242ac110003#/participant');
+                }
+        			 
+        			
 
 				} else if (dataArr["status"] == "failure") {
 					swal("Session Expired! Please login to register for the event.", ":(", "error");
@@ -123,6 +140,10 @@ $(document).ready(function () {
 					else
 					{
 						status = 1;
+                    	if (eid==33) 
+						{
+						$('#register').hide();
+						}
 						$('#register').html("Register");
                     }
 					setMetaTags(eventArr);
@@ -179,6 +200,10 @@ $(document).ready(function () {
 					$('#eid_no2').html(no2);
 					// populate(eventArr);
 					status = 1;
+                	if (eid==33) 
+					{
+					$('#register').hide();
+					}
 					$('#register').html("Register");                
 					setMetaTags(eventArr);
 					if(eventArr['category']==='paidworkshops')
@@ -284,12 +309,10 @@ $('#paymentBtn').click(()=>{
 	var url = location.href;
 	var eid = url.split("?")[1].split("=")[1];		
     $.ajax({
-        url: '../apis/user/payment/specialPayment.php',
-        beforeSend: function(request) {
-            request.setRequestHeader('Authorization', 'Bearer ' + q);
-		},
+        url: '../apis/user/payment/specialPayment.php',        
 		data:{
 			eid:eid,
+        	token:q,
 			title:dataArray["result"]["title"]
 		},
         type: 'POST',
