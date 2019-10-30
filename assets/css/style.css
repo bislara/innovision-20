@@ -1241,6 +1241,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #faq #faq-list p {
     margin-bottom: 20px;
+	text-align: justify;
+	letter-spacing: 1px;
 }
 
 #faq #faq-list a.collapse {
