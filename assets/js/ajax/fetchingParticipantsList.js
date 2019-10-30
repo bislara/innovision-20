@@ -39,7 +39,7 @@ function populate(data_arr) {
       else str = '<td class="approval_checkbox"> <input class="checkbox" type="checkbox" checked> </td>';
       temp = temp + '<tr><td style="display:none" id="inno_id">' + data_arr[i].inno_id + '</td><td>' + (i + 1) + '</td ><td>' + data_arr[i].inno_id + '</td><td>' + data_arr[i].name + '</td><td>' + data_arr[i].gender + '</td><td>' + data_arr[i].phone + '</td><td>' + data_arr[i].email + '</td><td>' + data_arr[i].college + '</td><td>' + data_arr[i].paid + '</td><td class="hostel">' + hostelDropdown + '</td>' + str + '</tr>';
   }
-  $("tbody").html(temp);
+  $(".list").html(temp);
 }
 $(document).on("click", "#searchBtn", function(){
   var inp=$("#inputId").val();
@@ -65,3 +65,32 @@ $(document).on("click", "#searchBtn", function(){
     }
   });
 });
+
+$(document).ready(()=>{
+  let accom_table='<h2>Allotted Hostels</h2><table class="col-sm-12" style="border: 2px solid black;">';
+  $.ajax({
+    type: "GET",
+    beforeSend: function(request){
+      request.setRequestHeader('Authorization', 'Bearer ' + localStorage.admin_token);
+    },
+    url: "../../apis/admin/participant/allottedHostelsList.php",
+    success: function (data) {        
+        var data = JSON.parse(data);
+        console.log(data.result);
+        var hostel_count=data.result;
+        accom_table+='<thead>'
+        for(let each in hostel_count)
+          accom_table+='<td>'+each.toUpperCase()+'</td>';        
+        accom_table+='</thead>';
+        accom_table+='<tr>';
+        for(let each in hostel_count)
+          accom_table+='<td>'+hostel_count[each].toUpperCase()+'</td>';        
+        accom_table+='</tr>';
+        accom_table+='</table>';
+        $('#hostelTable').html(accom_table);
+      },
+    error: function (data) {
+      console.log(data);
+    }
+  });
+})
