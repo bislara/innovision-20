@@ -101,3 +101,43 @@
     background: #f82249;
     color: #fff;
 }
+
+.ca {
+    margin: auto 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#under_CA {
+    margin: 0;
+}
+
+#ca_button1:hover,
+#ca_button2:hover {
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+@media (max-width: 500px) {
+    .ca input {
+        border-radius: 0.75em;
+        padding: 0.5em;
+    }
+    .ca #editCaButton {
+        font-size: 1rem;
+        background-color: black;
+        padding: 0.1em 2em;
+    }
+    #ca_button2 {
+        font-size: 1rem;
+        padding: 0.1em 1em;
+    }
+}
