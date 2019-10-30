@@ -101,3 +101,8 @@
     background: #f82249;
     color: #fff;
 }
+
+.ca {
+    display: none;
+    justify-content: space-between;
+}
