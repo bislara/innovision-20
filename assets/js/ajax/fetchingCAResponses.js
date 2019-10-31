@@ -3,7 +3,7 @@ $(document).ready(function(){
     type: "POST",
     url: "../../../apis/admin/ca/displayResponses.php",
     beforeSend: function(request){
-            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.ca_token);
     },
     success: function (data) {
         // console.log(data);

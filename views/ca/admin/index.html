@@ -65,7 +65,7 @@
                     console.log(data);
                     var dataSet = JSON.parse(data);
                     if (dataSet["status"].localeCompare("success") == 0) {
-                        localStorage.cms_token = dataSet["result"];
+                        localStorage.ca_token = dataSet["result"];
                         window.location.assign("./CAList.html");
                     } else {
                         alert(dataSet["result"]);

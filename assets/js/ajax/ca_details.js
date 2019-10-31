@@ -8,7 +8,7 @@ $(document).ready(function () {
 			type: "GET",
 			url: "../../../apis/admin/ca/fetchIndividualCA.php?ca_id=" + ca_id,
 			beforeSend: function(request){
-            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.ca_token);
     		},
 			success: function (data) {			
 				var dataArray = JSON.parse(data);
@@ -44,7 +44,7 @@ $('#accept_ca').click(function () {
 			type: "POST",
 			url: "../../../apis/admin/ca/CASelect.php",
 			beforeSend: function(request){
-            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.cms_token);
+            request.setRequestHeader('Authorization', 'Bearer ' + localStorage.ca_token);
     		},
 			data: {
 				ca_id: ca_id
