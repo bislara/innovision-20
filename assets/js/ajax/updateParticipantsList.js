@@ -5,11 +5,14 @@ $(document).on("click", ".submit_button", function(){
       for(var i = 0; i < arr.length; i++)
       {
         var cid = $(arr[i]).siblings("#inno_id").html();
+        var hostel=$(arr[i]).siblings(".hostel").children()[0].value;
         var sel;
+        
         // console.log($(arr[i]).children("input").is(":checked"));
-        if($(arr[i]).children("input").is(":checked")) sel = 1;
+        if($(arr[i]).children("input").is(":checked")) sel = 1;        
         else sel = 0;
-        res.push({'inno_id': cid, 'checked_in': sel});
+
+        res.push({'inno_id': cid, 'checked_in': sel,'hostel':hostel});
       }
       console.log(res);
       $.ajax({
