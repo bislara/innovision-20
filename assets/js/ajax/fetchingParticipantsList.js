@@ -43,14 +43,19 @@ function populate(data_arr) {
 }
 $(document).on("click", "#searchBtn", function(){
   var inp=$("#inputId").val();
+  var ca_inp=$("#inputCAId").val();
+
   if(inp==="") 
     inp=0;
+  if(ca_inp==="") 
+    ca_inp=0;
+  
   $.ajax({
     type: "GET",
     beforeSend: function(request){
       request.setRequestHeader('Authorization', 'Bearer ' + localStorage.admin_token);
     },
-    url: "../../apis/admin/participant/displayParticipantsList.php?q="+inp,
+    url: "../../apis/admin/participant/displayParticipantsList.php?q1="+inp+"&q2="+ca_inp,
     success: function (data) {
         // console.log(data);
         var data_obj = JSON.parse(data);
