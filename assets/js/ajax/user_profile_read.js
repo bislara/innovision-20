@@ -44,11 +44,12 @@ $(document).ready(function() {
 						$(".ca").css('display','flex');
 					}else{
 						$(".ca").css('display','flex');
+                    	$('#under_CA').hide();
 						$('#ca_button2').html("Add Under CA");
 					}
 
 					if(hostel.length){
-						$("#planet").html("Your Hostel is "+hostel.toUpperCase())
+						$("#planet").html("Your Hostel is <b>"+hostel.toUpperCase()+"</b>")
 					}
 
                 
@@ -154,7 +155,7 @@ $('#signoutBtn').click(()=>{
 
 $('#ca_button2').click(()=>{
 	console.log("hell");
-	$(".ca").html('<input style="border-radius: 0.75em;" type="number" min="1" step="1" name="under_CA" / placeholder="CA_ID"><button class="about-btn" style="background-color: black;" id="editCaButton">&nbsp; Submit &nbsp;</button>')
+	$(".ca").html('<input style="border-radius: 0.75em;margin-left: 1.05em;" type="number" min="1" step="1" name="under_CA" / placeholder="CA_ID"><button class="about-btn" style="background-color: black;" id="editCaButton">&nbsp; Submit &nbsp;</button>')
 
 })
 
