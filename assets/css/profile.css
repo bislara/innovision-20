@@ -146,7 +146,7 @@ input[type=number]::-webkit-outer-spin-button {
     .ca #editCaButton {
         font-size: 1.1rem;
         background-color: black;
-        padding: 0.1em 2em;
+        padding: 0.1em 1.5em;
     }
     #ca_button2 {
         font-size: 1rem;
