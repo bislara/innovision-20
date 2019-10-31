@@ -15,6 +15,7 @@ $(document).ready(function() {
 			success: function(response) {
 				// console.log(response);
 				response = JSON.parse(response);
+            	console.log(response);
 				if (response.status == 'success') {
 					var id = response.result['basicInfo']['inno_id'];
 					var name = response.result['basicInfo']['name'];
@@ -22,10 +23,15 @@ $(document).ready(function() {
 					var college = response.result['basicInfo']['college'];
 					var ca_id = response.result['basicInfo']['ca_id'];
 					var paid=parseInt(response.result['basicInfo']['paid']);
+					var under_CA=parseInt(response.result['basicInfo']['ca_response']);
+					var hostel=response.result['basicInfo']['allotted_hostel'];
+					var payment=response.result['basicInfo']['payment_response'];
 					console.log(paid);
-                	console.log('hello');
+					console.log('hello');
+					
 					if(paid==1){
-                    	$('#paymentBtn').hide();
+						$('#paymentBtn').hide();						
+						$("#ticket").html("<b>Ticket ID :  </b>"+JSON.parse(payment).ticketId);
                     }
                 	else if(paid==2){
 						$('#paymentBtn').hide();
@@ -33,6 +39,20 @@ $(document).ready(function() {
 					}else{
 						$('#paidMsg').hide();
 					}
+
+					if(under_CA){
+						$('#under_CA').html("<b>Under CA</b> :  "+under_CA);
+						$(".ca").css('display','flex');
+					}else{
+						$(".ca").css('display','flex');
+                    	$('#under_CA').hide();
+						$('#ca_button2').html("Add Under CA");
+					}
+
+					if(hostel){
+						$("#planet").html("Your Hostel is <b>"+hostel.toUpperCase()+"</b>")
+					}
+
                 
 					$('#participant_ca_id').hide();
 					// console.log(ca_id);
@@ -133,3 +153,31 @@ $('#signoutBtn').click(()=>{
 	localStorage.removeItem('token');
 	window.location='/';
 })
+
+$('#ca_button2').click(()=>{
+	console.log("hell");
+	$(".ca").html('<input style="border-radius: 0.75em;margin-left: 1.05em;" type="number" min="1" step="1" name="under_CA" / placeholder="CA_ID"><button class="about-btn" style="background-color: black;" id="editCaButton">&nbsp; Submit &nbsp;</button>')
+
+})
+
+$('.ca').on('click','#editCaButton', function(){
+	var q = localStorage.getItem('token');
+	let id=$("input[type=number]").val();
+    $.ajax({
+        url: '../apis/user/ca/changeUnderCA.php',        
+		data:{
+			token:q,
+			underCA:id
+		},
+        type: 'POST',
+        success:(response)=>{
+			response=JSON.parse(response);
+			swal(response.result, "success")    
+                .then((value)=>{
+                    window.location.reload();
+                }) 
+			// let url=JSON.parse(response.result).pgUrl;
+			// window.location=url;
+        }
+    });
+} );

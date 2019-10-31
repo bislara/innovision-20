@@ -11,11 +11,7 @@
 
     $eid=$_POST['eid'];
     $title=$_POST['title'];
-
-    $headers = apache_request_headers();
-
-    $authHeader= $headers["Authorization"];
-    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
+	$jwt=$_POST['token'];
 
 	
 	$secretKey = base64_decode(SECRET_KEY);

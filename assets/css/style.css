@@ -1191,7 +1191,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     border-bottom: 1px solid #e0e5fa;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.5);
-    height: 160px;
+    height: 220px;
 }
 
 #supporters .supporter-logo:hover img {
@@ -1241,6 +1241,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #faq #faq-list p {
     margin-bottom: 20px;
+	text-align: justify;
+	letter-spacing: 1px;
 }
 
 #faq #faq-list a.collapse {
@@ -1892,4 +1894,43 @@ a:hover {
 #pro .venue-gallery:hover img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+ .major{
+    text-align: center;
+    font-family:'Open Sans' ;
+    font-weight: bold;
+    margin-top: 20px;
+
+
+}
+.major1 h4{
+    text-align: center;
+    font-family:'Open Sans' ;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.major2 h4{
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    margin-top: 20px;
+    display:none;
+
+}
+
+
+
+@media(max-width:480px){
+
+#maj {
+        display:none;
+    }
+#maj1 .major2{
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+   }
+   
 }

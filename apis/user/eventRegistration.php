@@ -23,15 +23,19 @@
 		$res1 = mysqli_query($conn, $sql1);
 		if(mysqli_num_rows($res1) == 0)
 		{
-			$sql2 = "INSERT INTO events_registration (inno_id, event_id) VALUES (".$inno_id.", ".$_POST["eid"].")";
-			$res2 = mysqli_query($conn, $sql2);
-			if($res2)
-			{
-				echo(json_encode(array("status"=>"registration done")));
-			}
-			else
-			{
-				echo(json_encode(array("status"=>"failure")));
+			if($_POST["eid"]!=33){
+				$sql2 = "INSERT INTO events_registration (inno_id, event_id) VALUES (".$inno_id.", ".$_POST["eid"].")";
+				$res2 = mysqli_query($conn, $sql2);
+				if($res2)
+				{
+					echo(json_encode(array("status"=>"registration done")));
+				}
+				else
+				{
+					echo(json_encode(array("status"=>"failure")));
+				}	
+			}else{
+				echo json_encode(array('status' => 'failure', 'result' => "registrations closed"));
 			}
 		}
 		else

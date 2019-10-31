@@ -103,6 +103,62 @@
 }
 
 .ca {
+<<<<<<< HEAD
     display: none;
     justify-content: space-between;
+=======
+    margin: auto 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#under_CA {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#ticket {
+    font-size: 1.2rem;
+    margin: 1em;
+}
+
+#ca_button1:hover,
+#ca_button2:hover {
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+@media (max-width: 500px) {
+    .ca input {
+        border-radius: 0.75em;
+        padding: 0.5em;
+    }
+    .ca {
+        margin: auto 0.95em;
+    }
+    #under_CA {
+        font-size: 1.3rem;
+    }
+    .ca #editCaButton {
+        font-size: 1.1rem;
+        background-color: black;
+        padding: 0.1em 1.5em;
+    }
+    #ca_button2 {
+        font-size: 1rem;
+        padding: 0.1em 1em;
+    }
+    #ticket {
+        font-size: 1.5rem;
+        margin: 0.75em;
+    }
+>>>>>>> 841565c9b040683d245265b6f5aef45c17bc49bb
 }

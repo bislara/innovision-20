@@ -17,15 +17,16 @@
 			if($id_list[$i]['checked_in']){
 				$query= mysqli_query($conn,'SELECT paid from users WHERE inno_id ='.$id_list[$i]['inno_id'])->fetch_assoc();
 				if($query['paid']){
-					$query = mysqli_query( $conn, 'UPDATE users SET checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);	
+					//echo('UPDATE users SET allotted_hostel='.$id_list[$i]['hostel'].', checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);return;
+					$query = mysqli_query( $conn, 'UPDATE users SET allotted_hostel="'.$id_list[$i]['hostel'].'",checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);	
 				}else{
 					$flag=false;
 				}
 			}else{
-				$query = mysqli_query( $conn, 'UPDATE users SET checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);
+				$query = mysqli_query( $conn, 'UPDATE users SET allotted_hostel="", checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);
 			}
 			
-
+			//echo mysqli_error($conn);return;
 			if (!$query) {
 
 				echo(json_encode(array('status' => 'failure', 'result' => 'DB operation failed or ca_applicant_id not found')));
