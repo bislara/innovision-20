@@ -1,0 +1,58 @@
+body {
+    background: #f6f7fd;
+}
+.wrapper {
+    margin: 3.5em 0;
+}
+
+@media (min-width: 500px) {
+
+    .wrapper {
+        margin: 5em 0;
+    }
+
+}
+.companyHead {
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+}
+
+.companyHead img {
+    width: 70%;
+}
+
+.companyDetails {
+    margin: 1em;
+    padding: 0.5em;
+    border-top: 1px solid #f82249;
+    border-bottom: 1px solid #f82249;
+}
+
+.companyDetails div span {
+    text-align: justify;
+}
+
+.companyDetails ul {
+    list-style: none;
+    padding-left: 1em;
+}
+
+.enter {
+    text-align: center;
+    margin-top: 0.75em;
+}
+
+.enter button {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    margin: 1em;
+    border: 1px solid #f82249;
+    border-radius: 1.5em;
+    background-color: #fff;
+}
+
+.enter button:hover {
+    background-color: #f82249;
+    color: #fff;
+}
