@@ -278,6 +278,29 @@
         }
         var com_name= 'ikshate';
 
+        $.ajax({
+                type: "POST",
+                url: "../apis/user/apply_status.php",
+                data: {
+                    token: q,
+                    company:com_name 
+                },
+                beforeSend: function(request) {
+                request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                success: function (data) {
+                    dataArr = JSON.parse(data);
+                    // console.log(data);
+                    if (dataArr["result"] == "applied") {
+                        $('#apply').html('Withdraw');                      
+                    }
+                    else if (dataArr["result"] == "not applied") {
+                        $('#apply').html('Apply');                      
+                    }
+                    
+                }
+            });
+
         $(document).on("click", "#apply", function () {
             if (q) 
             {
