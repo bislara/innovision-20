@@ -28,7 +28,7 @@ $(document).on("click", ".submit_button", function(){
         {
           console.log(data);
           alert((JSON.parse(data)).result);
-          //location.reload();
+          window.location.reload();
         },
         error: function(data)
         {
