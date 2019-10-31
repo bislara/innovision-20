@@ -24,71 +24,13 @@
           $("tbody").append(temp);
     }
   </script> -->
-    <div class="container" style="padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);">
-        <h2 style="color:red">Read the instructions carefully before proceeding for submission of winners and runners results</h2>
-        <ul>
-            <!-- <li>
-                    Make sure, all the winners and runners of your event are registred to your event (even if some are
-                    from NITR) <b>THROUGH THE
-                        INNOVISION WEBSITE.You can verify this from the REGISTERED PARTICIPANTS LIST BELOW.</b> If not,
-                    then contact them to register to your event now through <a href="javascript:void(0)">innonitr.com/eventFinal.html</a>
-                </li>
-                <br />
-                <li>
-                    <b style="color:red">Untill the above step is completed, don't proceed further.</b>
-                </li>
-                <br /> -->
-            <li>
-                When you proceed for entering the winners and runners id in the form, <b>FIRST CONFIRM THEIR ID'S</b> and then submit those as <b>THE SUBMISSION FORM WILL BE ACCESSIBLE ONLY ONCE.</b>Enter the ID's carefully.
-            </li>
-            <br />
-            <li>
-                While submitting, enter all winners and runners<b> ID's seprated by comma(e.g 876,3442,22)</b> and then click on submit.
-            </li>
-            <br />
-            <li>
-                <b>If you have read and understood all the instructions carefully</b>, PROCEED TO SUBMIT YOUR RESULTS.
-                <a id="result" href="javascript:void(0)">Click Here</a>
-            </li>
-        </ul>
-
-    </div>
+   
     <script>
         $(document).on("click", "#result", function() {
             $(".result").css("display", "block");
         });
     </script>
-    <div class="container result" style="padding:3em;background-color: #FFF;border-radius: 2px;box-shadow: 0px 3px 8px rgba(0,0,0,0.25);display:none">
-        <div class="row" style="margin-top: 1em">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="winners">Winners Id:</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="winners" class="form-control" id="winners" placeholder="Enter InnoID of winners separated by commas">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="runners_up">Runners Up Id:</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="runners" class="form-control" id="runners" placeholder="Enter InnoID of runners up separated by commas">
-                    </div>
-                </div>
-                <!-- <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                          <label>
-                              <input type="checkbox"> Remember me</label>
-                      </div>
-                  </div>
-              </div> -->
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button" class="btn btn-default submit_button" style="background-color: black;color: aliceblue">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+   
 
     <script>
         $(document).ready(function() {
@@ -120,7 +62,7 @@
             <center>
                 <h1 id="checkit"></h1>
             </center>
-            <table id="event-registered" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+            <table id="event-registered" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -137,7 +79,7 @@
 
                 </tbody>
             </table>
-            <table id="special-event-registered" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+            <table id="special-event-registered" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -169,7 +111,7 @@
             </center>
             <br>
 
-            <table id="checkedin-table" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+            <table id="checkedin-table" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;">
 
                 <thead>
                     <tr>
@@ -179,7 +121,6 @@
                         <th>Phone Number</th>
                         <th>Email Address</th>
                         <th>Institution</th>
-                        <th>Paid</th>
                         <th>Click to Uncheck</th>
                     </tr>
                 </thead>
@@ -187,7 +128,7 @@
 
                 </tbody>
             </table>
-            <table id="special-checkedin-table" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;width:70%;">
+            <table id="special-checkedin-table" class="table table-bordered table-responsive table-sc" style="background-color: #3D4C53;color: white;box-shadow: 0px 1px 2px rgba(0,0,0,.2);border-radius: 5px;">
                 <thead>
                     <tr>
                         <th>#</th>

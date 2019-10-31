@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Internmela</title>
+    <title>Humaps</title>
 
     <!-- Favicons -->
-    <link href="../assets/images/Innovision_Logo.png" rel="icon">
+    <link href="img/humaps.jpg" rel="icon">
     <link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -25,6 +25,7 @@
     <!-- Main Stylesheet File -->
     <link href="../assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="intern.css">
+    <link href="../assets/css/sweetalert.css" rel="stylesheet">
 </head>
 
 <body>
@@ -104,85 +105,40 @@
     </div>
     <!-- #header -->
 
-    <br><br><br>
-
-    <section id="supporters" class="section-with-bg wow fadeInUp">
-        <div class="container">
-            <div class="section-header">
-                <h2>Internhsip company list</h2>
+    <div class="container-fluid wrapper">
+        <div class="row">
+            <div class="companyHead col-lg-5 col-md-5">
+                <img class="companyLogo" src="img/humaps.jpg" alt="Humaps Logo">
+                <!-- <h2 class="companyName">Phoenix Robotics</h2> -->
             </div>
-
-            <div class="row no-gutters supporters-wrap clearfix">
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="Awalk.html"><img src="img/awalk.png" class="img-fluid" alt="awalk logo"></a>
-                    </div>
+            <div class="companyDetails col-lg-5 col-md-5">
+                <p id="location"><b>Company location :</b> <span>Rourkela</span></p>
+                <p id="available"><b>Number of posts available :</b> <span>based on performance</span></p>
+                <div id="types">
+                    <b>Types of posts :</b>
+                    <span>
+                        <ul>
+                            <li>Node.js Dev</li>
+                            <li>App Dev</li>
+                        </ul>
+                    </span>
                 </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="clavimate.html"><img src="img/clavimate.jpg" class="img-fluid" alt="clavimate logo"></a>
-                    </div>
+                <p id="stipend"><b>Stipend :</b> <span>upto 12k</span></p>
+                <div class="screening">
+                    <h5>Screening process:</h5>
+                    <ul>
+                        <li>1. CV shortlist</li>
+                        <li>2. MCQ test</li>
+                        <li>3. Personal Interview</li>
+                    </ul>
                 </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="etrix.html"><img src="img/etrix.png" class="img-fluid" alt="etrix logo"></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="FastechFashion.html"><img src="img/fastech fashion.png" class="img-fluid" alt="fastech fashion logo"></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="frapp.html"><img src="img/frapp.png" class="img-fluid" alt="frapp logo"></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="phoenix.html"><img src="img/phoenix-logo.png" class="img-fluid" alt="phoenix robotics logo"></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo" style="text-align: center;">
-                        <a href="estino.html">
-                            <img src="img/estino.jpg" class="img-fluid" alt="phoenix robotics logo">
-                            <h5>Estino Energies</h5>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo">
-                        <a href="ikshate.html">
-                            <h2>Ikshate Technologies</h2>
-                            <!-- <img src="img/" class="img-fluid" alt="phoenix robotics logo"> -->
-                        </a>
-                    </div>
-                </div>
-            
-            	<div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="supporter-logo" style="text-align: center;">
-                        <a href="humaps.html">
-                            <img src="img/humaps.jpg" class="img-fluid" alt="Humaps logo">
-                            <h5>Humaps</h5>
-                        </a>
-                    </div>
-                </div>
-
             </div>
-
+            <div class="enter col-lg-12 col-md-12">
+                <button class="apply-btn" id="apply">Apply</button>
+                <!-- <button class="withdraw-btn" id="withdraw">Withdraw</button> -->
+            </div>
         </div>
-        <br><br>
-
-    </section>
+    </div>
 
     <!--==========================
     Footer
@@ -303,6 +259,7 @@
     <script src="../assets/js/contactform.js"></script>
 
     <!-- Template Main Javascript File -->
+    <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/main.js"></script>
     <script>
         var q = localStorage.getItem("token");
@@ -321,6 +278,86 @@
                 }
             });
         }
+        var com_name= 'humaps';
+
+        $.ajax({
+                type: "POST",
+                url: "../apis/user/apply_status.php",
+                data: {
+                    token: q,
+                    company:com_name 
+                },
+                beforeSend: function(request) {
+                request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                success: function (data) {
+                    dataArr = JSON.parse(data);
+                    // console.log(data);
+                    if (dataArr["result"] == "applied") {
+                        $('#apply').html('Withdraw');                      
+                    }
+                    else if (dataArr["result"] == "not applied") {
+                        $('#apply').html('Apply');                      
+                    }
+                    
+                }
+            });
+
+        $(document).on("click", "#apply", function () {
+            if (q) 
+            {
+                
+                $.ajax({
+                type: "POST",
+                url: "../apis/user/special_event_apply.php",
+                data: {
+                    token: q,
+                    company:com_name 
+                },
+                beforeSend: function(request) {
+                request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                success: function (data) {
+                    dataArr = JSON.parse(data);
+                    console.log(dataArr);
+                    if (dataArr["result"] == "applied") {
+                        swal("Registration Successful !", ": )", "success");
+                        // window.location.assign('event-details.html?eid='+ eid);
+                        // swal({
+                        // title: "Registration Successful !",
+                        // text: ": )",
+                        // type: "success"
+                        // }, function() {
+                        //     window.location = 'Awalk.html';
+                        // });
+                        $('#apply').html('Withdraw');                      
+
+                    } else if (dataArr["status"] == "failure") {
+                        swal(dataArr["result"], ":(", "error");
+                    }
+                    else if (dataArr["result"] == "withdraw") {
+                        swal("De registration Successful !", ": )", "success");
+                        // window.location.assign('event-details.html?eid='+ eid);
+                        // swal({
+                        // title: "De registration Successful !",
+                        // text: ": )",
+                        // type: "success"
+                        // }, function() {
+                        //     window.location = 'Awalk.html';
+                        // });
+                        $('#apply').html('Apply');                     
+
+
+                    }
+                }
+            });
+
+            }
+            else
+            {
+                swal("Please login to register for the company.", ":(", "error");
+            }
+        });
     </script>
 
 </body>
