@@ -7,11 +7,7 @@
 
     include('../../config.php');
     $secretKey = base64_decode(SECRET_KEY);
-
-    $headers = apache_request_headers();
-
-    $authHeader= $headers["Authorization"];
-    list($jwt) = sscanf( $authHeader, 'Bearer %s');    
+    $jwt=$_POST['token'];
     $id=$_POST['underCA'];
 
 	if( $_SERVER["REQUEST_METHOD"] === "POST" &&  $jwt != "") {

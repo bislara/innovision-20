@@ -30,7 +30,7 @@ $(document).ready(function() {
 					
 					if(paid==1){
 						$('#paymentBtn').hide();						
-						$("#ticket").html("Ticket ID "+JSON.parse(payment).ticketId);
+						$("#ticket").html("<b>Ticket ID :  </b>"+JSON.parse(payment).ticketId);
                     }
                 	else if(paid==2){
 						$('#paymentBtn').hide();
@@ -40,10 +40,10 @@ $(document).ready(function() {
 					}
 
 					if(under_CA){
-						$('#under_CA').html("<b>Under CA</b> : "+under_CA);
+						$('#under_CA').html("<b>Under CA</b> :  "+under_CA);
 						$(".ca").css('display','flex');
 					}else{
-						$(".ca").css('display','block');
+						$(".ca").css('display','flex');
 						$('#ca_button2').html("Add Under CA");
 					}
 
@@ -162,11 +162,9 @@ $('.ca').on('click','#editCaButton', function(){
 	var q = localStorage.getItem('token');
 	let id=$("input[type=number]").val();
     $.ajax({
-        url: '../apis/user/ca/changeUnderCA.php',
-        beforeSend: function(request) {
-            request.setRequestHeader('Authorization', 'Bearer ' + q);
-		},
+        url: '../apis/user/ca/changeUnderCA.php',        
 		data:{
+			token:q,
 			underCA:id
 		},
         type: 'POST',
