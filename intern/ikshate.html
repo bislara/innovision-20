@@ -24,6 +24,7 @@
 
     <!-- Main Stylesheet File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="intern.css">
 </head>
 
@@ -126,13 +127,13 @@
                     <h5>Screening process:</h5>
                     <ul>
                         <li>1. CV shortlist</li>
-                        <li>3. Personal Interview</li>
+                        <li>2. Personal Interview</li>
                     </ul>
                 </div>
             </div>
             <div class="enter col-lg-12 col-md-12">
                 <button class="apply-btn" id="apply">Apply</button>
-                <button class="withdraw-btn" id="withdraw">Withdraw</button>
+                <!-- <button class="withdraw-btn" id="withdraw">Withdraw</button> -->
             </div>
         </div>
     </div>
@@ -256,12 +257,13 @@
     <script src="../assets/js/contactform.js"></script>
 
     <!-- Template Main Javascript File -->
+    <script src="../assets/js/sweetalert.js"></script>
     <script src="../assets/js/main.js"></script>
     <script>
         var q = localStorage.getItem("token");
         if (q) {
             $.ajax({
-                url: 'apis/user/auth/profile.php',
+                url: '../apis/user/auth/profile.php',
                 beforeSend: function (request) {
                     request.setRequestHeader('Authorization', 'Bearer ' + q);
                 },
@@ -269,11 +271,68 @@
                 success: function (response) {
                     response = JSON.parse(response)
                     if (response.status == "success") {
-                        $('.log_btn').html('Profile').attr('href', 'views/profile.html')
+                        $('.log_btn').html('Profile').attr('href', '../views/profile.html')
                     }
                 }
             });
         }
+        var com_name= 'ikshate';
+
+        $(document).on("click", "#apply", function () {
+            if (q) 
+            {
+                
+                $.ajax({
+                type: "POST",
+                url: "../apis/user/special_event_apply.php",
+                data: {
+                    token: q,
+                    company:com_name 
+                },
+                beforeSend: function(request) {
+                request.setRequestHeader('Authorization', 'Bearer ' + q);
+                },
+                success: function (data) {
+                    dataArr = JSON.parse(data);
+                    console.log(dataArr);
+                    if (dataArr["result"] == "applied") {
+                        swal("Registration Successful !", ": )", "success");
+                        // window.location.assign('event-details.html?eid='+ eid);
+                        // swal({
+                        // title: "Registration Successful !",
+                        // text: ": )",
+                        // type: "success"
+                        // }, function() {
+                        //     window.location = 'Awalk.html';
+                        // });
+                        $('#apply').html('Withdraw');                      
+
+                    } else if (dataArr["status"] == "failure") {
+                        swal("Session Expired! Please login to register for the event.", ":(", "error");
+                    }
+                    else if (dataArr["result"] == "withdraw") {
+                        swal("De registration Successful !", ": )", "success");
+                        // window.location.assign('event-details.html?eid='+ eid);
+                        // swal({
+                        // title: "De registration Successful !",
+                        // text: ": )",
+                        // type: "success"
+                        // }, function() {
+                        //     window.location = 'Awalk.html';
+                        // });
+                        $('#apply').html('Apply');                     
+
+
+                    }
+                }
+            });
+
+            }
+            else
+            {
+                swal("Please login to register for the company.", ":(", "error");
+            }
+        });
     </script>
 
 </body>

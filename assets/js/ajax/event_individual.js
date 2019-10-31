@@ -2,6 +2,12 @@ var url = location.href;
 var eid = url.split("?")[1].split("=")[1];
 var status;
 var dataArray;
+$('#comp').hide();
+
+if (eid==105) 
+{
+	$('#comp').show();
+}
 setMetaTags=(eventArr)=>{
 	$('head').prepend('<title>'+eventArr["title"]+'</title>');
 	$('head').prepend('<meta name="keywords" content="'+eventArr["title"]+'">');
@@ -188,7 +194,7 @@ $(document).ready(function () {
 		});
 	} 
 });
-
+ 
 $(document).on("click", "#detailsButton", function () {
 	
     var q = localStorage.getItem("token");

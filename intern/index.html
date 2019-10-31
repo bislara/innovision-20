@@ -299,7 +299,7 @@
         var q = localStorage.getItem("token");
         if (q) {
             $.ajax({
-                url: 'apis/user/auth/profile.php',
+                url: '../apis/user/auth/profile.php',
                 beforeSend: function (request) {
                     request.setRequestHeader('Authorization', 'Bearer ' + q);
                 },
@@ -307,7 +307,7 @@
                 success: function (response) {
                     response = JSON.parse(response)
                     if (response.status == "success") {
-                        $('.log_btn').html('Profile').attr('href', 'views/profile.html')
+                        $('.log_btn').html('Profile').attr('href', '../views/profile.html')
                     }
                 }
             });
