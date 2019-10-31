@@ -16,12 +16,7 @@
 			//echo ('UPDATE ca_selection_responses SET selected = '.$id_list[$i]['selected'].' WHERE ca_applicant_id ='.$id_list[$i]['ca_applicant_id']);
 			if($id_list[$i]['checked_in']){
 				$query= mysqli_query($conn,'SELECT paid from users WHERE inno_id ='.$id_list[$i]['inno_id'])->fetch_assoc();
-				if($query['paid']){
-					//echo('UPDATE users SET allotted_hostel='.$id_list[$i]['hostel'].', checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);return;
-					$query = mysqli_query( $conn, 'UPDATE users SET allotted_hostel="'.$id_list[$i]['hostel'].'",checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);	
-				}else{
-					$flag=false;
-				}
+				$query = mysqli_query( $conn, 'UPDATE users SET allotted_hostel="'.$id_list[$i]['hostel'].'",checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);	
 			}else{
 				$query = mysqli_query( $conn, 'UPDATE users SET allotted_hostel="", checked_in = '.$id_list[$i]['checked_in'].' WHERE inno_id ='.$id_list[$i]['inno_id']);
 			}
