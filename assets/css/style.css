@@ -1511,7 +1511,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-left: 200px;
     padding-right: 200px;
     color: #0e1b4d;
-    font-size: 2.5rem;
+    font-size: 0.5rem;
     line-height: 1.5;
 }
 
@@ -1733,7 +1733,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     .quote-text {
         padding-left: 50px;
         padding-right: 50px;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -1833,7 +1833,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     }
     #quotes .quote-text {
         padding: 5px 20px;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     #quotes em {
         font-size: 0.8rem;
