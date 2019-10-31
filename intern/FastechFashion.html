@@ -340,7 +340,7 @@
                         $('#apply').html('Withdraw');                      
 
                     } else if (dataArr["status"] == "failure") {
-                        swal("Session Expired! Please login to register for the event.", ":(", "error");
+                        swal(dataArr["result"], ":(", "error");
                     }
                     else if (dataArr["result"] == "withdraw") {
                         swal("De registration Successful !", ": )", "success");

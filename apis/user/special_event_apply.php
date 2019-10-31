@@ -26,7 +26,7 @@
                 $result =mysqli_query($conn, $query);
                 
                 if (mysqli_num_rows($result) < 1) {
-                    echo(json_encode(array('status' => 'failure', 'result' => 'inno_id not found')));
+                    echo(json_encode(array('status' => 'failure', 'result' => 'Please register for the event!')));
                 }
 
                 else {
