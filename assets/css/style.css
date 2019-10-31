@@ -1501,38 +1501,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding: 30px 20px 130px 20px;
 }
 
-#quotes em {
-    color: #a5a9b3;
-}
 
-.quote-text {
-    padding-left: 200px;
-    padding-right: 200px;
-    color: #0e1b4d;
-    font-size: 0.5rem;
-    line-height: 1.5;
-}
-
-#quotes .quote-btn {
-    width: 7%;
-}
-
-#quotes .quote-btn:focus,
-#quotes .quote-btn:hover {
-    color: #000;
-}
-
-#quotes .youtube-link {
-    position: relative;
-}
-
-#quotes .play-btn {
-    height: 100%;
-    width: 58%;
-    position: absolute;
-    top: 0;
-    left: 10%;
-}
 
 
 /* ============ */
@@ -1826,27 +1795,9 @@ body.mobile-nav-active #mobile-nav-toggle {
     #schedule .nav-tabs a {
         padding: 8px 30px;
     }
-    #quotes .youtube-link {
-        height: 200px;
-    }
-    #quotes .quote-text {
-        padding: 5px 20px;
-        font-size: 0.8rem;
-    }
-    #quotes em {
-        font-size: 0.8rem;
-    }
-    #quotes .play-btn {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 79%;
-        height: 80%;
-        padding-top: 20px;
-    }
-    #quotes .quote-btn {
-        width: 10%;
-    }
+#quotes .quote-img {
+	width: 100%;
+}
 }
 
 @media (max-width: 460px) {
