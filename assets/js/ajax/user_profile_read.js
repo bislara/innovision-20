@@ -15,6 +15,7 @@ $(document).ready(function() {
 			success: function(response) {
 				// console.log(response);
 				response = JSON.parse(response);
+            	console.log(response);
 				if (response.status == 'success') {
 					var id = response.result['basicInfo']['inno_id'];
 					var name = response.result['basicInfo']['name'];
@@ -48,7 +49,7 @@ $(document).ready(function() {
 						$('#ca_button2').html("Add Under CA");
 					}
 
-					if(hostel.length){
+					if(hostel){
 						$("#planet").html("Your Hostel is <b>"+hostel.toUpperCase()+"</b>")
 					}
 
