@@ -22,17 +22,13 @@
 		else {
 			$query = mysqli_query($conn, "SELECT * FROM users where inno_id='".$inno_id."'");
 			$checked_in=$query->fetch_assoc()['checked_in'];
-			if($checked_in){
-				$query = mysqli_query($conn, "UPDATE events_registration SET checkInStatus = 1 where inno_id='".$inno_id."' AND event_id = '".$eid."'");
+			$query = mysqli_query($conn, "UPDATE events_registration SET checkInStatus = 1 where inno_id='".$inno_id."' AND event_id = '".$eid."'");
 				if ($query) {
 					echo(json_encode(array('status' => 'success', 'result' => 'Checked in ')));
 				}
 				else {
 					echo(json_encode(array('status' => 'failure', 'result' => 'DB query failed')));	    			
 				   }
-			}else{
-				echo(json_encode(array('status' => 'failure', 'result' => 'Participant not checked in Institute')));	    			
-			}
 
 
 			

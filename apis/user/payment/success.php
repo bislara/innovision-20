@@ -36,10 +36,19 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     // Converts it into a PHP object
     $data = json_decode($json);
 
-    $user_email=$data->ticketItems[0]->attendee->email;
+	$ticketPrice=$data->totalFare;
+	if($ticketPrice>600){
+        $user_email=$data->ticketItems[0]->attendee->email;
+        $query = mysqli_query($conn, "UPDATE users SET paid='1' , payment_response='".$json."' where email ='".$user_email."'");
+        echo "success";
+    }else{
+        echo "workshop";
+    }
+    
+    
+    	
 
-    $query = mysqli_query($conn, "UPDATE users SET paid='1' , payment_response='".$json."' where email ='".$user_email."'");
-    echo "success";
+    
 
 
 }
